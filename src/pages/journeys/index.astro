@@ -3,4 +3,25 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { journeys } from '../../data/journeys';
 import { withBase } from '../../lib/paths';
 ---
-<BaseLayout title="旅程から探す" description="作りたいものから代表的な技術構成と、その選択理由をたどれます。"><header class="page-head shell"><div class="breadcrumb"><a href={withBase('/')}>Home</a> / Journeys</div><div class="kicker">GUIDED JOURNEYS</div><h1>作りたいものから、技術をたどる。</h1><p>唯一の正解を出すのではなく、まず理解しやすい代表ルートを示します。代替案も一緒に見てください。</p></header><section class="section"><div class="shell journey-grid">{journeys.map((journey) => <article class="journey-card"><div class="eyebrow">GUIDED ROUTE</div><h2><a href={withBase(`/journeys/${journey.id}`)}>{journey.title}</a></h2><p>{journey.summary}</p></article>)}</div></section></BaseLayout>
+<BaseLayout title="旅程から探す" description="作りたいものから代表的な技術構成と、その選択理由をたどれます。">
+  <header class="page-head shell">
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a> / Journeys</div>
+    <div class="meta-label accent-label">GUIDED JOURNEYS</div>
+    <h1>作りたいものから、技術をたどる。</h1>
+    <p>唯一の正解を出すのではなく、理解しやすい代表ルートから始める。構成の理由と、別ルートも一緒に確認できます。</p>
+  </header>
+  <section class="section">
+    <div class="shell">
+      <div class="journey-list">
+        {journeys.map((journey, index) => (
+          <a class="journey-row" href={withBase(`/journeys/${journey.id}`)}>
+            <span class="journey-row-number">0{index + 1}</span>
+            <strong class="journey-row-title">{journey.title}</strong>
+            <span class="journey-row-summary">{journey.summary}</span>
+            <span class="journey-row-count">{journey.technologyIds.length} tech →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

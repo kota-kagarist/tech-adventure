@@ -1,10 +1,16 @@
 # Tech Adventure
 
-> 技術の世界を、迷わず冒険する。
+> Navigate the technology landscape.
 
 Tech Adventure は、Astro / Hono / React / Cloudflare Workers などのWeb技術を、単なる名前の一覧ではなく **「何を担当するか」「何と競合するか」「何と組み合わせるか」** で理解するためのオープンガイドです。
 
 AIにコードを書いてもらえる時代ほど、「出てきた技術名が何者なのか」を把握する地図が必要だと考えています。
+
+## Live
+
+https://kota-kagarist.github.io/tech-adventure/
+
+`main` への更新は GitHub Actions で検証された後、GitHub Pages へ自動公開されます。
 
 ## できること
 
@@ -18,14 +24,16 @@ AIにコードを書いてもらえる時代ほど、「出てきた技術名が
 - Astro 7
 - TypeScript 5.9（Astroの言語ツールとの互換性を優先）
 - Node.js 22+
-- Cloudflare Workers Static Assets
+- GitHub Pages
+- GitHub Actions
+- Cloudflare Workers Static Assets（dry-runで互換性確認）
 - UIフレームワークなし
 - DB / サーバーAPIなし
 
 ## ローカル開発
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
@@ -44,7 +52,7 @@ npx wrangler deploy --dry-run
 2. `src/data/technologies/index.ts` にimportを追加する
 3. 必要なら `src/data/relations.json` に関係を追加する
 4. 公式一次情報で内容を確認する
-5. `npm run verify` を実行する
+5. `npm run check && npm test && npm run build` を実行する
 
 `id` は小文字 kebab-case。公式URLは `https://` を使います。
 

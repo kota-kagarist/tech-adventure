@@ -6,14 +6,40 @@ interface Props { technology: Technology; allTechnologies: Technology[]; relatio
 const { technology, allTechnologies, relations } = Astro.props;
 const byId = new Map(allTechnologies.map((item) => [item.id, item]));
 const groups = [
-  { key: 'competes', title: '同じ土俵の技術', description: '比較候補になりやすい技術', match: (r: TechnologyRelation) => r.type === 'competes-with' },
-  { key: 'works', title: '一緒に使う技術', description: '組み合わせて役割を分担できる技術', match: (r: TechnologyRelation) => r.type === 'works-with' },
-  { key: 'runs-out', title: '動く場所', description: 'この技術を実行できる環境', match: (r: TechnologyRelation) => r.type === 'runs-on' && r.source === technology.id },
-  { key: 'runs-in', title: 'ここで動く技術', description: 'この実行環境を利用する技術', match: (r: TechnologyRelation) => r.type === 'runs-on' && r.target === technology.id },
-  { key: 'built-out', title: '土台・基盤', description: 'この技術を下で支える技術', match: (r: TechnologyRelation) => r.type === 'built-on' && r.source === technology.id },
-  { key: 'built-in', title: 'この技術を土台にするもの', description: 'この技術を基盤として利用する技術', match: (r: TechnologyRelation) => r.type === 'built-on' && r.target === technology.id },
-  { key: 'alternative', title: '代替候補', description: '似た役割を担える別の選択肢', match: (r: TechnologyRelation) => r.type === 'alternative-to' }
+  { key: 'competes', title: '同じ土俵', description: '比較候補', match: (r: TechnologyRelation) => r.type === 'competes-with' },
+  { key: 'works', title: '一緒に使う', description: '役割分担', match: (r: TechnologyRelation) => r.type === 'works-with' },
+  { key: 'runs-out', title: '動く場所', description: 'runtime', match: (r: TechnologyRelation) => r.type === 'runs-on' && r.source === technology.id },
+  { key: 'runs-in', title: 'ここで動く', description: 'runs here', match: (r: TechnologyRelation) => r.type === 'runs-on' && r.target === technology.id },
+  { key: 'built-out', title: '土台・基盤', description: 'built on', match: (r: TechnologyRelation) => r.type === 'built-on' && r.source === technology.id },
+  { key: 'built-in', title: 'この技術を使うもの', description: 'used by', match: (r: TechnologyRelation) => r.type === 'built-on' && r.target === technology.id },
+  { key: 'alternative', title: '代替候補', description: 'alternatives', match: (r: TechnologyRelation) => r.type === 'alternative-to' }
 ];
 function counterpart(relation: TechnologyRelation) { return byId.get(relation.source === technology.id ? relation.target : relation.source); }
 ---
-<div class="relation-groups">{groups.map((group) => { const matches = relations.filter(group.match); if (matches.length === 0) return null; return <section class="relation-group"><div><h2>{group.title}</h2><p class="muted">{group.description}</p></div><div class="relation-list">{matches.map((relation) => { const other = counterpart(relation); if (!other) return null; return <a class="relation-card" href={withBase(`/technologies/${other.id}`)}><span class="eyebrow">{categoryById[other.category].name}</span><strong>{other.name}</strong><span>{relation.note}</span></a>; })}</div></section>; })}</div>
+<div class="relation-groups">
+  {groups.map((group) => {
+    const matches = relations.filter(group.match);
+    if (matches.length === 0) return null;
+    return (
+      <section class="relation-group">
+        <div class="relation-group-head">
+          <h3>{group.title}</h3>
+          <p class="relation-group-description">{group.description}</p>
+        </div>
+        <div class="relation-list">
+          {matches.map((relation) => {
+            const other = counterpart(relation);
+            if (!other) return null;
+            return (
+              <a class="relation-row" href={withBase(`/technologies/${other.id}`)}>
+                <span class="meta-label">{categoryById[other.category].name}</span>
+                <span><strong class="relation-name">{other.name}</strong><span class="relation-note"> — {relation.note}</span></span>
+                <span class="relation-arrow">→</span>
+              </a>
+            );
+          })}
+        </div>
+      </section>
+    );
+  })}
+</div>
