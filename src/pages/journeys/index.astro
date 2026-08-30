@@ -15,7 +15,7 @@ import { withBase } from '../../lib/paths';
       <div class="journey-list">
         {journeys.map((journey, index) => (
           <a class="journey-row" href={withBase(`/journeys/${journey.id}`)}>
-            <span class="journey-row-number">0{index + 1}</span>
+            <span class="journey-row-number">{String(index + 1).padStart(2, '0')}</span>
             <strong class="journey-row-title">{journey.title}</strong>
             <span class="journey-row-summary">{journey.summary}</span>
             <span class="journey-row-count">{journey.technologyIds.length} tech →</span>

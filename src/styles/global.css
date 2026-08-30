@@ -588,7 +588,7 @@ main { min-height: 70vh; overflow: clip; }
 .journey-step-name { padding-top: .25rem; }
 .journey-step-name a { display: block; margin-top: .25rem; font-size: 1.05rem; font-weight: 650; text-decoration: none; }
 .journey-step-description { margin: .2rem 0 0; color: var(--text-muted); font-size: .84rem; }
-.journey-notes { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 4.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
+.journey-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem; margin-top: 4.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
 .journey-note h2 { margin: .45rem 0 .8rem; font-size: 1.4rem; letter-spacing: -.03em; }
 
 .fact-card, .panel {

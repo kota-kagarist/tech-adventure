@@ -26,7 +26,7 @@ const route = journey.technologyIds.map((id) => byId.get(id)).filter((item): ite
       <ol class="journey-rail">
         {route.map((technology, index) => (
           <li class="journey-step">
-            <span class="journey-step-index">0{index + 1}</span>
+            <span class="journey-step-index">{String(index + 1).padStart(2, '0')}</span>
             <div class="journey-step-name">
               <span class="meta-label">{categoryById[technology.category].name}</span>
               <a href={withBase(`/technologies/${technology.id}`)}>{technology.name}</a>
@@ -40,6 +40,11 @@ const route = journey.technologyIds.map((id) => byId.get(id)).filter((item): ite
           <div class="meta-label">WHY THIS ROUTE?</div>
           <h2>なぜこの構成？</h2>
           <ul class="fact-list">{journey.reasoning.map((reason) => <li>{reason}</li>)}</ul>
+        </section>
+        <section class="journey-note">
+          <div class="meta-label">TRADE-OFFS</div>
+          <h2>向かない場面</h2>
+          <ul class="fact-list">{journey.tradeoffs.map((tradeoff) => <li>{tradeoff}</li>)}</ul>
         </section>
         <section class="journey-note">
           <div class="meta-label">ALTERNATIVES</div>

@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import LandscapePreview from '../components/LandscapePreview.astro';
 import TechnologyCard from '../components/TechnologyCard.astro';
 import { categories, getRelations, getTechnologies } from '../data/load';
-import { journeys } from '../data/journeys';
+import { featuredJourneys, journeys } from '../data/journeys';
 import { withBase } from '../lib/paths';
 import type { Technology } from '../data/schema';
 
@@ -96,7 +96,7 @@ const comparisons = [
         <a class="section-link" href={withBase('/journeys')}>View all journeys →</a>
       </div>
       <div class="journey-preview-grid">
-        {journeys.map((journey, index) => (
+        {featuredJourneys.map((journey, index) => (
           <a class="journey-preview" href={withBase(`/journeys/${journey.id}`)}>
             <span class="journey-index">0{index + 1}</span>
             <div><h3>{journey.title}</h3><p>{journey.summary}</p></div>

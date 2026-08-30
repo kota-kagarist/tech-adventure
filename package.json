@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev",
     "check": "astro check",
-    "test": "node --test",
+    "test": "node --experimental-strip-types --test",
     "build": "astro build",
     "verify": "npm run check && npm test && npm run build"
   },
