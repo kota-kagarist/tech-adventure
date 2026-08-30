@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import TechnologyRelations from '../../components/TechnologyRelations.astro';
+import { categoryById, getRelationsFor, getTechnologies } from '../../data/load';
+import type { Technology } from '../../data/schema';
+export function getStaticPaths() { return getTechnologies().map((technology) => ({ params: { id: technology.id }, props: { technology } })); }
+interface Props { technology: Technology; }
+const { technology } = Astro.props;
+const allTechnologies = getTechnologies();
+const relations = getRelationsFor(technology.id);
+const category = categoryById[technology.category];
+---
+<BaseLayout title={technology.name} description={technology.shortDescription}><header class="page-head shell"><div class="breadcrumb"><a href="/">Home</a> / <a href="/technologies">Technologies</a> / {technology.name}</div><div class="kicker">{category.name}</div><h1>{technology.name}</h1><p>{technology.shortDescription}</p><div class="hero-actions"><a class="button primary" href={technology.officialUrl} rel="noreferrer">公式サイトを見る ↗</a></div></header><section class="section"><div class="shell detail-grid"><article class="fact-card"><div class="eyebrow">WHAT IS IT?</div><h2>何者？</h2><p>{technology.whatItDoes}</p></article><article class="fact-card"><div class="eyebrow">ROLE</div><h2>何を担当する？</h2><p><strong>{category.name}</strong> — {category.description}</p></article><article class="fact-card"><div class="eyebrow">USE IT WHEN</div><h2>いつ使う？</h2><ul class="fact-list">{technology.whenToUse.map((item) => <li>{item}</li>)}</ul></article><article class="fact-card"><div class="eyebrow">SKIP IT WHEN</div><h2>いつ使わない？</h2><ul class="fact-list">{technology.whenNotToUse.map((item) => <li>{item}</li>)}</ul></article></div></section><section class="section"><div class="shell"><TechnologyRelations technology={technology} allTechnologies={allTechnologies} relations={relations} /></div></section></BaseLayout>
