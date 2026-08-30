@@ -1,0 +1,1 @@
+{"id":"nextjs","name":"Next.js","shortDescription":"Reactを使ったWebアプリ向けフレームワーク。","category":"web-framework","officialUrl":"https://nextjs.org/","whatItDoes":"Reactのルーティング、サーバー描画、データ取得などをまとめて扱う。","whenToUse":["React中心のWebアプリ","サーバー処理と画面を一体で作りたい"],"whenNotToUse":["静的コンテンツ中心でReactを必要としないサイト"],"maturity":"mature","tags":["react","ssr"]}

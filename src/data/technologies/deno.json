@@ -1,0 +1,1 @@
+{"id":"deno","name":"Deno","shortDescription":"Web標準と安全性を重視したJavaScript/TypeScript実行環境。","category":"runtime","officialUrl":"https://deno.com/","whatItDoes":"ブラウザ外でJavaScript/TypeScriptをWeb標準寄りのAPIで実行する。","whenToUse":["Web標準に寄せたサーバーコード","権限モデルを活用したい"],"whenNotToUse":["Node.js専用パッケージへの依存が強い既存環境"],"maturity":"established","tags":["runtime","typescript"]}

@@ -1,0 +1,1 @@
+{"id":"sqlite","name":"SQLite","shortDescription":"1ファイルで動く組み込み型リレーショナルデータベース。","category":"database","officialUrl":"https://www.sqlite.org/","whatItDoes":"サーバーを別途立てず、アプリ内からSQLでデータを保存・検索する。","whenToUse":["ローカルアプリや小規模サービス","運用するDBサーバーを増やしたくない"],"whenNotToUse":["多数のサーバーから高頻度に同時書き込みする構成"],"maturity":"mature","tags":["sql","embedded"]}

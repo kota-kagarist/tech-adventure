@@ -1,0 +1,1 @@
+{"id":"hono","name":"Hono","shortDescription":"Web標準APIを重視した軽量なサーバーフレームワーク。","category":"server-framework","officialUrl":"https://hono.dev/","whatItDoes":"HTTPルーティング、ミドルウェア、APIレスポンスなどサーバー側の処理を組み立てる。","whenToUse":["APIを小さく高速に作りたい","Workers・Node.js・Bun・Deno間の移植性を持たせたい"],"whenNotToUse":["静的ページだけでサーバー処理が不要"],"maturity":"established","tags":["api","edge"]}

@@ -1,0 +1,1 @@
+{"id":"svelte","name":"Svelte","shortDescription":"コンパイル時に軽量なJavaScriptへ変換するUIフレームワーク。","category":"ui-library","officialUrl":"https://svelte.dev/","whatItDoes":"宣言的なコンポーネントをビルド時に効率的なJavaScriptへ変換する。","whenToUse":["簡潔な記法で対話的UIを作りたい","クライアント側の実行量を抑えたい"],"whenNotToUse":["組織でReact資産への強い依存がある"],"maturity":"established","tags":["ui","component"]}

@@ -1,0 +1,1 @@
+{"id":"bun","name":"Bun","shortDescription":"高速なJavaScript実行環境と開発ツール群。","category":"runtime","officialUrl":"https://bun.com/","whatItDoes":"JavaScript/TypeScript実行、パッケージ管理、テスト、バンドルなどを一体で提供する。","whenToUse":["高速な開発体験を試したい","Bun対応のサーバーアプリを作る"],"whenNotToUse":["Node.js固有互換性が最優先の既存システム"],"maturity":"established","tags":["runtime","tooling"]}

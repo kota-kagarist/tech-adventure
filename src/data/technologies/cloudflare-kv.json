@@ -1,0 +1,1 @@
+{"id":"cloudflare-kv","name":"Cloudflare KV","shortDescription":"世界中から低遅延で読む用途に向くキー・値ストア。","category":"database","officialUrl":"https://developers.cloudflare.com/kv/","whatItDoes":"キーに対して値を保存し、Cloudflareネットワーク上から高速に読み取る。","whenToUse":["設定値・キャッシュ・読み取り中心のデータ","単純なキー検索で十分"],"whenNotToUse":["強い即時整合性や複雑なSQL検索が必要"],"maturity":"mature","tags":["kv","cloudflare"]}
