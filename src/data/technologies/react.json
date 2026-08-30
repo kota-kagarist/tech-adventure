@@ -1,1 +1,12 @@
-{"id":"react","name":"React","shortDescription":"UIを部品として組み立てるライブラリ。","category":"ui-library","officialUrl":"https://react.dev/","whatItDoes":"状態に応じて変化する画面をコンポーネントとして構築する。","whenToUse":["操作の多いWeb UI","Reactの豊富な生態系を使いたい"],"whenNotToUse":["ほぼ静的なページだけでJavaScriptを増やしたくない"],"maturity":"mature","tags":["ui","component"]}
+{
+  "id": "react",
+  "name": "React",
+  "shortDescription": "UIを部品として組み立てるライブラリ。",
+  "category": "ui-library",
+  "officialUrl": "https://react.dev/",
+  "whatItDoes": "状態に応じて変化する画面をコンポーネントとして構築する。",
+  "whenToUse": ["操作の多いWeb UI", "Reactの豊富な生態系を使いたい"],
+  "whenNotToUse": ["ほぼ静的なページだけでJavaScriptを増やしたくない"],
+  "maturity": "mature",
+  "tags": ["ui", "component"]
+}

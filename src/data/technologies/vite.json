@@ -1,1 +1,12 @@
-{"id":"vite","name":"Vite","shortDescription":"高速な開発サーバーとフロントエンド向けビルドツール。","category":"build-tool","officialUrl":"https://vite.dev/","whatItDoes":"開発中のモジュール配信と本番向けの資産ビルドを行う。","whenToUse":["現代的なフロントエンド開発","Viteを基盤にするフレームワークを使う"],"whenNotToUse":["ビルド工程のない単純なHTMLだけで十分"],"maturity":"mature","tags":["build","dev-server"]}
+{
+  "id": "vite",
+  "name": "Vite",
+  "shortDescription": "高速な開発サーバーとフロントエンド向けビルドツール。",
+  "category": "build-tool",
+  "officialUrl": "https://vite.dev/",
+  "whatItDoes": "開発中のモジュール配信と本番向けの資産ビルドを行う。",
+  "whenToUse": ["現代的なフロントエンド開発", "Viteを基盤にするフレームワークを使う"],
+  "whenNotToUse": ["ビルド工程のない単純なHTMLだけで十分"],
+  "maturity": "mature",
+  "tags": ["build", "dev-server"]
+}

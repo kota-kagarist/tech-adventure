@@ -1,1 +1,12 @@
-{"id":"postgresql","name":"PostgreSQL","shortDescription":"高機能なオープンソースのリレーショナルデータベース。","category":"database","officialUrl":"https://www.postgresql.org/","whatItDoes":"表形式のデータをSQLで保存・検索し、強い整合性と多彩な機能を提供する。","whenToUse":["一般的な業務データやSaaS","複雑な検索やトランザクションが必要"],"whenNotToUse":["単一端末内だけの極小データ保存"],"maturity":"mature","tags":["sql","database"]}
+{
+  "id": "postgresql",
+  "name": "PostgreSQL",
+  "shortDescription": "高機能なオープンソースのリレーショナルデータベース。",
+  "category": "database",
+  "officialUrl": "https://www.postgresql.org/",
+  "whatItDoes": "表形式のデータをSQLで保存・検索し、強い整合性と多彩な機能を提供する。",
+  "whenToUse": ["一般的な業務データやSaaS", "複雑な検索やトランザクションが必要"],
+  "whenNotToUse": ["単一端末内だけの極小データ保存"],
+  "maturity": "mature",
+  "tags": ["sql", "database"]
+}

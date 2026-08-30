@@ -1,1 +1,12 @@
-{"id":"nuxt","name":"Nuxt","shortDescription":"Vueを使ったWebアプリ向けフレームワーク。","category":"web-framework","officialUrl":"https://nuxt.com/","whatItDoes":"Vueにルーティング、サーバー描画、データ取得などの仕組みを加える。","whenToUse":["Vue中心のWebアプリ","Vueでフルスタックに構築したい"],"whenNotToUse":["Vueを使う理由がなく静的HTML中心で十分"],"maturity":"mature","tags":["vue","ssr"]}
+{
+  "id": "nuxt",
+  "name": "Nuxt",
+  "shortDescription": "Vueを使ったWebアプリ向けフレームワーク。",
+  "category": "web-framework",
+  "officialUrl": "https://nuxt.com/",
+  "whatItDoes": "Vueにルーティング、サーバー描画、データ取得などの仕組みを加える。",
+  "whenToUse": ["Vue中心のWebアプリ", "Vueでフルスタックに構築したい"],
+  "whenNotToUse": ["Vueを使う理由がなく静的HTML中心で十分"],
+  "maturity": "mature",
+  "tags": ["vue", "ssr"]
+}

@@ -1,1 +1,12 @@
-{"id":"vue","name":"Vue","shortDescription":"段階的に導入できるUIフレームワーク。","category":"ui-library","officialUrl":"https://vuejs.org/","whatItDoes":"テンプレートとリアクティブな状態管理でWeb UIを構築する。","whenToUse":["読みやすいテンプレートでUIを作りたい","既存ページへ段階的に動きを足したい"],"whenNotToUse":["UIライブラリ自体が不要な静的サイト"],"maturity":"mature","tags":["ui","component"]}
+{
+  "id": "vue",
+  "name": "Vue",
+  "shortDescription": "段階的に導入できるUIフレームワーク。",
+  "category": "ui-library",
+  "officialUrl": "https://vuejs.org/",
+  "whatItDoes": "テンプレートとリアクティブな状態管理でWeb UIを構築する。",
+  "whenToUse": ["読みやすいテンプレートでUIを作りたい", "既存ページへ段階的に動きを足したい"],
+  "whenNotToUse": ["UIライブラリ自体が不要な静的サイト"],
+  "maturity": "mature",
+  "tags": ["ui", "component"]
+}

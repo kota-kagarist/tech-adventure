@@ -1,1 +1,12 @@
-{"id":"cloudflare-r2","name":"Cloudflare R2","shortDescription":"S3互換APIを持つオブジェクトストレージ。","category":"storage","officialUrl":"https://developers.cloudflare.com/r2/","whatItDoes":"画像、動画、バックアップなどのファイルをオブジェクトとして保存する。","whenToUse":["Webサービスの画像や大きなファイルを保存したい","Workersと組み合わせたい"],"whenNotToUse":["リレーションを持つ構造化データをSQLで検索したい"],"maturity":"established","tags":["storage","cloudflare"]}
+{
+  "id": "cloudflare-r2",
+  "name": "Cloudflare R2",
+  "shortDescription": "S3互換APIを持つオブジェクトストレージ。",
+  "category": "storage",
+  "officialUrl": "https://developers.cloudflare.com/r2/",
+  "whatItDoes": "画像、動画、バックアップなどのファイルをオブジェクトとして保存する。",
+  "whenToUse": ["Webサービスの画像や大きなファイルを保存したい", "Workersと組み合わせたい"],
+  "whenNotToUse": ["リレーションを持つ構造化データをSQLで検索したい"],
+  "maturity": "established",
+  "tags": ["storage", "cloudflare"]
+}

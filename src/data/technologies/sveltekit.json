@@ -1,1 +1,12 @@
-{"id":"sveltekit","name":"SvelteKit","shortDescription":"Svelteの公式Webアプリフレームワーク。","category":"web-framework","officialUrl":"https://svelte.dev/docs/kit","whatItDoes":"Svelteアプリにルーティング、サーバー描画、データ取得などを提供する。","whenToUse":["SvelteでWebアプリを作りたい","画面とサーバー処理を同じ構成で扱いたい"],"whenNotToUse":["Svelteを使わないプロジェクト"],"maturity":"established","tags":["svelte","ssr"]}
+{
+  "id": "sveltekit",
+  "name": "SvelteKit",
+  "shortDescription": "Svelteの公式Webアプリフレームワーク。",
+  "category": "web-framework",
+  "officialUrl": "https://svelte.dev/docs/kit",
+  "whatItDoes": "Svelteアプリにルーティング、サーバー描画、データ取得などを提供する。",
+  "whenToUse": ["SvelteでWebアプリを作りたい", "画面とサーバー処理を同じ構成で扱いたい"],
+  "whenNotToUse": ["Svelteを使わないプロジェクト"],
+  "maturity": "established",
+  "tags": ["svelte", "ssr"]
+}
