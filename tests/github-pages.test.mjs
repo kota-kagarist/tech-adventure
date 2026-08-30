@@ -34,7 +34,7 @@ test('GitHub Pages workflow builds and deploys dist', async () => {
   const workflow = await source('.github/workflows/pages.yml');
   assert.match(workflow, /actions\/configure-pages@v5/);
   assert.match(workflow, /actions\/upload-pages-artifact@v4/);
-  assert.match(workflow, /actions\/deploy-pages@v4/);
+  assert.match(workflow, /actions\/deploy-pages@v5/);
   assert.match(workflow, /path:\s*\.\/dist/);
   assert.match(workflow, /pages:\s*write/);
   assert.match(workflow, /id-token:\s*write/);
