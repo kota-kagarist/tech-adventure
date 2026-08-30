@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TechnologyIcon from '../../components/TechnologyIcon.astro';
 import { journeys } from '../../data/journeys';
 import { categoryById, getTechnologies } from '../../data/load';
 import { withBase } from '../../lib/paths';
@@ -27,6 +28,7 @@ const route = journey.technologyIds.map((id) => byId.get(id)).filter((item): ite
         {route.map((technology, index) => (
           <li class="journey-step">
             <span class="journey-step-index">{String(index + 1).padStart(2, '0')}</span>
+            <TechnologyIcon technology={technology} />
             <div class="journey-step-name">
               <span class="meta-label">{categoryById[technology.category].name}</span>
               <a href={withBase(`/technologies/${technology.id}`)}>{technology.name}</a>

@@ -4,6 +4,13 @@
 
 Tech Adventure は、2026年の主要なWeb技術179件を22カテゴリに整理し、単なる名前の一覧ではなく **「何を担当するか」「何と競合するか」「何と組み合わせるか」** で理解するためのオープンガイドです。
 
+![Astro 7](https://img.shields.io/badge/Astro-7-BC52EE?style=flat-square&logo=astro&logoColor=white)
+![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Node.js 22+](https://img.shields.io/badge/Node.js-22%2B-5FA04E?style=flat-square&logo=nodedotjs&logoColor=white)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-live-222222?style=flat-square&logo=githubpages&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-CI-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Cloudflare Workers](https://img.shields.io/badge/Cloudflare_Workers-compatible-F38020?style=flat-square&logo=cloudflareworkers&logoColor=white)
+
 AIにコードを書いてもらえる時代ほど、「出てきた技術名が何者なのか」を把握する地図が必要だと考えています。
 
 ## Live
@@ -30,6 +37,12 @@ https://kota-kagarist.github.io/tech-adventure/
 - Cloudflare Workers Static Assets（dry-runで互換性確認）
 - UIフレームワークなし
 - DB / サーバーAPIなし
+
+## 技術アイコン
+
+サイト内のロゴは [Simple Icons](https://simpleicons.org/) を第一候補、[Devicon](https://devicon.dev/) と [theSVG](https://thesvg.org/) を補完候補として、ビルド時にローカルSVGへ変換しています。Emotion・Kysely・Nitroは各プロジェクトの公式リポジトリにある画像を使用しています。ブラウザから外部アイコンサービスへは接続しません。
+
+HTTP・RESTなど固有のブランドロゴがない概念は、カテゴリ色と短いラベルで表示します。ライセンスと出典は [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md) を参照してください。ブランド名とロゴの権利は各権利者に帰属します。
 
 ## ローカル開発
 

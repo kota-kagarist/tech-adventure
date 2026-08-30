@@ -1,5 +1,6 @@
 ---
 import { categoryById } from '../data/categories';
+import TechnologyIcon from './TechnologyIcon.astro';
 import { withBase } from '../lib/paths';
 import type { Technology } from '../data/schema';
 interface Props { technology: Technology; }
@@ -20,8 +21,13 @@ const category = categoryById[technology.category];
   data-aliases={technology.aliases.join('|')}
   data-tags={technology.tags.join('|')}
 >
-  <div class="meta-label">{category.name}</div>
-  <h3><a href={withBase(`/technologies/${technology.id}`)}>{technology.name}</a></h3>
+  <div class="tech-card-head">
+    <TechnologyIcon technology={technology} />
+    <div>
+      <div class="meta-label">{category.name}</div>
+      <h3><a href={withBase(`/technologies/${technology.id}`)}>{technology.name}</a></h3>
+    </div>
+  </div>
   <p>{technology.shortDescription}</p>
   <div class="tag-row" aria-label="タグ">{technology.tags.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}</div>
 </article>

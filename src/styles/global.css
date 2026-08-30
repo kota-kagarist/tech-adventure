@@ -283,7 +283,9 @@ main { min-height: 70vh; overflow: clip; }
 .landscape-node-list { display: grid; gap: .55rem; }
 .landscape-node {
   position: relative;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: .55rem;
   padding: .66rem .7rem;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -368,7 +370,9 @@ main { min-height: 70vh; overflow: clip; }
   transition: border-color .18s ease, background .18s ease, transform .18s ease;
 }
 .tech-card:hover { border-color: var(--border-strong); background: var(--surface-hover); transform: translateY(-1px); }
-.tech-card h3 { margin: .55rem 0 .45rem; font-size: 1.15rem; line-height: 1.15; letter-spacing: -.02em; }
+.tech-card-head { display: flex; align-items: center; gap: .8rem; margin-bottom: .7rem; }
+.tech-card-head > div { min-width: 0; }
+.tech-card h3 { margin: .35rem 0 0; font-size: 1.15rem; line-height: 1.15; letter-spacing: -.02em; }
 .tech-card h3 a { text-decoration: none; }
 .tech-card p { margin: 0; color: var(--text-muted); font-size: .82rem; line-height: 1.5; }
 .tag-row { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: auto; padding-top: 1rem; }
@@ -474,6 +478,8 @@ main { min-height: 70vh; overflow: clip; }
 
 .technology-hero { padding: clamp(4.5rem,8vw,7rem) 0 3.25rem; border-bottom: 1px solid var(--border); }
 .technology-hero-row { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; }
+.technology-title-lockup { display: flex; align-items: center; gap: 1.25rem; }
+.technology-title-lockup > div { min-width: 0; }
 .technology-hero p { max-width: 50rem; margin: 1rem 0 0; color: var(--text-muted); font-size: 1.05rem; }
 .technology-detail-grid {
   display: grid;
@@ -511,7 +517,7 @@ main { min-height: 70vh; overflow: clip; }
 .relation-list { display: grid; }
 .relation-row {
   display: grid;
-  grid-template-columns: minmax(0,.8fr) minmax(0,1.4fr) auto;
+  grid-template-columns: auto minmax(0,1fr) auto;
   gap: .8rem;
   align-items: center;
   padding: .72rem 0;
@@ -520,6 +526,7 @@ main { min-height: 70vh; overflow: clip; }
 }
 .relation-row:first-child { border-top: 0; }
 .relation-name { font-size: .84rem; font-weight: 650; }
+.relation-category { display: block; margin-top: .12rem; color: var(--text-dim); font-size: .64rem; letter-spacing: .05em; text-transform: uppercase; }
 .relation-note { overflow: hidden; color: var(--text-dim); font-size: .72rem; text-overflow: ellipsis; white-space: nowrap; }
 .relation-arrow { color: var(--text-dim); }
 
@@ -565,7 +572,7 @@ main { min-height: 70vh; overflow: clip; }
 .journey-step {
   position: relative;
   display: grid;
-  grid-template-columns: 36px minmax(180px,.45fr) minmax(0,1fr);
+  grid-template-columns: 36px auto minmax(180px,.45fr) minmax(0,1fr);
   gap: 1.15rem;
   align-items: start;
   padding: 0 0 2rem;
@@ -590,6 +597,46 @@ main { min-height: 70vh; overflow: clip; }
 .journey-step-description { margin: .2rem 0 0; color: var(--text-muted); font-size: .84rem; }
 .journey-notes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem; margin-top: 4.5rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
 .journey-note h2 { margin: .45rem 0 .8rem; font-size: 1.4rem; letter-spacing: -.03em; }
+
+.technology-icon {
+  --technology-icon-size: 2.65rem;
+  position: relative;
+  width: var(--technology-icon-size);
+  height: var(--technology-icon-size);
+  flex: 0 0 var(--technology-icon-size);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--technology-icon-brand) 28%, var(--border));
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--technology-icon-brand) 12%, var(--surface-2));
+  box-shadow: inset 0 1px rgba(255,255,255,.045), 0 8px 24px rgba(0,0,0,.12);
+}
+.technology-icon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(145deg, rgba(255,255,255,.08), transparent 45%);
+}
+.technology-icon-art {
+  width: 58%;
+  height: 58%;
+  display: block;
+  object-fit: contain;
+}
+.technology-icon--invert .technology-icon-art { filter: brightness(0) invert(1); }
+.technology-icon--small { --technology-icon-size: 1.7rem; border-radius: 6px; }
+.technology-icon--large { --technology-icon-size: 5.25rem; border-radius: 16px; }
+.technology-icon-label {
+  color: var(--technology-icon-ink);
+  font-size: calc(var(--technology-icon-size) * .29);
+  font-weight: 780;
+  letter-spacing: -.035em;
+}
+.technology-icon--fallback { border-style: dashed; }
+
+.comparison-column > .technology-icon { margin-bottom: 1rem; }
 
 .fact-card, .panel {
   border: 1px solid var(--border);
@@ -636,12 +683,12 @@ main { min-height: 70vh; overflow: clip; }
   .comparison-columns { grid-template-columns: 1fr; }
   .comparison-column, .comparison-column + .comparison-column { padding: 1.6rem 0; border-left: 0; }
   .comparison-column + .comparison-column { border-top: 1px solid var(--border); }
-  .relation-row { grid-template-columns: minmax(0,.65fr) minmax(0,1fr) auto; }
+  .relation-row { grid-template-columns: auto minmax(0,1fr) auto; }
   .relation-note { white-space: normal; }
   .journey-row { grid-template-columns: 44px 1fr auto; }
   .journey-row-summary { grid-column: 2 / -1; }
-  .journey-step { grid-template-columns: 36px 1fr; }
-  .journey-step-description { grid-column: 2; }
+  .journey-step { grid-template-columns: 36px auto 1fr; }
+  .journey-step-description { grid-column: 3; }
   .journey-notes { grid-template-columns: 1fr; gap: 2.25rem; }
   .metadata-grid { grid-template-columns: 1fr; }
   .footer-inner { flex-direction: column; gap: .6rem; }
