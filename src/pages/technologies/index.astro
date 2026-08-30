@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TechnologyCard from '../../components/TechnologyCard.astro';
 import { categories, getTechnologies } from '../../data/load';
+import { withBase } from '../../lib/paths';
 const technologies = getTechnologies();
 ---
 <BaseLayout title="技術を探す" description="Web技術を役割ごとに整理し、何を担当する道具なのかを確認できます。">
-<header class="page-head shell"><div class="breadcrumb"><a href="/">Home</a> / Technologies</div><div class="kicker">TECHNOLOGY ATLAS</div><h1>技術を、役割から探す。</h1><p>名前の人気ではなく「何を担当する道具か」で並べています。同じカテゴリなら比較候補、違うカテゴリなら組み合わせ候補かもしれません。</p></header>
+<header class="page-head shell"><div class="breadcrumb"><a href={withBase('/')}>Home</a> / Technologies</div><div class="kicker">TECHNOLOGY ATLAS</div><h1>技術を、役割から探す。</h1><p>名前の人気ではなく「何を担当する道具か」で並べています。同じカテゴリなら比較候補、違うカテゴリなら組み合わせ候補かもしれません。</p></header>
 <section class="section"><div class="shell"><div class="filter-bar" aria-label="技術を絞り込む"><input data-tech-search type="search" placeholder="Astro、API、database..." aria-label="技術名や説明を検索" /><select data-tech-category aria-label="カテゴリで絞り込む"><option value="">すべてのカテゴリ</option>{categories.map((category) => <option value={category.id}>{category.name}</option>)}</select></div><p class="muted" data-tech-count>{technologies.length}件の技術</p>{categories.map((category) => { const items = technologies.filter((technology) => technology.category === category.id); if (items.length === 0) return null; return <section class="tech-section" data-tech-section data-category={category.id}><div class="section-head"><div><div class="kicker">{category.id}</div><h2>{category.name}</h2></div><p class="muted">{category.description}</p></div><div class="tech-grid">{items.map((technology) => <TechnologyCard technology={technology} />)}</div></section>; })}</div></section>
 <script>
 const searchInput = document.querySelector('[data-tech-search]');
