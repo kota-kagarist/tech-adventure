@@ -1,5 +1,6 @@
 ---
 import { withBase } from '../lib/paths';
+import TechnologyIcon from './TechnologyIcon.astro';
 import type { Technology } from '../data/schema';
 
 interface Props { technologies: Technology[]; }
@@ -28,7 +29,7 @@ const groups = [
             {group.ids.map((id) => {
               const technology = byId.get(id);
               if (!technology) return null;
-              return <a class="landscape-node" href={withBase(`/technologies/${technology.id}`)}>{technology.name}</a>;
+              return <a class="landscape-node" href={withBase(`/technologies/${technology.id}`)}><TechnologyIcon technology={technology} size="small" /><span>{technology.name}</span></a>;
             })}
           </div>
         </section>

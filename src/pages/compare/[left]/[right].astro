@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import TechnologyIcon from '../../../components/TechnologyIcon.astro';
 import { categoryById, getRelations, getTechnologies } from '../../../data/load';
 import { compareTechnologies } from '../../../lib/compare';
 import { buildComparisonPairIds } from '../../../lib/comparison-pairs.mjs';
@@ -39,6 +40,7 @@ const verdictLabel = comparison.comparable ? 'DIRECT COMPARISON' : comparison.di
       </div>
       <div class="comparison-columns">
         <article class="comparison-column">
+          <TechnologyIcon technology={left} size="large" />
           <div class="meta-label">{categoryById[left.category].name}</div>
           <h2><a href={withBase(`/technologies/${left.id}`)}>{left.name}</a></h2>
           <p>{left.whatItDoes}</p>
@@ -46,6 +48,7 @@ const verdictLabel = comparison.comparable ? 'DIRECT COMPARISON' : comparison.di
           <ul>{left.whenToUse.map((item) => <li>{item}</li>)}</ul>
         </article>
         <article class="comparison-column">
+          <TechnologyIcon technology={right} size="large" />
           <div class="meta-label">{categoryById[right.category].name}</div>
           <h2><a href={withBase(`/technologies/${right.id}`)}>{right.name}</a></h2>
           <p>{right.whatItDoes}</p>

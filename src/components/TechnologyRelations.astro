@@ -1,5 +1,6 @@
 ---
 import { categoryById } from '../data/categories';
+import TechnologyIcon from './TechnologyIcon.astro';
 import { comparisonPath } from '../lib/comparison-pairs.mjs';
 import { withBase } from '../lib/paths';
 import { groupRelationsForTechnology } from '../lib/relations.mjs';
@@ -41,8 +42,8 @@ function counterpart(relation: TechnologyRelation) { return byId.get(relation.so
             const destination = isComparison ? comparisonPath(technology.id, other.id) : `/technologies/${other.id}`;
             return (
               <a class="relation-row" href={withBase(destination)}>
-                <span class="meta-label">{categoryById[other.category].name}</span>
-                <span><strong class="relation-name">{other.name}</strong><span class="relation-note"> — {relation.note}</span></span>
+                <TechnologyIcon technology={other} size="small" />
+                <span><strong class="relation-name">{other.name}</strong><span class="relation-category">{categoryById[other.category].name}</span><span class="relation-note"> — {relation.note}</span></span>
                 <span class="relation-arrow">{isComparison ? '比較 →' : '→'}</span>
               </a>
             );
