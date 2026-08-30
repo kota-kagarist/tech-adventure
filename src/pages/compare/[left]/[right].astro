@@ -3,10 +3,26 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { categoryById, getRelations, getTechnologies } from '../../../data/load';
 import { compareTechnologies } from '../../../lib/compare';
 import type { Technology } from '../../../data/schema';
-const representativePairs = [['astro','nextjs'],['astro','hono'],['react','nextjs'],['hono','express'],['nodejs','bun'],['postgresql','sqlite']] as const;
-export function getStaticPaths() { const byId = new Map(getTechnologies().map((technology) => [technology.id, technology])); return representativePairs.flatMap(([leftId, rightId]) => { const left = byId.get(leftId); const right = byId.get(rightId); return left && right ? [{ params: { left: leftId, right: rightId }, props: { left, right } }] : []; }); }
+
+export function getStaticPaths() {
+  const representativePairs = [['astro','nextjs'],['astro','hono'],['react','nextjs'],['hono','express'],['nodejs','bun'],['postgresql','sqlite']] as const;
+  const byId = new Map(getTechnologies().map((technology) => [technology.id, technology]));
+  return representativePairs.flatMap(([leftId, rightId]) => {
+    const left = byId.get(leftId);
+    const right = byId.get(rightId);
+    return left && right ? [{ params: { left: leftId, right: rightId }, props: { left, right } }] : [];
+  });
+}
+
 interface Props { left: Technology; right: Technology; }
 const { left, right } = Astro.props;
 const comparison = compareTechnologies(left, right, getRelations());
 ---
-<BaseLayout title={`${left.name} vs ${right.name}`} description={`${left.name}と${right.name}は競合するのか、組み合わせるのかを役割から比較します。`}><header class="page-head shell"><div class="breadcrumb"><a href="/">Home</a> / Compare</div><div class="kicker">TECHNOLOGY COMPASS</div><h1>{left.name} vs {right.name}</h1><p>「どっちが上？」ではなく、まず同じ仕事をする道具なのかを確認します。</p></header><section class="section"><div class="shell"><div class="comparison-banner" data-kind={comparison.kind}><div class="eyebrow">{comparison.kind}</div><h2>{comparison.comparable ? '直接比較しやすい組み合わせ' : '単純な二者択一ではない'}</h2><p>{comparison.summary}</p></div><div class="compare-grid two"><article class="compare-card"><div class="eyebrow">{categoryById[left.category].name}</div><h2><a href={`/technologies/${left.id}`}>{left.name}</a></h2><p>{left.whatItDoes}</p><strong>向いている場面</strong><ul>{left.whenToUse.map((item) => <li>{item}</li>)}</ul></article><div class="vs" aria-hidden="true">VS</div><article class="compare-card"><div class="eyebrow">{categoryById[right.category].name}</div><h2><a href={`/technologies/${right.id}`}>{right.name}</a></h2><p>{right.whatItDoes}</p><strong>向いている場面</strong><ul>{right.whenToUse.map((item) => <li>{item}</li>)}</ul></article></div>{comparison.directRelations.length > 0 && <section class="section"><div class="section-head"><div><div class="kicker">RELATION</div><h2>2つの間にある関係</h2></div></div>{comparison.directRelations.map((relation) => <p class="fact-card">{relation.note}</p>)}</section>}</div></section></BaseLayout>
+<BaseLayout title={`${left.name} vs ${right.name}`} description={`${left.name}と${right.name}は競合するのか、組み合わせるのかを役割から比較します。`}>
+  <header class="page-head shell"><div class="breadcrumb"><a href="/">Home</a> / Compare</div><div class="kicker">TECHNOLOGY COMPASS</div><h1>{left.name} vs {right.name}</h1><p>「どっちが上？」ではなく、まず同じ仕事をする道具なのかを確認します。</p></header>
+  <section class="section"><div class="shell">
+    <div class="comparison-banner" data-kind={comparison.kind}><div class="eyebrow">{comparison.kind}</div><h2>{comparison.comparable ? '直接比較しやすい組み合わせ' : '単純な二者択一ではない'}</h2><p>{comparison.summary}</p></div>
+    <div class="compare-grid two"><article class="compare-card"><div class="eyebrow">{categoryById[left.category].name}</div><h2><a href={`/technologies/${left.id}`}>{left.name}</a></h2><p>{left.whatItDoes}</p><strong>向いている場面</strong><ul>{left.whenToUse.map((item) => <li>{item}</li>)}</ul></article><div class="vs" aria-hidden="true">VS</div><article class="compare-card"><div class="eyebrow">{categoryById[right.category].name}</div><h2><a href={`/technologies/${right.id}`}>{right.name}</a></h2><p>{right.whatItDoes}</p><strong>向いている場面</strong><ul>{right.whenToUse.map((item) => <li>{item}</li>)}</ul></article></div>
+    {comparison.directRelations.length > 0 && <section class="section"><div class="section-head"><div><div class="kicker">RELATION</div><h2>2つの間にある関係</h2></div></div>{comparison.directRelations.map((relation) => <p class="fact-card">{relation.note}</p>)}</section>}
+  </div></section>
+</BaseLayout>
