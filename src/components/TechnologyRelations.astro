@@ -1,5 +1,6 @@
 ---
 import { categoryById } from '../data/categories';
+import { withBase } from '../lib/paths';
 import type { Technology, TechnologyRelation } from '../data/schema';
 interface Props { technology: Technology; allTechnologies: Technology[]; relations: TechnologyRelation[]; }
 const { technology, allTechnologies, relations } = Astro.props;
@@ -15,4 +16,4 @@ const groups = [
 ];
 function counterpart(relation: TechnologyRelation) { return byId.get(relation.source === technology.id ? relation.target : relation.source); }
 ---
-<div class="relation-groups">{groups.map((group) => { const matches = relations.filter(group.match); if (matches.length === 0) return null; return <section class="relation-group"><div><h2>{group.title}</h2><p class="muted">{group.description}</p></div><div class="relation-list">{matches.map((relation) => { const other = counterpart(relation); if (!other) return null; return <a class="relation-card" href={`/technologies/${other.id}`}><span class="eyebrow">{categoryById[other.category].name}</span><strong>{other.name}</strong><span>{relation.note}</span></a>; })}</div></section>; })}</div>
+<div class="relation-groups">{groups.map((group) => { const matches = relations.filter(group.match); if (matches.length === 0) return null; return <section class="relation-group"><div><h2>{group.title}</h2><p class="muted">{group.description}</p></div><div class="relation-list">{matches.map((relation) => { const other = counterpart(relation); if (!other) return null; return <a class="relation-card" href={withBase(`/technologies/${other.id}`)}><span class="eyebrow">{categoryById[other.category].name}</span><strong>{other.name}</strong><span>{relation.note}</span></a>; })}</div></section>; })}</div>
