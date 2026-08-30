@@ -2,13 +2,14 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { categoryById, getRelations, getTechnologies } from '../../../data/load';
 import { compareTechnologies } from '../../../lib/compare';
+import { buildComparisonPairIds } from '../../../lib/comparison-pairs.mjs';
 import { withBase } from '../../../lib/paths';
 import type { Technology } from '../../../data/schema';
 
 export function getStaticPaths() {
-  const representativePairs = [['astro','nextjs'],['astro','hono'],['react','nextjs'],['hono','express'],['nodejs','bun'],['postgresql','sqlite']] as const;
-  const byId = new Map(getTechnologies().map((technology) => [technology.id, technology]));
-  return representativePairs.flatMap(([leftId, rightId]) => {
+  const technologies = getTechnologies();
+  const byId = new Map(technologies.map((technology) => [technology.id, technology]));
+  return buildComparisonPairIds(technologies, getRelations()).flatMap(([leftId, rightId]) => {
     const left = byId.get(leftId);
     const right = byId.get(rightId);
     return left && right ? [{ params: { left: leftId, right: rightId }, props: { left, right } }] : [];
