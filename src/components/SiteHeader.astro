@@ -1,4 +1,17 @@
 ---
 import { withBase } from '../lib/paths';
 ---
-<header class="site-header"><div class="shell header-inner"><a class="brand" href={withBase('/')} aria-label="Tech Adventure ホーム"><span class="brand-mark" aria-hidden="true">✦</span><span>TECH ADVENTURE</span></a><nav aria-label="メインナビゲーション"><a href={withBase('/technologies')}>技術を探す</a><a href={withBase('/journeys')}>旅程から探す</a><a href={withBase('/compare/astro/hono')}>比較してみる</a></nav></div></header>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href={withBase('/')} aria-label="Tech Adventure ホーム">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+      <span>TECH ADVENTURE</span>
+    </a>
+    <nav class="site-nav" aria-label="メインナビゲーション">
+      <a href={withBase('/technologies')}>Technologies</a>
+      <a href={withBase('/journeys')}>Journeys</a>
+      <a href={withBase('/compare/astro/hono')}>Compare</a>
+      <a class="nav-external" href="https://github.com/kota-kagarist/tech-adventure" rel="noreferrer">GitHub ↗</a>
+    </nav>
+  </div>
+</header>

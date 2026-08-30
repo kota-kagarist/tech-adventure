@@ -18,12 +18,46 @@ export function getStaticPaths() {
 interface Props { left: Technology; right: Technology; }
 const { left, right } = Astro.props;
 const comparison = compareTechnologies(left, right, getRelations());
+const verdictLabel = comparison.comparable ? 'DIRECT COMPARISON' : comparison.directRelations.length > 0 ? 'RELATED / DIFFERENT LAYERS' : 'DIFFERENT LAYERS';
 ---
 <BaseLayout title={`${left.name} vs ${right.name}`} description={`${left.name}と${right.name}は競合するのか、組み合わせるのかを役割から比較します。`}>
-  <header class="page-head shell"><div class="breadcrumb"><a href={withBase('/')}>Home</a> / Compare</div><div class="kicker">TECHNOLOGY COMPASS</div><h1>{left.name} vs {right.name}</h1><p>「どっちが上？」ではなく、まず同じ仕事をする道具なのかを確認します。</p></header>
-  <section class="section"><div class="shell">
-    <div class="comparison-banner" data-kind={comparison.kind}><div class="eyebrow">{comparison.kind}</div><h2>{comparison.comparable ? '直接比較しやすい組み合わせ' : '単純な二者択一ではない'}</h2><p>{comparison.summary}</p></div>
-    <div class="compare-grid two"><article class="compare-card"><div class="eyebrow">{categoryById[left.category].name}</div><h2><a href={withBase(`/technologies/${left.id}`)}>{left.name}</a></h2><p>{left.whatItDoes}</p><strong>向いている場面</strong><ul>{left.whenToUse.map((item) => <li>{item}</li>)}</ul></article><div class="vs" aria-hidden="true">VS</div><article class="compare-card"><div class="eyebrow">{categoryById[right.category].name}</div><h2><a href={withBase(`/technologies/${right.id}`)}>{right.name}</a></h2><p>{right.whatItDoes}</p><strong>向いている場面</strong><ul>{right.whenToUse.map((item) => <li>{item}</li>)}</ul></article></div>
-    {comparison.directRelations.length > 0 && <section class="section"><div class="section-head"><div><div class="kicker">RELATION</div><h2>2つの間にある関係</h2></div></div>{comparison.directRelations.map((relation) => <p class="fact-card">{relation.note}</p>)}</section>}
-  </div></section>
+  <header class="page-head shell">
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a> / Compare</div>
+    <div class="meta-label accent-label">TECHNOLOGY COMPARE</div>
+    <h1>{left.name} <span class="muted">/</span> {right.name}</h1>
+    <p>「どっちが上？」ではなく、まず同じ仕事をする道具なのかを確認します。</p>
+  </header>
+  <section class="comparison-shell">
+    <div class="shell">
+      <div class="comparison-verdict" data-kind={comparison.kind}>
+        <div class="meta-label accent-label">{verdictLabel}</div>
+        <div>
+          <h2>{comparison.comparable ? '直接比較しやすい組み合わせ' : '単純な二者択一ではない'}</h2>
+          <p>{comparison.summary}</p>
+        </div>
+      </div>
+      <div class="comparison-columns">
+        <article class="comparison-column">
+          <div class="meta-label">{categoryById[left.category].name}</div>
+          <h2><a href={withBase(`/technologies/${left.id}`)}>{left.name}</a></h2>
+          <p>{left.whatItDoes}</p>
+          <h3>Use it when</h3>
+          <ul>{left.whenToUse.map((item) => <li>{item}</li>)}</ul>
+        </article>
+        <article class="comparison-column">
+          <div class="meta-label">{categoryById[right.category].name}</div>
+          <h2><a href={withBase(`/technologies/${right.id}`)}>{right.name}</a></h2>
+          <p>{right.whatItDoes}</p>
+          <h3>Use it when</h3>
+          <ul>{right.whenToUse.map((item) => <li>{item}</li>)}</ul>
+        </article>
+      </div>
+      {comparison.directRelations.length > 0 && (
+        <section class="comparison-relations">
+          <div class="meta-label">DIRECT RELATION</div>
+          {comparison.directRelations.map((relation) => <p>{relation.note}</p>)}
+        </section>
+      )}
+    </div>
+  </section>
 </BaseLayout>

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { journeys } from '../../data/journeys';
-import { getTechnologies } from '../../data/load';
+import { categoryById, getTechnologies } from '../../data/load';
 import { withBase } from '../../lib/paths';
 import type { Journey, Technology } from '../../data/schema';
 export function getStaticPaths() { return journeys.map((journey) => ({ params: { id: journey.id }, props: { journey } })); }
@@ -10,4 +10,43 @@ const { journey } = Astro.props;
 const byId = new Map(getTechnologies().map((technology) => [technology.id, technology]));
 const route = journey.technologyIds.map((id) => byId.get(id)).filter((item): item is Technology => Boolean(item));
 ---
-<BaseLayout title={journey.title} description={journey.summary}><header class="page-head shell"><div class="breadcrumb"><a href={withBase('/')}>Home</a> / <a href={withBase('/journeys')}>Journeys</a> / {journey.title}</div><div class="kicker">GUIDED ROUTE</div><h1>{journey.title}</h1><p>{journey.summary}</p></header><section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">ROUTE</div><h2>代表的な構成</h2></div><p class="muted">唯一の正解ではなく、理解しやすい出発点です。</p></div><ol class="path">{route.map((technology) => <li><strong><a href={withBase(`/technologies/${technology.id}`)}>{technology.name}</a></strong><br /><span>{technology.shortDescription}</span></li>)}</ol></div></section><section class="section"><div class="shell detail-grid"><article class="fact-card"><div class="eyebrow">WHY THIS ROUTE?</div><h2>なぜこの構成？</h2><ul class="fact-list">{journey.reasoning.map((reason) => <li>{reason}</li>)}</ul></article><article class="fact-card"><div class="eyebrow">ALTERNATIVES</div><h2>別ルートもある</h2><ul class="fact-list">{journey.alternatives.map((alternative) => <li>{alternative}</li>)}</ul></article></div></section></BaseLayout>
+<BaseLayout title={journey.title} description={journey.summary}>
+  <header class="page-head shell">
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a> / <a href={withBase('/journeys')}>Journeys</a> / {journey.title}</div>
+    <div class="meta-label accent-label">GUIDED ROUTE</div>
+    <h1>{journey.title}</h1>
+    <p>{journey.summary}</p>
+  </header>
+  <section class="section">
+    <div class="shell">
+      <div class="section-header">
+        <div><div class="meta-label">ROUTE</div><h2 class="section-title">代表的な構成</h2></div>
+        <p class="section-description">唯一の正解ではなく、理解しやすい出発点です。</p>
+      </div>
+      <ol class="journey-rail">
+        {route.map((technology, index) => (
+          <li class="journey-step">
+            <span class="journey-step-index">0{index + 1}</span>
+            <div class="journey-step-name">
+              <span class="meta-label">{categoryById[technology.category].name}</span>
+              <a href={withBase(`/technologies/${technology.id}`)}>{technology.name}</a>
+            </div>
+            <p class="journey-step-description">{technology.shortDescription}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="journey-notes">
+        <section class="journey-note">
+          <div class="meta-label">WHY THIS ROUTE?</div>
+          <h2>なぜこの構成？</h2>
+          <ul class="fact-list">{journey.reasoning.map((reason) => <li>{reason}</li>)}</ul>
+        </section>
+        <section class="journey-note">
+          <div class="meta-label">ALTERNATIVES</div>
+          <h2>別ルートもある</h2>
+          <ul class="fact-list">{journey.alternatives.map((alternative) => <li>{alternative}</li>)}</ul>
+        </section>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

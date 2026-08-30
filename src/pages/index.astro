@@ -1,18 +1,122 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LandscapePreview from '../components/LandscapePreview.astro';
 import TechnologyCard from '../components/TechnologyCard.astro';
-import { categories, getTechnologies } from '../data/load';
+import { categories, getRelations, getTechnologies } from '../data/load';
 import { journeys } from '../data/journeys';
 import { withBase } from '../lib/paths';
 import type { Technology } from '../data/schema';
+
 const technologies = getTechnologies();
-const featured = ['astro','hono','react','cloudflare-workers'].map((id) => technologies.find((technology) => technology.id === id)).filter((technology): technology is Technology => Boolean(technology));
+const relations = getRelations();
+const featured = ['astro', 'hono', 'react', 'cloudflare-workers']
+  .map((id) => technologies.find((technology) => technology.id === id))
+  .filter((technology): technology is Technology => Boolean(technology));
 const categoryCounts = new Map(categories.map((category) => [category.id, technologies.filter((technology) => technology.category === category.id).length]));
+const activeCategories = categories.filter((category) => (categoryCounts.get(category.id) ?? 0) > 0);
+const comparisons = [
+  { type: 'Direct comparison', title: 'Astro vs Next.js', body: '同じWebフレームワーク層。何を優先するかで選択が変わる。', href: '/compare/astro/nextjs' },
+  { type: 'Different layers', title: 'Astro vs Hono', body: 'サイト全体とサーバー処理。競合ではなく役割分担を見る。', href: '/compare/astro/hono' },
+  { type: 'Built on', title: 'React vs Next.js', body: 'UIライブラリと、それを土台に使うWebフレームワーク。', href: '/compare/react/nextjs' }
+];
 ---
 <BaseLayout>
-<section class="hero"><div class="shell hero-grid"><div><div class="kicker">OPEN TECHNOLOGY FIELD GUIDE</div><h1>技術の世界を、迷わず冒険する。</h1></div><div><p class="hero-lead">Astro、Hono、React、Workers。名前を覚える前に「何を担当する道具か」を地図で理解しよう。</p><div class="hero-actions"><a class="button primary" href={withBase('/technologies')}>技術から探す</a><a class="button secondary" href={withBase('/journeys')}>作りたいものから探す</a></div></div></div></section>
-<section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">CURRENT POSITION</div><h2>まず、技術の「役割」を見る。</h2></div><p class="muted">同じ箱に入っているものが、比較候補になりやすい。</p></div><div class="category-grid">{categories.filter((category) => (categoryCounts.get(category.id) ?? 0) > 0).map((category) => <a class="category-card" href={withBase(`/technologies?category=${category.id}`)}><div class="eyebrow">{categoryCounts.get(category.id)} TECHNOLOGIES</div><h3>{category.name}</h3><p>{category.description}</p></a>)}</div></div></section>
-<section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">START HERE</div><h2>よく遭遇する技術。</h2></div><a href={withBase('/technologies')}>すべて見る →</a></div><div class="tech-grid">{featured.map((technology) => <TechnologyCard technology={technology} />)}</div></div></section>
-<section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">COMPARE</div><h2>「どっち？」の前に、同じ土俵かを見る。</h2></div></div><div class="compare-grid"><article class="compare-card"><div class="eyebrow">直接比較</div><h3><a href={withBase('/compare/astro/nextjs')}>Astro vs Next.js</a></h3><p>どちらもWebサイト全体を担当。設計思想の違いを見る。</p></article><article class="compare-card"><div class="eyebrow">層が違う</div><h3><a href={withBase('/compare/astro/hono')}>Astro vs Hono</a></h3><p>サイト全体とAPI処理。競合ではないことから理解する。</p></article><article class="compare-card"><div class="eyebrow">土台の関係</div><h3><a href={withBase('/compare/react/nextjs')}>React vs Next.js</a></h3><p>UI部品と、そのReactを使うWebフレームワーク。</p></article></div></div></section>
-<section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">JOURNEYS</div><h2>作りたいものから逆算する。</h2></div></div><div class="journey-grid">{journeys.map((journey) => <article class="journey-card"><div class="eyebrow">GUIDED ROUTE</div><h3><a href={withBase(`/journeys/${journey.id}`)}>{journey.title}</a></h3><p>{journey.summary}</p></article>)}</div></div></section>
+  <section class="home-hero">
+    <div class="shell hero-layout">
+      <div class="hero-copy">
+        <div class="meta-label accent-label">TECHNOLOGY LANDSCAPE</div>
+        <h1 class="display-title">Navigate the technology <span class="accent-text">landscape.</span></h1>
+        <p class="hero-description">技術名を覚える前に、「何者か」「何と競合するか」「何と組むか」を理解する。AI時代のWeb技術を、役割と関係から探索するオープンガイド。</p>
+        <div class="hero-actions">
+          <a class="button-primary" href={withBase('/technologies')}>Explore technologies</a>
+          <a class="button-secondary" href={withBase('/journeys')}>Choose a journey</a>
+        </div>
+        <div class="hero-metrics" aria-label="収録情報">
+          <div class="hero-metric"><strong>{technologies.length}</strong><span>TECHNOLOGIES</span></div>
+          <div class="hero-metric"><strong>{relations.length}</strong><span>RELATIONS</span></div>
+          <div class="hero-metric"><strong>{journeys.length}</strong><span>JOURNEYS</span></div>
+        </div>
+      </div>
+      <LandscapePreview technologies={technologies} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-header">
+        <div class="section-header-copy">
+          <div class="meta-label">01 / EXPLORE BY ROLE</div>
+          <h2 class="section-title">まず、技術が担当する場所を知る。</h2>
+        </div>
+        <p class="section-description">同じ役割にいる技術は比較候補。違う役割にいる技術は、組み合わせる相手かもしれない。</p>
+      </div>
+      <div class="role-grid">
+        {activeCategories.map((category) => (
+          <a class="role-card" href={withBase(`/technologies?category=${category.id}`)}>
+            <div class="role-card-top"><span class="meta-label">{category.id}</span><span class="role-card-count">{categoryCounts.get(category.id)} tech</span></div>
+            <div><h3>{category.name}</h3><p>{category.description}</p></div>
+            <span class="role-card-arrow">Explore →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-header">
+        <div><div class="meta-label">02 / START HERE</div><h2 class="section-title">よく遭遇する技術から現在地を掴む。</h2></div>
+        <a class="section-link" href={withBase('/technologies')}>View all technologies →</a>
+      </div>
+      <div class="tech-grid">{featured.map((technology) => <TechnologyCard technology={technology} />)}</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-header">
+        <div><div class="meta-label">03 / COMPARE</div><h2 class="section-title">「どっちが良い？」の前に、同じ土俵かを見る。</h2></div>
+      </div>
+      <div class="compare-preview-grid">
+        {comparisons.map((comparison) => (
+          <a class="compare-preview" href={withBase(comparison.href)}>
+            <span class="compare-preview-type">{comparison.type}</span>
+            <h3>{comparison.title}</h3>
+            <p>{comparison.body}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="section-header">
+        <div><div class="meta-label">04 / JOURNEYS</div><h2 class="section-title">作りたいものから、必要な技術だけ辿る。</h2></div>
+        <a class="section-link" href={withBase('/journeys')}>View all journeys →</a>
+      </div>
+      <div class="journey-preview-grid">
+        {journeys.map((journey, index) => (
+          <a class="journey-preview" href={withBase(`/journeys/${journey.id}`)}>
+            <span class="journey-index">0{index + 1}</span>
+            <div><h3>{journey.title}</h3><p>{journey.summary}</p></div>
+            <span class="journey-preview-arrow">→</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="shell">
+      <div class="open-source-panel">
+        <div>
+          <div class="meta-label accent-label">OPEN SOURCE</div>
+          <h2>この地図そのものを、GitHubで育てる。</h2>
+          <p>技術説明と関係データは公開リポジトリが正本。足りない技術や関係の修正を、そのままPull Requestで提案できます。</p>
+        </div>
+        <a class="button-secondary" href="https://github.com/kota-kagarist/tech-adventure" rel="noreferrer">View repository ↗</a>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
