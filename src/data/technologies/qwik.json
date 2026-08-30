@@ -1,0 +1,29 @@
+{
+  "id": "qwik",
+  "name": "Qwik",
+  "shortDescription": "実行状態を再開して初期JavaScriptを抑えるUIフレームワーク。",
+  "category": "ui-library",
+  "officialUrl": "https://qwik.dev/",
+  "whatItDoes": "実行状態を再開して初期JavaScriptを抑えるUIフレームワーク。細かく分割した処理を必要時に読み込み、再実行ではなく再開する。",
+  "role": "細かく分割した処理を必要時に読み込み、再実行ではなく再開する。",
+  "whenToUse": [
+    "初期表示と対話開始の速さを厳しく最適化したいとき。"
+  ],
+  "whenNotToUse": [
+    "成熟した部品資産と採用実績を最優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript"
+  ],
+  "aliases": [
+    "Qwik City"
+  ],
+  "tags": [
+    "resumability",
+    "performance"
+  ],
+  "lastVerified": "2026-08-30"
+}

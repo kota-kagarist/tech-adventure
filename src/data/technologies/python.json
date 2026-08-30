@@ -1,0 +1,26 @@
+{
+  "id": "python",
+  "name": "Python",
+  "shortDescription": "読みやすい構文と広い用途を持つ汎用プログラミング言語。",
+  "category": "language",
+  "officialUrl": "https://www.python.org/",
+  "whatItDoes": "読みやすい構文と広い用途を持つ汎用プログラミング言語。Web API、データ処理、自動化、機械学習の処理を記述する。",
+  "role": "Web API、データ処理、自動化、機械学習の処理を記述する。",
+  "whenToUse": [
+    "Webバックエンドとデータ処理を同じ生態系で扱いたいとき。"
+  ],
+  "whenNotToUse": [
+    "ブラウザへ直接配る対話処理を標準技術だけで作りたいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "python"
+  ],
+  "aliases": [],
+  "tags": [
+    "backend",
+    "data"
+  ],
+  "lastVerified": "2026-08-30"
+}

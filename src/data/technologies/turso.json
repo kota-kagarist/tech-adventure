@@ -1,0 +1,28 @@
+{
+  "id": "turso",
+  "name": "Turso",
+  "shortDescription": "SQLite互換DBをエッジへ複製するデータベースプラットフォーム。",
+  "category": "backend-platform",
+  "officialUrl": "https://turso.tech/",
+  "whatItDoes": "SQLite互換DBをエッジへ複製するデータベースプラットフォーム。libSQLと複製で利用者に近い場所から低遅延にクエリする。",
+  "role": "libSQLと複製で利用者に近い場所から低遅延にクエリする。",
+  "whenToUse": [
+    "読み取り中心のアプリデータを世界各地へ分散したいとき。"
+  ],
+  "whenNotToUse": [
+    "中央で高頻度な複雑トランザクションを集中処理するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [
+    "libSQL"
+  ],
+  "tags": [
+    "sqlite",
+    "edge"
+  ],
+  "lastVerified": "2026-08-30"
+}

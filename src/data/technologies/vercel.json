@@ -1,0 +1,29 @@
+{
+  "id": "vercel",
+  "name": "Vercel",
+  "shortDescription": "フロントエンドとNext.jsの公開ワークフローに強いクラウドプラットフォーム。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://vercel.com/",
+  "whatItDoes": "フロントエンドとNext.jsの公開ワークフローに強いクラウドプラットフォーム。Git連携プレビュー、サーバーレス/エッジ実行、CDNを統合する。",
+  "role": "Git連携プレビュー、サーバーレス/エッジ実行、CDNを統合する。",
+  "whenToUse": [
+    "Next.jsやフロントエンドをcommit単位で素早く公開するとき。"
+  ],
+  "whenNotToUse": [
+    "クラウド基盤全体を細かなネットワーク設定から管理するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "hosting",
+    "preview"
+  ],
+  "lastVerified": "2026-08-30"
+}

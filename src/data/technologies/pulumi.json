@@ -1,0 +1,30 @@
+{
+  "id": "pulumi",
+  "name": "Pulumi",
+  "shortDescription": "一般的なプログラミング言語でクラウド資源を定義するIaC ツール。",
+  "category": "infrastructure",
+  "officialUrl": "https://www.pulumi.com/",
+  "whatItDoes": "一般的なプログラミング言語でクラウド資源を定義するIaC ツール。型、関数、テストを使ってインフラを構成する。",
+  "role": "型、関数、テストを使ってインフラを構成する。",
+  "whenToUse": [
+    "TypeScriptなど既存言語で複雑な基盤ロジックを書きたいとき。"
+  ],
+  "whenNotToUse": [
+    "宣言ファイルと広いTerraform モジュール資産を優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "devops",
+    "javascript",
+    "typescript",
+    "python",
+    "go"
+  ],
+  "aliases": [],
+  "tags": [
+    "iac",
+    "programmatic"
+  ],
+  "lastVerified": "2026-08-30"
+}

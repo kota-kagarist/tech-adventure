@@ -1,12 +1,28 @@
 {
   "id": "fastify",
   "name": "Fastify",
-  "shortDescription": "性能と開発者体験を重視したNode.js向けWebフレームワーク。",
+  "shortDescription": "性能とスキーマ駆動を重視するNode.jsサーバーフレームワーク。",
   "category": "server-framework",
   "officialUrl": "https://fastify.dev/",
-  "whatItDoes": "スキーマやプラグインを使いながらNode.jsのAPIサーバーを構築する。",
-  "whenToUse": ["Node.jsでAPI性能を重視する", "スキーマ駆動の検証を取り入れたい"],
-  "whenNotToUse": ["複数のエッジ実行環境を同じコードで狙いたい"],
+  "whatItDoes": "性能とスキーマ駆動を重視するNode.jsサーバーフレームワーク。プラグイン、JSON Schema、効率的なHTTP処理をまとめる。",
+  "role": "プラグイン、JSON Schema、効率的なHTTP処理をまとめる。",
+  "whenToUse": [
+    "Node.jsで高い処理量と入力検証を両立したいとき。"
+  ],
+  "whenNotToUse": [
+    "Express ミドルウェアの完全互換を前提にするとき。"
+  ],
   "maturity": "established",
-  "tags": ["api", "nodejs"]
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "performance",
+    "schema"
+  ],
+  "lastVerified": "2026-08-30"
 }

@@ -1,0 +1,26 @@
+{
+  "id": "fastapi",
+  "name": "FastAPI",
+  "shortDescription": "Pythonの型注釈からAPI検証と文書を作るフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://fastapi.tiangolo.com/",
+  "whatItDoes": "Pythonの型注釈からAPI検証と文書を作るフレームワーク。非同期HTTP処理、入力検証、OpenAPI文書生成を統合する。",
+  "role": "非同期HTTP処理、入力検証、OpenAPI文書生成を統合する。",
+  "whenToUse": [
+    "Pythonで型付きAPIや機械学習の公開口を作るとき。"
+  ],
+  "whenNotToUse": [
+    "画面テンプレート中心の一体型Webサイトを作るとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "python"
+  ],
+  "aliases": [],
+  "tags": [
+    "api",
+    "openapi"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "rolldown",
+  "name": "Rolldown",
+  "shortDescription": "Rollup互換を目指すRust製JavaScript バンドラー。",
+  "category": "build-transform",
+  "officialUrl": "https://rolldown.rs/",
+  "whatItDoes": "Rollup互換を目指すRust製JavaScript バンドラー。高速なバンドルと変換を一つのエンジンにまとめ、Vite 8を支える。",
+  "role": "高速なバンドルと変換を一つのエンジンにまとめ、Vite 8を支える。",
+  "whenToUse": [
+    "Vite経由で高速な統合ビルドを使うかRollup互換を試すとき。"
+  ],
+  "whenNotToUse": [
+    "対応前のRollup プラグインへ依存する既存ライブラリビルド。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "rust",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "bundler",
+    "rollup-compatible"
+  ],
+  "lastVerified": "2026-08-30"
+}

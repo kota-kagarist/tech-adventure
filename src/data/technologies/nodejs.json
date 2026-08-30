@@ -1,12 +1,29 @@
 {
   "id": "nodejs",
   "name": "Node.js",
-  "shortDescription": "サーバーなどでJavaScriptを動かす実行環境。",
+  "shortDescription": "ブラウザ外でJavaScriptを動かす代表的な実行環境。",
   "category": "runtime",
   "officialUrl": "https://nodejs.org/",
-  "whatItDoes": "ブラウザ外でJavaScriptを実行し、ファイル・ネットワーク・サーバー処理を扱う。",
-  "whenToUse": ["JavaScript/TypeScriptでサーバーやCLIを作る", "npm生態系を広く使いたい"],
-  "whenNotToUse": ["ブラウザ内だけで完結する処理"],
+  "whatItDoes": "ブラウザ外でJavaScriptを動かす代表的な実行環境。イベント駆動のI/Oとnpm生態系でサーバーや開発ツールを動かす。",
+  "role": "イベント駆動のI/Oとnpm生態系でサーバーや開発ツールを動かす。",
+  "whenToUse": [
+    "JavaScriptでAPI、CLI、ビルド処理を実行するとき。"
+  ],
+  "whenNotToUse": [
+    "CPU計算を単一処理で長時間占有する設計。"
+  ],
   "maturity": "mature",
-  "tags": ["runtime", "server"]
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "node"
+  ],
+  "aliases": [
+    "Node"
+  ],
+  "tags": [
+    "runtime",
+    "event-loop"
+  ],
+  "lastVerified": "2026-08-30"
 }

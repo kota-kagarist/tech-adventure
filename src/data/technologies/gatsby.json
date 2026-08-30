@@ -1,0 +1,30 @@
+{
+  "id": "gatsby",
+  "name": "Gatsby",
+  "shortDescription": "ReactとGraphQLを使う静的サイト生成フレームワーク。",
+  "category": "web-framework",
+  "officialUrl": "https://www.gatsbyjs.com/",
+  "whatItDoes": "ReactとGraphQLを使う静的サイト生成フレームワーク。複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。",
+  "role": "複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。",
+  "whenToUse": [
+    "既存Gatsby資産を保守するか、静的生成の設計を学ぶとき。"
+  ],
+  "whenNotToUse": [
+    "活発な新規開発と最新のReactフルスタック機能を優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "node",
+    "content"
+  ],
+  "aliases": [],
+  "tags": [
+    "ssg",
+    "content"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "dynamodb",
+  "name": "Amazon DynamoDB",
+  "shortDescription": "AWSが運用する分散キー値/ドキュメントデータベース。",
+  "category": "database",
+  "officialUrl": "https://aws.amazon.com/dynamodb/",
+  "whatItDoes": "AWSが運用する分散キー値/ドキュメントデータベース。パーティションキーを中心に自動スケールする低遅延ストレージを提供する。",
+  "role": "パーティションキーを中心に自動スケールする低遅延ストレージを提供する。",
+  "whenToUse": [
+    "アクセスパターンが明確で大規模負荷をAWS上で処理するとき。"
+  ],
+  "whenNotToUse": [
+    "後から自由な結合やad-hoc SQL クエリを多用するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "data",
+    "aws"
+  ],
+  "aliases": [
+    "DynamoDB"
+  ],
+  "tags": [
+    "nosql",
+    "serverless"
+  ],
+  "lastVerified": "2026-08-30"
+}

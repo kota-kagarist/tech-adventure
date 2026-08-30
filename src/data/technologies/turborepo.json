@@ -1,0 +1,30 @@
+{
+  "id": "turborepo",
+  "name": "Turborepo",
+  "shortDescription": "JavaScript/TypeScript モノレポのタスク実行を高速化するビルドシステム。",
+  "category": "package-monorepo",
+  "officialUrl": "https://turborepo.com/",
+  "whatItDoes": "JavaScript/TypeScript モノレポのタスク実行を高速化するビルドシステム。パッケージ間の依存に沿ってタスクをキャッシュし並列実行する。",
+  "role": "パッケージ間の依存に沿ってタスクをキャッシュし並列実行する。",
+  "whenToUse": [
+    "複数フロントエンドや共有パッケージのビルドをまとめて速くしたいとき。"
+  ],
+  "whenNotToUse": [
+    "単一パッケージでタスクグラフやキャッシュが不要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [
+    "Turbo"
+  ],
+  "tags": [
+    "monorepo",
+    "cache"
+  ],
+  "lastVerified": "2026-08-30"
+}

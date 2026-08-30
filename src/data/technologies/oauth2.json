@@ -1,0 +1,29 @@
+{
+  "id": "oauth2",
+  "name": "OAuth 2.0",
+  "shortDescription": "利用者のパスワードを渡さず、限定したAPI権限を委任する枠組み。",
+  "category": "auth",
+  "officialUrl": "https://www.rfc-editor.org/rfc/rfc6749",
+  "whatItDoes": "利用者のパスワードを渡さず、限定したAPI権限を委任する枠組み。アクセストークンの発行と利用を役割別のフローで定める。",
+  "role": "アクセストークンの発行と利用を役割別のフローで定める。",
+  "whenToUse": [
+    "別サービスへ利用者の代理で安全にアクセスするとき。"
+  ],
+  "whenNotToUse": [
+    "利用者本人のログイン結果そのものを単独で表したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform"
+  ],
+  "aliases": [
+    "OAuth",
+    "OAuth2"
+  ],
+  "tags": [
+    "authorization",
+    "protocol"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "firebase-auth",
+  "name": "Firebase Auth",
+  "shortDescription": "Firebaseに含まれるマネージド認証機能。",
+  "category": "auth",
+  "officialUrl": "https://firebase.google.com/docs/auth",
+  "whatItDoes": "Firebaseに含まれるマネージド認証機能。パスワード、外部プロバイダー、トークンをクライアント SDKとセキュリティルールへ接続する。",
+  "role": "パスワード、外部プロバイダー、トークンをクライアント SDKとセキュリティルールへ接続する。",
+  "whenToUse": [
+    "Firebase アプリへログインを素早く追加するとき。"
+  ],
+  "whenNotToUse": [
+    "Firebase外へ容易に移せるアイデンティティ基盤が必須のとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "gcp",
+    "javascript"
+  ],
+  "aliases": [
+    "Firebase Authentication"
+  ],
+  "tags": [
+    "authentication",
+    "managed"
+  ],
+  "lastVerified": "2026-08-30"
+}

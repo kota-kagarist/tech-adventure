@@ -1,0 +1,31 @@
+{
+  "id": "sentry",
+  "name": "Sentry",
+  "shortDescription": "アプリエラーと性能問題をコード位置へ結び付ける監視サービス。",
+  "category": "observability",
+  "officialUrl": "https://sentry.io/",
+  "whatItDoes": "アプリエラーと性能問題をコード位置へ結び付ける監視サービス。スタックトレース、リリース、利用者操作、トレースを集約して原因を追う。",
+  "role": "スタックトレース、リリース、利用者操作、トレースを集約して原因を追う。",
+  "whenToUse": [
+    "フロントエンドとバックエンドの例外を素早く再現・修正したいとき。"
+  ],
+  "whenNotToUse": [
+    "基盤メトリクスだけを長期集計しエラー文脈が不要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "python",
+    "java",
+    "dotnet",
+    "ruby",
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "error-tracking",
+    "performance"
+  ],
+  "lastVerified": "2026-08-30"
+}

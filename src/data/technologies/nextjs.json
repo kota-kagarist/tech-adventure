@@ -1,12 +1,32 @@
 {
   "id": "nextjs",
   "name": "Next.js",
-  "shortDescription": "Reactを使ったWebアプリ向けフレームワーク。",
+  "shortDescription": "Reactを基盤にフルスタックWebアプリを作るフレームワーク。",
   "category": "web-framework",
   "officialUrl": "https://nextjs.org/",
-  "whatItDoes": "Reactのルーティング、サーバー描画、データ取得などをまとめて扱う。",
-  "whenToUse": ["React中心のWebアプリ", "サーバー処理と画面を一体で作りたい"],
-  "whenNotToUse": ["静的コンテンツ中心でReactを必要としないサイト"],
-  "maturity": "mature",
-  "tags": ["react", "ssr"]
+  "whatItDoes": "Reactを基盤にフルスタックWebアプリを作るフレームワーク。ルーティング、サーバー描画、データ更新、配信最適化を統合する。",
+  "role": "ルーティング、サーバー描画、データ更新、配信最適化を統合する。",
+  "whenToUse": [
+    "Reactで画面とサーバー処理を一つの構成にまとめたいとき。"
+  ],
+  "whenNotToUse": [
+    "Reactを使わないサイトや単純な静的文書だけを作るとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "node"
+  ],
+  "aliases": [
+    "Next",
+    "NextJS"
+  ],
+  "tags": [
+    "fullstack",
+    "ssr"
+  ],
+  "lastVerified": "2026-08-30"
 }

@@ -1,0 +1,29 @@
+{
+  "id": "esbuild",
+  "name": "esbuild",
+  "shortDescription": "Goで書かれた高速なJavaScript ビルドツール。",
+  "category": "build-transform",
+  "officialUrl": "https://esbuild.github.io/",
+  "whatItDoes": "Goで書かれた高速なJavaScript ビルドツール。バンドル、変換、圧縮を高速に実行する。",
+  "role": "バンドル、変換、圧縮を高速に実行する。",
+  "whenToUse": [
+    "速度を重視する変換処理や他ツールの内部エンジンに使うとき。"
+  ],
+  "whenNotToUse": [
+    "高度なコード分割やプラグイン互換を最優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "go",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "bundler",
+    "compiler"
+  ],
+  "lastVerified": "2026-08-30"
+}

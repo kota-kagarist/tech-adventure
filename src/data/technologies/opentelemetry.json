@@ -1,0 +1,29 @@
+{
+  "id": "opentelemetry",
+  "name": "OpenTelemetry",
+  "shortDescription": "トレース、メトリクス、ログをベンダー中立に計測する標準とツール群。",
+  "category": "observability",
+  "officialUrl": "https://opentelemetry.io/",
+  "whatItDoes": "トレース、メトリクス、ログをベンダー中立に計測する標準とツール群。共通APIとコレクターで観測データを複数バックエンドへ送る。",
+  "role": "共通APIとコレクターで観測データを複数バックエンドへ送る。",
+  "whenToUse": [
+    "監視ベンダーを固定せずサービス間の処理を追跡したいとき。"
+  ],
+  "whenNotToUse": [
+    "単一アプリへ最小のエラー通知だけを追加するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "devops",
+    "web-platform"
+  ],
+  "aliases": [
+    "OTel"
+  ],
+  "tags": [
+    "telemetry",
+    "standard"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "spring-boot",
+  "name": "Spring Boot",
+  "shortDescription": "Springアプリを設定少なく起動するJavaフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://spring.io/projects/spring-boot",
+  "whatItDoes": "Springアプリを設定少なく起動するJavaフレームワーク。組込みサーバー、自動設定、運用機能で業務APIを構築する。",
+  "role": "組込みサーバー、自動設定、運用機能で業務APIを構築する。",
+  "whenToUse": [
+    "Javaで長期運用する大規模サービスや企業連携を作るとき。"
+  ],
+  "whenNotToUse": [
+    "小さな静的配信や短命なスクリプトを作るとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "java"
+  ],
+  "aliases": [
+    "Spring"
+  ],
+  "tags": [
+    "enterprise",
+    "dependency-injection"
+  ],
+  "lastVerified": "2026-08-30"
+}

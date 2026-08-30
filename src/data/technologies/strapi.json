@@ -1,0 +1,29 @@
+{
+  "id": "strapi",
+  "name": "Strapi",
+  "shortDescription": "セルフホストできるJavaScript製ヘッドレス CMS。",
+  "category": "cms",
+  "officialUrl": "https://strapi.io/",
+  "whatItDoes": "セルフホストできるJavaScript製ヘッドレス CMS。コンテンツモデル、管理画面、REST/GraphQL APIを提供する。",
+  "role": "コンテンツモデル、管理画面、REST/GraphQL APIを提供する。",
+  "whenToUse": [
+    "Node.jsでコンテンツ構造と運用環境を自分で管理したいとき。"
+  ],
+  "whenNotToUse": [
+    "frontと一体の完成テーマをすぐ使いたいとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node",
+    "content"
+  ],
+  "aliases": [],
+  "tags": [
+    "headless-cms",
+    "self-hosted"
+  ],
+  "lastVerified": "2026-08-30"
+}

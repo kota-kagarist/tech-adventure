@@ -1,0 +1,29 @@
+{
+  "id": "rest",
+  "name": "REST",
+  "shortDescription": "リソースとHTTP操作を中心にAPIを設計するアーキテクチャスタイル。",
+  "category": "protocol-api",
+  "officialUrl": "https://roy.gbiv.com/pubs/dissertation/rest_arch_style.htm",
+  "whatItDoes": "リソースとHTTP操作を中心にAPIを設計するアーキテクチャスタイル。識別可能なリソース、統一インターフェース、ステートレスな通信を指針にする。",
+  "role": "識別可能なリソース、統一インターフェース、ステートレスな通信を指針にする。",
+  "whenToUse": [
+    "公開性とHTTPの単純さを重視するCRUD中心API。"
+  ],
+  "whenNotToUse": [
+    "クライアントごとに異なる複雑なデータグラフを一度で取得したいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform",
+    "data"
+  ],
+  "aliases": [
+    "RESTful API"
+  ],
+  "tags": [
+    "api-style",
+    "resources"
+  ],
+  "lastVerified": "2026-08-30"
+}

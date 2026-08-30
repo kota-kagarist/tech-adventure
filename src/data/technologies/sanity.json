@@ -1,0 +1,29 @@
+{
+  "id": "sanity",
+  "name": "Sanity",
+  "shortDescription": "構造化コンテンツと共同編集を提供するマネージドプラットフォーム。",
+  "category": "cms",
+  "officialUrl": "https://www.sanity.io/",
+  "whatItDoes": "構造化コンテンツと共同編集を提供するマネージドプラットフォーム。リアルタイム編集、Content Lake、クエリ言語、カスタムスタジオを提供する。",
+  "role": "リアルタイム編集、Content Lake、クエリ言語、カスタムスタジオを提供する。",
+  "whenToUse": [
+    "複雑なコンテンツモデルと編集体験を作り込みたいとき。"
+  ],
+  "whenNotToUse": [
+    "完全セルフホストと標準SQLへの直接アクセスが必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "content"
+  ],
+  "aliases": [],
+  "tags": [
+    "headless-cms",
+    "structured-content"
+  ],
+  "lastVerified": "2026-08-30"
+}

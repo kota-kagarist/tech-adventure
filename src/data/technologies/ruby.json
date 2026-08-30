@@ -1,0 +1,26 @@
+{
+  "id": "ruby",
+  "name": "Ruby",
+  "shortDescription": "読み書きしやすさを重視する動的な汎用プログラミング言語。",
+  "category": "language",
+  "officialUrl": "https://www.ruby-lang.org/",
+  "whatItDoes": "読み書きしやすさを重視する動的な汎用プログラミング言語。Railsなどを使ってWebの業務処理を簡潔に記述する。",
+  "role": "Railsなどを使ってWebの業務処理を簡潔に記述する。",
+  "whenToUse": [
+    "Railsの規約と高い開発速度を活かすWebサービスを作るとき。"
+  ],
+  "whenNotToUse": [
+    "CPU負荷の高い処理を最小資源で動かすことが最優先のとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "ruby"
+  ],
+  "aliases": [],
+  "tags": [
+    "backend",
+    "productivity"
+  ],
+  "lastVerified": "2026-08-30"
+}

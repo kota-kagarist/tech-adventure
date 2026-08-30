@@ -1,0 +1,29 @@
+{
+  "id": "aws",
+  "name": "Amazon Web Services",
+  "shortDescription": "計算、データ、ネットワークなどを広く提供するパブリッククラウド。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://aws.amazon.com/",
+  "whatItDoes": "計算、データ、ネットワークなどを広く提供するパブリッククラウド。細かなマネージドサービスを組み合わせて世界規模の基盤を構築する。",
+  "role": "細かなマネージドサービスを組み合わせて世界規模の基盤を構築する。",
+  "whenToUse": [
+    "幅広い選択肢と大規模運用実績を重視するとき。"
+  ],
+  "whenNotToUse": [
+    "小さなサイトで構成と費用管理を最小限にしたいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "aws",
+    "devops"
+  ],
+  "aliases": [
+    "AWS"
+  ],
+  "tags": [
+    "cloud",
+    "infrastructure"
+  ],
+  "lastVerified": "2026-08-30"
+}

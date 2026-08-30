@@ -1,0 +1,31 @@
+{
+  "id": "drizzle-orm",
+  "name": "Drizzle ORM",
+  "shortDescription": "SQLに近い記述と型安全性を両立するTypeScript ORM。",
+  "category": "orm",
+  "officialUrl": "https://orm.drizzle.team/",
+  "whatItDoes": "SQLに近い記述と型安全性を両立するTypeScript ORM。TypeScript スキーマからクエリとマイグレーションを構築する。",
+  "role": "TypeScript スキーマからクエリとマイグレーションを構築する。",
+  "whenToUse": [
+    "SQLの構造を保ちながら型付きでDBを操作したいとき。"
+  ],
+  "whenNotToUse": [
+    "管理画面まで含む高水準の一体型データ層を求めるとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node",
+    "data"
+  ],
+  "aliases": [
+    "Drizzle"
+  ],
+  "tags": [
+    "orm",
+    "sql-like"
+  ],
+  "lastVerified": "2026-08-30"
+}

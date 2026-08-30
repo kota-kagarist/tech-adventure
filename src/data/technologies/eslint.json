@@ -1,0 +1,28 @@
+{
+  "id": "eslint",
+  "name": "ESLint",
+  "shortDescription": "JavaScriptとTypeScriptの問題を規則で検出するリンター。",
+  "category": "quality-validation",
+  "officialUrl": "https://eslint.org/",
+  "whatItDoes": "JavaScriptとTypeScriptの問題を規則で検出するリンター。構文ツリーを調べ、バグ候補とチーム規約違反を報告する。",
+  "role": "構文ツリーを調べ、バグ候補とチーム規約違反を報告する。",
+  "whenToUse": [
+    "コードレビュー前に品質規則を自動適用したいとき。"
+  ],
+  "whenNotToUse": [
+    "書式統一だけが目的で意味的な検査が不要なとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "linter",
+    "static-analysis"
+  ],
+  "lastVerified": "2026-08-30"
+}

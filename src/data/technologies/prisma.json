@@ -1,0 +1,29 @@
+{
+  "id": "prisma",
+  "name": "Prisma",
+  "shortDescription": "型付きクライアントとスキーマを中心にDBを扱うTypeScript ORM。",
+  "category": "orm",
+  "officialUrl": "https://www.prisma.io/",
+  "whatItDoes": "型付きクライアントとスキーマを中心にDBを扱うTypeScript ORM。スキーマからクエリクライアントとマイグレーションを生成し、DB操作へ型を付ける。",
+  "role": "スキーマからクエリクライアントとマイグレーションを生成し、DB操作へ型を付ける。",
+  "whenToUse": [
+    "Node.jsで開発体験と型安全なCRUDを重視するとき。"
+  ],
+  "whenNotToUse": [
+    "SQLの細かな最適化と軽い抽象だけを求めるとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node",
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "orm",
+    "type-safe"
+  ],
+  "lastVerified": "2026-08-30"
+}

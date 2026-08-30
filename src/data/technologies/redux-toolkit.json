@@ -1,0 +1,30 @@
+{
+  "id": "redux-toolkit",
+  "name": "Redux Toolkit",
+  "shortDescription": "Reduxを推奨手順で使うための公式状態管理道具。",
+  "category": "state-data",
+  "officialUrl": "https://redux-toolkit.js.org/",
+  "whatItDoes": "Reduxを推奨手順で使うための公式状態管理道具。予測可能なグローバル状態、更新処理、デバッグ手段を簡潔に組む。",
+  "role": "予測可能なグローバル状態、更新処理、デバッグ手段を簡潔に組む。",
+  "whenToUse": [
+    "複雑な共有状態と変更履歴を明示的に管理したいとき。"
+  ],
+  "whenNotToUse": [
+    "局所状態だけで足り、グローバルストアが不要なとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "aliases": [
+    "RTK"
+  ],
+  "tags": [
+    "state-management",
+    "predictable"
+  ],
+  "lastVerified": "2026-08-30"
+}

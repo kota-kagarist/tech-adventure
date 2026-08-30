@@ -1,0 +1,26 @@
+{
+  "id": "laravel",
+  "name": "Laravel",
+  "shortDescription": "Web開発機能を一式備えるPHPフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://laravel.com/",
+  "whatItDoes": "Web開発機能を一式備えるPHPフレームワーク。ルート、ORM、認証、キュー、テンプレートを統合して提供する。",
+  "role": "ルート、ORM、認証、キュー、テンプレートを統合して提供する。",
+  "whenToUse": [
+    "PHPで業務Webアプリを一貫した作法で作るとき。"
+  ],
+  "whenNotToUse": [
+    "小さなエッジ関数だけを軽量に配るとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "php"
+  ],
+  "aliases": [],
+  "tags": [
+    "fullstack",
+    "mvc"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "puppeteer",
+  "name": "Puppeteer",
+  "shortDescription": "Chrome系ブラウザーをプログラムから操作する自動化ライブラリ。",
+  "category": "testing",
+  "officialUrl": "https://pptr.dev/",
+  "whatItDoes": "Chrome系ブラウザーをプログラムから操作する自動化ライブラリ。DevTools Protocolを介してページ操作、キャプチャ、スクレイピングを行う。",
+  "role": "DevTools Protocolを介してページ操作、キャプチャ、スクレイピングを行う。",
+  "whenToUse": [
+    "Chromium中心の自動化やPDF・screenshot生成を細かく制御するとき。"
+  ],
+  "whenNotToUse": [
+    "FirefoxとWebKitを同じAPIで広く検証したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node",
+    "web-platform"
+  ],
+  "aliases": [],
+  "tags": [
+    "browser-automation",
+    "chromium"
+  ],
+  "lastVerified": "2026-08-30"
+}

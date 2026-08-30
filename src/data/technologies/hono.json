@@ -1,12 +1,31 @@
 {
   "id": "hono",
   "name": "Hono",
-  "shortDescription": "Web標準APIを重視した軽量なサーバーフレームワーク。",
+  "shortDescription": "Web標準APIを使う小さく高速なサーバーフレームワーク。",
   "category": "server-framework",
   "officialUrl": "https://hono.dev/",
-  "whatItDoes": "HTTPルーティング、ミドルウェア、APIレスポンスなどサーバー側の処理を組み立てる。",
-  "whenToUse": ["APIを小さく高速に作りたい", "Workers・Node.js・Bun・Deno間の移植性を持たせたい"],
-  "whenNotToUse": ["静的ページだけでサーバー処理が不要"],
+  "whatItDoes": "Web標準APIを使う小さく高速なサーバーフレームワーク。同じハンドラー設計をエッジ、Node.js、Bun、Denoで動かす。",
+  "role": "同じハンドラー設計をエッジ、Node.js、Bun、Denoで動かす。",
+  "whenToUse": [
+    "複数ランタイムへ持ち運べるAPIやエッジ処理を作るとき。"
+  ],
+  "whenNotToUse": [
+    "Node.js固有ミドルウェア資産を変更せず大量に使うとき。"
+  ],
   "maturity": "established",
-  "tags": ["api", "edge"]
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node",
+    "bun",
+    "deno",
+    "cloudflare"
+  ],
+  "aliases": [],
+  "tags": [
+    "edge",
+    "web-standards"
+  ],
+  "lastVerified": "2026-08-30"
 }

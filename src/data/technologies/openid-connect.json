@@ -1,0 +1,28 @@
+{
+  "id": "openid-connect",
+  "name": "OpenID Connect",
+  "shortDescription": "OAuth 2.0上で利用者本人を確認するアイデンティティプロトコル。",
+  "category": "auth",
+  "officialUrl": "https://openid.net/developers/how-connect-works/",
+  "whatItDoes": "OAuth 2.0上で利用者本人を確認するアイデンティティプロトコル。ID トークンと標準クレームでログイン結果をクライアントへ伝える。",
+  "role": "ID トークンと標準クレームでログイン結果をクライアントへ伝える。",
+  "whenToUse": [
+    "複数アプリや外部アイデンティティプロバイダーでシングルサインオンするとき。"
+  ],
+  "whenNotToUse": [
+    "API権限の委任だけが必要で本人情報を扱わないとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform"
+  ],
+  "aliases": [
+    "OIDC"
+  ],
+  "tags": [
+    "authentication",
+    "identity"
+  ],
+  "lastVerified": "2026-08-30"
+}

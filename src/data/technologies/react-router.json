@@ -1,0 +1,32 @@
+{
+  "id": "react-router",
+  "name": "React Router",
+  "shortDescription": "Reactの経路制御からフルスタック構成まで扱うルーター。",
+  "category": "web-framework",
+  "officialUrl": "https://reactrouter.com/",
+  "whatItDoes": "Reactの経路制御からフルスタック構成まで扱うルーター。宣言的、データ、フレームワークの各モードでURLと画面・データを結ぶ。",
+  "role": "宣言的、データ、フレームワークの各モードでURLと画面・データを結ぶ。",
+  "whenToUse": [
+    "Reactアプリへ段階的にルーティングやサーバー描画を導入するとき。"
+  ],
+  "whenNotToUse": [
+    "Reactを使わない画面の経路制御を行うとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "node"
+  ],
+  "aliases": [
+    "RR",
+    "React Router v8"
+  ],
+  "tags": [
+    "router",
+    "fullstack"
+  ],
+  "lastVerified": "2026-08-30"
+}

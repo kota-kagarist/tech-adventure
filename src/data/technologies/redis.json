@@ -1,0 +1,26 @@
+{
+  "id": "redis",
+  "name": "Redis",
+  "shortDescription": "メモリ中心で高速にデータ構造を扱うキー値データベース。",
+  "category": "database",
+  "officialUrl": "https://redis.io/",
+  "whatItDoes": "メモリ中心で高速にデータ構造を扱うキー値データベース。キャッシュ、セッション、キュー、カウンター、Pub/Subを低遅延で提供する。",
+  "role": "キャッシュ、セッション、キュー、カウンター、Pub/Subを低遅延で提供する。",
+  "whenToUse": [
+    "短時間データや高速キャッシュで主DBを補助するとき。"
+  ],
+  "whenNotToUse": [
+    "唯一の永続保管先として複雑な関係データを持つとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "cache",
+    "key-value"
+  ],
+  "lastVerified": "2026-08-30"
+}

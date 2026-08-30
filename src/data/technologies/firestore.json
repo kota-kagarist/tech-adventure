@@ -1,0 +1,29 @@
+{
+  "id": "firestore",
+  "name": "Cloud Firestore",
+  "shortDescription": "クライアント同期とリアルタイム更新を備えるドキュメントデータベース。",
+  "category": "database",
+  "officialUrl": "https://firebase.google.com/docs/firestore",
+  "whatItDoes": "クライアント同期とリアルタイム更新を備えるドキュメントデータベース。モバイル/Web クライアントとセキュリティルールを介してドキュメントを同期する。",
+  "role": "モバイル/Web クライアントとセキュリティルールを介してドキュメントを同期する。",
+  "whenToUse": [
+    "Firebaseでリアルタイムなアプリデータを素早く共有するとき。"
+  ],
+  "whenNotToUse": [
+    "複雑な結合や高頻度分析クエリを中心にするとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "data",
+    "gcp"
+  ],
+  "aliases": [
+    "Firestore"
+  ],
+  "tags": [
+    "document",
+    "realtime"
+  ],
+  "lastVerified": "2026-08-30"
+}

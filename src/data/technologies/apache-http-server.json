@@ -1,0 +1,30 @@
+{
+  "id": "apache-http-server",
+  "name": "Apache HTTP Server",
+  "shortDescription": "モジュール拡張と設定柔軟性を持つ成熟したWeb サーバー。",
+  "category": "infrastructure",
+  "officialUrl": "https://httpd.apache.org/",
+  "whatItDoes": "モジュール拡張と設定柔軟性を持つ成熟したWeb サーバー。静的配信、プロキシ、認証、ディレクトリ単位設定を提供する。",
+  "role": "静的配信、プロキシ、認証、ディレクトリ単位設定を提供する。",
+  "whenToUse": [
+    "既存LAMP環境やApache モジュール資産を運用するとき。"
+  ],
+  "whenNotToUse": [
+    "新規で小さな設定と軽量プロキシだけを求めるとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "devops",
+    "web-platform"
+  ],
+  "aliases": [
+    "Apache",
+    "httpd"
+  ],
+  "tags": [
+    "web-server",
+    "modules"
+  ],
+  "lastVerified": "2026-08-30"
+}

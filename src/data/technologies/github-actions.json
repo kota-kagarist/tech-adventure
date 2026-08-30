@@ -1,0 +1,28 @@
+{
+  "id": "github-actions",
+  "name": "GitHub Actions",
+  "shortDescription": "GitHub リポジトリ内でワークフローを自動実行するCI/CD。",
+  "category": "ci-cd",
+  "officialUrl": "https://github.com/features/actions",
+  "whatItDoes": "GitHub リポジトリ内でワークフローを自動実行するCI/CD。プッシュ、Pull Request、スケジュールをトリガーにテストやデプロイを動かす。",
+  "role": "プッシュ、Pull Request、スケジュールをトリガーにテストやデプロイを動かす。",
+  "whenToUse": [
+    "コードレビューと自動検証をGitHubへ一体化するとき。"
+  ],
+  "whenNotToUse": [
+    "GitHub外のリポジトリを中心に運用するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [
+    "Actions"
+  ],
+  "tags": [
+    "ci",
+    "automation"
+  ],
+  "lastVerified": "2026-08-30"
+}

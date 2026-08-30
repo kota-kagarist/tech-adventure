@@ -1,0 +1,30 @@
+{
+  "id": "testing-library",
+  "name": "Testing Library",
+  "shortDescription": "利用者が操作する形に近いUI テストを促すライブラリ群。",
+  "category": "testing",
+  "officialUrl": "https://testing-library.com/",
+  "whatItDoes": "利用者が操作する形に近いUI テストを促すライブラリ群。役割、ラベル、テキストから要素を探し、実装詳細への依存を減らす。",
+  "role": "役割、ラベル、テキストから要素を探し、実装詳細への依存を減らす。",
+  "whenToUse": [
+    "UI部品の見える振る舞いをフレームワーク横断で検証するとき。"
+  ],
+  "whenNotToUse": [
+    "視覚的差分や実ブラウザー全体の動作を単独で検証するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "vue",
+    "svelte"
+  ],
+  "aliases": [],
+  "tags": [
+    "component-test",
+    "accessibility"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "contentful",
+  "name": "Contentful",
+  "shortDescription": "構造化コンテンツをAPI配信するマネージドヘッドレス CMS。",
+  "category": "cms",
+  "officialUrl": "https://www.contentful.com/",
+  "whatItDoes": "構造化コンテンツをAPI配信するマネージドヘッドレス CMS。コンテンツモデル、編集ワークフロー、ロケール、配信APIを提供する。",
+  "role": "コンテンツモデル、編集ワークフロー、ロケール、配信APIを提供する。",
+  "whenToUse": [
+    "企業で複数チャネルへコンテンツを安定配信するとき。"
+  ],
+  "whenNotToUse": [
+    "費用を抑えた小規模セルフホスト CMSが必要なとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "content"
+  ],
+  "aliases": [],
+  "tags": [
+    "headless-cms",
+    "managed"
+  ],
+  "lastVerified": "2026-08-30"
+}

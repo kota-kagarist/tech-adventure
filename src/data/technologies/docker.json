@@ -1,0 +1,26 @@
+{
+  "id": "docker",
+  "name": "Docker",
+  "shortDescription": "アプリと依存環境をコンテナ画像へまとめるプラットフォーム。",
+  "category": "infrastructure",
+  "officialUrl": "https://www.docker.com/",
+  "whatItDoes": "アプリと依存環境をコンテナ画像へまとめるプラットフォーム。同じ実行環境を開発、CI、本番へ持ち運ぶ。",
+  "role": "同じ実行環境を開発、CI、本番へ持ち運ぶ。",
+  "whenToUse": [
+    "環境差を減らしてサービスを配布・隔離したいとき。"
+  ],
+  "whenNotToUse": [
+    "単一の静的ファイル配信でコンテナが運用負担になるとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "containers",
+    "images"
+  ],
+  "lastVerified": "2026-08-30"
+}

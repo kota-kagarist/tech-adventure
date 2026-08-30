@@ -1,0 +1,28 @@
+{
+  "id": "better-auth",
+  "name": "Better Auth",
+  "shortDescription": "TypeScript向けにプラグイン拡張できる認証フレームワーク。",
+  "category": "auth",
+  "officialUrl": "https://www.better-auth.com/",
+  "whatItDoes": "TypeScript向けにプラグイン拡張できる認証フレームワーク。セッション、プロバイダー、2要素認証などを自分のバックエンドへ組み込む。",
+  "role": "セッション、プロバイダー、2要素認証などを自分のバックエンドへ組み込む。",
+  "whenToUse": [
+    "認証データを所有しつつTypeScriptで機能を拡張したいとき。"
+  ],
+  "whenNotToUse": [
+    "長期実績が最優先で新しい生態系を避けるとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "authentication",
+    "framework"
+  ],
+  "lastVerified": "2026-08-30"
+}

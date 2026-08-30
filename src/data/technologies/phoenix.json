@@ -1,0 +1,28 @@
+{
+  "id": "phoenix",
+  "name": "Phoenix",
+  "shortDescription": "ElixirとBEAM上で動く並行性に強いWebフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://www.phoenixframework.org/",
+  "whatItDoes": "ElixirとBEAM上で動く並行性に強いWebフレームワーク。多数接続、耐障害性、LiveViewによるリアルタイム画面を扱う。",
+  "role": "多数接続、耐障害性、LiveViewによるリアルタイム画面を扱う。",
+  "whenToUse": [
+    "接続数の多いリアルタイムサービスを安定運用するとき。"
+  ],
+  "whenNotToUse": [
+    "Elixirの運用知識を確保できない小規模チーム。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "elixir"
+  ],
+  "aliases": [
+    "Phoenix Framework"
+  ],
+  "tags": [
+    "realtime",
+    "fault-tolerance"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "vitest",
+  "name": "Vitest",
+  "shortDescription": "Viteと設定や変換を共有する高速なテストランナー。",
+  "category": "testing",
+  "officialUrl": "https://vitest.dev/",
+  "whatItDoes": "Viteと設定や変換を共有する高速なテストランナー。単体テスト、モック、カバレッジをVite プロジェクトへ統合する。",
+  "role": "単体テスト、モック、カバレッジをVite プロジェクトへ統合する。",
+  "whenToUse": [
+    "Viteを使う新規フロントエンドで高速な単体テストが必要なとき。"
+  ],
+  "whenNotToUse": [
+    "Jest固有プラグインとの完全互換が必須の既存プロジェクト。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "unit-test",
+    "vite"
+  ],
+  "lastVerified": "2026-08-30"
+}

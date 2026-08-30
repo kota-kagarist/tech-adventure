@@ -1,0 +1,31 @@
+{
+  "id": "msw",
+  "name": "MSW",
+  "shortDescription": "ネットワークリクエストをサービスワーカーやNodeで模擬するテストライブラリ。",
+  "category": "testing",
+  "officialUrl": "https://mswjs.io/",
+  "whatItDoes": "ネットワークリクエストをサービスワーカーやNodeで模擬するテストライブラリ。アプリコードを変えずにHTTPとGraphQLの応答を差し替える。",
+  "role": "アプリコードを変えずにHTTPとGraphQLの応答を差し替える。",
+  "whenToUse": [
+    "実際の通信境界を保ったフロントエンドテストや開発環境を作るとき。"
+  ],
+  "whenNotToUse": [
+    "サーバー自体のDB処理と実ネットワークを統合検証したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node",
+    "web-platform"
+  ],
+  "aliases": [
+    "Mock Service Worker"
+  ],
+  "tags": [
+    "network-mock",
+    "testing"
+  ],
+  "lastVerified": "2026-08-30"
+}

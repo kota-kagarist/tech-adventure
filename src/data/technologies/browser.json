@@ -1,0 +1,29 @@
+{
+  "id": "browser",
+  "name": "Browser",
+  "shortDescription": "HTML、CSS、JavaScriptを解釈してWeb体験を実行する環境。",
+  "category": "runtime",
+  "officialUrl": "https://html.spec.whatwg.org/multipage/webappapis.html",
+  "whatItDoes": "HTML、CSS、JavaScriptを解釈してWeb体験を実行する環境。文書描画、入力、ネットワーク、ストレージ、セキュリティ境界を提供する。",
+  "role": "文書描画、入力、ネットワーク、ストレージ、セキュリティ境界を提供する。",
+  "whenToUse": [
+    "利用者の端末でWeb画面と対話処理を動かすとき。"
+  ],
+  "whenNotToUse": [
+    "秘密情報を守る処理や信頼できるサーバー権限が必要なとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform",
+    "javascript"
+  ],
+  "aliases": [
+    "Web Browser"
+  ],
+  "tags": [
+    "runtime",
+    "client"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "mongodb",
+  "name": "MongoDB",
+  "shortDescription": "JSONに近いドキュメントを保存する分散データベース。",
+  "category": "database",
+  "officialUrl": "https://www.mongodb.com/",
+  "whatItDoes": "JSONに近いドキュメントを保存する分散データベース。柔軟なドキュメントスキーマ、インデックス、集約を提供する。",
+  "role": "柔軟なドキュメントスキーマ、インデックス、集約を提供する。",
+  "whenToUse": [
+    "階層的なデータをドキュメント単位で頻繁に変えるとき。"
+  ],
+  "whenNotToUse": [
+    "複雑な関係整合性と結合を中心に設計するとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "document",
+    "nosql"
+  ],
+  "lastVerified": "2026-08-30"
+}

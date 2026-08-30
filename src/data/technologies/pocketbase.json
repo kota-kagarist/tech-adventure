@@ -1,0 +1,27 @@
+{
+  "id": "pocketbase",
+  "name": "PocketBase",
+  "shortDescription": "単一実行ファイルでデータベース、認証、ファイル APIを提供するバックエンド。",
+  "category": "backend-platform",
+  "officialUrl": "https://pocketbase.io/",
+  "whatItDoes": "単一実行ファイルでデータベース、認証、ファイル APIを提供するバックエンド。SQLiteと管理画面を小さなサーバーへまとめる。",
+  "role": "SQLiteと管理画面を小さなサーバーへまとめる。",
+  "whenToUse": [
+    "個人プロジェクトや小規模ツールを最小運用で公開するとき。"
+  ],
+  "whenNotToUse": [
+    "大規模分散、厳密な高可用性、企業supportが必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data",
+    "go"
+  ],
+  "aliases": [],
+  "tags": [
+    "baas",
+    "embedded"
+  ],
+  "lastVerified": "2026-08-30"
+}

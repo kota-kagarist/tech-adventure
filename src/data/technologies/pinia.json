@@ -1,0 +1,28 @@
+{
+  "id": "pinia",
+  "name": "Pinia",
+  "shortDescription": "Vue公式生態系の型安全な状態管理ライブラリ。",
+  "category": "state-data",
+  "officialUrl": "https://pinia.vuejs.org/",
+  "whatItDoes": "Vue公式生態系の型安全な状態管理ライブラリ。複数ストア、アクション、開発者ツール連携で共有状態を管理する。",
+  "role": "複数ストア、アクション、開発者ツール連携で共有状態を管理する。",
+  "whenToUse": [
+    "Vueアプリで部品をまたぐ状態を明確に分けたいとき。"
+  ],
+  "whenNotToUse": [
+    "Vueを使わないか局所状態だけで足りるとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "vue"
+  ],
+  "aliases": [],
+  "tags": [
+    "state-management",
+    "vue"
+  ],
+  "lastVerified": "2026-08-30"
+}

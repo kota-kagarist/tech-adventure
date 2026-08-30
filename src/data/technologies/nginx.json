@@ -1,0 +1,29 @@
+{
+  "id": "nginx",
+  "name": "Nginx",
+  "shortDescription": "静的配信、リバースプロキシ、負荷分散を行うWeb サーバー。",
+  "category": "infrastructure",
+  "officialUrl": "https://nginx.org/",
+  "whatItDoes": "静的配信、リバースプロキシ、負荷分散を行うWeb サーバー。外部リクエストをバックエンドへ振り分け、TLSやキャッシュを処理する。",
+  "role": "外部リクエストをバックエンドへ振り分け、TLSやキャッシュを処理する。",
+  "whenToUse": [
+    "高性能なWeb入口とプロキシを自分で運用するとき。"
+  ],
+  "whenNotToUse": [
+    "マネージドプラットフォームが配信とTLSをすべて担うとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "devops",
+    "web-platform"
+  ],
+  "aliases": [
+    "NGINX"
+  ],
+  "tags": [
+    "web-server",
+    "reverse-proxy"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "nx",
+  "name": "Nx",
+  "shortDescription": "大規模モノレポのプロジェクトグラフと開発規則を管理するツール。",
+  "category": "package-monorepo",
+  "officialUrl": "https://nx.dev/",
+  "whatItDoes": "大規模モノレポのプロジェクトグラフと開発規則を管理するツール。影響範囲計算、タスクキャッシュ、ジェネレーター、境界規則を提供する。",
+  "role": "影響範囲計算、タスクキャッシュ、ジェネレーター、境界規則を提供する。",
+  "whenToUse": [
+    "多数アプリとライブラリの依存関係を統制したいとき。"
+  ],
+  "whenNotToUse": [
+    "小さな単一プロジェクトへ管理層を増やしたくないとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "monorepo",
+    "project-graph"
+  ],
+  "lastVerified": "2026-08-30"
+}

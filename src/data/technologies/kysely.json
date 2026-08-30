@@ -1,0 +1,29 @@
+{
+  "id": "kysely",
+  "name": "Kysely",
+  "shortDescription": "SQL クエリビルダーに強い型安全性を加えるTypeScript ライブラリ。",
+  "category": "orm",
+  "officialUrl": "https://kysely.dev/",
+  "whatItDoes": "SQL クエリビルダーに強い型安全性を加えるTypeScript ライブラリ。テーブル型からSQLに近いクエリを組み立て、結果型を推論する。",
+  "role": "テーブル型からSQLに近いクエリを組み立て、結果型を推論する。",
+  "whenToUse": [
+    "ORMのモデル抽象を避けて型付きSQLを書きたいとき。"
+  ],
+  "whenNotToUse": [
+    "関係管理やエンティティライフサイクルを自動化したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node",
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "query-builder",
+    "type-safe"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "clickhouse",
+  "name": "ClickHouse",
+  "shortDescription": "列指向で大量データを高速集計する分析データベース。",
+  "category": "database",
+  "officialUrl": "https://clickhouse.com/",
+  "whatItDoes": "列指向で大量データを高速集計する分析データベース。圧縮した列データを並列スキャンし、分析クエリを処理する。",
+  "role": "圧縮した列データを並列スキャンし、分析クエリを処理する。",
+  "whenToUse": [
+    "イベント、ログ、時系列データを大規模に集計するとき。"
+  ],
+  "whenNotToUse": [
+    "行単位の頻繁なトランザクション更新を主用途にするとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "olap",
+    "columnar"
+  ],
+  "lastVerified": "2026-08-30"
+}

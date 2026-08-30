@@ -1,0 +1,29 @@
+{
+  "id": "alpinejs",
+  "name": "Alpine.js",
+  "shortDescription": "HTMLへ小さな対話処理を直接書ける軽量UIライブラリ。",
+  "category": "ui-library",
+  "officialUrl": "https://alpinejs.dev/",
+  "whatItDoes": "HTMLへ小さな対話処理を直接書ける軽量UIライブラリ。属性ベースの状態とイベント処理を既存マークアップへ加える。",
+  "role": "属性ベースの状態とイベント処理を既存マークアップへ加える。",
+  "whenToUse": [
+    "静的ページやサーバー生成画面へ小規模な操作を足すとき。"
+  ],
+  "whenNotToUse": [
+    "大規模な画面状態と複雑な部品間通信を管理するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "web-platform"
+  ],
+  "aliases": [
+    "Alpine"
+  ],
+  "tags": [
+    "lightweight",
+    "progressive"
+  ],
+  "lastVerified": "2026-08-30"
+}

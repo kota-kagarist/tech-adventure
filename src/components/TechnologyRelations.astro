@@ -1,10 +1,12 @@
 ---
 import { categoryById } from '../data/categories';
 import { withBase } from '../lib/paths';
+import { groupRelationsForTechnology } from '../lib/relations.mjs';
 import type { Technology, TechnologyRelation } from '../data/schema';
 interface Props { technology: Technology; allTechnologies: Technology[]; relations: TechnologyRelation[]; }
 const { technology, allTechnologies, relations } = Astro.props;
 const byId = new Map(allTechnologies.map((item) => [item.id, item]));
+const directed = groupRelationsForTechnology(technology.id, relations);
 const groups = [
   { key: 'competes', title: '同じ土俵', description: '比較候補', match: (r: TechnologyRelation) => r.type === 'competes-with' },
   { key: 'works', title: '一緒に使う', description: '役割分担', match: (r: TechnologyRelation) => r.type === 'works-with' },
@@ -12,7 +14,11 @@ const groups = [
   { key: 'runs-in', title: 'ここで動く', description: 'runs here', match: (r: TechnologyRelation) => r.type === 'runs-on' && r.target === technology.id },
   { key: 'built-out', title: '土台・基盤', description: 'built on', match: (r: TechnologyRelation) => r.type === 'built-on' && r.source === technology.id },
   { key: 'built-in', title: 'この技術を使うもの', description: 'used by', match: (r: TechnologyRelation) => r.type === 'built-on' && r.target === technology.id },
-  { key: 'alternative', title: '代替候補', description: 'alternatives', match: (r: TechnologyRelation) => r.type === 'alternative-to' }
+  { key: 'alternative', title: '代替候補', description: 'alternatives', match: (r: TechnologyRelation) => r.type === 'alternative-to' },
+  { key: 'implements', title: '実装する規格', description: 'implements', match: (r: TechnologyRelation) => directed.implements.includes(r) },
+  { key: 'implemented-by', title: 'この規格の実装', description: 'implemented by', match: (r: TechnologyRelation) => directed.implementedBy.includes(r) },
+  { key: 'part-of', title: '所属する製品・基盤', description: 'part of', match: (r: TechnologyRelation) => directed.partOf.includes(r) },
+  { key: 'includes', title: '含まれるサービス', description: 'includes', match: (r: TechnologyRelation) => directed.includes.includes(r) }
 ];
 function counterpart(relation: TechnologyRelation) { return byId.get(relation.source === technology.id ? relation.target : relation.source); }
 ---

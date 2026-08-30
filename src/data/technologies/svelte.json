@@ -1,12 +1,28 @@
 {
   "id": "svelte",
   "name": "Svelte",
-  "shortDescription": "コンパイル時に軽量なJavaScriptへ変換するUIフレームワーク。",
+  "shortDescription": "コンパイル時に効率的な画面更新コードを作るUIフレームワーク。",
   "category": "ui-library",
   "officialUrl": "https://svelte.dev/",
-  "whatItDoes": "宣言的なコンポーネントをビルド時に効率的なJavaScriptへ変換する。",
-  "whenToUse": ["簡潔な記法で対話的UIを作りたい", "クライアント側の実行量を抑えたい"],
-  "whenNotToUse": ["組織でReact資産への強い依存がある"],
+  "whatItDoes": "コンパイル時に効率的な画面更新コードを作るUIフレームワーク。簡潔な部品記法をブラウザで動くJavaScriptへ変換する。",
+  "role": "簡潔な部品記法をブラウザで動くJavaScriptへ変換する。",
+  "whenToUse": [
+    "少ない記述量と軽い実行コードで対話画面を作りたいとき。"
+  ],
+  "whenNotToUse": [
+    "React専用の企業内資産へ強く依存しているとき。"
+  ],
   "maturity": "established",
-  "tags": ["ui", "component"]
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "svelte"
+  ],
+  "aliases": [],
+  "tags": [
+    "compiler",
+    "component"
+  ],
+  "lastVerified": "2026-08-30"
 }

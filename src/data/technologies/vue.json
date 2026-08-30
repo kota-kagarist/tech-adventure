@@ -1,12 +1,31 @@
 {
   "id": "vue",
   "name": "Vue",
-  "shortDescription": "段階的に導入できるUIフレームワーク。",
+  "shortDescription": "段階的に導入できるコンポーネント指向のUIフレームワーク。",
   "category": "ui-library",
   "officialUrl": "https://vuejs.org/",
-  "whatItDoes": "テンプレートとリアクティブな状態管理でWeb UIを構築する。",
-  "whenToUse": ["読みやすいテンプレートでUIを作りたい", "既存ページへ段階的に動きを足したい"],
-  "whenNotToUse": ["UIライブラリ自体が不要な静的サイト"],
+  "whatItDoes": "段階的に導入できるコンポーネント指向のUIフレームワーク。テンプレート、反応的な状態、部品化を一体で提供する。",
+  "role": "テンプレート、反応的な状態、部品化を一体で提供する。",
+  "whenToUse": [
+    "既存HTMLから始めて対話的な画面へ広げたいとき。"
+  ],
+  "whenNotToUse": [
+    "React専用の部品資産をそのまま使う必要があるとき。"
+  ],
   "maturity": "mature",
-  "tags": ["ui", "component"]
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "vue"
+  ],
+  "aliases": [
+    "Vue.js",
+    "VueJS"
+  ],
+  "tags": [
+    "component",
+    "reactivity"
+  ],
+  "lastVerified": "2026-08-30"
 }

@@ -1,0 +1,28 @@
+{
+  "id": "swr",
+  "name": "SWR",
+  "shortDescription": "キャッシュを先に返し裏で再検証するReact データ取得ライブラリ。",
+  "category": "state-data",
+  "officialUrl": "https://swr.vercel.app/",
+  "whatItDoes": "キャッシュを先に返し裏で再検証するReact データ取得ライブラリ。キー単位の取得、キャッシュ、再検証を小さなフック APIで提供する。",
+  "role": "キー単位の取得、キャッシュ、再検証を小さなフック APIで提供する。",
+  "whenToUse": [
+    "Reactで読み取り中心のAPI データを簡潔に同期したいとき。"
+  ],
+  "whenNotToUse": [
+    "複雑なミューテーションワークフローとフレームワーク横断対応が必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "aliases": [],
+  "tags": [
+    "server-state",
+    "cache"
+  ],
+  "lastVerified": "2026-08-30"
+}

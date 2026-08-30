@@ -1,0 +1,26 @@
+{
+  "id": "planetscale",
+  "name": "PlanetScale",
+  "shortDescription": "分散SQLと開発ワークフローを提供するマネージドデータベースプラットフォーム。",
+  "category": "backend-platform",
+  "officialUrl": "https://planetscale.com/",
+  "whatItDoes": "分散SQLと開発ワークフローを提供するマネージドデータベースプラットフォーム。ブランチ、非停止スキーマ変更、マネージド運用でMySQL系DBを扱う。",
+  "role": "ブランチ、非停止スキーマ変更、マネージド運用でMySQL系DBを扱う。",
+  "whenToUse": [
+    "スキーマ変更を安全に行うマネージド SQL基盤が必要なとき。"
+  ],
+  "whenNotToUse": [
+    "単一ファイルの組み込み DBや完全なセルフホストが必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "mysql",
+    "managed"
+  ],
+  "lastVerified": "2026-08-30"
+}

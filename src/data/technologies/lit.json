@@ -1,0 +1,30 @@
+{
+  "id": "lit",
+  "name": "Lit",
+  "shortDescription": "Web Componentsを簡潔に作るための軽量ライブラリ。",
+  "category": "ui-library",
+  "officialUrl": "https://lit.dev/",
+  "whatItDoes": "Web Componentsを簡潔に作るための軽量ライブラリ。標準のカスタム要素とシャドウ DOMを扱いやすくする。",
+  "role": "標準のカスタム要素とシャドウ DOMを扱いやすくする。",
+  "whenToUse": [
+    "複数フレームワークから使える標準準拠のUI部品を配るとき。"
+  ],
+  "whenNotToUse": [
+    "特定フレームワーク専用の状態管理へ深く統合するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "web-platform"
+  ],
+  "aliases": [
+    "LitElement"
+  ],
+  "tags": [
+    "web-components",
+    "standards"
+  ],
+  "lastVerified": "2026-08-30"
+}

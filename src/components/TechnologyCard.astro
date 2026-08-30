@@ -6,7 +6,20 @@ interface Props { technology: Technology; }
 const { technology } = Astro.props;
 const category = categoryById[technology.category];
 ---
-<article class="tech-card" data-tech-card data-name={technology.name.toLowerCase()} data-category={technology.category}>
+<article
+  class="tech-card"
+  data-tech-card
+  data-id={technology.id}
+  data-name={technology.name}
+  data-description={technology.shortDescription}
+  data-role={technology.role}
+  data-category={technology.category}
+  data-ecosystems={technology.ecosystem.join('|')}
+  data-maturity={technology.maturity}
+  data-importance={technology.importance}
+  data-aliases={technology.aliases.join('|')}
+  data-tags={technology.tags.join('|')}
+>
   <div class="meta-label">{category.name}</div>
   <h3><a href={withBase(`/technologies/${technology.id}`)}>{technology.name}</a></h3>
   <p>{technology.shortDescription}</p>

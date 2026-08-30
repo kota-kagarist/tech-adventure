@@ -1,12 +1,29 @@
 {
   "id": "typescript",
   "name": "TypeScript",
-  "shortDescription": "JavaScriptに型を加えた言語。",
+  "shortDescription": "JavaScriptへ静的な型検査を加えるプログラミング言語。",
   "category": "language",
   "officialUrl": "https://www.typescriptlang.org/",
-  "whatItDoes": "JavaScriptとして動くコードに型情報を加え、開発時の間違いを見つけやすくする。",
-  "whenToUse": ["複数ファイルにまたがるWeb開発", "AIと共同で変更するコードの契約を明確にしたい"],
-  "whenNotToUse": ["数行だけの使い捨てスクリプト"],
-  "maturity": "mature",
-  "tags": ["web", "types"]
+  "whatItDoes": "JavaScriptへ静的な型検査を加えるプログラミング言語。実行前に値や関数の形の不一致を見つけ、JavaScriptへ変換する。",
+  "role": "実行前に値や関数の形の不一致を見つけ、JavaScriptへ変換する。",
+  "whenToUse": [
+    "複数人や長期運用のJavaScriptで変更時の安全性を高めたいとき。"
+  ],
+  "whenNotToUse": [
+    "短い使い捨てスクリプトで型定義の負担が上回るとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "typescript",
+    "javascript"
+  ],
+  "aliases": [
+    "TS"
+  ],
+  "tags": [
+    "static-types",
+    "compiler"
+  ],
+  "lastVerified": "2026-08-30"
 }

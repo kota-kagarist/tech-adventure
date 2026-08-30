@@ -1,0 +1,28 @@
+{
+  "id": "csharp",
+  "name": "C#",
+  "shortDescription": ".NET上で動く静的型付きの汎用プログラミング言語。",
+  "category": "language",
+  "officialUrl": "https://learn.microsoft.com/dotnet/csharp/",
+  "whatItDoes": ".NET上で動く静的型付きの汎用プログラミング言語。Web API、業務アプリ、クラウド処理を.NETの型とライブラリで実装する。",
+  "role": "Web API、業務アプリ、クラウド処理を.NETの型とライブラリで実装する。",
+  "whenToUse": [
+    "Microsoft環境やASP.NET Coreと統合するWebシステムを作るとき。"
+  ],
+  "whenNotToUse": [
+    "ブラウザ標準だけで軽い対話処理を追加したいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "dotnet"
+  ],
+  "aliases": [
+    "C Sharp"
+  ],
+  "tags": [
+    "backend",
+    "dotnet"
+  ],
+  "lastVerified": "2026-08-30"
+}

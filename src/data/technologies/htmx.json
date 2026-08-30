@@ -1,0 +1,29 @@
+{
+  "id": "htmx",
+  "name": "HTMX",
+  "shortDescription": "HTML属性からサーバー通信と部分更新を指定するライブラリ。",
+  "category": "ui-library",
+  "officialUrl": "https://htmx.org/",
+  "whatItDoes": "HTML属性からサーバー通信と部分更新を指定するライブラリ。サーバーが返すHTML断片を使い、少ないJavaScriptで画面を更新する。",
+  "role": "サーバーが返すHTML断片を使い、少ないJavaScriptで画面を更新する。",
+  "whenToUse": [
+    "サーバー中心の構成でフォームや一覧を段階的に対話化するとき。"
+  ],
+  "whenNotToUse": [
+    "複雑なオフライン状態をブラウザ側で大量に管理するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "web-platform"
+  ],
+  "aliases": [
+    "htmx"
+  ],
+  "tags": [
+    "hypermedia",
+    "html-over-wire"
+  ],
+  "lastVerified": "2026-08-30"
+}

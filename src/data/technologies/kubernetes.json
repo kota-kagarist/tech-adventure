@@ -1,0 +1,28 @@
+{
+  "id": "kubernetes",
+  "name": "Kubernetes",
+  "shortDescription": "コンテナ化したサービスを複数マシンで運用するオーケストレーター。",
+  "category": "infrastructure",
+  "officialUrl": "https://kubernetes.io/",
+  "whatItDoes": "コンテナ化したサービスを複数マシンで運用するオーケストレーター。配置、スケール、復旧、ネットワーク、設定を宣言的に管理する。",
+  "role": "配置、スケール、復旧、ネットワーク、設定を宣言的に管理する。",
+  "whenToUse": [
+    "多数サービスを高可用に標準化して運用するとき。"
+  ],
+  "whenNotToUse": [
+    "少数アプリでプラットフォームの複雑さが価値を上回るとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [
+    "K8s"
+  ],
+  "tags": [
+    "orchestration",
+    "containers"
+  ],
+  "lastVerified": "2026-08-30"
+}

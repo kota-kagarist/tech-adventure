@@ -1,0 +1,28 @@
+{
+  "id": "jest",
+  "name": "Jest",
+  "shortDescription": "JavaScriptの単体テストに広く使われるテストフレームワーク。",
+  "category": "testing",
+  "officialUrl": "https://jestjs.io/",
+  "whatItDoes": "JavaScriptの単体テストに広く使われるテストフレームワーク。ランナー、アサーション、モック、スナップショットを一体で提供する。",
+  "role": "ランナー、アサーション、モック、スナップショットを一体で提供する。",
+  "whenToUse": [
+    "既存Jest資産やReact系ツールの広い対応を使うとき。"
+  ],
+  "whenNotToUse": [
+    "Viteとの共有設定と起動速度を最優先する新規プロジェクト。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "unit-test",
+    "mocking"
+  ],
+  "lastVerified": "2026-08-30"
+}

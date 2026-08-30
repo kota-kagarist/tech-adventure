@@ -1,0 +1,30 @@
+{
+  "id": "ant-design",
+  "name": "Ant Design",
+  "shortDescription": "業務画面向け部品と設計規則を備えるReact UI集。",
+  "category": "ui-components",
+  "officialUrl": "https://ant.design/",
+  "whatItDoes": "業務画面向け部品と設計規則を備えるReact UI集。テーブル、フォーム、ナビゲーションなど情報量の多い部品を提供する。",
+  "role": "テーブル、フォーム、ナビゲーションなど情報量の多い部品を提供する。",
+  "whenToUse": [
+    "管理画面や企業向け業務アプリを短期間で構築するとき。"
+  ],
+  "whenNotToUse": [
+    "独自ブランドの小さな公開サイトでバンドル量を抑えたいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "aliases": [
+    "AntD"
+  ],
+  "tags": [
+    "components",
+    "enterprise"
+  ],
+  "lastVerified": "2026-08-30"
+}

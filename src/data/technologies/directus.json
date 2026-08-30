@@ -1,0 +1,27 @@
+{
+  "id": "directus",
+  "name": "Directus",
+  "shortDescription": "既存SQL DBへ管理画面とAPIを加えるデータプラットフォーム。",
+  "category": "cms",
+  "officialUrl": "https://directus.io/",
+  "whatItDoes": "既存SQL DBへ管理画面とAPIを加えるデータプラットフォーム。テーブルをコンテンツモデルとしてREST/GraphQLと権限管理を提供する。",
+  "role": "テーブルをコンテンツモデルとしてREST/GraphQLと権限管理を提供する。",
+  "whenToUse": [
+    "既存データベースを保ったまま編集UIを追加したいとき。"
+  ],
+  "whenNotToUse": [
+    "ファイル中心の静的コンテンツだけをGitで管理するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data",
+    "content"
+  ],
+  "aliases": [],
+  "tags": [
+    "headless-cms",
+    "database"
+  ],
+  "lastVerified": "2026-08-30"
+}

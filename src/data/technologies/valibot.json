@@ -1,0 +1,27 @@
+{
+  "id": "valibot",
+  "name": "Valibot",
+  "shortDescription": "小さく組み合わせ可能なスキーマ検証ライブラリ。",
+  "category": "quality-validation",
+  "officialUrl": "https://valibot.dev/",
+  "whatItDoes": "小さく組み合わせ可能なスキーマ検証ライブラリ。個別関数を組み合わせ、必要なコードだけをバンドルして入力を検証する。",
+  "role": "個別関数を組み合わせ、必要なコードだけをバンドルして入力を検証する。",
+  "whenToUse": [
+    "フロントエンドの配信量を抑えつつ型付き検証を行うとき。"
+  ],
+  "whenNotToUse": [
+    "Zod固有APIを使う既存資産との互換が必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript"
+  ],
+  "aliases": [],
+  "tags": [
+    "schema",
+    "validation"
+  ],
+  "lastVerified": "2026-08-30"
+}

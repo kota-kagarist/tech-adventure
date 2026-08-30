@@ -1,0 +1,30 @@
+{
+  "id": "http",
+  "name": "HTTP",
+  "shortDescription": "Webでリクエストとレスポンスを交換する基礎プロトコル。",
+  "category": "protocol-api",
+  "officialUrl": "https://httpwg.org/specs/",
+  "whatItDoes": "Webでリクエストとレスポンスを交換する基礎プロトコル。メソッド、ステータス、ヘッダー、キャッシュなど通信の共通規則を定める。",
+  "role": "メソッド、ステータス、ヘッダー、キャッシュなど通信の共通規則を定める。",
+  "whenToUse": [
+    "ブラウザー、API、サービス間でWeb互換の通信を行うとき。"
+  ],
+  "whenNotToUse": [
+    "双方向の常時接続だけを専用プロトコルで行うとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform"
+  ],
+  "aliases": [
+    "Hypertext Transfer Protocol",
+    "HTTP/2",
+    "HTTP/3"
+  ],
+  "tags": [
+    "protocol",
+    "request-response"
+  ],
+  "lastVerified": "2026-08-30"
+}

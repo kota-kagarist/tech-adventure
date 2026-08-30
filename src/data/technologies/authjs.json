@@ -1,0 +1,32 @@
+{
+  "id": "authjs",
+  "name": "Auth.js",
+  "shortDescription": "Web フレームワーク向けのオープンソース認証ライブラリ。",
+  "category": "auth",
+  "officialUrl": "https://authjs.dev/",
+  "whatItDoes": "Web フレームワーク向けのオープンソース認証ライブラリ。OAuth プロバイダー、セッション、コールバックをJavaScript アプリへ統合する。",
+  "role": "OAuth プロバイダー、セッション、コールバックをJavaScript アプリへ統合する。",
+  "whenToUse": [
+    "Next.jsなどで外部ログインとセッションを自分のアプリへ組み込むとき。"
+  ],
+  "whenNotToUse": [
+    "認証運用を完全なマネージドサービスへ任せたいとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "node"
+  ],
+  "aliases": [
+    "NextAuth.js",
+    "NextAuth"
+  ],
+  "tags": [
+    "authentication",
+    "session"
+  ],
+  "lastVerified": "2026-08-30"
+}

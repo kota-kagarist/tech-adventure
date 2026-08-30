@@ -1,0 +1,28 @@
+{
+  "id": "prettier",
+  "name": "Prettier",
+  "shortDescription": "コードの書式を決まった形へ自動整形するフォーマッター。",
+  "category": "quality-validation",
+  "officialUrl": "https://prettier.io/",
+  "whatItDoes": "コードの書式を決まった形へ自動整形するフォーマッター。入力コードを解析し、選択肢を抑えた統一形式で出力する。",
+  "role": "入力コードを解析し、選択肢を抑えた統一形式で出力する。",
+  "whenToUse": [
+    "書式議論を減らして複数言語を自動整形したいとき。"
+  ],
+  "whenNotToUse": [
+    "意味的なバグや型の誤りを検出したいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "formatter",
+    "style"
+  ],
+  "lastVerified": "2026-08-30"
+}

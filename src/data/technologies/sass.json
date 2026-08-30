@@ -1,0 +1,28 @@
+{
+  "id": "sass",
+  "name": "Sass",
+  "shortDescription": "変数や入れ子などをCSSへ加えるプリプロセッサ。",
+  "category": "styling",
+  "officialUrl": "https://sass-lang.com/",
+  "whatItDoes": "変数や入れ子などをCSSへ加えるプリプロセッサ。Sass記法を標準CSSへ変換し、大きなスタイルシートを分割管理する。",
+  "role": "Sass記法を標準CSSへ変換し、大きなスタイルシートを分割管理する。",
+  "whenToUse": [
+    "既存Sass資産を保守するか、ビルド時のCSS生成が必要なとき。"
+  ],
+  "whenNotToUse": [
+    "現代CSSだけで十分で、変換工程を増やしたくないとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform"
+  ],
+  "aliases": [
+    "SCSS"
+  ],
+  "tags": [
+    "preprocessor",
+    "css"
+  ],
+  "lastVerified": "2026-08-30"
+}

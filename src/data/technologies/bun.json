@@ -1,12 +1,28 @@
 {
   "id": "bun",
   "name": "Bun",
-  "shortDescription": "高速なJavaScript実行環境と開発ツール群。",
+  "shortDescription": "ランタイム、パッケージ管理、テスト、ビルドを統合するJavaScript実行環境。",
   "category": "runtime",
-  "officialUrl": "https://bun.com/",
-  "whatItDoes": "JavaScript/TypeScript実行、パッケージ管理、テスト、バンドルなどを一体で提供する。",
-  "whenToUse": ["高速な開発体験を試したい", "Bun対応のサーバーアプリを作る"],
-  "whenNotToUse": ["Node.js固有互換性が最優先の既存システム"],
+  "officialUrl": "https://bun.sh/",
+  "whatItDoes": "ランタイム、パッケージ管理、テスト、ビルドを統合するJavaScript実行環境。Node.js互換を広げながら高速な開発道具を一体で提供する。",
+  "role": "Node.js互換を広げながら高速な開発道具を一体で提供する。",
+  "whenToUse": [
+    "高速な起動と統合ツールでJavaScript開発を簡素化したいとき。"
+  ],
+  "whenNotToUse": [
+    "Node.js固有APIの完全互換が必須の既存基盤。"
+  ],
   "maturity": "established",
-  "tags": ["runtime", "tooling"]
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "bun"
+  ],
+  "aliases": [],
+  "tags": [
+    "runtime",
+    "toolchain"
+  ],
+  "lastVerified": "2026-08-30"
 }

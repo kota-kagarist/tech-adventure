@@ -1,0 +1,29 @@
+{
+  "id": "rspack",
+  "name": "Rspack",
+  "shortDescription": "webpack互換を重視するRust製バンドラー。",
+  "category": "build-transform",
+  "officialUrl": "https://rspack.dev/",
+  "whatItDoes": "webpack互換を重視するRust製バンドラー。既存webpack生態系を活かしながらビルドを高速化する。",
+  "role": "既存webpack生態系を活かしながらビルドを高速化する。",
+  "whenToUse": [
+    "webpack構成の互換性を保って速度を改善したいとき。"
+  ],
+  "whenNotToUse": [
+    "webpack互換が不要でViteの単純さを優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "rust",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "bundler",
+    "webpack-compatible"
+  ],
+  "lastVerified": "2026-08-30"
+}

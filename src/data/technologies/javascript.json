@@ -1,12 +1,30 @@
 {
   "id": "javascript",
   "name": "JavaScript",
-  "shortDescription": "Webブラウザを中心に広く動くプログラミング言語。",
+  "shortDescription": "ブラウザと多くのサーバー環境で動くWebの標準プログラミング言語。",
   "category": "language",
-  "officialUrl": "https://developer.mozilla.org/ja/docs/Web/JavaScript",
-  "whatItDoes": "ブラウザ上の操作やサーバー処理など、Webの動きを記述する。",
-  "whenToUse": ["Webページに動きを付けたい", "Node.jsなどでサーバー処理を書きたい"],
-  "whenNotToUse": ["型による大規模な安全性を最初から強く求める場合"],
+  "officialUrl": "https://tc39.es/ecma262/",
+  "whatItDoes": "ブラウザと多くのサーバー環境で動くWebの標準プログラミング言語。画面操作、通信、サーバー処理までWebアプリの動作を記述する。",
+  "role": "画面操作、通信、サーバー処理までWebアプリの動作を記述する。",
+  "whenToUse": [
+    "ブラウザで対話処理を動かすか、同じ言語をサーバーでも使いたいとき。"
+  ],
+  "whenNotToUse": [
+    "静的な文書とCSSだけで目的を満たせるとき。"
+  ],
   "maturity": "mature",
-  "tags": ["web", "language"]
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "web-platform"
+  ],
+  "aliases": [
+    "JS",
+    "ECMAScript"
+  ],
+  "tags": [
+    "dynamic",
+    "web"
+  ],
+  "lastVerified": "2026-08-30"
 }

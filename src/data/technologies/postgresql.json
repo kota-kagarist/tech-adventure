@@ -1,12 +1,28 @@
 {
   "id": "postgresql",
   "name": "PostgreSQL",
-  "shortDescription": "高機能なオープンソースのリレーショナルデータベース。",
+  "shortDescription": "標準SQLと拡張性に強いオープンソースリレーショナル DB。",
   "category": "database",
   "officialUrl": "https://www.postgresql.org/",
-  "whatItDoes": "表形式のデータをSQLで保存・検索し、強い整合性と多彩な機能を提供する。",
-  "whenToUse": ["一般的な業務データやSaaS", "複雑な検索やトランザクションが必要"],
-  "whenNotToUse": ["単一端末内だけの極小データ保存"],
+  "whatItDoes": "標準SQLと拡張性に強いオープンソースリレーショナル DB。トランザクション、インデックス、JSON、拡張機能で幅広い業務データを扱う。",
+  "role": "トランザクション、インデックス、JSON、拡張機能で幅広い業務データを扱う。",
+  "whenToUse": [
+    "整合性と高度なクエリを必要とする一般的なWeb サービス。"
+  ],
+  "whenNotToUse": [
+    "単一端末へ埋め込む極小アプリでサーバー運用を避けたいとき。"
+  ],
   "maturity": "mature",
-  "tags": ["sql", "database"]
+  "importance": "core",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [
+    "Postgres"
+  ],
+  "tags": [
+    "sql",
+    "relational"
+  ],
+  "lastVerified": "2026-08-30"
 }

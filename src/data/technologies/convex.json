@@ -1,0 +1,28 @@
+{
+  "id": "convex",
+  "name": "Convex",
+  "shortDescription": "型付き関数とリアルタイムデータベースを統合するバックエンドプラットフォーム。",
+  "category": "backend-platform",
+  "officialUrl": "https://www.convex.dev/",
+  "whatItDoes": "型付き関数とリアルタイムデータベースを統合するバックエンドプラットフォーム。クエリ、ミューテーション、アクションの結果をクライアントへ自動同期する。",
+  "role": "クエリ、ミューテーション、アクションの結果をクライアントへ自動同期する。",
+  "whenToUse": [
+    "TypeScriptでリアルタイムアプリをバックエンド運用少なく作るとき。"
+  ],
+  "whenNotToUse": [
+    "標準SQLやクラウド非依存性を必須にするとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data",
+    "javascript",
+    "typescript"
+  ],
+  "aliases": [],
+  "tags": [
+    "baas",
+    "realtime"
+  ],
+  "lastVerified": "2026-08-30"
+}

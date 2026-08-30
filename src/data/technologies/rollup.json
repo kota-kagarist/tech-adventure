@@ -1,0 +1,28 @@
+{
+  "id": "rollup",
+  "name": "Rollup",
+  "shortDescription": "ES モジュールを中心にライブラリビルドへ強いバンドラー。",
+  "category": "build-transform",
+  "officialUrl": "https://rollupjs.org/",
+  "whatItDoes": "ES モジュールを中心にライブラリビルドへ強いバンドラー。ツリーシェイキングと複数形式出力で配布パッケージを生成する。",
+  "role": "ツリーシェイキングと複数形式出力で配布パッケージを生成する。",
+  "whenToUse": [
+    "JavaScript ライブラリを小さく複数形式で公開するとき。"
+  ],
+  "whenNotToUse": [
+    "大規模アプリの開発サーバーまで一体で求めるとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "bundler",
+    "library"
+  ],
+  "lastVerified": "2026-08-30"
+}

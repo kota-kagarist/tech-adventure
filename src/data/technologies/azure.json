@@ -1,0 +1,30 @@
+{
+  "id": "azure",
+  "name": "Microsoft Azure",
+  "shortDescription": "Microsoft製品との統合に強いパブリッククラウド。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://azure.microsoft.com/",
+  "whatItDoes": "Microsoft製品との統合に強いパブリッククラウド。計算、データ、アイデンティティ、AI、ネットワークを企業環境へ提供する。",
+  "role": "計算、データ、アイデンティティ、AI、ネットワークを企業環境へ提供する。",
+  "whenToUse": [
+    "Microsoft 365、Entra ID、NETとの統合を重視するとき。"
+  ],
+  "whenNotToUse": [
+    "単一の静的サイトだけを最小設定で公開するとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "azure",
+    "devops",
+    "dotnet"
+  ],
+  "aliases": [
+    "Azure"
+  ],
+  "tags": [
+    "cloud",
+    "enterprise"
+  ],
+  "lastVerified": "2026-08-30"
+}

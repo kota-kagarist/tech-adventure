@@ -1,0 +1,28 @@
+{
+  "id": "html",
+  "name": "HTML",
+  "shortDescription": "Webページの意味と文書構造を表す標準マークアップ言語。",
+  "category": "language",
+  "officialUrl": "https://html.spec.whatwg.org/",
+  "whatItDoes": "Webページの意味と文書構造を表す標準マークアップ言語。見出し、段落、リンク、フォームなどの構造をブラウザや支援技術へ伝える。",
+  "role": "見出し、段落、リンク、フォームなどの構造をブラウザや支援技術へ伝える。",
+  "whenToUse": [
+    "Web上へ表示する文書や操作画面を作るとき。"
+  ],
+  "whenNotToUse": [
+    "見た目の装飾や動的な処理そのものを記述したいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform"
+  ],
+  "aliases": [
+    "HyperText Markup Language"
+  ],
+  "tags": [
+    "markup",
+    "semantics"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "selenium",
+  "name": "Selenium",
+  "shortDescription": "WebDriver標準でブラウザーを自動操作する成熟したプロジェクト。",
+  "category": "testing",
+  "officialUrl": "https://www.selenium.dev/",
+  "whatItDoes": "WebDriver標準でブラウザーを自動操作する成熟したプロジェクト。多言語クライアントから実ブラウザーとリモートグリッドを制御する。",
+  "role": "多言語クライアントから実ブラウザーとリモートグリッドを制御する。",
+  "whenToUse": [
+    "複数言語や企業内グリッドを使う既存E2E基盤を運用するとき。"
+  ],
+  "whenNotToUse": [
+    "JavaScript プロジェクトで高速な自動待機と簡潔な設定を優先するとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "web-platform",
+    "java",
+    "python",
+    "dotnet"
+  ],
+  "aliases": [
+    "Selenium WebDriver"
+  ],
+  "tags": [
+    "e2e",
+    "webdriver"
+  ],
+  "lastVerified": "2026-08-30"
+}

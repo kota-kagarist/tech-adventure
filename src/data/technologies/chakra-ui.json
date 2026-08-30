@@ -1,0 +1,30 @@
+{
+  "id": "chakra-ui",
+  "name": "Chakra UI",
+  "shortDescription": "アクセシビリティと組み立てやすさを重視するReact UI集。",
+  "category": "ui-components",
+  "officialUrl": "https://chakra-ui.com/",
+  "whatItDoes": "アクセシビリティと組み立てやすさを重視するReact UI集。スタイル propsとテーマを使って再利用部品を構築する。",
+  "role": "スタイル propsとテーマを使って再利用部品を構築する。",
+  "whenToUse": [
+    "Reactでアクセシビリティを保ちながら独自テーマを作るとき。"
+  ],
+  "whenNotToUse": [
+    "標準CSSだけでフレームワーク非依存の部品を配りたいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "aliases": [
+    "Chakra"
+  ],
+  "tags": [
+    "components",
+    "accessibility"
+  ],
+  "lastVerified": "2026-08-30"
+}

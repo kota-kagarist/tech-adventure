@@ -1,0 +1,30 @@
+{
+  "id": "gcp",
+  "name": "Google Cloud",
+  "shortDescription": "データ、コンテナ、AIに強みを持つGoogleのパブリッククラウド。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://cloud.google.com/",
+  "whatItDoes": "データ、コンテナ、AIに強みを持つGoogleのパブリッククラウド。計算、ストレージ、ネットワーク、マネージドデータサービスを提供する。",
+  "role": "計算、ストレージ、ネットワーク、マネージドデータサービスを提供する。",
+  "whenToUse": [
+    "BigQuery、GKE、FirebaseなどGoogle生態系を使うとき。"
+  ],
+  "whenNotToUse": [
+    "利用サービスがAWS専用機能へ深く依存するとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "gcp",
+    "devops"
+  ],
+  "aliases": [
+    "GCP",
+    "Google Cloud Platform"
+  ],
+  "tags": [
+    "cloud",
+    "infrastructure"
+  ],
+  "lastVerified": "2026-08-30"
+}

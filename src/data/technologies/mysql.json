@@ -1,0 +1,26 @@
+{
+  "id": "mysql",
+  "name": "MySQL",
+  "shortDescription": "Web システムで広く使われるリレーショナル DB。",
+  "category": "database",
+  "officialUrl": "https://www.mysql.com/",
+  "whatItDoes": "Web システムで広く使われるリレーショナル DB。トランザクションとインデックスを備えたSQL データストアを提供する。",
+  "role": "トランザクションとインデックスを備えたSQL データストアを提供する。",
+  "whenToUse": [
+    "成熟した運用情報と広いホスティング対応を重視するとき。"
+  ],
+  "whenNotToUse": [
+    "PostgreSQL固有の高度な型や拡張を必要とするとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "sql",
+    "relational"
+  ],
+  "lastVerified": "2026-08-30"
+}

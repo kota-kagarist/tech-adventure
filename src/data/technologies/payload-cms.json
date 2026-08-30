@@ -1,0 +1,32 @@
+{
+  "id": "payload-cms",
+  "name": "Payload CMS",
+  "shortDescription": "コード優先でTypeScriptへ統合するヘッドレス CMS。",
+  "category": "cms",
+  "officialUrl": "https://payloadcms.com/",
+  "whatItDoes": "コード優先でTypeScriptへ統合するヘッドレス CMS。スキーマ、認証、管理画面、APIをアプリコードと同じリポジトリで定義する。",
+  "role": "スキーマ、認証、管理画面、APIをアプリコードと同じリポジトリで定義する。",
+  "whenToUse": [
+    "Next.js周辺で型付きCMSを深くcustomizeしたいとき。"
+  ],
+  "whenNotToUse": [
+    "完全マネージドでサーバー運用を持ちたくないとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "node",
+    "content"
+  ],
+  "aliases": [
+    "Payload"
+  ],
+  "tags": [
+    "headless-cms",
+    "code-first"
+  ],
+  "lastVerified": "2026-08-30"
+}

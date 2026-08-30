@@ -1,0 +1,29 @@
+{
+  "id": "grpc",
+  "name": "gRPC",
+  "shortDescription": "Protocol Buffersを使う高性能なRPC フレームワーク。",
+  "category": "protocol-api",
+  "officialUrl": "https://grpc.io/",
+  "whatItDoes": "Protocol Buffersを使う高性能なRPC フレームワーク。サービス定義からクライアントとサーバーコードを生成しバイナリ通信する。",
+  "role": "サービス定義からクライアントとサーバーコードを生成しバイナリ通信する。",
+  "whenToUse": [
+    "内部サービス間で型付きの高速通信とストリームを使うとき。"
+  ],
+  "whenNotToUse": [
+    "ブラウザーへ人が読みやすい公開HTTP APIを直接提供するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "data",
+    "go"
+  ],
+  "aliases": [
+    "gRPC-Web"
+  ],
+  "tags": [
+    "rpc",
+    "protobuf"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "cloudflare",
+  "name": "Cloudflare",
+  "shortDescription": "エッジネットワーク上で配信、セキュリティ、コンピューティング、データを提供するプラットフォーム。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://www.cloudflare.com/developer-platform/",
+  "whatItDoes": "エッジネットワーク上で配信、セキュリティ、コンピューティング、データを提供するプラットフォーム。CDN、DNS、Workers、ストレージを世界のエッジへ統合する。",
+  "role": "CDN、DNS、Workers、ストレージを世界のエッジへ統合する。",
+  "whenToUse": [
+    "Web トラフィックを利用者の近くで守り処理したいとき。"
+  ],
+  "whenNotToUse": [
+    "一般的な長時間サーバーやGPU処理を中心にするとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "cloudflare",
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "edge",
+    "cdn"
+  ],
+  "lastVerified": "2026-08-30"
+}

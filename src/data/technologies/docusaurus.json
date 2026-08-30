@@ -1,0 +1,29 @@
+{
+  "id": "docusaurus",
+  "name": "Docusaurus",
+  "shortDescription": "ReactとMarkdownで文書サイトを作る静的サイト生成器。",
+  "category": "web-framework",
+  "officialUrl": "https://docusaurus.io/",
+  "whatItDoes": "ReactとMarkdownで文書サイトを作る静的サイト生成器。版管理、検索連携、文書ナビゲーションを含むサイトを生成する。",
+  "role": "版管理、検索連携、文書ナビゲーションを含むサイトを生成する。",
+  "whenToUse": [
+    "製品文書や開発者向け文書を体系的に公開するとき。"
+  ],
+  "whenNotToUse": [
+    "複雑な業務アプリや任意のCMS画面を作るとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "content"
+  ],
+  "aliases": [],
+  "tags": [
+    "documentation",
+    "ssg"
+  ],
+  "lastVerified": "2026-08-30"
+}

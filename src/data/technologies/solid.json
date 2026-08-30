@@ -1,0 +1,29 @@
+{
+  "id": "solid",
+  "name": "Solid",
+  "shortDescription": "細粒度の反応性で必要なDOMだけを更新するUIライブラリ。",
+  "category": "ui-library",
+  "officialUrl": "https://www.solidjs.com/",
+  "whatItDoes": "細粒度の反応性で必要なDOMだけを更新するUIライブラリ。シグナルを使い、仮想DOMなしで状態変化を画面へ反映する。",
+  "role": "シグナルを使い、仮想DOMなしで状態変化を画面へ反映する。",
+  "whenToUse": [
+    "Reactに近い書き味で細かな更新性能を重視するとき。"
+  ],
+  "whenNotToUse": [
+    "採用人材や部品資産の多さを最優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript"
+  ],
+  "aliases": [
+    "SolidJS"
+  ],
+  "tags": [
+    "signals",
+    "fine-grained"
+  ],
+  "lastVerified": "2026-08-30"
+}

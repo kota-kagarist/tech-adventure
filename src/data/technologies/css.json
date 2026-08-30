@@ -1,0 +1,28 @@
+{
+  "id": "css",
+  "name": "CSS",
+  "shortDescription": "HTMLの見た目と配置を定義するWeb標準のスタイル言語。",
+  "category": "language",
+  "officialUrl": "https://www.w3.org/Style/CSS/",
+  "whatItDoes": "HTMLの見た目と配置を定義するWeb標準のスタイル言語。色、余白、文字、レイアウト、画面幅ごとの表示を制御する。",
+  "role": "色、余白、文字、レイアウト、画面幅ごとの表示を制御する。",
+  "whenToUse": [
+    "Web画面の表示と応答的なレイアウトを設計するとき。"
+  ],
+  "whenNotToUse": [
+    "データ処理や画面の状態変化を実装したいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform"
+  ],
+  "aliases": [
+    "Cascading Style Sheets"
+  ],
+  "tags": [
+    "style",
+    "layout"
+  ],
+  "lastVerified": "2026-08-30"
+}

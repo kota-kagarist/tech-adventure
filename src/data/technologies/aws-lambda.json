@@ -1,0 +1,29 @@
+{
+  "id": "aws-lambda",
+  "name": "AWS Lambda",
+  "shortDescription": "イベントごとにコードを実行するAWSのサーバーレス実行環境。",
+  "category": "runtime",
+  "officialUrl": "https://aws.amazon.com/lambda/",
+  "whatItDoes": "イベントごとにコードを実行するAWSのサーバーレス実行環境。サーバー管理なしでHTTP、キュー、ストレージなどのイベント処理を起動する。",
+  "role": "サーバー管理なしでHTTP、キュー、ストレージなどのイベント処理を起動する。",
+  "whenToUse": [
+    "変動負荷の処理をAWSサービスと細かく連携するとき。"
+  ],
+  "whenNotToUse": [
+    "常時高負荷で専用サーバーの方が単純かつ安価なとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "aws",
+    "devops"
+  ],
+  "aliases": [
+    "Lambda"
+  ],
+  "tags": [
+    "serverless",
+    "functions"
+  ],
+  "lastVerified": "2026-08-30"
+}
