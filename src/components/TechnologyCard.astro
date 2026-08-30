@@ -1,0 +1,8 @@
+---
+import { categoryById } from '../data/categories';
+import type { Technology } from '../data/schema';
+interface Props { technology: Technology; }
+const { technology } = Astro.props;
+const category = categoryById[technology.category];
+---
+<article class="tech-card" data-tech-card data-name={technology.name.toLowerCase()} data-category={technology.category}><div class="eyebrow">{category.name}</div><h3><a href={`/technologies/${technology.id}`}>{technology.name}</a></h3><p>{technology.shortDescription}</p><div class="tag-row" aria-label="タグ">{technology.tags.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}</div></article>

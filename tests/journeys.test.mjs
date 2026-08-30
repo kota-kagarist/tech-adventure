@@ -1,0 +1,4 @@
+import assert from 'node:assert/strict';
+import { readdir, readFile } from 'node:fs/promises';
+import test from 'node:test';
+test('journey source references only known technology ids', async () => { const dir = new URL('../src/data/technologies/', import.meta.url); const names = (await readdir(dir)).filter((name) => name.endsWith('.json')); const technologies = await Promise.all(names.map(async (name) => JSON.parse(await readFile(new URL(name, dir), 'utf8')))); const ids = new Set(technologies.map((technology) => technology.id)); const source = await readFile(new URL('../src/data/journeys.ts', import.meta.url), 'utf8'); const matches = [...source.matchAll(/technologyIds:\s*\[([^\]]+)\]/g)]; assert.equal(matches.length, 4); for (const match of matches) { const referenced = [...match[1].matchAll(/'([^']+)'/g)].map((entry) => entry[1]); assert.ok(referenced.length > 0); for (const id of referenced) assert.ok(ids.has(id), `unknown journey technology: ${id}`); } });

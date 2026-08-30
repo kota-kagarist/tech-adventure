@@ -1,0 +1,12 @@
+{
+  "id": "javascript",
+  "name": "JavaScript",
+  "shortDescription": "Webブラウザを中心に広く動くプログラミング言語。",
+  "category": "language",
+  "officialUrl": "https://developer.mozilla.org/ja/docs/Web/JavaScript",
+  "whatItDoes": "ブラウザ上の操作やサーバー処理など、Webの動きを記述する。",
+  "whenToUse": ["Webページに動きを付けたい", "Node.jsなどでサーバー処理を書きたい"],
+  "whenNotToUse": ["型による大規模な安全性を最初から強く求める場合"],
+  "maturity": "mature",
+  "tags": ["web", "language"]
+}

@@ -1,0 +1,12 @@
+{
+  "id": "cloudflare-workers",
+  "name": "Cloudflare Workers",
+  "shortDescription": "Cloudflareの世界中の実行基盤でコードを動かすサービス。",
+  "category": "runtime",
+  "officialUrl": "https://developers.cloudflare.com/workers/",
+  "whatItDoes": "Web標準のRequest/Responseを使ったコードや静的資産をCloudflareのネットワーク上で実行・配信する。",
+  "whenToUse": ["世界中へ低遅延でAPIやサイトを配信したい", "D1・R2・KVと近い場所で処理したい"],
+  "whenNotToUse": ["OSレベルの自由度が必要な長時間サーバー処理"],
+  "maturity": "mature",
+  "tags": ["edge", "cloud"]
+}

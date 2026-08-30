@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { journeys } from '../../data/journeys';
+import { getTechnologies } from '../../data/load';
+import type { Journey, Technology } from '../../data/schema';
+export function getStaticPaths() { return journeys.map((journey) => ({ params: { id: journey.id }, props: { journey } })); }
+interface Props { journey: Journey; }
+const { journey } = Astro.props;
+const byId = new Map(getTechnologies().map((technology) => [technology.id, technology]));
+const route = journey.technologyIds.map((id) => byId.get(id)).filter((item): item is Technology => Boolean(item));
+---
+<BaseLayout title={journey.title} description={journey.summary}><header class="page-head shell"><div class="breadcrumb"><a href="/">Home</a> / <a href="/journeys">Journeys</a> / {journey.title}</div><div class="kicker">GUIDED ROUTE</div><h1>{journey.title}</h1><p>{journey.summary}</p></header><section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">ROUTE</div><h2>代表的な構成</h2></div><p class="muted">唯一の正解ではなく、理解しやすい出発点です。</p></div><ol class="path">{route.map((technology) => <li><strong><a href={`/technologies/${technology.id}`}>{technology.name}</a></strong><br /><span>{technology.shortDescription}</span></li>)}</ol></div></section><section class="section"><div class="shell detail-grid"><article class="fact-card"><div class="eyebrow">WHY THIS ROUTE?</div><h2>なぜこの構成？</h2><ul class="fact-list">{journey.reasoning.map((reason) => <li>{reason}</li>)}</ul></article><article class="fact-card"><div class="eyebrow">ALTERNATIVES</div><h2>別ルートもある</h2><ul class="fact-list">{journey.alternatives.map((alternative) => <li>{alternative}</li>)}</ul></article></div></section></BaseLayout>

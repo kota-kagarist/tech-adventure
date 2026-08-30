@@ -1,0 +1,12 @@
+{
+  "id": "express",
+  "name": "Express",
+  "shortDescription": "Node.jsで広く使われてきたWebサーバーフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://expressjs.com/",
+  "whatItDoes": "Node.jsでルーティングやミドルウェアを使ったHTTPサーバーを構築する。",
+  "whenToUse": ["既存のExpress資産がある", "Node.js生態系との互換性を重視する"],
+  "whenNotToUse": ["Web標準中心のエッジ環境を第一にしたい"],
+  "maturity": "mature",
+  "tags": ["api", "nodejs"]
+}

@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { journeys } from '../../data/journeys';
+---
+<BaseLayout title="旅程から探す" description="作りたいものから代表的な技術構成と、その選択理由をたどれます。"><header class="page-head shell"><div class="breadcrumb"><a href="/">Home</a> / Journeys</div><div class="kicker">GUIDED JOURNEYS</div><h1>作りたいものから、技術をたどる。</h1><p>唯一の正解を出すのではなく、まず理解しやすい代表ルートを示します。代替案も一緒に見てください。</p></header><section class="section"><div class="shell journey-grid">{journeys.map((journey) => <article class="journey-card"><div class="eyebrow">GUIDED ROUTE</div><h2><a href={`/journeys/${journey.id}`}>{journey.title}</a></h2><p>{journey.summary}</p></article>)}</div></section></BaseLayout>

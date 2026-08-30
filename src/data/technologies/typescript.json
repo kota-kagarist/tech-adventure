@@ -1,0 +1,12 @@
+{
+  "id": "typescript",
+  "name": "TypeScript",
+  "shortDescription": "JavaScriptに型を加えた言語。",
+  "category": "language",
+  "officialUrl": "https://www.typescriptlang.org/",
+  "whatItDoes": "JavaScriptとして動くコードに型情報を加え、開発時の間違いを見つけやすくする。",
+  "whenToUse": ["複数ファイルにまたがるWeb開発", "AIと共同で変更するコードの契約を明確にしたい"],
+  "whenNotToUse": ["数行だけの使い捨てスクリプト"],
+  "maturity": "mature",
+  "tags": ["web", "types"]
+}

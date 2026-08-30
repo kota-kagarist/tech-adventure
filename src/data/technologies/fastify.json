@@ -1,0 +1,12 @@
+{
+  "id": "fastify",
+  "name": "Fastify",
+  "shortDescription": "性能と開発者体験を重視したNode.js向けWebフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://fastify.dev/",
+  "whatItDoes": "スキーマやプラグインを使いながらNode.jsのAPIサーバーを構築する。",
+  "whenToUse": ["Node.jsでAPI性能を重視する", "スキーマ駆動の検証を取り入れたい"],
+  "whenNotToUse": ["複数のエッジ実行環境を同じコードで狙いたい"],
+  "maturity": "established",
+  "tags": ["api", "nodejs"]
+}

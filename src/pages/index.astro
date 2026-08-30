@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TechnologyCard from '../components/TechnologyCard.astro';
+import { categories, getTechnologies } from '../data/load';
+import { journeys } from '../data/journeys';
+import type { Technology } from '../data/schema';
+const technologies = getTechnologies();
+const featured = ['astro','hono','react','cloudflare-workers'].map((id) => technologies.find((technology) => technology.id === id)).filter((technology): technology is Technology => Boolean(technology));
+const categoryCounts = new Map(categories.map((category) => [category.id, technologies.filter((technology) => technology.category === category.id).length]));
+---
+<BaseLayout>
+<section class="hero"><div class="shell hero-grid"><div><div class="kicker">OPEN TECHNOLOGY FIELD GUIDE</div><h1>技術の世界を、迷わず冒険する。</h1></div><div><p class="hero-lead">Astro、Hono、React、Workers。名前を覚える前に「何を担当する道具か」を地図で理解しよう。</p><div class="hero-actions"><a class="button primary" href="/technologies">技術から探す</a><a class="button secondary" href="/journeys">作りたいものから探す</a></div></div></div></section>
+<section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">CURRENT POSITION</div><h2>まず、技術の「役割」を見る。</h2></div><p class="muted">同じ箱に入っているものが、比較候補になりやすい。</p></div><div class="category-grid">{categories.filter((category) => (categoryCounts.get(category.id) ?? 0) > 0).map((category) => <a class="category-card" href={`/technologies?category=${category.id}`}><div class="eyebrow">{categoryCounts.get(category.id)} TECHNOLOGIES</div><h3>{category.name}</h3><p>{category.description}</p></a>)}</div></div></section>
+<section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">START HERE</div><h2>よく遭遇する技術。</h2></div><a href="/technologies">すべて見る →</a></div><div class="tech-grid">{featured.map((technology) => <TechnologyCard technology={technology} />)}</div></div></section>
+<section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">COMPARE</div><h2>「どっち？」の前に、同じ土俵かを見る。</h2></div></div><div class="compare-grid"><article class="compare-card"><div class="eyebrow">直接比較</div><h3><a href="/compare/astro/nextjs">Astro vs Next.js</a></h3><p>どちらもWebサイト全体を担当。設計思想の違いを見る。</p></article><article class="compare-card"><div class="eyebrow">層が違う</div><h3><a href="/compare/astro/hono">Astro vs Hono</a></h3><p>サイト全体とAPI処理。競合ではないことから理解する。</p></article><article class="compare-card"><div class="eyebrow">土台の関係</div><h3><a href="/compare/react/nextjs">React vs Next.js</a></h3><p>UI部品と、そのReactを使うWebフレームワーク。</p></article></div></div></section>
+<section class="section"><div class="shell"><div class="section-head"><div><div class="kicker">JOURNEYS</div><h2>作りたいものから逆算する。</h2></div></div><div class="journey-grid">{journeys.map((journey) => <article class="journey-card"><div class="eyebrow">GUIDED ROUTE</div><h3><a href={`/journeys/${journey.id}`}>{journey.title}</a></h3><p>{journey.summary}</p></article>)}</div></div></section>
+</BaseLayout>

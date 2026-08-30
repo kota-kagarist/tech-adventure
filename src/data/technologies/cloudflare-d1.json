@@ -1,0 +1,12 @@
+{
+  "id": "cloudflare-d1",
+  "name": "Cloudflare D1",
+  "shortDescription": "Cloudflare Workers向けのサーバーレスSQLデータベース。",
+  "category": "database",
+  "officialUrl": "https://developers.cloudflare.com/d1/",
+  "whatItDoes": "SQLiteの仕組みを基盤に、WorkersからSQLデータを扱えるマネージドDBを提供する。",
+  "whenToUse": ["Workers中心の小〜中規模Webサービス", "SQLを使いたいがDBサーバー運用を避けたい"],
+  "whenNotToUse": ["PostgreSQL固有機能が必要", "非常に高い書き込み性能を最優先する"],
+  "maturity": "established",
+  "tags": ["sql", "cloudflare"]
+}
