@@ -1,5 +1,6 @@
 ---
 import { categoryById } from '../data/categories';
+import { comparisonPath } from '../lib/comparison-pairs.mjs';
 import { withBase } from '../lib/paths';
 import { groupRelationsForTechnology } from '../lib/relations.mjs';
 import type { Technology, TechnologyRelation } from '../data/schema';
@@ -36,11 +37,13 @@ function counterpart(relation: TechnologyRelation) { return byId.get(relation.so
           {matches.map((relation) => {
             const other = counterpart(relation);
             if (!other) return null;
+            const isComparison = relation.type === 'competes-with' || relation.type === 'alternative-to';
+            const destination = isComparison ? comparisonPath(technology.id, other.id) : `/technologies/${other.id}`;
             return (
-              <a class="relation-row" href={withBase(`/technologies/${other.id}`)}>
+              <a class="relation-row" href={withBase(destination)}>
                 <span class="meta-label">{categoryById[other.category].name}</span>
                 <span><strong class="relation-name">{other.name}</strong><span class="relation-note"> — {relation.note}</span></span>
-                <span class="relation-arrow">→</span>
+                <span class="relation-arrow">{isComparison ? '比較 →' : '→'}</span>
               </a>
             );
           })}

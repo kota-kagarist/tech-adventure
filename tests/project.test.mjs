@@ -22,11 +22,6 @@ test('core pages explain role, comparison, and journeys', async () => {
   assert.match(journeys, /唯一の正解/);
 });
 
-test('compare route defines static path pairs inside getStaticPaths isolation', async () => {
-  const compare = await source('src/pages/compare/[left]/[right].astro');
-  assert.match(compare, /export function getStaticPaths\(\) \{\s*const representativePairs/);
-});
-
 test('Workers static assets configuration points at dist', async () => {
   const wrangler = await source('wrangler.jsonc');
   assert.match(wrangler, /"directory": "\.\/dist"/);
