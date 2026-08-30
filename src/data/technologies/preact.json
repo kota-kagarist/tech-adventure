@@ -1,0 +1,28 @@
+{
+  "id": "preact",
+  "name": "Preact",
+  "shortDescription": "Reactに近いAPIを小さな容量で提供するUIライブラリ。",
+  "category": "ui-library",
+  "officialUrl": "https://preactjs.com/",
+  "whatItDoes": "Reactに近いAPIを小さな容量で提供するUIライブラリ。軽量な互換層でコンポーネント型の画面を動かす。",
+  "role": "軽量な互換層でコンポーネント型の画面を動かす。",
+  "whenToUse": [
+    "配信量を抑えつつReact風の部品設計を使いたいとき。"
+  ],
+  "whenNotToUse": [
+    "React固有の最新機能との完全な互換性が必須のとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "aliases": [],
+  "tags": [
+    "lightweight",
+    "component"
+  ],
+  "lastVerified": "2026-08-30"
+}

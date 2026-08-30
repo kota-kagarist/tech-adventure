@@ -1,0 +1,32 @@
+{
+  "id": "remix",
+  "name": "Remix",
+  "shortDescription": "Web標準へ寄せたフルスタックWebフレームワークの系統。",
+  "category": "web-framework",
+  "officialUrl": "https://remix.run/",
+  "whatItDoes": "Web標準へ寄せたフルスタックWebフレームワークの系統。v2系はReact Routerへ統合され、v3 ベータは別の簡潔な道具群として再設計されている。",
+  "role": "v2系はReact Routerへ統合され、v3 ベータは別の簡潔な道具群として再設計されている。",
+  "whenToUse": [
+    "Remix v2資産を理解するか、v3の新しい設計を検証するとき。"
+  ],
+  "whenNotToUse": [
+    "Remix v3の安定版を前提に本番構成を固定したいとき。"
+  ],
+  "maturity": "emerging",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "node"
+  ],
+  "aliases": [
+    "Remix v2",
+    "Remix 3"
+  ],
+  "tags": [
+    "fullstack",
+    "web-standards"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,26 @@
+{
+  "id": "railway",
+  "name": "Railway",
+  "shortDescription": "アプリとデータベースを簡潔に配置する開発者向けプラットフォーム。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://railway.com/",
+  "whatItDoes": "アプリとデータベースを簡潔に配置する開発者向けプラットフォーム。リポジトリやコンテナからサービスを作り環境変数とネットワークを管理する。",
+  "role": "リポジトリやコンテナからサービスを作り環境変数とネットワークを管理する。",
+  "whenToUse": [
+    "試作から小中規模アプリまで運用負担を抑えたいとき。"
+  ],
+  "whenNotToUse": [
+    "厳格な企業統制と複雑なネットワーク分離が必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "paas",
+    "developer-experience"
+  ],
+  "lastVerified": "2026-08-30"
+}

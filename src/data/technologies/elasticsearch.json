@@ -1,0 +1,28 @@
+{
+  "id": "elasticsearch",
+  "name": "Elasticsearch",
+  "shortDescription": "全文検索と分散分析を行う検索エンジン。",
+  "category": "database",
+  "officialUrl": "https://www.elastic.co/elasticsearch",
+  "whatItDoes": "全文検索と分散分析を行う検索エンジン。転置インデックスで文書検索、集計、ログ探索を高速化する。",
+  "role": "転置インデックスで文書検索、集計、ログ探索を高速化する。",
+  "whenToUse": [
+    "商品検索やログ検索を主DBと分けて強化するとき。"
+  ],
+  "whenNotToUse": [
+    "厳密なトランザクションを持つ唯一の業務DBとして使うとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [
+    "Elastic Search"
+  ],
+  "tags": [
+    "search",
+    "analytics"
+  ],
+  "lastVerified": "2026-08-30"
+}

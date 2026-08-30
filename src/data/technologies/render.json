@@ -1,0 +1,26 @@
+{
+  "id": "render",
+  "name": "Render",
+  "shortDescription": "Web サービス、DB、ジョブ、静的サイトをまとめて公開するプラットフォーム。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://render.com/",
+  "whatItDoes": "Web サービス、DB、ジョブ、静的サイトをまとめて公開するプラットフォーム。Gitからビルドし、常駐サービスとマネージドデータを簡潔に運用する。",
+  "role": "Gitからビルドし、常駐サービスとマネージドデータを簡潔に運用する。",
+  "whenToUse": [
+    "小規模チームで一般的なサーバーアプリを素早く公開するとき。"
+  ],
+  "whenNotToUse": [
+    "巨大クラウドの細かなサービスを自由に組み合わせたいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "paas",
+    "hosting"
+  ],
+  "lastVerified": "2026-08-30"
+}

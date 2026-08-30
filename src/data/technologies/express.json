@@ -1,12 +1,30 @@
 {
   "id": "express",
   "name": "Express",
-  "shortDescription": "Node.jsで広く使われてきたWebサーバーフレームワーク。",
+  "shortDescription": "Node.js向けの最小限で成熟したWebサーバーフレームワーク。",
   "category": "server-framework",
   "officialUrl": "https://expressjs.com/",
-  "whatItDoes": "Node.jsでルーティングやミドルウェアを使ったHTTPサーバーを構築する。",
-  "whenToUse": ["既存のExpress資産がある", "Node.js生態系との互換性を重視する"],
-  "whenNotToUse": ["Web標準中心のエッジ環境を第一にしたい"],
+  "whatItDoes": "Node.js向けの最小限で成熟したWebサーバーフレームワーク。ミドルウェアとルートを組み合わせてHTTP処理を構築する。",
+  "role": "ミドルウェアとルートを組み合わせてHTTP処理を構築する。",
+  "whenToUse": [
+    "豊富なNode.js資産と単純な制御を重視するとき。"
+  ],
+  "whenNotToUse": [
+    "型付きの大規模構成や標準機能一式を最初から求めるとき。"
+  ],
   "maturity": "mature",
-  "tags": ["api", "nodejs"]
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [
+    "Express.js"
+  ],
+  "tags": [
+    "middleware",
+    "http"
+  ],
+  "lastVerified": "2026-08-30"
 }

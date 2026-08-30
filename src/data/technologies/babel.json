@@ -1,0 +1,27 @@
+{
+  "id": "babel",
+  "name": "Babel",
+  "shortDescription": "新しいJavaScript構文を対象環境向けへ変換するコンパイラー。",
+  "category": "build-transform",
+  "officialUrl": "https://babeljs.io/",
+  "whatItDoes": "新しいJavaScript構文を対象環境向けへ変換するコンパイラー。プリセットとプラグインで構文変換やコード計装を行う。",
+  "role": "プリセットとプラグインで構文変換やコード計装を行う。",
+  "whenToUse": [
+    "既存ブラウザー対応や独自変換プラグインが必要なとき。"
+  ],
+  "whenNotToUse": [
+    "対象環境が新しく追加変換を必要としないとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "compiler",
+    "transpiler"
+  ],
+  "lastVerified": "2026-08-30"
+}

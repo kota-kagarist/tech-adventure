@@ -1,12 +1,28 @@
 {
   "id": "vite",
   "name": "Vite",
-  "shortDescription": "高速な開発サーバーとフロントエンド向けビルドツール。",
-  "category": "build-tool",
+  "shortDescription": "高速な開発サーバーと本番ビルドを提供するフロントエンドツール。",
+  "category": "build-transform",
   "officialUrl": "https://vite.dev/",
-  "whatItDoes": "開発中のモジュール配信と本番向けの資産ビルドを行う。",
-  "whenToUse": ["現代的なフロントエンド開発", "Viteを基盤にするフレームワークを使う"],
-  "whenNotToUse": ["ビルド工程のない単純なHTMLだけで十分"],
-  "maturity": "mature",
-  "tags": ["build", "dev-server"]
+  "whatItDoes": "高速な開発サーバーと本番ビルドを提供するフロントエンドツール。ネイティブ ESMで開発し、Rolldownを中心に配布用アセットを生成する。",
+  "role": "ネイティブ ESMで開発し、Rolldownを中心に配布用アセットを生成する。",
+  "whenToUse": [
+    "現代的なフロントエンドプロジェクトを速く起動しビルドしたいとき。"
+  ],
+  "whenNotToUse": [
+    "既存webpack固有プラグインへ深く依存しているとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "dev-server",
+    "bundler"
+  ],
+  "lastVerified": "2026-08-30"
 }

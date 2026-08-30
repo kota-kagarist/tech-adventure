@@ -1,0 +1,30 @@
+{
+  "id": "styled-components",
+  "name": "styled-components",
+  "shortDescription": "React部品とCSSをJavaScript内で結び付けるCSS-in-JS ライブラリ。",
+  "category": "styling",
+  "officialUrl": "https://styled-components.com/",
+  "whatItDoes": "React部品とCSSをJavaScript内で結び付けるCSS-in-JS ライブラリ。propsに応じたスタイルと固有クラスをランタイムで生成する。",
+  "role": "propsに応じたスタイルと固有クラスをランタイムで生成する。",
+  "whenToUse": [
+    "既存styled-components資産や動的テーマを保守するとき。"
+  ],
+  "whenNotToUse": [
+    "サーバー component中心でランタイム CSSを減らしたい新規構成。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "aliases": [
+    "styled components"
+  ],
+  "tags": [
+    "css-in-js",
+    "runtime"
+  ],
+  "lastVerified": "2026-08-30"
+}

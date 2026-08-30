@@ -1,0 +1,31 @@
+{
+  "id": "sql-server",
+  "name": "SQL Server",
+  "shortDescription": "Microsoftの企業向けリレーショナルデータベース。",
+  "category": "database",
+  "officialUrl": "https://www.microsoft.com/sql-server",
+  "whatItDoes": "Microsoftの企業向けリレーショナルデータベース。SQL、分析、認証、運用ツールをMicrosoft生態系で統合する。",
+  "role": "SQL、分析、認証、運用ツールをMicrosoft生態系で統合する。",
+  "whenToUse": [
+    "NETやAzureと連携する企業システムを運用するとき。"
+  ],
+  "whenNotToUse": [
+    "軽量な組み込み用途やlicense費用を避けたいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "data",
+    "azure",
+    "dotnet"
+  ],
+  "aliases": [
+    "Microsoft SQL Server",
+    "MSSQL"
+  ],
+  "tags": [
+    "sql",
+    "enterprise"
+  ],
+  "lastVerified": "2026-08-30"
+}

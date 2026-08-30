@@ -1,0 +1,28 @@
+{
+  "id": "parcel",
+  "name": "Parcel",
+  "shortDescription": "設定を抑えてアセットグラフをビルドするWeb アプリバンドラー。",
+  "category": "build-transform",
+  "officialUrl": "https://parceljs.org/",
+  "whatItDoes": "設定を抑えてアセットグラフをビルドするWeb アプリバンドラー。HTMLを入口に変換、バンドル、開発サーバーを自動構成する。",
+  "role": "HTMLを入口に変換、バンドル、開発サーバーを自動構成する。",
+  "whenToUse": [
+    "設定作業を減らして複数種類のアセットを扱いたいとき。"
+  ],
+  "whenNotToUse": [
+    "ビルドの全段階を細かく明示設定したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "bundler",
+    "zero-config"
+  ],
+  "lastVerified": "2026-08-30"
+}

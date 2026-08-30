@@ -1,0 +1,28 @@
+{
+  "id": "pnpm",
+  "name": "pnpm",
+  "shortDescription": "ディスク共有と厳密な依存解決を行うJavaScript パッケージ管理機能。",
+  "category": "package-monorepo",
+  "officialUrl": "https://pnpm.io/",
+  "whatItDoes": "ディスク共有と厳密な依存解決を行うJavaScript パッケージ管理機能。コンテンツ-アドレス指定ストアで重複を減らしワークスペースを管理する。",
+  "role": "コンテンツ-アドレス指定ストアで重複を減らしワークスペースを管理する。",
+  "whenToUse": [
+    "モノレポや多数プロジェクトで高速性と厳密性を重視するとき。"
+  ],
+  "whenNotToUse": [
+    "npmと完全に同じnode_modules配置を前提とする古いツール。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "package-manager",
+    "workspace"
+  ],
+  "lastVerified": "2026-08-30"
+}

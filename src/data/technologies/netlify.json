@@ -1,0 +1,28 @@
+{
+  "id": "netlify",
+  "name": "Netlify",
+  "shortDescription": "Web サイトのビルド、プレビュー、関数、配信を統合するプラットフォーム。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://www.netlify.com/",
+  "whatItDoes": "Web サイトのビルド、プレビュー、関数、配信を統合するプラットフォーム。Git連携とCDNで静的サイトやフレームワークアプリを公開する。",
+  "role": "Git連携とCDNで静的サイトやフレームワークアプリを公開する。",
+  "whenToUse": [
+    "コンテンツサイトとプレビューワークフローを少ない運用で回すとき。"
+  ],
+  "whenNotToUse": [
+    "複雑な専用ネットワークや常駐サーバーを必要とするとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "content",
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "hosting",
+    "jamstack"
+  ],
+  "lastVerified": "2026-08-30"
+}

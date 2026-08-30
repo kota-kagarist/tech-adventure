@@ -1,0 +1,28 @@
+{
+  "id": "caddy",
+  "name": "Caddy",
+  "shortDescription": "HTTPSを自動化する設定の簡潔なWeb サーバー。",
+  "category": "infrastructure",
+  "officialUrl": "https://caddyserver.com/",
+  "whatItDoes": "HTTPSを自動化する設定の簡潔なWeb サーバー。証明書取得と更新、静的配信、リバースプロキシを自動化する。",
+  "role": "証明書取得と更新、静的配信、リバースプロキシを自動化する。",
+  "whenToUse": [
+    "小中規模サービスのTLS付き入口を簡単に運用するとき。"
+  ],
+  "whenNotToUse": [
+    "Apache固有モジュールや極端に細かな既存設定が必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "devops",
+    "go",
+    "web-platform"
+  ],
+  "aliases": [],
+  "tags": [
+    "web-server",
+    "automatic-https"
+  ],
+  "lastVerified": "2026-08-30"
+}

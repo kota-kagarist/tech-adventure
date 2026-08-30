@@ -1,0 +1,26 @@
+{
+  "id": "prometheus",
+  "name": "Prometheus",
+  "shortDescription": "時系列メトリクスを収集・クエリするオープンソース監視システム。",
+  "category": "observability",
+  "officialUrl": "https://prometheus.io/",
+  "whatItDoes": "時系列メトリクスを収集・クエリするオープンソース監視システム。対象をプルし、ラベル付きメトリクスとアラートルールを保存する。",
+  "role": "対象をプルし、ラベル付きメトリクスとアラートルールを保存する。",
+  "whenToUse": [
+    "Kubernetesやサービスの数値指標を自分で管理するとき。"
+  ],
+  "whenNotToUse": [
+    "全文ログや長期大容量データを単独で保存するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "metrics",
+    "time-series"
+  ],
+  "lastVerified": "2026-08-30"
+}

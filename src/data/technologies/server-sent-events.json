@@ -1,0 +1,29 @@
+{
+  "id": "server-sent-events",
+  "name": "Server-Sent Events",
+  "shortDescription": "サーバーからブラウザーへイベントを連続送信するWeb標準。",
+  "category": "protocol-api",
+  "officialUrl": "https://html.spec.whatwg.org/multipage/server-sent-events.html",
+  "whatItDoes": "サーバーからブラウザーへイベントを連続送信するWeb標準。HTTP接続上のテキストストリームをEventSourceで受信する。",
+  "role": "HTTP接続上のテキストストリームをEventSourceで受信する。",
+  "whenToUse": [
+    "進捗や通知など一方向の更新を単純に配信するとき。"
+  ],
+  "whenNotToUse": [
+    "クライアントからも同じ接続で頻繁にメッセージを送りたいとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform"
+  ],
+  "aliases": [
+    "SSE",
+    "EventSource"
+  ],
+  "tags": [
+    "realtime",
+    "streaming"
+  ],
+  "lastVerified": "2026-08-30"
+}

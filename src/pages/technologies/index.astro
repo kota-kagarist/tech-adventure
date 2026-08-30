@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TechnologyCard from '../../components/TechnologyCard.astro';
-import { categories, getTechnologies } from '../../data/load';
+import { categories, ecosystems, getTechnologies } from '../../data/load';
 import { withBase } from '../../lib/paths';
 const technologies = getTechnologies();
 ---
@@ -19,6 +19,21 @@ const technologies = getTechnologies();
         <select data-tech-category aria-label="カテゴリで絞り込む">
           <option value="">すべてのカテゴリ</option>
           {categories.map((category) => <option value={category.id}>{category.name}</option>)}
+        </select>
+        <select data-tech-ecosystem aria-label="エコシステムで絞り込む">
+          <option value="">すべてのecosystem</option>
+          {ecosystems.map((ecosystem) => <option value={ecosystem.id}>{ecosystem.name}</option>)}
+        </select>
+        <select data-tech-maturity aria-label="成熟度で絞り込む">
+          <option value="">すべての成熟度</option>
+          <option value="mature">Mature</option>
+          <option value="established">Established</option>
+          <option value="emerging">Emerging</option>
+        </select>
+        <select data-tech-importance aria-label="主要度で絞り込む">
+          <option value="">すべての主要度</option>
+          <option value="core">Core</option>
+          <option value="major">Major</option>
         </select>
         <p class="explorer-count" data-tech-count>{technologies.length} technologies</p>
       </div>
@@ -38,31 +53,66 @@ const technologies = getTechnologies();
     </div>
   </section>
   <script>
+    import { filterTechnologies } from '../../lib/explorer.mjs';
+
     const searchInput = document.querySelector('[data-tech-search]');
     const categorySelect = document.querySelector('[data-tech-category]');
+    const ecosystemSelect = document.querySelector('[data-tech-ecosystem]');
+    const maturitySelect = document.querySelector('[data-tech-maturity]');
+    const importanceSelect = document.querySelector('[data-tech-importance]');
     const cards = [...document.querySelectorAll('[data-tech-card]')];
     const sections = [...document.querySelectorAll('[data-tech-section]')];
     const count = document.querySelector('[data-tech-count]');
-    const initialCategory = new URLSearchParams(window.location.search).get('category') ?? '';
-    if (categorySelect instanceof HTMLSelectElement && [...categorySelect.options].some((option) => option.value === initialCategory)) categorySelect.value = initialCategory;
+    const records = cards.filter((card) => card instanceof HTMLElement).map((card) => ({
+      id: card.dataset.id ?? '',
+      name: card.dataset.name ?? '',
+      shortDescription: card.dataset.description ?? '',
+      role: card.dataset.role ?? '',
+      category: card.dataset.category ?? '',
+      ecosystem: card.dataset.ecosystems?.split('|').filter(Boolean) ?? [],
+      maturity: card.dataset.maturity ?? '',
+      importance: card.dataset.importance ?? '',
+      aliases: card.dataset.aliases?.split('|').filter(Boolean) ?? [],
+      tags: card.dataset.tags?.split('|').filter(Boolean) ?? []
+    }));
+    const params = new URLSearchParams(window.location.search);
+    const controls = {
+      query: searchInput,
+      category: categorySelect,
+      ecosystem: ecosystemSelect,
+      maturity: maturitySelect,
+      importance: importanceSelect
+    };
+    for (const [key, control] of Object.entries(controls)) {
+      const value = params.get(key) ?? '';
+      if (control instanceof HTMLInputElement) control.value = value;
+      if (control instanceof HTMLSelectElement && [...control.options].some((option) => option.value === value)) control.value = value;
+    }
     function applyFilters() {
-      const query = searchInput instanceof HTMLInputElement ? searchInput.value.trim().toLowerCase() : '';
-      const category = categorySelect instanceof HTMLSelectElement ? categorySelect.value : '';
-      let visible = 0;
+      const filters = {
+        query: searchInput instanceof HTMLInputElement ? searchInput.value : '',
+        category: categorySelect instanceof HTMLSelectElement ? categorySelect.value : '',
+        ecosystem: ecosystemSelect instanceof HTMLSelectElement ? ecosystemSelect.value : '',
+        maturity: maturitySelect instanceof HTMLSelectElement ? maturitySelect.value : '',
+        importance: importanceSelect instanceof HTMLSelectElement ? importanceSelect.value : ''
+      };
+      const visibleIds = new Set(filterTechnologies(records, filters).map((technology: { id: string }) => technology.id));
       for (const card of cards) {
         if (!(card instanceof HTMLElement)) continue;
-        const matchesQuery = !query || Boolean(card.textContent?.toLowerCase().includes(query)) || Boolean(card.dataset.name?.includes(query));
-        const matchesCategory = !category || card.dataset.category === category;
-        card.hidden = !(matchesQuery && matchesCategory);
-        if (!card.hidden) visible += 1;
+        card.hidden = !visibleIds.has(card.dataset.id ?? '');
       }
       for (const section of sections) {
         if (section instanceof HTMLElement) section.hidden = !section.querySelector('[data-tech-card]:not([hidden])');
       }
-      if (count) count.textContent = `${visible} technologies`;
+      if (count) count.textContent = `${visibleIds.size} technologies`;
+      const nextParams = new URLSearchParams();
+      for (const [key, value] of Object.entries(filters)) if (value) nextParams.set(key, value);
+      const nextQuery = nextParams.toString();
+      window.history.replaceState({}, '', `${window.location.pathname}${nextQuery ? `?${nextQuery}` : ''}`);
     }
-    searchInput?.addEventListener('input', applyFilters);
-    categorySelect?.addEventListener('change', applyFilters);
+    for (const control of Object.values(controls)) {
+      control?.addEventListener(control instanceof HTMLInputElement ? 'input' : 'change', applyFilters);
+    }
     applyFilters();
   </script>
 </BaseLayout>

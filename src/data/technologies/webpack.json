@@ -1,0 +1,29 @@
+{
+  "id": "webpack",
+  "name": "webpack",
+  "shortDescription": "JavaScriptとアセットを依存グラフからバンドルする成熟したツール。",
+  "category": "build-transform",
+  "officialUrl": "https://webpack.js.org/",
+  "whatItDoes": "JavaScriptとアセットを依存グラフからバンドルする成熟したツール。ローダーとプラグインで多様なリソースを配布単位へ変換する。",
+  "role": "ローダーとプラグインで多様なリソースを配布単位へ変換する。",
+  "whenToUse": [
+    "大規模な既存設定や豊富なプラグイン資産を保守するとき。"
+  ],
+  "whenNotToUse": [
+    "新規プロジェクトで設定の単純さと高速起動を優先するとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "node"
+  ],
+  "aliases": [
+    "Webpack"
+  ],
+  "tags": [
+    "bundler",
+    "plugin"
+  ],
+  "lastVerified": "2026-08-30"
+}

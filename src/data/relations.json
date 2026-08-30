@@ -1,26 +1,2810 @@
 [
-  {"source":"astro","target":"nextjs","type":"competes-with","note":"どちらもWebサイト全体を構築する選択肢だが、Astroはコンテンツ中心、Next.jsはReact中心のアプリに強い。"},
-  {"source":"astro","target":"react","type":"works-with","note":"Astroの一部をReactコンポーネントとして対話的にできる。"},
-  {"source":"astro","target":"vue","type":"works-with","note":"Astroの一部へVueコンポーネントを組み込める。"},
-  {"source":"astro","target":"svelte","type":"works-with","note":"Astroの一部へSvelteコンポーネントを組み込める。"},
-  {"source":"astro","target":"vite","type":"built-on","note":"Astroは開発・ビルド基盤にViteを利用する。"},
-  {"source":"nextjs","target":"react","type":"built-on","note":"Next.jsはReactを基盤にWebアプリ全体の仕組みを提供する。"},
-  {"source":"nuxt","target":"vue","type":"built-on","note":"NuxtはVueを基盤にWebアプリ全体の仕組みを提供する。"},
-  {"source":"sveltekit","target":"svelte","type":"built-on","note":"SvelteKitはSvelteを基盤にWebアプリ全体の仕組みを提供する。"},
-  {"source":"hono","target":"cloudflare-workers","type":"runs-on","note":"HonoはCloudflare Workersで動作し、Web標準APIを活かしやすい。"},
-  {"source":"hono","target":"nodejs","type":"runs-on","note":"HonoはNode.jsでも動作する。"},
-  {"source":"hono","target":"bun","type":"runs-on","note":"HonoはBunでも動作する。"},
-  {"source":"hono","target":"deno","type":"runs-on","note":"HonoはDenoでも動作する。"},
-  {"source":"express","target":"nodejs","type":"runs-on","note":"ExpressはNode.js上で動く代表的なサーバーフレームワーク。"},
-  {"source":"fastify","target":"nodejs","type":"runs-on","note":"FastifyはNode.js向けのサーバーフレームワーク。"},
-  {"source":"hono","target":"express","type":"competes-with","note":"どちらもHTTP/APIサーバーを構築する選択肢だが、狙う実行環境と設計思想が異なる。"},
-  {"source":"express","target":"fastify","type":"competes-with","note":"どちらもNode.jsでAPIサーバーを構築する主要な選択肢。"},
-  {"source":"nodejs","target":"bun","type":"alternative-to","note":"どちらもサーバー側でJavaScriptを実行できるが、互換性と統合ツールの考え方が異なる。"},
-  {"source":"nodejs","target":"deno","type":"alternative-to","note":"どちらもブラウザ外のJavaScript実行環境だが、API設計とセキュリティ思想が異なる。"},
-  {"source":"cloudflare-d1","target":"sqlite","type":"built-on","note":"D1はSQLiteの技術を基盤にしたCloudflareのサーバーレスSQLデータベース。"},
-  {"source":"cloudflare-workers","target":"cloudflare-d1","type":"works-with","note":"WorkersからD1 bindingを通じてSQLデータへアクセスできる。"},
-  {"source":"cloudflare-workers","target":"cloudflare-r2","type":"works-with","note":"WorkersからR2 bindingを通じてオブジェクトを読み書きできる。"},
-  {"source":"cloudflare-workers","target":"cloudflare-kv","type":"works-with","note":"WorkersからKV bindingを通じてキー・値データを読み書きできる。"},
-  {"source":"vite","target":"typescript","type":"works-with","note":"ViteはTypeScriptソースを扱える。"},
-  {"source":"vite","target":"javascript","type":"works-with","note":"ViteはJavaScriptプロジェクトの開発・ビルドを支える。"}
+  {
+    "source": "alpinejs",
+    "target": "lit",
+    "type": "alternative-to",
+    "note": "Alpine.jsとLitは小さな対話機能を加える方法で比較される。属性ベースの状態とイベント処理を既存マークアップへ加える。一方、Litは標準のカスタム要素とシャドウ DOMを扱いやすくする。"
+  },
+  {
+    "source": "alpinejs",
+    "target": "preact",
+    "type": "alternative-to",
+    "note": "Alpine.jsとPreactは小さな対話機能を加える方法で比較される。属性ベースの状態とイベント処理を既存マークアップへ加える。一方、Preactは軽量な互換層でコンポーネント型の画面を動かす。"
+  },
+  {
+    "source": "angular",
+    "target": "preact",
+    "type": "competes-with",
+    "note": "AngularとPreactは大規模さ、描画方式、学習コストで比較される。部品、依存注入、ルーティング、フォームなどの標準構成を提供する。一方、Preactは軽量な互換層でコンポーネント型の画面を動かす。"
+  },
+  {
+    "source": "angular",
+    "target": "qwik",
+    "type": "competes-with",
+    "note": "AngularとQwikは大規模さ、描画方式、学習コストで比較される。部品、依存注入、ルーティング、フォームなどの標準構成を提供する。一方、Qwikは細かく分割した処理を必要時に読み込み、再実行ではなく再開する。"
+  },
+  {
+    "source": "angular",
+    "target": "solid",
+    "type": "competes-with",
+    "note": "AngularとSolidは大規模さ、描画方式、学習コストで比較される。部品、依存注入、ルーティング、フォームなどの標準構成を提供する。一方、Solidはシグナルを使い、仮想DOMなしで状態変化を画面へ反映する。"
+  },
+  {
+    "source": "angular",
+    "target": "svelte",
+    "type": "competes-with",
+    "note": "AngularとSvelteは大規模さ、描画方式、学習コストで比較される。部品、依存注入、ルーティング、フォームなどの標準構成を提供する。一方、Svelteは簡潔な部品記法をブラウザで動くJavaScriptへ変換する。"
+  },
+  {
+    "source": "ant-design",
+    "target": "chakra-ui",
+    "type": "competes-with",
+    "note": "Ant DesignとChakra UIはReact向けUI部品の所有権と設計自由度で比較される。テーブル、フォーム、ナビゲーションなど情報量の多い部品を提供する。一方、Chakra UIはスタイル propsとテーマを使って再利用部品を構築する。"
+  },
+  {
+    "source": "apache-http-server",
+    "target": "caddy",
+    "type": "competes-with",
+    "note": "Apache HTTP ServerとCaddyはリバースプロキシとWeb配信の運用で比較される。静的配信、プロキシ、認証、ディレクトリ単位設定を提供する。一方、Caddyは証明書取得と更新、静的配信、リバースプロキシを自動化する。"
+  },
+  {
+    "source": "apollo-client",
+    "target": "graphql",
+    "type": "built-on",
+    "note": "Apollo ClientはGraphQLのクエリ、正規化キャッシュ、更新管理をクライアントへ提供する。"
+  },
+  {
+    "source": "apollo-client",
+    "target": "react",
+    "type": "works-with",
+    "note": "Apollo ClientのReact hooksでGraphQLのサーバー状態をUIへ接続できる。"
+  },
+  {
+    "source": "appwrite",
+    "target": "pocketbase",
+    "type": "competes-with",
+    "note": "AppwriteとPocketBaseはバックエンド機能の所有範囲と運用負荷で比較される。セルフホスト可能なAPIとSDKで共通バックエンド機能をまとめる。一方、PocketBaseはSQLiteと管理画面を小さなサーバーへまとめる。"
+  },
+  {
+    "source": "aspnet-core",
+    "target": "phoenix",
+    "type": "alternative-to",
+    "note": "ASP.NET CoreとPhoenixはフルスタックな業務Webアプリ基盤で比較される。高性能なHTTP処理、API、画面、認証を.NET上で提供する。一方、Phoenixは多数接続、耐障害性、LiveViewによるリアルタイム画面を扱う。"
+  },
+  {
+    "source": "astro",
+    "target": "docusaurus",
+    "type": "alternative-to",
+    "note": "AstroとDocusaurusはコンテンツ中心サイトとドキュメント構築で比較される。標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。一方、Docusaurusは版管理、検索連携、文書ナビゲーションを含むサイトを生成する。"
+  },
+  {
+    "source": "astro",
+    "target": "fresh",
+    "type": "competes-with",
+    "note": "AstroとFreshはWebアプリ全体の描画・ルーティング・配備方式で比較される。標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。一方、Freshはサーバー描画を基本に、必要なアイランドだけを対話化する。"
+  },
+  {
+    "source": "astro",
+    "target": "gatsby",
+    "type": "alternative-to",
+    "note": "AstroとGatsbyはコンテンツ中心サイトとドキュメント構築で比較される。標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。一方、Gatsbyは複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。"
+  },
+  {
+    "source": "astro",
+    "target": "gatsby",
+    "type": "competes-with",
+    "note": "AstroとGatsbyはWebアプリ全体の描画・ルーティング・配備方式で比較される。標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。一方、Gatsbyは複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。"
+  },
+  {
+    "source": "astro",
+    "target": "react-router",
+    "type": "competes-with",
+    "note": "AstroとReact RouterはWebアプリ全体の描画・ルーティング・配備方式で比較される。標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。一方、React Routerは宣言的、データ、フレームワークの各モードでURLと画面・データを結ぶ。"
+  },
+  {
+    "source": "astro",
+    "target": "react",
+    "type": "works-with",
+    "note": "Astroの島としてReactコンポーネントを必要な箇所だけ組み込める。"
+  },
+  {
+    "source": "astro",
+    "target": "remix",
+    "type": "competes-with",
+    "note": "AstroとRemixはWebアプリ全体の描画・ルーティング・配備方式で比較される。標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。一方、Remixはv2系はReact Routerへ統合され、v3 ベータは別の簡潔な道具群として再設計されている。"
+  },
+  {
+    "source": "astro",
+    "target": "sveltekit",
+    "type": "competes-with",
+    "note": "AstroとSvelteKitはWebアプリ全体の描画・ルーティング・配備方式で比較される。標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。一方、SvelteKitはファイルルーティング、サーバー描画、フォーム処理、配信先連携を提供する。"
+  },
+  {
+    "source": "astro",
+    "target": "tanstack-start",
+    "type": "competes-with",
+    "note": "AstroとTanStack StartはWebアプリ全体の描画・ルーティング・配備方式で比較される。標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。一方、TanStack Startはルート、データ取得、サーバー関数、描画方式を同じ型情報で接続する。"
+  },
+  {
+    "source": "astro",
+    "target": "vite",
+    "type": "built-on",
+    "note": "Astroは開発サーバーとビルド基盤にViteを利用する。"
+  },
+  {
+    "source": "astro",
+    "target": "vue",
+    "type": "works-with",
+    "note": "Astroの島としてVueコンポーネントを必要な箇所だけ組み込める。"
+  },
+  {
+    "source": "authjs",
+    "target": "better-auth",
+    "type": "competes-with",
+    "note": "Auth.jsとBetter Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。OAuth プロバイダー、セッション、コールバックをJavaScript アプリへ統合する。一方、Better Authはセッション、プロバイダー、2要素認証などを自分のバックエンドへ組み込む。"
+  },
+  {
+    "source": "authjs",
+    "target": "clerk",
+    "type": "competes-with",
+    "note": "Auth.jsとClerkはアプリ認証の実装範囲、ホスティング、制御権で比較される。OAuth プロバイダー、セッション、コールバックをJavaScript アプリへ統合する。一方、Clerkは組込みUI、セッション、組織、管理画面をSDKでアプリへ接続する。"
+  },
+  {
+    "source": "authjs",
+    "target": "firebase-auth",
+    "type": "competes-with",
+    "note": "Auth.jsとFirebase Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。OAuth プロバイダー、セッション、コールバックをJavaScript アプリへ統合する。一方、Firebase Authはパスワード、外部プロバイダー、トークンをクライアント SDKとセキュリティルールへ接続する。"
+  },
+  {
+    "source": "authjs",
+    "target": "keycloak",
+    "type": "competes-with",
+    "note": "Auth.jsとKeycloakはアプリ認証の実装範囲、ホスティング、制御権で比較される。OAuth プロバイダー、セッション、コールバックをJavaScript アプリへ統合する。一方、KeycloakはOIDC、OAuth 2.0、SAML、利用者・役割管理を一体で提供する。"
+  },
+  {
+    "source": "authjs",
+    "target": "openid-connect",
+    "type": "implements",
+    "note": "Auth.jsはOpenID Connectによるログイン連携を扱える。"
+  },
+  {
+    "source": "authjs",
+    "target": "supabase-auth",
+    "type": "competes-with",
+    "note": "Auth.jsとSupabase Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。OAuth プロバイダー、セッション、コールバックをJavaScript アプリへ統合する。一方、Supabase AuthはJWTとRow Level Securityを使い、利用者とDB権限を結ぶ。"
+  },
+  {
+    "source": "aws-lambda",
+    "target": "aws",
+    "type": "part-of",
+    "note": "AWS LambdaはAWSのイベント駆動サーバーレス実行サービスである。"
+  },
+  {
+    "source": "aws-lambda",
+    "target": "nodejs",
+    "type": "runs-on",
+    "note": "AWS LambdaはNode.jsランタイムでJavaScriptやTypeScript由来の関数を実行できる。"
+  },
+  {
+    "source": "aws",
+    "target": "azure",
+    "type": "competes-with",
+    "note": "Amazon Web ServicesとMicrosoft Azureは総合クラウドのサービス範囲と組織統合で比較される。細かなマネージドサービスを組み合わせて世界規模の基盤を構築する。一方、Microsoft Azureは計算、データ、アイデンティティ、AI、ネットワークを企業環境へ提供する。"
+  },
+  {
+    "source": "aws",
+    "target": "gcp",
+    "type": "competes-with",
+    "note": "Amazon Web ServicesとGoogle Cloudは総合クラウドのサービス範囲と組織統合で比較される。細かなマネージドサービスを組み合わせて世界規模の基盤を構築する。一方、Google Cloudは計算、ストレージ、ネットワーク、マネージドデータサービスを提供する。"
+  },
+  {
+    "source": "azure",
+    "target": "gcp",
+    "type": "competes-with",
+    "note": "Microsoft AzureとGoogle Cloudは総合クラウドのサービス範囲と組織統合で比較される。計算、データ、アイデンティティ、AI、ネットワークを企業環境へ提供する。一方、Google Cloudは計算、ストレージ、ネットワーク、マネージドデータサービスを提供する。"
+  },
+  {
+    "source": "babel",
+    "target": "esbuild",
+    "type": "alternative-to",
+    "note": "BabelとesbuildはJavaScript/TypeScriptの変換方式で比較される。プリセットとプラグインで構文変換やコード計装を行う。一方、esbuildはバンドル、変換、圧縮を高速に実行する。"
+  },
+  {
+    "source": "babel",
+    "target": "swc",
+    "type": "alternative-to",
+    "note": "BabelとSWCはJavaScript/TypeScriptの変換方式で比較される。プリセットとプラグインで構文変換やコード計装を行う。一方、SWCは構文変換と圧縮を高速化しフレームワークの内部でも使われる。"
+  },
+  {
+    "source": "better-auth",
+    "target": "firebase-auth",
+    "type": "competes-with",
+    "note": "Better AuthとFirebase Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。セッション、プロバイダー、2要素認証などを自分のバックエンドへ組み込む。一方、Firebase Authはパスワード、外部プロバイダー、トークンをクライアント SDKとセキュリティルールへ接続する。"
+  },
+  {
+    "source": "better-auth",
+    "target": "keycloak",
+    "type": "competes-with",
+    "note": "Better AuthとKeycloakはアプリ認証の実装範囲、ホスティング、制御権で比較される。セッション、プロバイダー、2要素認証などを自分のバックエンドへ組み込む。一方、KeycloakはOIDC、OAuth 2.0、SAML、利用者・役割管理を一体で提供する。"
+  },
+  {
+    "source": "better-auth",
+    "target": "openid-connect",
+    "type": "implements",
+    "note": "Better AuthはOpenID Connectによるログイン連携を扱える。"
+  },
+  {
+    "source": "better-auth",
+    "target": "supabase-auth",
+    "type": "competes-with",
+    "note": "Better AuthとSupabase Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。セッション、プロバイダー、2要素認証などを自分のバックエンドへ組み込む。一方、Supabase AuthはJWTとRow Level Securityを使い、利用者とDB権限を結ぶ。"
+  },
+  {
+    "source": "biome",
+    "target": "oxlint",
+    "type": "competes-with",
+    "note": "Biomeとoxlintは静的解析の規則、速度、拡張性で比較される。JavaScript、TypeScript、JSON、CSSなどを単一ツールで検査・整形する。一方、oxlintは一般的なリント規則を並列に検査し、大規模コードベースを高速処理する。"
+  },
+  {
+    "source": "bootstrap",
+    "target": "css-modules",
+    "type": "alternative-to",
+    "note": "BootstrapとCSS Modulesはスタイルの再利用、局所化、実行時コストで比較される。グリッド、フォーム、ナビゲーションなどを既定の見た目で素早く提供する。一方、CSS Modulesはビルド時にクラス名を固有化し、部品間の衝突を防ぐ。"
+  },
+  {
+    "source": "bootstrap",
+    "target": "emotion",
+    "type": "alternative-to",
+    "note": "BootstrapとEmotionはスタイルの再利用、局所化、実行時コストで比較される。グリッド、フォーム、ナビゲーションなどを既定の見た目で素早く提供する。一方、Emotionはオブジェクトまたはテンプレート記法から部品に紐づくスタイルを生成する。"
+  },
+  {
+    "source": "bootstrap",
+    "target": "sass",
+    "type": "alternative-to",
+    "note": "BootstrapとSassはスタイルの再利用、局所化、実行時コストで比較される。グリッド、フォーム、ナビゲーションなどを既定の見た目で素早く提供する。一方、SassはSass記法を標準CSSへ変換し、大きなスタイルシートを分割管理する。"
+  },
+  {
+    "source": "bootstrap",
+    "target": "styled-components",
+    "type": "alternative-to",
+    "note": "Bootstrapとstyled-componentsはスタイルの再利用、局所化、実行時コストで比較される。グリッド、フォーム、ナビゲーションなどを既定の見た目で素早く提供する。一方、styled-componentsはpropsに応じたスタイルと固有クラスをランタイムで生成する。"
+  },
+  {
+    "source": "bootstrap",
+    "target": "unocss",
+    "type": "alternative-to",
+    "note": "BootstrapとUnoCSSはスタイルの再利用、局所化、実行時コストで比較される。グリッド、フォーム、ナビゲーションなどを既定の見た目で素早く提供する。一方、UnoCSSはプリセットとルールから使用中のクラスに対応するCSSを生成する。"
+  },
+  {
+    "source": "browser",
+    "target": "playwright",
+    "type": "works-with",
+    "note": "PlaywrightはChromium、Firefox、WebKit系ブラウザーを自動操作して検証する。"
+  },
+  {
+    "source": "browser",
+    "target": "puppeteer",
+    "type": "works-with",
+    "note": "PuppeteerはDevTools Protocol等を介してブラウザーを自動操作する。"
+  },
+  {
+    "source": "bun",
+    "target": "deno",
+    "type": "alternative-to",
+    "note": "BunとDenoはサーバーJavaScriptの互換性、権限、同梱ツールで比較される。Node.js互換を広げながら高速な開発道具を一体で提供する。一方、Denoは権限制御、TypeScript対応、標準ツールを一体で提供する。"
+  },
+  {
+    "source": "circleci",
+    "target": "docker",
+    "type": "works-with",
+    "note": "CircleCIはDockerイメージのビルド、テスト、配備を自動化できる。"
+  },
+  {
+    "source": "circleci",
+    "target": "jenkins",
+    "type": "competes-with",
+    "note": "CircleCIとJenkinsはビルド・テスト・配備の自動化基盤で比較される。設定ファイルからジョブをキャッシュ・並列実行し、複数VCSと接続する。一方、Jenkinsは任意のビルド、テスト、デプロイ処理を自社サーバーで実行する。"
+  },
+  {
+    "source": "clerk",
+    "target": "better-auth",
+    "type": "competes-with",
+    "note": "ClerkとBetter Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。組込みUI、セッション、組織、管理画面をSDKでアプリへ接続する。一方、Better Authはセッション、プロバイダー、2要素認証などを自分のバックエンドへ組み込む。"
+  },
+  {
+    "source": "clerk",
+    "target": "firebase-auth",
+    "type": "competes-with",
+    "note": "ClerkとFirebase Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。組込みUI、セッション、組織、管理画面をSDKでアプリへ接続する。一方、Firebase Authはパスワード、外部プロバイダー、トークンをクライアント SDKとセキュリティルールへ接続する。"
+  },
+  {
+    "source": "clerk",
+    "target": "keycloak",
+    "type": "competes-with",
+    "note": "ClerkとKeycloakはアプリ認証の実装範囲、ホスティング、制御権で比較される。組込みUI、セッション、組織、管理画面をSDKでアプリへ接続する。一方、KeycloakはOIDC、OAuth 2.0、SAML、利用者・役割管理を一体で提供する。"
+  },
+  {
+    "source": "clerk",
+    "target": "openid-connect",
+    "type": "implements",
+    "note": "ClerkはOpenID Connectによるログイン連携を扱える。"
+  },
+  {
+    "source": "clerk",
+    "target": "supabase-auth",
+    "type": "competes-with",
+    "note": "ClerkとSupabase Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。組込みUI、セッション、組織、管理画面をSDKでアプリへ接続する。一方、Supabase AuthはJWTとRow Level Securityを使い、利用者とDB権限を結ぶ。"
+  },
+  {
+    "source": "clickhouse",
+    "target": "grafana",
+    "type": "works-with",
+    "note": "ClickHouseに集約した分析データをGrafanaのダッシュボードで可視化できる。"
+  },
+  {
+    "source": "cloudflare-d1",
+    "target": "sqlite",
+    "type": "built-on",
+    "note": "Cloudflare D1はSQLiteの意味論とエコシステムを利用する分散SQLサービスである。"
+  },
+  {
+    "source": "cloudflare-r2",
+    "target": "aws",
+    "type": "alternative-to",
+    "note": "R2はS3互換APIを提供し、AWS S3を使う構成から移行・併用しやすい。"
+  },
+  {
+    "source": "cloudflare-workers",
+    "target": "aws-lambda",
+    "type": "competes-with",
+    "note": "Cloudflare WorkersとAWS Lambdaはイベント駆動のサーバーレス実行で比較される。リクエストを利用者の近くで処理し、Cloudflareのデータ製品と接続する。一方、AWS Lambdaはサーバー管理なしでHTTP、キュー、ストレージなどのイベント処理を起動する。"
+  },
+  {
+    "source": "cloudflare-workers",
+    "target": "cloudflare-d1",
+    "type": "works-with",
+    "note": "Workersはバインディングを通じてD1へ低遅延でアクセスできる。"
+  },
+  {
+    "source": "cloudflare-workers",
+    "target": "cloudflare-kv",
+    "type": "works-with",
+    "note": "Workersはバインディングを通じて読み取り中心のキー値データへアクセスできる。"
+  },
+  {
+    "source": "cloudflare-workers",
+    "target": "cloudflare-r2",
+    "type": "works-with",
+    "note": "Workersはバインディングを通じてR2のオブジェクトを読み書きできる。"
+  },
+  {
+    "source": "cloudflare-workers",
+    "target": "cloudflare",
+    "type": "part-of",
+    "note": "Cloudflare WorkersはCloudflareネットワークでコードを実行する基盤である。"
+  },
+  {
+    "source": "cloudflare",
+    "target": "digitalocean",
+    "type": "competes-with",
+    "note": "CloudflareとDigitalOceanはWebアプリの配備体験、実行場所、運用自由度で比較される。CDN、DNS、Workers、ストレージを世界のエッジへ統合する。一方、DigitalOceanはDroplet、Kubernetes、DB、App Platformを比較的単純に提供する。"
+  },
+  {
+    "source": "cloudflare",
+    "target": "flyio",
+    "type": "competes-with",
+    "note": "CloudflareとFly.ioはWebアプリの配備体験、実行場所、運用自由度で比較される。CDN、DNS、Workers、ストレージを世界のエッジへ統合する。一方、Fly.ioはFirecracker系VMとプライベートネットワークで利用者の近くにアプリを動かす。"
+  },
+  {
+    "source": "cloudflare",
+    "target": "heroku",
+    "type": "competes-with",
+    "note": "CloudflareとHerokuはWebアプリの配備体験、実行場所、運用自由度で比較される。CDN、DNS、Workers、ストレージを世界のエッジへ統合する。一方、Herokuはビルドパック、Dyno、アドオンでサーバー運用を抽象化する。"
+  },
+  {
+    "source": "cloudflare",
+    "target": "netlify",
+    "type": "competes-with",
+    "note": "CloudflareとNetlifyはWebアプリの配備体験、実行場所、運用自由度で比較される。CDN、DNS、Workers、ストレージを世界のエッジへ統合する。一方、NetlifyはGit連携とCDNで静的サイトやフレームワークアプリを公開する。"
+  },
+  {
+    "source": "cloudflare",
+    "target": "railway",
+    "type": "competes-with",
+    "note": "CloudflareとRailwayはWebアプリの配備体験、実行場所、運用自由度で比較される。CDN、DNS、Workers、ストレージを世界のエッジへ統合する。一方、Railwayはリポジトリやコンテナからサービスを作り環境変数とネットワークを管理する。"
+  },
+  {
+    "source": "cloudflare",
+    "target": "render",
+    "type": "competes-with",
+    "note": "CloudflareとRenderはWebアプリの配備体験、実行場所、運用自由度で比較される。CDN、DNS、Workers、ストレージを世界のエッジへ統合する。一方、RenderはGitからビルドし、常駐サービスとマネージドデータを簡潔に運用する。"
+  },
+  {
+    "source": "cloudflare",
+    "target": "vercel",
+    "type": "competes-with",
+    "note": "CloudflareとVercelはWebアプリの配備体験、実行場所、運用自由度で比較される。CDN、DNS、Workers、ストレージを世界のエッジへ統合する。一方、VercelはGit連携プレビュー、サーバーレス/エッジ実行、CDNを統合する。"
+  },
+  {
+    "source": "contentful",
+    "target": "ghost",
+    "type": "competes-with",
+    "note": "ContentfulとGhostはコンテンツ編集、API、ホスティングの所有範囲で比較される。コンテンツモデル、編集ワークフロー、ロケール、配信APIを提供する。一方、Ghostは記事編集、ニュースレター、会員管理、テーマを一体で提供する。"
+  },
+  {
+    "source": "contentful",
+    "target": "nextjs",
+    "type": "works-with",
+    "note": "ContentfulのコンテンツAPIをNext.jsの静的生成やサーバー描画から利用できる。"
+  },
+  {
+    "source": "convex",
+    "target": "appwrite",
+    "type": "competes-with",
+    "note": "ConvexとAppwriteはバックエンド機能の所有範囲と運用負荷で比較される。クエリ、ミューテーション、アクションの結果をクライアントへ自動同期する。一方、Appwriteはセルフホスト可能なAPIとSDKで共通バックエンド機能をまとめる。"
+  },
+  {
+    "source": "convex",
+    "target": "pocketbase",
+    "type": "competes-with",
+    "note": "ConvexとPocketBaseはバックエンド機能の所有範囲と運用負荷で比較される。クエリ、ミューテーション、アクションの結果をクライアントへ自動同期する。一方、PocketBaseはSQLiteと管理画面を小さなサーバーへまとめる。"
+  },
+  {
+    "source": "csharp",
+    "target": "aspnet-core",
+    "type": "works-with",
+    "note": "ASP.NET CoreはC#でWeb APIとWebアプリを構築する。"
+  },
+  {
+    "source": "csharp",
+    "target": "azure",
+    "type": "works-with",
+    "note": "C#と.NETはAzure App ServiceやFunctionsの主要な開発環境である。"
+  },
+  {
+    "source": "csharp",
+    "target": "ef-core",
+    "type": "works-with",
+    "note": "EF CoreはC#の型とデータベース操作を統合する。"
+  },
+  {
+    "source": "css-modules",
+    "target": "emotion",
+    "type": "alternative-to",
+    "note": "CSS ModulesとEmotionはスタイルの再利用、局所化、実行時コストで比較される。ビルド時にクラス名を固有化し、部品間の衝突を防ぐ。一方、Emotionはオブジェクトまたはテンプレート記法から部品に紐づくスタイルを生成する。"
+  },
+  {
+    "source": "css-modules",
+    "target": "styled-components",
+    "type": "alternative-to",
+    "note": "CSS Modulesとstyled-componentsはスタイルの再利用、局所化、実行時コストで比較される。ビルド時にクラス名を固有化し、部品間の衝突を防ぐ。一方、styled-componentsはpropsに応じたスタイルと固有クラスをランタイムで生成する。"
+  },
+  {
+    "source": "css-modules",
+    "target": "unocss",
+    "type": "alternative-to",
+    "note": "CSS ModulesとUnoCSSはスタイルの再利用、局所化、実行時コストで比較される。ビルド時にクラス名を固有化し、部品間の衝突を防ぐ。一方、UnoCSSはプリセットとルールから使用中のクラスに対応するCSSを生成する。"
+  },
+  {
+    "source": "css",
+    "target": "browser",
+    "type": "runs-on",
+    "note": "CSSはブラウザーのレイアウト・描画エンジンで適用される。"
+  },
+  {
+    "source": "css",
+    "target": "sass",
+    "type": "works-with",
+    "note": "Sassは変数や構文を標準CSSへ変換して配信する。"
+  },
+  {
+    "source": "css",
+    "target": "tailwind-css",
+    "type": "works-with",
+    "note": "Tailwind CSSのユーティリティは最終的に標準CSSとしてブラウザーへ配信される。"
+  },
+  {
+    "source": "cypress",
+    "target": "puppeteer",
+    "type": "competes-with",
+    "note": "CypressとPuppeteerはブラウザ自動化とE2Eテストで比較される。操作の時間経過、DOM、リクエストを対話的にデバッグできる。一方、PuppeteerはDevTools Protocolを介してページ操作、キャプチャ、スクレイピングを行う。"
+  },
+  {
+    "source": "cypress",
+    "target": "selenium",
+    "type": "competes-with",
+    "note": "CypressとSeleniumはブラウザ自動化とE2Eテストで比較される。操作の時間経過、DOM、リクエストを対話的にデバッグできる。一方、Seleniumは多言語クライアントから実ブラウザーとリモートグリッドを制御する。"
+  },
+  {
+    "source": "datadog",
+    "target": "opentelemetry",
+    "type": "works-with",
+    "note": "DatadogはOpenTelemetryで計装したメトリクスやトレースを受信できる。"
+  },
+  {
+    "source": "datadog",
+    "target": "prometheus",
+    "type": "works-with",
+    "note": "DatadogはPrometheus/OpenMetrics形式のメトリクスを収集して監視へ統合できる。"
+  },
+  {
+    "source": "digitalocean",
+    "target": "heroku",
+    "type": "competes-with",
+    "note": "DigitalOceanとHerokuはWebアプリの配備体験、実行場所、運用自由度で比較される。Droplet、Kubernetes、DB、App Platformを比較的単純に提供する。一方、Herokuはビルドパック、Dyno、アドオンでサーバー運用を抽象化する。"
+  },
+  {
+    "source": "directus",
+    "target": "contentful",
+    "type": "competes-with",
+    "note": "DirectusとContentfulはコンテンツ編集、API、ホスティングの所有範囲で比較される。テーブルをコンテンツモデルとしてREST/GraphQLと権限管理を提供する。一方、Contentfulはコンテンツモデル、編集ワークフロー、ロケール、配信APIを提供する。"
+  },
+  {
+    "source": "directus",
+    "target": "ghost",
+    "type": "competes-with",
+    "note": "DirectusとGhostはコンテンツ編集、API、ホスティングの所有範囲で比較される。テーブルをコンテンツモデルとしてREST/GraphQLと権限管理を提供する。一方、Ghostは記事編集、ニュースレター、会員管理、テーマを一体で提供する。"
+  },
+  {
+    "source": "directus",
+    "target": "sanity",
+    "type": "competes-with",
+    "note": "DirectusとSanityはコンテンツ編集、API、ホスティングの所有範囲で比較される。テーブルをコンテンツモデルとしてREST/GraphQLと権限管理を提供する。一方、Sanityはリアルタイム編集、Content Lake、クエリ言語、カスタムスタジオを提供する。"
+  },
+  {
+    "source": "django",
+    "target": "flask",
+    "type": "competes-with",
+    "note": "DjangoとFlaskはPythonによるAPI・Webアプリ開発で比較される。ORM、認証、管理画面、ルート、テンプレートを一体で提供する。一方、Flaskはリクエスト、ルート、レスポンスの基本を簡潔に提供する。"
+  },
+  {
+    "source": "docker",
+    "target": "kubernetes",
+    "type": "works-with",
+    "note": "Docker形式のコンテナイメージをKubernetesが複数ノードで配備・更新する。"
+  },
+  {
+    "source": "docusaurus",
+    "target": "react",
+    "type": "built-on",
+    "note": "DocusaurusはReactを基盤に文書サイトのナビゲーションと生成を提供する。"
+  },
+  {
+    "source": "drizzle-orm",
+    "target": "kysely",
+    "type": "competes-with",
+    "note": "Drizzle ORMとKyselyはNode.jsのデータアクセスと型安全性で比較される。TypeScript スキーマからクエリとマイグレーションを構築する。一方、Kyselyはテーブル型からSQLに近いクエリを組み立て、結果型を推論する。"
+  },
+  {
+    "source": "drizzle-orm",
+    "target": "mongoose",
+    "type": "competes-with",
+    "note": "Drizzle ORMとMongooseはNode.jsのデータアクセスと型安全性で比較される。TypeScript スキーマからクエリとマイグレーションを構築する。一方、Mongooseは検証、ミドルウェア、参照をNode.js オブジェクトとして扱う。"
+  },
+  {
+    "source": "drizzle-orm",
+    "target": "postgresql",
+    "type": "works-with",
+    "note": "Drizzle ORMはPostgreSQLへ型またはモデルを通じてアクセスできる。"
+  },
+  {
+    "source": "drizzle-orm",
+    "target": "sequelize",
+    "type": "competes-with",
+    "note": "Drizzle ORMとSequelizeはNode.jsのデータアクセスと型安全性で比較される。TypeScript スキーマからクエリとマイグレーションを構築する。一方、Sequelizeはモデル、関連付け、トランザクションをJavaScript APIで提供する。"
+  },
+  {
+    "source": "drizzle-orm",
+    "target": "typeorm",
+    "type": "competes-with",
+    "note": "Drizzle ORMとTypeORMはNode.jsのデータアクセスと型安全性で比較される。TypeScript スキーマからクエリとマイグレーションを構築する。一方、TypeORMはクラスとテーブルを対応付け、複数SQL DBへのクエリを抽象化する。"
+  },
+  {
+    "source": "dynamodb",
+    "target": "aws",
+    "type": "part-of",
+    "note": "DynamoDBはAWSのフルマネージドなキー値・ドキュメントデータベースである。"
+  },
+  {
+    "source": "dynamodb",
+    "target": "firestore",
+    "type": "alternative-to",
+    "note": "Amazon DynamoDBとCloud Firestoreはスキーマ柔軟なドキュメント・キー値データで比較される。パーティションキーを中心に自動スケールする低遅延ストレージを提供する。一方、Cloud Firestoreはモバイル/Web クライアントとセキュリティルールを介してドキュメントを同期する。"
+  },
+  {
+    "source": "elasticsearch",
+    "target": "datadog",
+    "type": "works-with",
+    "note": "DatadogのElasticsearch連携でクラスタ指標とログを監視できる。"
+  },
+  {
+    "source": "elasticsearch",
+    "target": "grafana",
+    "type": "works-with",
+    "note": "Elasticsearchの検索・ログデータをGrafanaのデータソースとして可視化できる。"
+  },
+  {
+    "source": "elasticsearch",
+    "target": "opensearch",
+    "type": "competes-with",
+    "note": "ElasticsearchとOpenSearchは分散検索とログ分析で比較される。転置インデックスで文書検索、集計、ログ探索を高速化する。一方、OpenSearchは分散インデックス、クエリ、dashboardで検索とログ分析を提供する。"
+  },
+  {
+    "source": "elysia",
+    "target": "bun",
+    "type": "runs-on",
+    "note": "ElysiaはBunの高速な実行環境と型推論を中心に設計されている。"
+  },
+  {
+    "source": "elysia",
+    "target": "nitro",
+    "type": "competes-with",
+    "note": "ElysiaとNitroはJavaScript/TypeScriptのHTTPサーバー設計で比較される。ルート定義から入力と出力の型をつなぎ、高速にHTTP処理する。一方、Nitroはルート、ストレージ、デプロイプリセットを抽象化して配信物を作る。"
+  },
+  {
+    "source": "emotion",
+    "target": "unocss",
+    "type": "alternative-to",
+    "note": "EmotionとUnoCSSはスタイルの再利用、局所化、実行時コストで比較される。オブジェクトまたはテンプレート記法から部品に紐づくスタイルを生成する。一方、UnoCSSはプリセットとルールから使用中のクラスに対応するCSSを生成する。"
+  },
+  {
+    "source": "esbuild",
+    "target": "parcel",
+    "type": "competes-with",
+    "note": "esbuildとParcelは開発サーバー、バンドル速度、拡張性で比較される。バンドル、変換、圧縮を高速に実行する。一方、ParcelはHTMLを入口に変換、バンドル、開発サーバーを自動構成する。"
+  },
+  {
+    "source": "esbuild",
+    "target": "rolldown",
+    "type": "competes-with",
+    "note": "esbuildとRolldownは開発サーバー、バンドル速度、拡張性で比較される。バンドル、変換、圧縮を高速に実行する。一方、Rolldownは高速なバンドルと変換を一つのエンジンにまとめ、Vite 8を支える。"
+  },
+  {
+    "source": "esbuild",
+    "target": "rspack",
+    "type": "competes-with",
+    "note": "esbuildとRspackは開発サーバー、バンドル速度、拡張性で比較される。バンドル、変換、圧縮を高速に実行する。一方、Rspackは既存webpack生態系を活かしながらビルドを高速化する。"
+  },
+  {
+    "source": "esbuild",
+    "target": "turbopack",
+    "type": "competes-with",
+    "note": "esbuildとTurbopackは開発サーバー、バンドル速度、拡張性で比較される。バンドル、変換、圧縮を高速に実行する。一方、Turbopackはファイル単位のキャッシュで開発と本番のNext.js ビルドを行う。"
+  },
+  {
+    "source": "eslint",
+    "target": "biome",
+    "type": "competes-with",
+    "note": "ESLintとBiomeは静的解析の規則、速度、拡張性で比較される。構文ツリーを調べ、バグ候補とチーム規約違反を報告する。一方、BiomeはJavaScript、TypeScript、JSON、CSSなどを単一ツールで検査・整形する。"
+  },
+  {
+    "source": "eslint",
+    "target": "oxlint",
+    "type": "competes-with",
+    "note": "ESLintとoxlintは静的解析の規則、速度、拡張性で比較される。構文ツリーを調べ、バグ候補とチーム規約違反を報告する。一方、oxlintは一般的なリント規則を並列に検査し、大規模コードベースを高速処理する。"
+  },
+  {
+    "source": "eslint",
+    "target": "typescript",
+    "type": "works-with",
+    "note": "typescript-eslintを介してTypeScriptの構文と型情報をESLint規則で検査できる。"
+  },
+  {
+    "source": "express",
+    "target": "elysia",
+    "type": "competes-with",
+    "note": "ExpressとElysiaはJavaScript/TypeScriptのHTTPサーバー設計で比較される。ミドルウェアとルートを組み合わせてHTTP処理を構築する。一方、Elysiaはルート定義から入力と出力の型をつなぎ、高速にHTTP処理する。"
+  },
+  {
+    "source": "express",
+    "target": "fastify",
+    "type": "competes-with",
+    "note": "ExpressとFastifyはJavaScript/TypeScriptのHTTPサーバー設計で比較される。ミドルウェアとルートを組み合わせてHTTP処理を構築する。一方、Fastifyはプラグイン、JSON Schema、効率的なHTTP処理をまとめる。"
+  },
+  {
+    "source": "express",
+    "target": "nestjs",
+    "type": "competes-with",
+    "note": "ExpressとNestJSはJavaScript/TypeScriptのHTTPサーバー設計で比較される。ミドルウェアとルートを組み合わせてHTTP処理を構築する。一方、NestJSはモジュール、コントローラー、依存注入でアプリの責務を分割する。"
+  },
+  {
+    "source": "express",
+    "target": "nitro",
+    "type": "competes-with",
+    "note": "ExpressとNitroはJavaScript/TypeScriptのHTTPサーバー設計で比較される。ミドルウェアとルートを組み合わせてHTTP処理を構築する。一方、Nitroはルート、ストレージ、デプロイプリセットを抽象化して配信物を作る。"
+  },
+  {
+    "source": "express",
+    "target": "nodejs",
+    "type": "runs-on",
+    "note": "ExpressはNode.js上でHTTPサーバーを実行する。"
+  },
+  {
+    "source": "fastapi",
+    "target": "django",
+    "type": "competes-with",
+    "note": "FastAPIとDjangoはPythonによるAPI・Webアプリ開発で比較される。非同期HTTP処理、入力検証、OpenAPI文書生成を統合する。一方、DjangoはORM、認証、管理画面、ルート、テンプレートを一体で提供する。"
+  },
+  {
+    "source": "fastapi",
+    "target": "flask",
+    "type": "competes-with",
+    "note": "FastAPIとFlaskはPythonによるAPI・Webアプリ開発で比較される。非同期HTTP処理、入力検証、OpenAPI文書生成を統合する。一方、Flaskはリクエスト、ルート、レスポンスの基本を簡潔に提供する。"
+  },
+  {
+    "source": "fastify",
+    "target": "elysia",
+    "type": "competes-with",
+    "note": "FastifyとElysiaはJavaScript/TypeScriptのHTTPサーバー設計で比較される。プラグイン、JSON Schema、効率的なHTTP処理をまとめる。一方、Elysiaはルート定義から入力と出力の型をつなぎ、高速にHTTP処理する。"
+  },
+  {
+    "source": "fastify",
+    "target": "nestjs",
+    "type": "competes-with",
+    "note": "FastifyとNestJSはJavaScript/TypeScriptのHTTPサーバー設計で比較される。プラグイン、JSON Schema、効率的なHTTP処理をまとめる。一方、NestJSはモジュール、コントローラー、依存注入でアプリの責務を分割する。"
+  },
+  {
+    "source": "fastify",
+    "target": "nitro",
+    "type": "competes-with",
+    "note": "FastifyとNitroはJavaScript/TypeScriptのHTTPサーバー設計で比較される。プラグイン、JSON Schema、効率的なHTTP処理をまとめる。一方、Nitroはルート、ストレージ、デプロイプリセットを抽象化して配信物を作る。"
+  },
+  {
+    "source": "fastify",
+    "target": "nodejs",
+    "type": "runs-on",
+    "note": "FastifyはNode.js上でHTTPサーバーを実行する。"
+  },
+  {
+    "source": "firebase-auth",
+    "target": "firebase",
+    "type": "part-of",
+    "note": "Firebase AuthenticationはFirebaseに統合された認証サービスである。"
+  },
+  {
+    "source": "firebase-auth",
+    "target": "openid-connect",
+    "type": "implements",
+    "note": "Firebase AuthはOpenID Connectによるログイン連携を扱える。"
+  },
+  {
+    "source": "firebase-auth",
+    "target": "supabase-auth",
+    "type": "competes-with",
+    "note": "Firebase AuthとSupabase Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。パスワード、外部プロバイダー、トークンをクライアント SDKとセキュリティルールへ接続する。一方、Supabase AuthはJWTとRow Level Securityを使い、利用者とDB権限を結ぶ。"
+  },
+  {
+    "source": "firebase",
+    "target": "appwrite",
+    "type": "competes-with",
+    "note": "FirebaseとAppwriteはバックエンド機能の所有範囲と運用負荷で比較される。データベース、認証、ホスティング、関数、分析機能をクライアント SDKへ接続する。一方、Appwriteはセルフホスト可能なAPIとSDKで共通バックエンド機能をまとめる。"
+  },
+  {
+    "source": "firebase",
+    "target": "convex",
+    "type": "competes-with",
+    "note": "FirebaseとConvexはバックエンド機能の所有範囲と運用負荷で比較される。データベース、認証、ホスティング、関数、分析機能をクライアント SDKへ接続する。一方、Convexはクエリ、ミューテーション、アクションの結果をクライアントへ自動同期する。"
+  },
+  {
+    "source": "firestore",
+    "target": "firebase",
+    "type": "part-of",
+    "note": "Cloud FirestoreはFirebaseで利用できる主要なマネージドデータベースである。"
+  },
+  {
+    "source": "firebase",
+    "target": "neon",
+    "type": "competes-with",
+    "note": "FirebaseとNeonはバックエンド機能の所有範囲と運用負荷で比較される。データベース、認証、ホスティング、関数、分析機能をクライアント SDKへ接続する。一方、Neonはブランチ作成、スケール-ゼロまで、接続プールで開発と運用を支える。"
+  },
+  {
+    "source": "firebase",
+    "target": "planetscale",
+    "type": "competes-with",
+    "note": "FirebaseとPlanetScaleはバックエンド機能の所有範囲と運用負荷で比較される。データベース、認証、ホスティング、関数、分析機能をクライアント SDKへ接続する。一方、PlanetScaleはブランチ、非停止スキーマ変更、マネージド運用でMySQL系DBを扱う。"
+  },
+  {
+    "source": "firebase",
+    "target": "pocketbase",
+    "type": "competes-with",
+    "note": "FirebaseとPocketBaseはバックエンド機能の所有範囲と運用負荷で比較される。データベース、認証、ホスティング、関数、分析機能をクライアント SDKへ接続する。一方、PocketBaseはSQLiteと管理画面を小さなサーバーへまとめる。"
+  },
+  {
+    "source": "firebase",
+    "target": "turso",
+    "type": "competes-with",
+    "note": "FirebaseとTursoはバックエンド機能の所有範囲と運用負荷で比較される。データベース、認証、ホスティング、関数、分析機能をクライアント SDKへ接続する。一方、TursoはlibSQLと複製で利用者に近い場所から低遅延にクエリする。"
+  },
+  {
+    "source": "firestore",
+    "target": "gcp",
+    "type": "part-of",
+    "note": "FirestoreはGoogle Cloud上で提供されるリアルタイム対応ドキュメントデータベースである。"
+  },
+  {
+    "source": "flyio",
+    "target": "digitalocean",
+    "type": "competes-with",
+    "note": "Fly.ioとDigitalOceanはWebアプリの配備体験、実行場所、運用自由度で比較される。Firecracker系VMとプライベートネットワークで利用者の近くにアプリを動かす。一方、DigitalOceanはDroplet、Kubernetes、DB、App Platformを比較的単純に提供する。"
+  },
+  {
+    "source": "flyio",
+    "target": "heroku",
+    "type": "competes-with",
+    "note": "Fly.ioとHerokuはWebアプリの配備体験、実行場所、運用自由度で比較される。Firecracker系VMとプライベートネットワークで利用者の近くにアプリを動かす。一方、Herokuはビルドパック、Dyno、アドオンでサーバー運用を抽象化する。"
+  },
+  {
+    "source": "fresh",
+    "target": "deno",
+    "type": "runs-on",
+    "note": "FreshはDenoで動作し、標準Web APIと島アーキテクチャを利用する。"
+  },
+  {
+    "source": "gatsby",
+    "target": "docusaurus",
+    "type": "alternative-to",
+    "note": "GatsbyとDocusaurusはコンテンツ中心サイトとドキュメント構築で比較される。複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。一方、Docusaurusは版管理、検索連携、文書ナビゲーションを含むサイトを生成する。"
+  },
+  {
+    "source": "gatsby",
+    "target": "fresh",
+    "type": "competes-with",
+    "note": "GatsbyとFreshはWebアプリ全体の描画・ルーティング・配備方式で比較される。複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。一方、Freshはサーバー描画を基本に、必要なアイランドだけを対話化する。"
+  },
+  {
+    "source": "gatsby",
+    "target": "react",
+    "type": "built-on",
+    "note": "GatsbyはReactを使ってコンテンツ中心サイトを生成する。"
+  },
+  {
+    "source": "github-actions",
+    "target": "circleci",
+    "type": "competes-with",
+    "note": "GitHub ActionsとCircleCIはビルド・テスト・配備の自動化基盤で比較される。プッシュ、Pull Request、スケジュールをトリガーにテストやデプロイを動かす。一方、CircleCIは設定ファイルからジョブをキャッシュ・並列実行し、複数VCSと接続する。"
+  },
+  {
+    "source": "github-actions",
+    "target": "docker",
+    "type": "works-with",
+    "note": "GitHub ActionsはDockerイメージのビルド、テスト、配備を自動化できる。"
+  },
+  {
+    "source": "github-actions",
+    "target": "gitlab-ci",
+    "type": "competes-with",
+    "note": "GitHub ActionsとGitLab CI/CDはビルド・テスト・配備の自動化基盤で比較される。プッシュ、Pull Request、スケジュールをトリガーにテストやデプロイを動かす。一方、GitLab CI/CDはリポジトリ、ランナー、成果物、環境を一つのプラットフォームで管理する。"
+  },
+  {
+    "source": "github-actions",
+    "target": "jenkins",
+    "type": "competes-with",
+    "note": "GitHub ActionsとJenkinsはビルド・テスト・配備の自動化基盤で比較される。プッシュ、Pull Request、スケジュールをトリガーにテストやデプロイを動かす。一方、Jenkinsは任意のビルド、テスト、デプロイ処理を自社サーバーで実行する。"
+  },
+  {
+    "source": "gitlab-ci",
+    "target": "circleci",
+    "type": "competes-with",
+    "note": "GitLab CI/CDとCircleCIはビルド・テスト・配備の自動化基盤で比較される。リポジトリ、ランナー、成果物、環境を一つのプラットフォームで管理する。一方、CircleCIは設定ファイルからジョブをキャッシュ・並列実行し、複数VCSと接続する。"
+  },
+  {
+    "source": "gitlab-ci",
+    "target": "docker",
+    "type": "works-with",
+    "note": "GitLab CI/CDはDockerイメージのビルド、テスト、配備を自動化できる。"
+  },
+  {
+    "source": "gitlab-ci",
+    "target": "jenkins",
+    "type": "competes-with",
+    "note": "GitLab CI/CDとJenkinsはビルド・テスト・配備の自動化基盤で比較される。リポジトリ、ランナー、成果物、環境を一つのプラットフォームで管理する。一方、Jenkinsは任意のビルド、テスト、デプロイ処理を自社サーバーで実行する。"
+  },
+  {
+    "source": "go",
+    "target": "docker",
+    "type": "works-with",
+    "note": "Goの単一バイナリは小さなコンテナイメージへまとめやすい。"
+  },
+  {
+    "source": "go",
+    "target": "grpc",
+    "type": "works-with",
+    "note": "gRPCはGoで型付きサービス間通信を構築する代表的な選択肢である。"
+  },
+  {
+    "source": "graphql",
+    "target": "grpc",
+    "type": "alternative-to",
+    "note": "GraphQLとgRPCはサービス間APIの契約と通信形式で比較される。型付きスキーマを介して複数リソースのデータを一度に取得する。一方、gRPCはサービス定義からクライアントとサーバーコードを生成しバイナリ通信する。"
+  },
+  {
+    "source": "hibernate",
+    "target": "ef-core",
+    "type": "alternative-to",
+    "note": "HibernateとEntity Framework Coreは言語ごとの業務アプリ向けORM設計で比較される。エンティティ、関係、キャッシュ、クエリをJPA生態系で管理する。一方、Entity Framework CoreはLINQ、モデル、マイグレーションでC# オブジェクトとSQL DBを結ぶ。"
+  },
+  {
+    "source": "hono",
+    "target": "bun",
+    "type": "runs-on",
+    "note": "HonoはBunのWeb標準API上で動作する。"
+  },
+  {
+    "source": "hono",
+    "target": "cloudflare-workers",
+    "type": "runs-on",
+    "note": "HonoはCloudflare WorkersのWeb標準API上で動作する。"
+  },
+  {
+    "source": "hono",
+    "target": "deno",
+    "type": "runs-on",
+    "note": "HonoはDenoのWeb標準API上で動作する。"
+  },
+  {
+    "source": "hono",
+    "target": "elysia",
+    "type": "competes-with",
+    "note": "HonoとElysiaはJavaScript/TypeScriptのHTTPサーバー設計で比較される。同じハンドラー設計をエッジ、Node.js、Bun、Denoで動かす。一方、Elysiaはルート定義から入力と出力の型をつなぎ、高速にHTTP処理する。"
+  },
+  {
+    "source": "hono",
+    "target": "express",
+    "type": "competes-with",
+    "note": "HonoとExpressはJavaScript/TypeScriptのHTTPサーバー設計で比較される。同じハンドラー設計をエッジ、Node.js、Bun、Denoで動かす。一方、Expressはミドルウェアとルートを組み合わせてHTTP処理を構築する。"
+  },
+  {
+    "source": "hono",
+    "target": "fastify",
+    "type": "competes-with",
+    "note": "HonoとFastifyはJavaScript/TypeScriptのHTTPサーバー設計で比較される。同じハンドラー設計をエッジ、Node.js、Bun、Denoで動かす。一方、Fastifyはプラグイン、JSON Schema、効率的なHTTP処理をまとめる。"
+  },
+  {
+    "source": "hono",
+    "target": "nestjs",
+    "type": "competes-with",
+    "note": "HonoとNestJSはJavaScript/TypeScriptのHTTPサーバー設計で比較される。同じハンドラー設計をエッジ、Node.js、Bun、Denoで動かす。一方、NestJSはモジュール、コントローラー、依存注入でアプリの責務を分割する。"
+  },
+  {
+    "source": "hono",
+    "target": "nitro",
+    "type": "competes-with",
+    "note": "HonoとNitroはJavaScript/TypeScriptのHTTPサーバー設計で比較される。同じハンドラー設計をエッジ、Node.js、Bun、Denoで動かす。一方、Nitroはルート、ストレージ、デプロイプリセットを抽象化して配信物を作る。"
+  },
+  {
+    "source": "hono",
+    "target": "nodejs",
+    "type": "runs-on",
+    "note": "HonoはNode.jsのWeb標準API上で動作する。"
+  },
+  {
+    "source": "html",
+    "target": "browser",
+    "type": "runs-on",
+    "note": "HTMLはブラウザーが解析し、文書とアクセシビリティツリーを構築する。"
+  },
+  {
+    "source": "html",
+    "target": "css",
+    "type": "works-with",
+    "note": "HTMLで文書構造を表し、CSSで見た目とレイアウトを定義する。"
+  },
+  {
+    "source": "html",
+    "target": "javascript",
+    "type": "works-with",
+    "note": "HTMLの要素をJavaScriptから操作し、対話的なWeb体験を作る。"
+  },
+  {
+    "source": "htmx",
+    "target": "alpinejs",
+    "type": "alternative-to",
+    "note": "HTMXとAlpine.jsは小さな対話機能を加える方法で比較される。サーバーが返すHTML断片を使い、少ないJavaScriptで画面を更新する。一方、Alpine.jsは属性ベースの状態とイベント処理を既存マークアップへ加える。"
+  },
+  {
+    "source": "htmx",
+    "target": "lit",
+    "type": "alternative-to",
+    "note": "HTMXとLitは小さな対話機能を加える方法で比較される。サーバーが返すHTML断片を使い、少ないJavaScriptで画面を更新する。一方、Litは標準のカスタム要素とシャドウ DOMを扱いやすくする。"
+  },
+  {
+    "source": "htmx",
+    "target": "preact",
+    "type": "alternative-to",
+    "note": "HTMXとPreactは小さな対話機能を加える方法で比較される。サーバーが返すHTML断片を使い、少ないJavaScriptで画面を更新する。一方、Preactは軽量な互換層でコンポーネント型の画面を動かす。"
+  },
+  {
+    "source": "http",
+    "target": "graphql",
+    "type": "works-with",
+    "note": "GraphQLは一般にHTTPを転送層としてクエリとレスポンスを交換する。"
+  },
+  {
+    "source": "http",
+    "target": "grpc",
+    "type": "works-with",
+    "note": "gRPCは通常HTTP/2を転送に使い、Protocol Buffersの契約を運ぶ。"
+  },
+  {
+    "source": "rest",
+    "target": "http",
+    "type": "built-on",
+    "note": "REST APIはHTTPのメソッド、URI、状態コードを使って資源を操作する。"
+  },
+  {
+    "source": "server-sent-events",
+    "target": "http",
+    "type": "built-on",
+    "note": "Server-Sent EventsはHTTP接続を維持してサーバーからイベントを送る。"
+  },
+  {
+    "source": "http",
+    "target": "websocket",
+    "type": "works-with",
+    "note": "WebSocketの接続開始はHTTP Upgradeを利用し、その後は双方向通信へ移行する。"
+  },
+  {
+    "source": "java",
+    "target": "hibernate",
+    "type": "works-with",
+    "note": "HibernateはJavaオブジェクトとリレーショナルデータを対応付ける。"
+  },
+  {
+    "source": "java",
+    "target": "keycloak",
+    "type": "works-with",
+    "note": "Javaで実装されたKeycloakをJava業務システムのID基盤として組み合わせられる。"
+  },
+  {
+    "source": "java",
+    "target": "spring-boot",
+    "type": "works-with",
+    "note": "Spring BootはJavaで業務APIやWebサービスを構築する標準的な基盤である。"
+  },
+  {
+    "source": "javascript",
+    "target": "browser",
+    "type": "runs-on",
+    "note": "JavaScriptはブラウザー上でDOMやWeb APIを操作する。"
+  },
+  {
+    "source": "javascript",
+    "target": "nodejs",
+    "type": "runs-on",
+    "note": "JavaScriptはNode.jsによってサーバーや開発ツールでも実行できる。"
+  },
+  {
+    "source": "jenkins",
+    "target": "docker",
+    "type": "works-with",
+    "note": "JenkinsはDockerイメージのビルド、テスト、配備を自動化できる。"
+  },
+  {
+    "source": "jest",
+    "target": "msw",
+    "type": "works-with",
+    "note": "Jestのテスト内でMSWを使い、ネットワーク境界のHTTP応答を再現できる。"
+  },
+  {
+    "source": "keycloak",
+    "target": "firebase-auth",
+    "type": "competes-with",
+    "note": "KeycloakとFirebase Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。OIDC、OAuth 2.0、SAML、利用者・役割管理を一体で提供する。一方、Firebase Authはパスワード、外部プロバイダー、トークンをクライアント SDKとセキュリティルールへ接続する。"
+  },
+  {
+    "source": "keycloak",
+    "target": "openid-connect",
+    "type": "works-with",
+    "note": "KeycloakはOpenID Connectによるログイン連携を扱える。"
+  },
+  {
+    "source": "keycloak",
+    "target": "supabase-auth",
+    "type": "competes-with",
+    "note": "KeycloakとSupabase Authはアプリ認証の実装範囲、ホスティング、制御権で比較される。OIDC、OAuth 2.0、SAML、利用者・役割管理を一体で提供する。一方、Supabase AuthはJWTとRow Level Securityを使い、利用者とDB権限を結ぶ。"
+  },
+  {
+    "source": "kubernetes",
+    "target": "prometheus",
+    "type": "works-with",
+    "note": "PrometheusでKubernetesのクラスタ、ノード、ワークロードのメトリクスを収集・監視できる。"
+  },
+  {
+    "source": "kubernetes",
+    "target": "terraform",
+    "type": "works-with",
+    "note": "TerraformでKubernetesクラスタやクラウド資源を宣言し、再現可能に構築できる。"
+  },
+  {
+    "source": "kysely",
+    "target": "postgresql",
+    "type": "works-with",
+    "note": "KyselyはPostgreSQLへ型またはモデルを通じてアクセスできる。"
+  },
+  {
+    "source": "laravel",
+    "target": "aspnet-core",
+    "type": "alternative-to",
+    "note": "LaravelとASP.NET Coreはフルスタックな業務Webアプリ基盤で比較される。ルート、ORM、認証、キュー、テンプレートを統合して提供する。一方、ASP.NET Coreは高性能なHTTP処理、API、画面、認証を.NET上で提供する。"
+  },
+  {
+    "source": "laravel",
+    "target": "phoenix",
+    "type": "alternative-to",
+    "note": "LaravelとPhoenixはフルスタックな業務Webアプリ基盤で比較される。ルート、ORM、認証、キュー、テンプレートを統合して提供する。一方、Phoenixは多数接続、耐障害性、LiveViewによるリアルタイム画面を扱う。"
+  },
+  {
+    "source": "laravel",
+    "target": "rails",
+    "type": "alternative-to",
+    "note": "LaravelとRuby on Railsはフルスタックな業務Webアプリ基盤で比較される。ルート、ORM、認証、キュー、テンプレートを統合して提供する。一方、Ruby on RailsはMVC、DB マイグレーション、ルート、ジョブなどを標準構成にまとめる。"
+  },
+  {
+    "source": "laravel",
+    "target": "spring-boot",
+    "type": "alternative-to",
+    "note": "LaravelとSpring Bootはフルスタックな業務Webアプリ基盤で比較される。ルート、ORM、認証、キュー、テンプレートを統合して提供する。一方、Spring Bootは組込みサーバー、自動設定、運用機能で業務APIを構築する。"
+  },
+  {
+    "source": "lit",
+    "target": "preact",
+    "type": "alternative-to",
+    "note": "LitとPreactは小さな対話機能を加える方法で比較される。標準のカスタム要素とシャドウ DOMを扱いやすくする。一方、Preactは軽量な互換層でコンポーネント型の画面を動かす。"
+  },
+  {
+    "source": "mariadb",
+    "target": "mysql",
+    "type": "built-on",
+    "note": "MariaDBはMySQLから分岐し、プロトコルや運用知識の多くを共有する。"
+  },
+  {
+    "source": "mariadb",
+    "target": "sql-server",
+    "type": "competes-with",
+    "note": "MariaDBとSQL Serverはリレーショナルデータの運用、機能、配備形態で比較される。SQL、トランザクション、レプリケーションをMySQL系の運用で提供する。一方、SQL ServerはSQL、分析、認証、運用ツールをMicrosoft生態系で統合する。"
+  },
+  {
+    "source": "mongodb",
+    "target": "dynamodb",
+    "type": "alternative-to",
+    "note": "MongoDBとAmazon DynamoDBはスキーマ柔軟なドキュメント・キー値データで比較される。柔軟なドキュメントスキーマ、インデックス、集約を提供する。一方、Amazon DynamoDBはパーティションキーを中心に自動スケールする低遅延ストレージを提供する。"
+  },
+  {
+    "source": "mongodb",
+    "target": "firestore",
+    "type": "alternative-to",
+    "note": "MongoDBとCloud Firestoreはスキーマ柔軟なドキュメント・キー値データで比較される。柔軟なドキュメントスキーマ、インデックス、集約を提供する。一方、Cloud Firestoreはモバイル/Web クライアントとセキュリティルールを介してドキュメントを同期する。"
+  },
+  {
+    "source": "mongoose",
+    "target": "kysely",
+    "type": "competes-with",
+    "note": "MongooseとKyselyはNode.jsのデータアクセスと型安全性で比較される。検証、ミドルウェア、参照をNode.js オブジェクトとして扱う。一方、Kyselyはテーブル型からSQLに近いクエリを組み立て、結果型を推論する。"
+  },
+  {
+    "source": "mongoose",
+    "target": "mongodb",
+    "type": "built-on",
+    "note": "MongooseはMongoDB文書へスキーマ、検証、モデル操作を加えるODMである。"
+  },
+  {
+    "source": "msw",
+    "target": "http",
+    "type": "works-with",
+    "note": "MSWはService WorkerなどでHTTP通信を捕捉し、実際の境界に近いモックを提供する。"
+  },
+  {
+    "source": "mui",
+    "target": "ant-design",
+    "type": "competes-with",
+    "note": "MUIとAnt DesignはReact向けUI部品の所有権と設計自由度で比較される。豊富な部品、テーマ、アクセシビリティの土台をパッケージで提供する。一方、Ant Designはテーブル、フォーム、ナビゲーションなど情報量の多い部品を提供する。"
+  },
+  {
+    "source": "mui",
+    "target": "chakra-ui",
+    "type": "competes-with",
+    "note": "MUIとChakra UIはReact向けUI部品の所有権と設計自由度で比較される。豊富な部品、テーマ、アクセシビリティの土台をパッケージで提供する。一方、Chakra UIはスタイル propsとテーマを使って再利用部品を構築する。"
+  },
+  {
+    "source": "mysql",
+    "target": "mariadb",
+    "type": "competes-with",
+    "note": "MySQLとMariaDBはリレーショナルデータの運用、機能、配備形態で比較される。トランザクションとインデックスを備えたSQL データストアを提供する。一方、MariaDBはSQL、トランザクション、レプリケーションをMySQL系の運用で提供する。"
+  },
+  {
+    "source": "mysql",
+    "target": "sql-server",
+    "type": "competes-with",
+    "note": "MySQLとSQL Serverはリレーショナルデータの運用、機能、配備形態で比較される。トランザクションとインデックスを備えたSQL データストアを提供する。一方、SQL ServerはSQL、分析、認証、運用ツールをMicrosoft生態系で統合する。"
+  },
+  {
+    "source": "mysql",
+    "target": "sqlite",
+    "type": "competes-with",
+    "note": "MySQLとSQLiteはリレーショナルデータの運用、機能、配備形態で比較される。トランザクションとインデックスを備えたSQL データストアを提供する。一方、SQLiteは単一ファイル内でSQL、トランザクション、インデックスを実行する。"
+  },
+  {
+    "source": "neon",
+    "target": "appwrite",
+    "type": "competes-with",
+    "note": "NeonとAppwriteはバックエンド機能の所有範囲と運用負荷で比較される。ブランチ作成、スケール-ゼロまで、接続プールで開発と運用を支える。一方、Appwriteはセルフホスト可能なAPIとSDKで共通バックエンド機能をまとめる。"
+  },
+  {
+    "source": "neon",
+    "target": "convex",
+    "type": "competes-with",
+    "note": "NeonとConvexはバックエンド機能の所有範囲と運用負荷で比較される。ブランチ作成、スケール-ゼロまで、接続プールで開発と運用を支える。一方、Convexはクエリ、ミューテーション、アクションの結果をクライアントへ自動同期する。"
+  },
+  {
+    "source": "neon",
+    "target": "planetscale",
+    "type": "competes-with",
+    "note": "NeonとPlanetScaleはバックエンド機能の所有範囲と運用負荷で比較される。ブランチ作成、スケール-ゼロまで、接続プールで開発と運用を支える。一方、PlanetScaleはブランチ、非停止スキーマ変更、マネージド運用でMySQL系DBを扱う。"
+  },
+  {
+    "source": "neon",
+    "target": "pocketbase",
+    "type": "competes-with",
+    "note": "NeonとPocketBaseはバックエンド機能の所有範囲と運用負荷で比較される。ブランチ作成、スケール-ゼロまで、接続プールで開発と運用を支える。一方、PocketBaseはSQLiteと管理画面を小さなサーバーへまとめる。"
+  },
+  {
+    "source": "neon",
+    "target": "postgresql",
+    "type": "built-on",
+    "note": "NeonはPostgreSQL互換のサーバーレス運用と分離ストレージを提供する。"
+  },
+  {
+    "source": "neon",
+    "target": "turso",
+    "type": "competes-with",
+    "note": "NeonとTursoはバックエンド機能の所有範囲と運用負荷で比較される。ブランチ作成、スケール-ゼロまで、接続プールで開発と運用を支える。一方、TursoはlibSQLと複製で利用者に近い場所から低遅延にクエリする。"
+  },
+  {
+    "source": "nestjs",
+    "target": "elysia",
+    "type": "competes-with",
+    "note": "NestJSとElysiaはJavaScript/TypeScriptのHTTPサーバー設計で比較される。モジュール、コントローラー、依存注入でアプリの責務を分割する。一方、Elysiaはルート定義から入力と出力の型をつなぎ、高速にHTTP処理する。"
+  },
+  {
+    "source": "nestjs",
+    "target": "nitro",
+    "type": "competes-with",
+    "note": "NestJSとNitroはJavaScript/TypeScriptのHTTPサーバー設計で比較される。モジュール、コントローラー、依存注入でアプリの責務を分割する。一方、Nitroはルート、ストレージ、デプロイプリセットを抽象化して配信物を作る。"
+  },
+  {
+    "source": "nestjs",
+    "target": "nodejs",
+    "type": "runs-on",
+    "note": "NestJSはNode.js上でHTTPサーバーを実行する。"
+  },
+  {
+    "source": "netlify",
+    "target": "astro",
+    "type": "works-with",
+    "note": "Netlify アダプターによりAstroの静的・サーバー出力を配備できる。"
+  },
+  {
+    "source": "netlify",
+    "target": "digitalocean",
+    "type": "competes-with",
+    "note": "NetlifyとDigitalOceanはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携とCDNで静的サイトやフレームワークアプリを公開する。一方、DigitalOceanはDroplet、Kubernetes、DB、App Platformを比較的単純に提供する。"
+  },
+  {
+    "source": "netlify",
+    "target": "flyio",
+    "type": "competes-with",
+    "note": "NetlifyとFly.ioはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携とCDNで静的サイトやフレームワークアプリを公開する。一方、Fly.ioはFirecracker系VMとプライベートネットワークで利用者の近くにアプリを動かす。"
+  },
+  {
+    "source": "netlify",
+    "target": "heroku",
+    "type": "competes-with",
+    "note": "NetlifyとHerokuはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携とCDNで静的サイトやフレームワークアプリを公開する。一方、Herokuはビルドパック、Dyno、アドオンでサーバー運用を抽象化する。"
+  },
+  {
+    "source": "netlify",
+    "target": "railway",
+    "type": "competes-with",
+    "note": "NetlifyとRailwayはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携とCDNで静的サイトやフレームワークアプリを公開する。一方、Railwayはリポジトリやコンテナからサービスを作り環境変数とネットワークを管理する。"
+  },
+  {
+    "source": "netlify",
+    "target": "render",
+    "type": "competes-with",
+    "note": "NetlifyとRenderはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携とCDNで静的サイトやフレームワークアプリを公開する。一方、RenderはGitからビルドし、常駐サービスとマネージドデータを簡潔に運用する。"
+  },
+  {
+    "source": "nextjs",
+    "target": "astro",
+    "type": "competes-with",
+    "note": "Next.jsとAstroはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルーティング、サーバー描画、データ更新、配信最適化を統合する。一方、Astroは標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。"
+  },
+  {
+    "source": "nextjs",
+    "target": "fresh",
+    "type": "competes-with",
+    "note": "Next.jsとFreshはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルーティング、サーバー描画、データ更新、配信最適化を統合する。一方、Freshはサーバー描画を基本に、必要なアイランドだけを対話化する。"
+  },
+  {
+    "source": "nextjs",
+    "target": "gatsby",
+    "type": "competes-with",
+    "note": "Next.jsとGatsbyはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルーティング、サーバー描画、データ更新、配信最適化を統合する。一方、Gatsbyは複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。"
+  },
+  {
+    "source": "nextjs",
+    "target": "nuxt",
+    "type": "competes-with",
+    "note": "Next.jsとNuxtはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルーティング、サーバー描画、データ更新、配信最適化を統合する。一方、Nuxtは規約に沿ったルーティング、描画、サーバー処理を提供する。"
+  },
+  {
+    "source": "nextjs",
+    "target": "react-router",
+    "type": "competes-with",
+    "note": "Next.jsとReact RouterはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルーティング、サーバー描画、データ更新、配信最適化を統合する。一方、React Routerは宣言的、データ、フレームワークの各モードでURLと画面・データを結ぶ。"
+  },
+  {
+    "source": "nextjs",
+    "target": "react",
+    "type": "built-on",
+    "note": "Next.jsはReactを基盤にルーティング、サーバー描画、データ取得を統合する。"
+  },
+  {
+    "source": "nextjs",
+    "target": "remix",
+    "type": "competes-with",
+    "note": "Next.jsとRemixはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルーティング、サーバー描画、データ更新、配信最適化を統合する。一方、Remixはv2系はReact Routerへ統合され、v3 ベータは別の簡潔な道具群として再設計されている。"
+  },
+  {
+    "source": "nextjs",
+    "target": "sveltekit",
+    "type": "competes-with",
+    "note": "Next.jsとSvelteKitはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルーティング、サーバー描画、データ更新、配信最適化を統合する。一方、SvelteKitはファイルルーティング、サーバー描画、フォーム処理、配信先連携を提供する。"
+  },
+  {
+    "source": "nextjs",
+    "target": "tanstack-start",
+    "type": "competes-with",
+    "note": "Next.jsとTanStack StartはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルーティング、サーバー描画、データ更新、配信最適化を統合する。一方、TanStack Startはルート、データ取得、サーバー関数、描画方式を同じ型情報で接続する。"
+  },
+  {
+    "source": "nextjs",
+    "target": "turbopack",
+    "type": "works-with",
+    "note": "Next.jsは開発・本番ビルドの高速化にTurbopackを利用できる。"
+  },
+  {
+    "source": "nginx",
+    "target": "apache-http-server",
+    "type": "competes-with",
+    "note": "NginxとApache HTTP ServerはリバースプロキシとWeb配信の運用で比較される。外部リクエストをバックエンドへ振り分け、TLSやキャッシュを処理する。一方、Apache HTTP Serverは静的配信、プロキシ、認証、ディレクトリ単位設定を提供する。"
+  },
+  {
+    "source": "nginx",
+    "target": "caddy",
+    "type": "competes-with",
+    "note": "NginxとCaddyはリバースプロキシとWeb配信の運用で比較される。外部リクエストをバックエンドへ振り分け、TLSやキャッシュを処理する。一方、Caddyは証明書取得と更新、静的配信、リバースプロキシを自動化する。"
+  },
+  {
+    "source": "nginx",
+    "target": "docker",
+    "type": "works-with",
+    "note": "Nginxをコンテナ化し、静的配信やリバースプロキシとして配置できる。"
+  },
+  {
+    "source": "nitro",
+    "target": "nodejs",
+    "type": "runs-on",
+    "note": "NitroはNode.jsを含む複数の配備先向けにサーバー出力を生成する。"
+  },
+  {
+    "source": "nodejs",
+    "target": "bun",
+    "type": "alternative-to",
+    "note": "Node.jsとBunはサーバーJavaScriptの互換性、権限、同梱ツールで比較される。イベント駆動のI/Oとnpm生態系でサーバーや開発ツールを動かす。一方、BunはNode.js互換を広げながら高速な開発道具を一体で提供する。"
+  },
+  {
+    "source": "nodejs",
+    "target": "deno",
+    "type": "alternative-to",
+    "note": "Node.jsとDenoはサーバーJavaScriptの互換性、権限、同梱ツールで比較される。イベント駆動のI/Oとnpm生態系でサーバーや開発ツールを動かす。一方、Denoは権限制御、TypeScript対応、標準ツールを一体で提供する。"
+  },
+  {
+    "source": "npm",
+    "target": "nodejs",
+    "type": "part-of",
+    "note": "npmはNode.js配布に同梱される標準的なパッケージ管理CLIである。"
+  },
+  {
+    "source": "npm",
+    "target": "pnpm",
+    "type": "competes-with",
+    "note": "npmとpnpmはJavaScript依存関係とワークスペース管理で比較される。依存パッケージの公開、取得、スクリプト実行、version固定を担う。一方、pnpmはコンテンツ-addressable ストアで重複を減らしワークスペースを管理する。"
+  },
+  {
+    "source": "npm",
+    "target": "yarn",
+    "type": "competes-with",
+    "note": "npmとYarnはJavaScript依存関係とワークスペース管理で比較される。依存パッケージの公開、取得、スクリプト実行、version固定を担う。一方、Yarnは依存取得、lock、ワークスペース、Plug'n'Playなどを提供する。"
+  },
+  {
+    "source": "nuxt",
+    "target": "astro",
+    "type": "competes-with",
+    "note": "NuxtとAstroはWebアプリ全体の描画・ルーティング・配備方式で比較される。規約に沿ったルーティング、描画、サーバー処理を提供する。一方、Astroは標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。"
+  },
+  {
+    "source": "nuxt",
+    "target": "fresh",
+    "type": "competes-with",
+    "note": "NuxtとFreshはWebアプリ全体の描画・ルーティング・配備方式で比較される。規約に沿ったルーティング、描画、サーバー処理を提供する。一方、Freshはサーバー描画を基本に、必要なアイランドだけを対話化する。"
+  },
+  {
+    "source": "nuxt",
+    "target": "gatsby",
+    "type": "competes-with",
+    "note": "NuxtとGatsbyはWebアプリ全体の描画・ルーティング・配備方式で比較される。規約に沿ったルーティング、描画、サーバー処理を提供する。一方、Gatsbyは複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。"
+  },
+  {
+    "source": "nuxt",
+    "target": "react-router",
+    "type": "competes-with",
+    "note": "NuxtとReact RouterはWebアプリ全体の描画・ルーティング・配備方式で比較される。規約に沿ったルーティング、描画、サーバー処理を提供する。一方、React Routerは宣言的、データ、フレームワークの各モードでURLと画面・データを結ぶ。"
+  },
+  {
+    "source": "nuxt",
+    "target": "remix",
+    "type": "competes-with",
+    "note": "NuxtとRemixはWebアプリ全体の描画・ルーティング・配備方式で比較される。規約に沿ったルーティング、描画、サーバー処理を提供する。一方、Remixはv2系はReact Routerへ統合され、v3 ベータは別の簡潔な道具群として再設計されている。"
+  },
+  {
+    "source": "nuxt",
+    "target": "sveltekit",
+    "type": "competes-with",
+    "note": "NuxtとSvelteKitはWebアプリ全体の描画・ルーティング・配備方式で比較される。規約に沿ったルーティング、描画、サーバー処理を提供する。一方、SvelteKitはファイルルーティング、サーバー描画、フォーム処理、配信先連携を提供する。"
+  },
+  {
+    "source": "nuxt",
+    "target": "tanstack-start",
+    "type": "competes-with",
+    "note": "NuxtとTanStack StartはWebアプリ全体の描画・ルーティング・配備方式で比較される。規約に沿ったルーティング、描画、サーバー処理を提供する。一方、TanStack Startはルート、データ取得、サーバー関数、描画方式を同じ型情報で接続する。"
+  },
+  {
+    "source": "nuxt",
+    "target": "vue",
+    "type": "built-on",
+    "note": "NuxtはVueを基盤にルーティングとサーバー描画を統合する。"
+  },
+  {
+    "source": "nx",
+    "target": "pnpm",
+    "type": "works-with",
+    "note": "Nxはpnpm ワークスペースと組み合わせ、依存グラフに基づくモノレポタスクを実行できる。"
+  },
+  {
+    "source": "nx",
+    "target": "typescript",
+    "type": "works-with",
+    "note": "NxはTypeScriptプロジェクトの依存グラフ、生成、テストを統合管理できる。"
+  },
+  {
+    "source": "oauth2",
+    "target": "http",
+    "type": "built-on",
+    "note": "OAuth 2.0の認可エンドポイントとトークン交換はHTTP上のプロトコルとして定義される。"
+  },
+  {
+    "source": "oauth2",
+    "target": "keycloak",
+    "type": "implements",
+    "note": "KeycloakはOAuth 2.0の認可サーバーとして認可コードなどのフローを実装する。"
+  },
+  {
+    "source": "openid-connect",
+    "target": "oauth2",
+    "type": "built-on",
+    "note": "OpenID ConnectはOAuth 2.0の認可フローにIDトークンと本人確認を加える。"
+  },
+  {
+    "source": "opensearch",
+    "target": "aws",
+    "type": "works-with",
+    "note": "Amazon OpenSearch Serviceとして検索クラスタをAWS上で運用できる。"
+  },
+  {
+    "source": "opentelemetry",
+    "target": "prometheus",
+    "type": "works-with",
+    "note": "OpenTelemetry CollectorからPrometheus形式でメトリクスを公開・転送できる。"
+  },
+  {
+    "source": "payload-cms",
+    "target": "contentful",
+    "type": "competes-with",
+    "note": "Payload CMSとContentfulはコンテンツ編集、API、ホスティングの所有範囲で比較される。スキーマ、認証、管理画面、APIをアプリコードと同じリポジトリで定義する。一方、Contentfulはコンテンツモデル、編集ワークフロー、ロケール、配信APIを提供する。"
+  },
+  {
+    "source": "payload-cms",
+    "target": "directus",
+    "type": "competes-with",
+    "note": "Payload CMSとDirectusはコンテンツ編集、API、ホスティングの所有範囲で比較される。スキーマ、認証、管理画面、APIをアプリコードと同じリポジトリで定義する。一方、DirectusはテーブルをコンテンツモデルとしてREST/GraphQLと権限管理を提供する。"
+  },
+  {
+    "source": "payload-cms",
+    "target": "ghost",
+    "type": "competes-with",
+    "note": "Payload CMSとGhostはコンテンツ編集、API、ホスティングの所有範囲で比較される。スキーマ、認証、管理画面、APIをアプリコードと同じリポジトリで定義する。一方、Ghostは記事編集、ニュースレター、会員管理、テーマを一体で提供する。"
+  },
+  {
+    "source": "payload-cms",
+    "target": "sanity",
+    "type": "competes-with",
+    "note": "Payload CMSとSanityはコンテンツ編集、API、ホスティングの所有範囲で比較される。スキーマ、認証、管理画面、APIをアプリコードと同じリポジトリで定義する。一方、Sanityはリアルタイム編集、Content Lake、クエリ言語、カスタムスタジオを提供する。"
+  },
+  {
+    "source": "phoenix",
+    "target": "websocket",
+    "type": "works-with",
+    "note": "Phoenix ChannelsはWebSocketを使うリアルタイム機能を提供する。"
+  },
+  {
+    "source": "php",
+    "target": "laravel",
+    "type": "works-with",
+    "note": "LaravelはPHPの代表的なフルスタックWebフレームワークである。"
+  },
+  {
+    "source": "planetscale",
+    "target": "appwrite",
+    "type": "competes-with",
+    "note": "PlanetScaleとAppwriteはバックエンド機能の所有範囲と運用負荷で比較される。ブランチ、非停止スキーマ変更、マネージド運用でMySQL系DBを扱う。一方、Appwriteはセルフホスト可能なAPIとSDKで共通バックエンド機能をまとめる。"
+  },
+  {
+    "source": "planetscale",
+    "target": "convex",
+    "type": "competes-with",
+    "note": "PlanetScaleとConvexはバックエンド機能の所有範囲と運用負荷で比較される。ブランチ、非停止スキーマ変更、マネージド運用でMySQL系DBを扱う。一方、Convexはクエリ、ミューテーション、アクションの結果をクライアントへ自動同期する。"
+  },
+  {
+    "source": "planetscale",
+    "target": "mysql",
+    "type": "built-on",
+    "note": "PlanetScaleはMySQL互換の分散データベース運用を提供する。"
+  },
+  {
+    "source": "planetscale",
+    "target": "pocketbase",
+    "type": "competes-with",
+    "note": "PlanetScaleとPocketBaseはバックエンド機能の所有範囲と運用負荷で比較される。ブランチ、非停止スキーマ変更、マネージド運用でMySQL系DBを扱う。一方、PocketBaseはSQLiteと管理画面を小さなサーバーへまとめる。"
+  },
+  {
+    "source": "planetscale",
+    "target": "turso",
+    "type": "competes-with",
+    "note": "PlanetScaleとTursoはバックエンド機能の所有範囲と運用負荷で比較される。ブランチ、非停止スキーマ変更、マネージド運用でMySQL系DBを扱う。一方、TursoはlibSQLと複製で利用者に近い場所から低遅延にクエリする。"
+  },
+  {
+    "source": "playwright",
+    "target": "cypress",
+    "type": "competes-with",
+    "note": "PlaywrightとCypressはブラウザ自動化とE2Eテストで比較される。Chromium、Firefox、WebKitで実利用に近い操作を再現する。一方、Cypressは操作の時間経過、DOM、リクエストを対話的にデバッグできる。"
+  },
+  {
+    "source": "playwright",
+    "target": "puppeteer",
+    "type": "competes-with",
+    "note": "PlaywrightとPuppeteerはブラウザ自動化とE2Eテストで比較される。Chromium、Firefox、WebKitで実利用に近い操作を再現する。一方、PuppeteerはDevTools Protocolを介してページ操作、キャプチャ、スクレイピングを行う。"
+  },
+  {
+    "source": "playwright",
+    "target": "selenium",
+    "type": "competes-with",
+    "note": "PlaywrightとSeleniumはブラウザ自動化とE2Eテストで比較される。Chromium、Firefox、WebKitで実利用に近い操作を再現する。一方、Seleniumは多言語クライアントから実ブラウザーとリモートグリッドを制御する。"
+  },
+  {
+    "source": "pnpm",
+    "target": "yarn",
+    "type": "competes-with",
+    "note": "pnpmとYarnはJavaScript依存関係とワークスペース管理で比較される。コンテンツ-addressable ストアで重複を減らしワークスペースを管理する。一方、Yarnは依存取得、lock、ワークスペース、Plug'n'Playなどを提供する。"
+  },
+  {
+    "source": "postgresql",
+    "target": "mariadb",
+    "type": "competes-with",
+    "note": "PostgreSQLとMariaDBはリレーショナルデータの運用、機能、配備形態で比較される。トランザクション、インデックス、JSON、拡張機能で幅広い業務データを扱う。一方、MariaDBはSQL、トランザクション、レプリケーションをMySQL系の運用で提供する。"
+  },
+  {
+    "source": "postgresql",
+    "target": "mysql",
+    "type": "competes-with",
+    "note": "PostgreSQLとMySQLはリレーショナルデータの運用、機能、配備形態で比較される。トランザクション、インデックス、JSON、拡張機能で幅広い業務データを扱う。一方、MySQLはトランザクションとインデックスを備えたSQL データストアを提供する。"
+  },
+  {
+    "source": "postgresql",
+    "target": "sql-server",
+    "type": "competes-with",
+    "note": "PostgreSQLとSQL Serverはリレーショナルデータの運用、機能、配備形態で比較される。トランザクション、インデックス、JSON、拡張機能で幅広い業務データを扱う。一方、SQL ServerはSQL、分析、認証、運用ツールをMicrosoft生態系で統合する。"
+  },
+  {
+    "source": "postgresql",
+    "target": "sqlite",
+    "type": "competes-with",
+    "note": "PostgreSQLとSQLiteはリレーショナルデータの運用、機能、配備形態で比較される。トランザクション、インデックス、JSON、拡張機能で幅広い業務データを扱う。一方、SQLiteは単一ファイル内でSQL、トランザクション、インデックスを実行する。"
+  },
+  {
+    "source": "preact",
+    "target": "qwik",
+    "type": "competes-with",
+    "note": "PreactとQwikは大規模さ、描画方式、学習コストで比較される。軽量な互換層でコンポーネント型の画面を動かす。一方、Qwikは細かく分割した処理を必要時に読み込み、再実行ではなく再開する。"
+  },
+  {
+    "source": "prettier",
+    "target": "biome",
+    "type": "competes-with",
+    "note": "PrettierとBiomeはコード整形の一貫性で比較される。入力コードを解析し、選択肢を抑えた統一形式で出力する。一方、BiomeはJavaScript、TypeScript、JSON、CSSなどを単一ツールで検査・整形する。"
+  },
+  {
+    "source": "prettier",
+    "target": "javascript",
+    "type": "works-with",
+    "note": "PrettierはJavaScriptを構文木から再出力し、チームの書式差分を減らす。"
+  },
+  {
+    "source": "prettier",
+    "target": "typescript",
+    "type": "works-with",
+    "note": "PrettierはTypeScript構文を解析して一貫した形式へ整形する。"
+  },
+  {
+    "source": "prisma",
+    "target": "drizzle-orm",
+    "type": "competes-with",
+    "note": "PrismaとDrizzle ORMはNode.jsのデータアクセスと型安全性で比較される。スキーマからクエリクライアントとマイグレーションを生成し、DB操作へ型を付ける。一方、Drizzle ORMはTypeScript スキーマからクエリとマイグレーションを構築する。"
+  },
+  {
+    "source": "prisma",
+    "target": "kysely",
+    "type": "competes-with",
+    "note": "PrismaとKyselyはNode.jsのデータアクセスと型安全性で比較される。スキーマからクエリクライアントとマイグレーションを生成し、DB操作へ型を付ける。一方、Kyselyはテーブル型からSQLに近いクエリを組み立て、結果型を推論する。"
+  },
+  {
+    "source": "prisma",
+    "target": "mongoose",
+    "type": "competes-with",
+    "note": "PrismaとMongooseはNode.jsのデータアクセスと型安全性で比較される。スキーマからクエリクライアントとマイグレーションを生成し、DB操作へ型を付ける。一方、Mongooseは検証、ミドルウェア、参照をNode.js オブジェクトとして扱う。"
+  },
+  {
+    "source": "prisma",
+    "target": "postgresql",
+    "type": "works-with",
+    "note": "PrismaはPostgreSQLへ型またはモデルを通じてアクセスできる。"
+  },
+  {
+    "source": "prisma",
+    "target": "sequelize",
+    "type": "competes-with",
+    "note": "PrismaとSequelizeはNode.jsのデータアクセスと型安全性で比較される。スキーマからクエリクライアントとマイグレーションを生成し、DB操作へ型を付ける。一方、Sequelizeはモデル、関連付け、トランザクションをJavaScript APIで提供する。"
+  },
+  {
+    "source": "prisma",
+    "target": "typeorm",
+    "type": "competes-with",
+    "note": "PrismaとTypeORMはNode.jsのデータアクセスと型安全性で比較される。スキーマからクエリクライアントとマイグレーションを生成し、DB操作へ型を付ける。一方、TypeORMはクラスとテーブルを対応付け、複数SQL DBへのクエリを抽象化する。"
+  },
+  {
+    "source": "prometheus",
+    "target": "grafana",
+    "type": "works-with",
+    "note": "Prometheusが保存した時系列メトリクスをGrafanaで照会・可視化する。"
+  },
+  {
+    "source": "pulumi",
+    "target": "azure",
+    "type": "works-with",
+    "note": "Pulumiは汎用言語でAzure資源を型付きコードとして管理できる。"
+  },
+  {
+    "source": "pulumi",
+    "target": "sst",
+    "type": "alternative-to",
+    "note": "PulumiとSSTはクラウド構成をコードで管理する方法で比較される。型、関数、テストを使ってインフラを構成する。一方、SSTはPulumiを基盤にアプリ、関数、ストレージをTypeScriptから接続する。"
+  },
+  {
+    "source": "puppeteer",
+    "target": "selenium",
+    "type": "competes-with",
+    "note": "PuppeteerとSeleniumはブラウザ自動化とE2Eテストで比較される。DevTools Protocolを介してページ操作、キャプチャ、スクレイピングを行う。一方、Seleniumは多言語クライアントから実ブラウザーとリモートグリッドを制御する。"
+  },
+  {
+    "source": "python",
+    "target": "django",
+    "type": "works-with",
+    "note": "DjangoはPythonでWebアプリ全体を構築するための機能を提供する。"
+  },
+  {
+    "source": "python",
+    "target": "fastapi",
+    "type": "works-with",
+    "note": "FastAPIはPythonの型注釈を活かしてAPIを構築する。"
+  },
+  {
+    "source": "python",
+    "target": "flask",
+    "type": "works-with",
+    "note": "FlaskはPythonで小さくHTTPアプリを始める土台になる。"
+  },
+  {
+    "source": "rails",
+    "target": "aspnet-core",
+    "type": "alternative-to",
+    "note": "Ruby on RailsとASP.NET Coreはフルスタックな業務Webアプリ基盤で比較される。MVC、DB マイグレーション、ルート、ジョブなどを標準構成にまとめる。一方、ASP.NET Coreは高性能なHTTP処理、API、画面、認証を.NET上で提供する。"
+  },
+  {
+    "source": "rails",
+    "target": "phoenix",
+    "type": "alternative-to",
+    "note": "Ruby on RailsとPhoenixはフルスタックな業務Webアプリ基盤で比較される。MVC、DB マイグレーション、ルート、ジョブなどを標準構成にまとめる。一方、Phoenixは多数接続、耐障害性、LiveViewによるリアルタイム画面を扱う。"
+  },
+  {
+    "source": "rails",
+    "target": "spring-boot",
+    "type": "alternative-to",
+    "note": "Ruby on RailsとSpring Bootはフルスタックな業務Webアプリ基盤で比較される。MVC、DB マイグレーション、ルート、ジョブなどを標準構成にまとめる。一方、Spring Bootは組込みサーバー、自動設定、運用機能で業務APIを構築する。"
+  },
+  {
+    "source": "railway",
+    "target": "digitalocean",
+    "type": "competes-with",
+    "note": "RailwayとDigitalOceanはWebアプリの配備体験、実行場所、運用自由度で比較される。リポジトリやコンテナからサービスを作り環境変数とネットワークを管理する。一方、DigitalOceanはDroplet、Kubernetes、DB、App Platformを比較的単純に提供する。"
+  },
+  {
+    "source": "railway",
+    "target": "flyio",
+    "type": "competes-with",
+    "note": "RailwayとFly.ioはWebアプリの配備体験、実行場所、運用自由度で比較される。リポジトリやコンテナからサービスを作り環境変数とネットワークを管理する。一方、Fly.ioはFirecracker系VMとプライベートネットワークで利用者の近くにアプリを動かす。"
+  },
+  {
+    "source": "railway",
+    "target": "heroku",
+    "type": "competes-with",
+    "note": "RailwayとHerokuはWebアプリの配備体験、実行場所、運用自由度で比較される。リポジトリやコンテナからサービスを作り環境変数とネットワークを管理する。一方、Herokuはビルドパック、Dyno、アドオンでサーバー運用を抽象化する。"
+  },
+  {
+    "source": "react-router",
+    "target": "fresh",
+    "type": "competes-with",
+    "note": "React RouterとFreshはWebアプリ全体の描画・ルーティング・配備方式で比較される。宣言的、データ、フレームワークの各モードでURLと画面・データを結ぶ。一方、Freshはサーバー描画を基本に、必要なアイランドだけを対話化する。"
+  },
+  {
+    "source": "react-router",
+    "target": "gatsby",
+    "type": "competes-with",
+    "note": "React RouterとGatsbyはWebアプリ全体の描画・ルーティング・配備方式で比較される。宣言的、データ、フレームワークの各モードでURLと画面・データを結ぶ。一方、Gatsbyは複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。"
+  },
+  {
+    "source": "react-router",
+    "target": "react",
+    "type": "built-on",
+    "note": "React RouterはReactアプリのルーティングとデータ処理を担う。"
+  },
+  {
+    "source": "react",
+    "target": "angular",
+    "type": "competes-with",
+    "note": "ReactとAngularは大規模さ、描画方式、学習コストで比較される。宣言的なUI部品と状態更新の模型を提供する。一方、Angularは部品、依存注入、ルーティング、フォームなどの標準構成を提供する。"
+  },
+  {
+    "source": "react",
+    "target": "preact",
+    "type": "competes-with",
+    "note": "ReactとPreactは大規模さ、描画方式、学習コストで比較される。宣言的なUI部品と状態更新の模型を提供する。一方、Preactは軽量な互換層でコンポーネント型の画面を動かす。"
+  },
+  {
+    "source": "react",
+    "target": "qwik",
+    "type": "competes-with",
+    "note": "ReactとQwikは大規模さ、描画方式、学習コストで比較される。宣言的なUI部品と状態更新の模型を提供する。一方、Qwikは細かく分割した処理を必要時に読み込み、再実行ではなく再開する。"
+  },
+  {
+    "source": "react",
+    "target": "solid",
+    "type": "competes-with",
+    "note": "ReactとSolidは大規模さ、描画方式、学習コストで比較される。宣言的なUI部品と状態更新の模型を提供する。一方、Solidはシグナルを使い、仮想DOMなしで状態変化を画面へ反映する。"
+  },
+  {
+    "source": "react",
+    "target": "svelte",
+    "type": "competes-with",
+    "note": "ReactとSvelteは大規模さ、描画方式、学習コストで比較される。宣言的なUI部品と状態更新の模型を提供する。一方、Svelteは簡潔な部品記法をブラウザで動くJavaScriptへ変換する。"
+  },
+  {
+    "source": "react",
+    "target": "vue",
+    "type": "competes-with",
+    "note": "ReactとVueは大規模さ、描画方式、学習コストで比較される。宣言的なUI部品と状態更新の模型を提供する。一方、Vueはテンプレート、反応的な状態、部品化を一体で提供する。"
+  },
+  {
+    "source": "redis",
+    "target": "cloudflare-kv",
+    "type": "alternative-to",
+    "note": "RedisとCloudflare KVはキー値アクセスを提供するが、一貫性と実行場所が異なる。"
+  },
+  {
+    "source": "redis",
+    "target": "django",
+    "type": "works-with",
+    "note": "RedisをDjangoのキャッシュや非同期タスクのブローカーとして利用できる。"
+  },
+  {
+    "source": "redis",
+    "target": "rails",
+    "type": "works-with",
+    "note": "RedisをRailsのキャッシュ、Action Cable、ジョブ基盤と組み合わせられる。"
+  },
+  {
+    "source": "redux-toolkit",
+    "target": "pinia",
+    "type": "alternative-to",
+    "note": "Redux ToolkitとPiniaはクライアント状態の共有と更新方法で比較される。予測可能なglobal state、更新処理、デバッグ手段を簡潔に組む。一方、Piniaは複数ストア、アクション、devtools連携で共有状態を管理する。"
+  },
+  {
+    "source": "redux-toolkit",
+    "target": "react",
+    "type": "works-with",
+    "note": "Redux ToolkitはReact Reduxを介してReactアプリの共有状態を管理する。"
+  },
+  {
+    "source": "redux-toolkit",
+    "target": "zustand",
+    "type": "alternative-to",
+    "note": "Redux ToolkitとZustandはクライアント状態の共有と更新方法で比較される。予測可能なglobal state、更新処理、デバッグ手段を簡潔に組む。一方、Zustandはフックから直接使えるストアを少ない定型記述で提供する。"
+  },
+  {
+    "source": "remix",
+    "target": "fresh",
+    "type": "competes-with",
+    "note": "RemixとFreshはWebアプリ全体の描画・ルーティング・配備方式で比較される。v2系はReact Routerへ統合され、v3 ベータは別の簡潔な道具群として再設計されている。一方、Freshはサーバー描画を基本に、必要なアイランドだけを対話化する。"
+  },
+  {
+    "source": "remix",
+    "target": "gatsby",
+    "type": "competes-with",
+    "note": "RemixとGatsbyはWebアプリ全体の描画・ルーティング・配備方式で比較される。v2系はReact Routerへ統合され、v3 ベータは別の簡潔な道具群として再設計されている。一方、Gatsbyは複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。"
+  },
+  {
+    "source": "remix",
+    "target": "react-router",
+    "type": "built-on",
+    "note": "Remix v2の設計はReact Routerのフレームワーク機能へ統合されている。"
+  },
+  {
+    "source": "remix",
+    "target": "react-router",
+    "type": "competes-with",
+    "note": "RemixとReact RouterはWebアプリ全体の描画・ルーティング・配備方式で比較される。v2系はReact Routerへ統合され、v3 ベータは別の簡潔な道具群として再設計されている。一方、React Routerは宣言的、データ、フレームワークの各モードでURLと画面・データを結ぶ。"
+  },
+  {
+    "source": "render",
+    "target": "digitalocean",
+    "type": "competes-with",
+    "note": "RenderとDigitalOceanはWebアプリの配備体験、実行場所、運用自由度で比較される。Gitからビルドし、常駐サービスとマネージドデータを簡潔に運用する。一方、DigitalOceanはDroplet、Kubernetes、DB、App Platformを比較的単純に提供する。"
+  },
+  {
+    "source": "render",
+    "target": "flyio",
+    "type": "competes-with",
+    "note": "RenderとFly.ioはWebアプリの配備体験、実行場所、運用自由度で比較される。Gitからビルドし、常駐サービスとマネージドデータを簡潔に運用する。一方、Fly.ioはFirecracker系VMとプライベートネットワークで利用者の近くにアプリを動かす。"
+  },
+  {
+    "source": "render",
+    "target": "heroku",
+    "type": "competes-with",
+    "note": "RenderとHerokuはWebアプリの配備体験、実行場所、運用自由度で比較される。Gitからビルドし、常駐サービスとマネージドデータを簡潔に運用する。一方、Herokuはビルドパック、Dyno、アドオンでサーバー運用を抽象化する。"
+  },
+  {
+    "source": "render",
+    "target": "railway",
+    "type": "competes-with",
+    "note": "RenderとRailwayはWebアプリの配備体験、実行場所、運用自由度で比較される。Gitからビルドし、常駐サービスとマネージドデータを簡潔に運用する。一方、Railwayはリポジトリやコンテナからサービスを作り環境変数とネットワークを管理する。"
+  },
+  {
+    "source": "rest",
+    "target": "graphql",
+    "type": "alternative-to",
+    "note": "RESTとGraphQLはサービス間APIの契約と通信形式で比較される。識別可能なリソース、統一interface、statelessな通信を指針にする。一方、GraphQLは型付きスキーマを介して複数リソースのデータを一度に取得する。"
+  },
+  {
+    "source": "rest",
+    "target": "grpc",
+    "type": "alternative-to",
+    "note": "RESTとgRPCはサービス間APIの契約と通信形式で比較される。識別可能なリソース、統一interface、statelessな通信を指針にする。一方、gRPCはサービス定義からクライアントとサーバーコードを生成しバイナリ通信する。"
+  },
+  {
+    "source": "rolldown",
+    "target": "parcel",
+    "type": "competes-with",
+    "note": "RolldownとParcelは開発サーバー、バンドル速度、拡張性で比較される。高速なバンドルと変換を一つのエンジンにまとめ、Vite 8を支える。一方、ParcelはHTMLを入口に変換、バンドル、開発サーバーを自動構成する。"
+  },
+  {
+    "source": "rollup",
+    "target": "esbuild",
+    "type": "competes-with",
+    "note": "Rollupとesbuildは開発サーバー、バンドル速度、拡張性で比較される。ツリーシェイキングと複数形式出力で配布パッケージを生成する。一方、esbuildはバンドル、変換、圧縮を高速に実行する。"
+  },
+  {
+    "source": "rollup",
+    "target": "parcel",
+    "type": "competes-with",
+    "note": "RollupとParcelは開発サーバー、バンドル速度、拡張性で比較される。ツリーシェイキングと複数形式出力で配布パッケージを生成する。一方、ParcelはHTMLを入口に変換、バンドル、開発サーバーを自動構成する。"
+  },
+  {
+    "source": "rollup",
+    "target": "rolldown",
+    "type": "competes-with",
+    "note": "RollupとRolldownは開発サーバー、バンドル速度、拡張性で比較される。ツリーシェイキングと複数形式出力で配布パッケージを生成する。一方、Rolldownは高速なバンドルと変換を一つのエンジンにまとめ、Vite 8を支える。"
+  },
+  {
+    "source": "rollup",
+    "target": "rspack",
+    "type": "competes-with",
+    "note": "RollupとRspackは開発サーバー、バンドル速度、拡張性で比較される。ツリーシェイキングと複数形式出力で配布パッケージを生成する。一方、Rspackは既存webpack生態系を活かしながらビルドを高速化する。"
+  },
+  {
+    "source": "rollup",
+    "target": "turbopack",
+    "type": "competes-with",
+    "note": "RollupとTurbopackは開発サーバー、バンドル速度、拡張性で比較される。ツリーシェイキングと複数形式出力で配布パッケージを生成する。一方、Turbopackはファイル単位のキャッシュで開発と本番のNext.js ビルドを行う。"
+  },
+  {
+    "source": "rspack",
+    "target": "parcel",
+    "type": "competes-with",
+    "note": "RspackとParcelは開発サーバー、バンドル速度、拡張性で比較される。既存webpack生態系を活かしながらビルドを高速化する。一方、ParcelはHTMLを入口に変換、バンドル、開発サーバーを自動構成する。"
+  },
+  {
+    "source": "rspack",
+    "target": "rolldown",
+    "type": "competes-with",
+    "note": "RspackとRolldownは開発サーバー、バンドル速度、拡張性で比較される。既存webpack生態系を活かしながらビルドを高速化する。一方、Rolldownは高速なバンドルと変換を一つのエンジンにまとめ、Vite 8を支える。"
+  },
+  {
+    "source": "rspack",
+    "target": "swc",
+    "type": "works-with",
+    "note": "RspackはSWC系のRust実装を活用して高速な変換を提供する。"
+  },
+  {
+    "source": "ruby",
+    "target": "rails",
+    "type": "works-with",
+    "note": "RailsはRubyの規約を活かしてWebアプリを素早く組み立てる。"
+  },
+  {
+    "source": "rust",
+    "target": "cloudflare-workers",
+    "type": "runs-on",
+    "note": "RustをWebAssemblyへコンパイルし、Cloudflare Workersから実行できる。"
+  },
+  {
+    "source": "sanity",
+    "target": "contentful",
+    "type": "competes-with",
+    "note": "SanityとContentfulはコンテンツ編集、API、ホスティングの所有範囲で比較される。リアルタイム編集、Content Lake、クエリ言語、カスタムスタジオを提供する。一方、Contentfulはコンテンツモデル、編集ワークフロー、ロケール、配信APIを提供する。"
+  },
+  {
+    "source": "sanity",
+    "target": "ghost",
+    "type": "competes-with",
+    "note": "SanityとGhostはコンテンツ編集、API、ホスティングの所有範囲で比較される。リアルタイム編集、Content Lake、クエリ言語、カスタムスタジオを提供する。一方、Ghostは記事編集、ニュースレター、会員管理、テーマを一体で提供する。"
+  },
+  {
+    "source": "sanity",
+    "target": "nextjs",
+    "type": "works-with",
+    "note": "Sanityの構造化コンテンツをNext.jsから取得し、プレビューと公開を構築できる。"
+  },
+  {
+    "source": "sass",
+    "target": "css-modules",
+    "type": "alternative-to",
+    "note": "SassとCSS Modulesはスタイルの再利用、局所化、実行時コストで比較される。Sass記法を標準CSSへ変換し、大きなスタイルシートを分割管理する。一方、CSS Modulesはビルド時にクラス名を固有化し、部品間の衝突を防ぐ。"
+  },
+  {
+    "source": "sass",
+    "target": "emotion",
+    "type": "alternative-to",
+    "note": "SassとEmotionはスタイルの再利用、局所化、実行時コストで比較される。Sass記法を標準CSSへ変換し、大きなスタイルシートを分割管理する。一方、Emotionはオブジェクトまたはテンプレート記法から部品に紐づくスタイルを生成する。"
+  },
+  {
+    "source": "sass",
+    "target": "styled-components",
+    "type": "alternative-to",
+    "note": "Sassとstyled-componentsはスタイルの再利用、局所化、実行時コストで比較される。Sass記法を標準CSSへ変換し、大きなスタイルシートを分割管理する。一方、styled-componentsはpropsに応じたスタイルと固有クラスをランタイムで生成する。"
+  },
+  {
+    "source": "sass",
+    "target": "unocss",
+    "type": "alternative-to",
+    "note": "SassとUnoCSSはスタイルの再利用、局所化、実行時コストで比較される。Sass記法を標準CSSへ変換し、大きなスタイルシートを分割管理する。一方、UnoCSSはプリセットとルールから使用中のクラスに対応するCSSを生成する。"
+  },
+  {
+    "source": "sentry",
+    "target": "datadog",
+    "type": "competes-with",
+    "note": "SentryとDatadogはアプリ障害の検知と原因調査で比較される。stack トレース、release、利用者操作、トレースを集約して原因を追う。一方、Datadogはメトリクス、ログ、トレース、RUM、アラートを一つの画面で関連付ける。"
+  },
+  {
+    "source": "sentry",
+    "target": "javascript",
+    "type": "works-with",
+    "note": "Sentry SDKでブラウザーJavaScriptの例外、性能、リリース情報を収集できる。"
+  },
+  {
+    "source": "sentry",
+    "target": "opentelemetry",
+    "type": "works-with",
+    "note": "SentryはOpenTelemetryのトレースを取り込み、例外情報と関連付けられる。"
+  },
+  {
+    "source": "sequelize",
+    "target": "kysely",
+    "type": "competes-with",
+    "note": "SequelizeとKyselyはNode.jsのデータアクセスと型安全性で比較される。モデル、関連付け、トランザクションをJavaScript APIで提供する。一方、Kyselyはテーブル型からSQLに近いクエリを組み立て、結果型を推論する。"
+  },
+  {
+    "source": "sequelize",
+    "target": "mongoose",
+    "type": "competes-with",
+    "note": "SequelizeとMongooseはNode.jsのデータアクセスと型安全性で比較される。モデル、関連付け、トランザクションをJavaScript APIで提供する。一方、Mongooseは検証、ミドルウェア、参照をNode.js オブジェクトとして扱う。"
+  },
+  {
+    "source": "sequelize",
+    "target": "postgresql",
+    "type": "works-with",
+    "note": "SequelizeはPostgreSQLへ型またはモデルを通じてアクセスできる。"
+  },
+  {
+    "source": "server-sent-events",
+    "target": "browser",
+    "type": "runs-on",
+    "note": "ブラウザーのEventSource APIがServer-Sent Eventsを受信し、自動再接続を扱う。"
+  },
+  {
+    "source": "shadcn-ui",
+    "target": "ant-design",
+    "type": "competes-with",
+    "note": "shadcn/uiとAnt DesignはReact向けUI部品の所有権と設計自由度で比較される。Radix系プリミティブとTailwind CSSを基に編集可能な部品を生成する。一方、Ant Designはテーブル、フォーム、ナビゲーションなど情報量の多い部品を提供する。"
+  },
+  {
+    "source": "shadcn-ui",
+    "target": "chakra-ui",
+    "type": "competes-with",
+    "note": "shadcn/uiとChakra UIはReact向けUI部品の所有権と設計自由度で比較される。Radix系プリミティブとTailwind CSSを基に編集可能な部品を生成する。一方、Chakra UIはスタイル propsとテーマを使って再利用部品を構築する。"
+  },
+  {
+    "source": "shadcn-ui",
+    "target": "mui",
+    "type": "competes-with",
+    "note": "shadcn/uiとMUIはReact向けUI部品の所有権と設計自由度で比較される。Radix系プリミティブとTailwind CSSを基に編集可能な部品を生成する。一方、MUIは豊富な部品、テーマ、アクセシビリティの土台をパッケージで提供する。"
+  },
+  {
+    "source": "solid",
+    "target": "preact",
+    "type": "competes-with",
+    "note": "SolidとPreactは大規模さ、描画方式、学習コストで比較される。シグナルを使い、仮想DOMなしで状態変化を画面へ反映する。一方、Preactは軽量な互換層でコンポーネント型の画面を動かす。"
+  },
+  {
+    "source": "solid",
+    "target": "qwik",
+    "type": "competes-with",
+    "note": "SolidとQwikは大規模さ、描画方式、学習コストで比較される。シグナルを使い、仮想DOMなしで状態変化を画面へ反映する。一方、Qwikは細かく分割した処理を必要時に読み込み、再実行ではなく再開する。"
+  },
+  {
+    "source": "spring-boot",
+    "target": "aspnet-core",
+    "type": "alternative-to",
+    "note": "Spring BootとASP.NET Coreはフルスタックな業務Webアプリ基盤で比較される。組込みサーバー、自動設定、運用機能で業務APIを構築する。一方、ASP.NET Coreは高性能なHTTP処理、API、画面、認証を.NET上で提供する。"
+  },
+  {
+    "source": "spring-boot",
+    "target": "phoenix",
+    "type": "alternative-to",
+    "note": "Spring BootとPhoenixはフルスタックな業務Webアプリ基盤で比較される。組込みサーバー、自動設定、運用機能で業務APIを構築する。一方、Phoenixは多数接続、耐障害性、LiveViewによるリアルタイム画面を扱う。"
+  },
+  {
+    "source": "sql-server",
+    "target": "azure",
+    "type": "works-with",
+    "note": "SQL ServerはAzure SQLなどMicrosoftクラウドのマネージド構成で利用できる。"
+  },
+  {
+    "source": "sqlalchemy",
+    "target": "ef-core",
+    "type": "alternative-to",
+    "note": "SQLAlchemyとEntity Framework Coreは言語ごとの業務アプリ向けORM設計で比較される。低水準SQLからオブジェクト mappingまで段階的にDBを扱う。一方、Entity Framework CoreはLINQ、モデル、マイグレーションでC# オブジェクトとSQL DBを結ぶ。"
+  },
+  {
+    "source": "sqlalchemy",
+    "target": "hibernate",
+    "type": "alternative-to",
+    "note": "SQLAlchemyとHibernateは言語ごとの業務アプリ向けORM設計で比較される。低水準SQLからオブジェクト mappingまで段階的にDBを扱う。一方、Hibernateはエンティティ、関係、キャッシュ、クエリをJPA生態系で管理する。"
+  },
+  {
+    "source": "sqlalchemy",
+    "target": "python",
+    "type": "works-with",
+    "note": "SQLAlchemyはPythonでSQL式とORMの両方を提供する。"
+  },
+  {
+    "source": "sqlite",
+    "target": "mariadb",
+    "type": "competes-with",
+    "note": "SQLiteとMariaDBはリレーショナルデータの運用、機能、配備形態で比較される。単一ファイル内でSQL、トランザクション、インデックスを実行する。一方、MariaDBはSQL、トランザクション、レプリケーションをMySQL系の運用で提供する。"
+  },
+  {
+    "source": "sqlite",
+    "target": "sql-server",
+    "type": "competes-with",
+    "note": "SQLiteとSQL Serverはリレーショナルデータの運用、機能、配備形態で比較される。単一ファイル内でSQL、トランザクション、インデックスを実行する。一方、SQL ServerはSQL、分析、認証、運用ツールをMicrosoft生態系で統合する。"
+  },
+  {
+    "source": "sst",
+    "target": "aws",
+    "type": "built-on",
+    "note": "SSTはAWSリソースとアプリコードを一体で定義・配備する。"
+  },
+  {
+    "source": "storybook",
+    "target": "msw",
+    "type": "works-with",
+    "note": "StorybookのストーリーでMSWを使い、画面状態ごとのHTTP・GraphQL応答を再現できる。"
+  },
+  {
+    "source": "storybook",
+    "target": "react",
+    "type": "works-with",
+    "note": "StorybookはReactコンポーネントをアプリから分離して開発・文書化できる。"
+  },
+  {
+    "source": "strapi",
+    "target": "contentful",
+    "type": "competes-with",
+    "note": "StrapiとContentfulはコンテンツ編集、API、ホスティングの所有範囲で比較される。コンテンツモデル、管理画面、REST/GraphQL APIを提供する。一方、Contentfulはコンテンツモデル、編集ワークフロー、ロケール、配信APIを提供する。"
+  },
+  {
+    "source": "strapi",
+    "target": "directus",
+    "type": "competes-with",
+    "note": "StrapiとDirectusはコンテンツ編集、API、ホスティングの所有範囲で比較される。コンテンツモデル、管理画面、REST/GraphQL APIを提供する。一方、DirectusはテーブルをコンテンツモデルとしてREST/GraphQLと権限管理を提供する。"
+  },
+  {
+    "source": "strapi",
+    "target": "ghost",
+    "type": "competes-with",
+    "note": "StrapiとGhostはコンテンツ編集、API、ホスティングの所有範囲で比較される。コンテンツモデル、管理画面、REST/GraphQL APIを提供する。一方、Ghostは記事編集、ニュースレター、会員管理、テーマを一体で提供する。"
+  },
+  {
+    "source": "strapi",
+    "target": "payload-cms",
+    "type": "competes-with",
+    "note": "StrapiとPayload CMSはコンテンツ編集、API、ホスティングの所有範囲で比較される。コンテンツモデル、管理画面、REST/GraphQL APIを提供する。一方、Payload CMSはスキーマ、認証、管理画面、APIをアプリコードと同じリポジトリで定義する。"
+  },
+  {
+    "source": "strapi",
+    "target": "sanity",
+    "type": "competes-with",
+    "note": "StrapiとSanityはコンテンツ編集、API、ホスティングの所有範囲で比較される。コンテンツモデル、管理画面、REST/GraphQL APIを提供する。一方、Sanityはリアルタイム編集、Content Lake、クエリ言語、カスタムスタジオを提供する。"
+  },
+  {
+    "source": "styled-components",
+    "target": "emotion",
+    "type": "alternative-to",
+    "note": "styled-componentsとEmotionはスタイルの再利用、局所化、実行時コストで比較される。propsに応じたスタイルと固有クラスをランタイムで生成する。一方、Emotionはオブジェクトまたはテンプレート記法から部品に紐づくスタイルを生成する。"
+  },
+  {
+    "source": "styled-components",
+    "target": "unocss",
+    "type": "alternative-to",
+    "note": "styled-componentsとUnoCSSはスタイルの再利用、局所化、実行時コストで比較される。propsに応じたスタイルと固有クラスをランタイムで生成する。一方、UnoCSSはプリセットとルールから使用中のクラスに対応するCSSを生成する。"
+  },
+  {
+    "source": "supabase-auth",
+    "target": "openid-connect",
+    "type": "implements",
+    "note": "Supabase AuthはOpenID Connectによるログイン連携を扱える。"
+  },
+  {
+    "source": "supabase-auth",
+    "target": "supabase",
+    "type": "part-of",
+    "note": "Supabase AuthはSupabaseのPostgreSQLやAPIと統合された認証機能である。"
+  },
+  {
+    "source": "supabase",
+    "target": "appwrite",
+    "type": "competes-with",
+    "note": "SupabaseとAppwriteはバックエンド機能の所有範囲と運用負荷で比較される。管理済みDBへリアルタイム、認証、オブジェクトストレージ、エッジ関数を加える。一方、Appwriteはセルフホスト可能なAPIとSDKで共通バックエンド機能をまとめる。"
+  },
+  {
+    "source": "supabase",
+    "target": "convex",
+    "type": "competes-with",
+    "note": "SupabaseとConvexはバックエンド機能の所有範囲と運用負荷で比較される。管理済みDBへリアルタイム、認証、オブジェクトストレージ、エッジ関数を加える。一方、Convexはクエリ、ミューテーション、アクションの結果をクライアントへ自動同期する。"
+  },
+  {
+    "source": "supabase",
+    "target": "firebase",
+    "type": "competes-with",
+    "note": "SupabaseとFirebaseはバックエンド機能の所有範囲と運用負荷で比較される。管理済みDBへリアルタイム、認証、オブジェクトストレージ、エッジ関数を加える。一方、Firebaseはデータベース、認証、ホスティング、関数、分析機能をクライアント SDKへ接続する。"
+  },
+  {
+    "source": "supabase",
+    "target": "neon",
+    "type": "competes-with",
+    "note": "SupabaseとNeonはバックエンド機能の所有範囲と運用負荷で比較される。管理済みDBへリアルタイム、認証、オブジェクトストレージ、エッジ関数を加える。一方、Neonはブランチ作成、スケール-ゼロまで、接続プールで開発と運用を支える。"
+  },
+  {
+    "source": "supabase",
+    "target": "planetscale",
+    "type": "competes-with",
+    "note": "SupabaseとPlanetScaleはバックエンド機能の所有範囲と運用負荷で比較される。管理済みDBへリアルタイム、認証、オブジェクトストレージ、エッジ関数を加える。一方、PlanetScaleはブランチ、非停止スキーマ変更、マネージド運用でMySQL系DBを扱う。"
+  },
+  {
+    "source": "supabase",
+    "target": "pocketbase",
+    "type": "competes-with",
+    "note": "SupabaseとPocketBaseはバックエンド機能の所有範囲と運用負荷で比較される。管理済みDBへリアルタイム、認証、オブジェクトストレージ、エッジ関数を加える。一方、PocketBaseはSQLiteと管理画面を小さなサーバーへまとめる。"
+  },
+  {
+    "source": "supabase",
+    "target": "postgresql",
+    "type": "built-on",
+    "note": "SupabaseはPostgreSQLを中核に認証、ストレージ、APIを組み合わせる。"
+  },
+  {
+    "source": "supabase",
+    "target": "turso",
+    "type": "competes-with",
+    "note": "SupabaseとTursoはバックエンド機能の所有範囲と運用負荷で比較される。管理済みDBへリアルタイム、認証、オブジェクトストレージ、エッジ関数を加える。一方、TursoはlibSQLと複製で利用者に近い場所から低遅延にクエリする。"
+  },
+  {
+    "source": "svelte",
+    "target": "preact",
+    "type": "competes-with",
+    "note": "SvelteとPreactは大規模さ、描画方式、学習コストで比較される。簡潔な部品記法をブラウザで動くJavaScriptへ変換する。一方、Preactは軽量な互換層でコンポーネント型の画面を動かす。"
+  },
+  {
+    "source": "svelte",
+    "target": "qwik",
+    "type": "competes-with",
+    "note": "SvelteとQwikは大規模さ、描画方式、学習コストで比較される。簡潔な部品記法をブラウザで動くJavaScriptへ変換する。一方、Qwikは細かく分割した処理を必要時に読み込み、再実行ではなく再開する。"
+  },
+  {
+    "source": "svelte",
+    "target": "solid",
+    "type": "competes-with",
+    "note": "SvelteとSolidは大規模さ、描画方式、学習コストで比較される。簡潔な部品記法をブラウザで動くJavaScriptへ変換する。一方、Solidはシグナルを使い、仮想DOMなしで状態変化を画面へ反映する。"
+  },
+  {
+    "source": "sveltekit",
+    "target": "fresh",
+    "type": "competes-with",
+    "note": "SvelteKitとFreshはWebアプリ全体の描画・ルーティング・配備方式で比較される。ファイルルーティング、サーバー描画、フォーム処理、配信先連携を提供する。一方、Freshはサーバー描画を基本に、必要なアイランドだけを対話化する。"
+  },
+  {
+    "source": "sveltekit",
+    "target": "gatsby",
+    "type": "competes-with",
+    "note": "SvelteKitとGatsbyはWebアプリ全体の描画・ルーティング・配備方式で比較される。ファイルルーティング、サーバー描画、フォーム処理、配信先連携を提供する。一方、Gatsbyは複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。"
+  },
+  {
+    "source": "sveltekit",
+    "target": "react-router",
+    "type": "competes-with",
+    "note": "SvelteKitとReact RouterはWebアプリ全体の描画・ルーティング・配備方式で比較される。ファイルルーティング、サーバー描画、フォーム処理、配信先連携を提供する。一方、React Routerは宣言的、データ、フレームワークの各モードでURLと画面・データを結ぶ。"
+  },
+  {
+    "source": "sveltekit",
+    "target": "remix",
+    "type": "competes-with",
+    "note": "SvelteKitとRemixはWebアプリ全体の描画・ルーティング・配備方式で比較される。ファイルルーティング、サーバー描画、フォーム処理、配信先連携を提供する。一方、Remixはv2系はReact Routerへ統合され、v3 ベータは別の簡潔な道具群として再設計されている。"
+  },
+  {
+    "source": "sveltekit",
+    "target": "svelte",
+    "type": "built-on",
+    "note": "SvelteKitはSvelteを基盤にWebアプリ全体の規約を提供する。"
+  },
+  {
+    "source": "sveltekit",
+    "target": "tanstack-start",
+    "type": "competes-with",
+    "note": "SvelteKitとTanStack StartはWebアプリ全体の描画・ルーティング・配備方式で比較される。ファイルルーティング、サーバー描画、フォーム処理、配信先連携を提供する。一方、TanStack Startはルート、データ取得、サーバー関数、描画方式を同じ型情報で接続する。"
+  },
+  {
+    "source": "swc",
+    "target": "esbuild",
+    "type": "alternative-to",
+    "note": "SWCとesbuildはJavaScript/TypeScriptの変換方式で比較される。構文変換と圧縮を高速化しフレームワークの内部でも使われる。一方、esbuildはバンドル、変換、圧縮を高速に実行する。"
+  },
+  {
+    "source": "swr",
+    "target": "apollo-client",
+    "type": "competes-with",
+    "note": "SWRとApollo Clientはサーバー状態の取得、キャッシュ、同期で比較される。キー単位の取得、キャッシュ、再検証を小さなフック APIで提供する。一方、Apollo Clientはクエリ結果をオブジェクト単位でキャッシュし、Reactの状態へ接続する。"
+  },
+  {
+    "source": "tailwind-css",
+    "target": "bootstrap",
+    "type": "alternative-to",
+    "note": "Tailwind CSSとBootstrapはスタイルの再利用、局所化、実行時コストで比較される。設計トークンに沿ったCSSをクラス名から生成する。一方、Bootstrapはグリッド、フォーム、ナビゲーションなどを既定の見た目で素早く提供する。"
+  },
+  {
+    "source": "tailwind-css",
+    "target": "css-modules",
+    "type": "alternative-to",
+    "note": "Tailwind CSSとCSS Modulesはスタイルの再利用、局所化、実行時コストで比較される。設計トークンに沿ったCSSをクラス名から生成する。一方、CSS Modulesはビルド時にクラス名を固有化し、部品間の衝突を防ぐ。"
+  },
+  {
+    "source": "tailwind-css",
+    "target": "emotion",
+    "type": "alternative-to",
+    "note": "Tailwind CSSとEmotionはスタイルの再利用、局所化、実行時コストで比較される。設計トークンに沿ったCSSをクラス名から生成する。一方、Emotionはオブジェクトまたはテンプレート記法から部品に紐づくスタイルを生成する。"
+  },
+  {
+    "source": "tailwind-css",
+    "target": "sass",
+    "type": "alternative-to",
+    "note": "Tailwind CSSとSassはスタイルの再利用、局所化、実行時コストで比較される。設計トークンに沿ったCSSをクラス名から生成する。一方、SassはSass記法を標準CSSへ変換し、大きなスタイルシートを分割管理する。"
+  },
+  {
+    "source": "tailwind-css",
+    "target": "styled-components",
+    "type": "alternative-to",
+    "note": "Tailwind CSSとstyled-componentsはスタイルの再利用、局所化、実行時コストで比較される。設計トークンに沿ったCSSをクラス名から生成する。一方、styled-componentsはpropsに応じたスタイルと固有クラスをランタイムで生成する。"
+  },
+  {
+    "source": "tailwind-css",
+    "target": "unocss",
+    "type": "alternative-to",
+    "note": "Tailwind CSSとUnoCSSはスタイルの再利用、局所化、実行時コストで比較される。設計トークンに沿ったCSSをクラス名から生成する。一方、UnoCSSはプリセットとルールから使用中のクラスに対応するCSSを生成する。"
+  },
+  {
+    "source": "tanstack-query",
+    "target": "apollo-client",
+    "type": "competes-with",
+    "note": "TanStack QueryとApollo Clientはサーバー状態の取得、キャッシュ、同期で比較される。取得、再取得、失効、loading、ミューテーションの状態を扱う。一方、Apollo Clientはクエリ結果をオブジェクト単位でキャッシュし、Reactの状態へ接続する。"
+  },
+  {
+    "source": "tanstack-query",
+    "target": "react",
+    "type": "works-with",
+    "note": "TanStack QueryのReact アダプターで取得・キャッシュ状態をコンポーネントへ接続する。"
+  },
+  {
+    "source": "tanstack-query",
+    "target": "swr",
+    "type": "competes-with",
+    "note": "TanStack QueryとSWRはサーバー状態の取得、キャッシュ、同期で比較される。取得、再取得、失効、loading、ミューテーションの状態を扱う。一方、SWRはキー単位の取得、キャッシュ、再検証を小さなフック APIで提供する。"
+  },
+  {
+    "source": "tanstack-start",
+    "target": "fresh",
+    "type": "competes-with",
+    "note": "TanStack StartとFreshはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルート、データ取得、サーバー関数、描画方式を同じ型情報で接続する。一方、Freshはサーバー描画を基本に、必要なアイランドだけを対話化する。"
+  },
+  {
+    "source": "tanstack-start",
+    "target": "gatsby",
+    "type": "competes-with",
+    "note": "TanStack StartとGatsbyはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルート、データ取得、サーバー関数、描画方式を同じ型情報で接続する。一方、Gatsbyは複数のコンテンツ源をビルド時に集約し、最適化したページを生成する。"
+  },
+  {
+    "source": "tanstack-start",
+    "target": "react-router",
+    "type": "competes-with",
+    "note": "TanStack StartとReact RouterはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルート、データ取得、サーバー関数、描画方式を同じ型情報で接続する。一方、React Routerは宣言的、データ、フレームワークの各モードでURLと画面・データを結ぶ。"
+  },
+  {
+    "source": "tanstack-start",
+    "target": "react",
+    "type": "built-on",
+    "note": "TanStack StartはReactとTanStack Routerを使うフルスタック基盤である。"
+  },
+  {
+    "source": "tanstack-start",
+    "target": "remix",
+    "type": "competes-with",
+    "note": "TanStack StartとRemixはWebアプリ全体の描画・ルーティング・配備方式で比較される。ルート、データ取得、サーバー関数、描画方式を同じ型情報で接続する。一方、Remixはv2系はReact Routerへ統合され、v3 ベータは別の簡潔な道具群として再設計されている。"
+  },
+  {
+    "source": "terraform",
+    "target": "aws",
+    "type": "works-with",
+    "note": "TerraformのAWS プロバイダーでクラウド資源を宣言的に管理する。"
+  },
+  {
+    "source": "terraform",
+    "target": "pulumi",
+    "type": "alternative-to",
+    "note": "TerraformとPulumiはクラウド構成をコードで管理する方法で比較される。プロバイダーを通じてリソース差分を計画し、再現可能に適用する。一方、Pulumiは型、関数、テストを使ってインフラを構成する。"
+  },
+  {
+    "source": "terraform",
+    "target": "sst",
+    "type": "alternative-to",
+    "note": "TerraformとSSTはクラウド構成をコードで管理する方法で比較される。プロバイダーを通じてリソース差分を計画し、再現可能に適用する。一方、SSTはPulumiを基盤にアプリ、関数、ストレージをTypeScriptから接続する。"
+  },
+  {
+    "source": "testing-library",
+    "target": "jest",
+    "type": "works-with",
+    "note": "Testing LibraryはJestと組み合わせてUIを利用者視点で検証できる。"
+  },
+  {
+    "source": "testing-library",
+    "target": "msw",
+    "type": "works-with",
+    "note": "Testing Libraryで操作するUIの通信境界をMSWで再現し、利用者視点のテストを安定させる。"
+  },
+  {
+    "source": "testing-library",
+    "target": "storybook",
+    "type": "works-with",
+    "note": "Storybookの対話テストでTesting Libraryの利用者中心クエリと操作APIを利用できる。"
+  },
+  {
+    "source": "testing-library",
+    "target": "vitest",
+    "type": "works-with",
+    "note": "Testing LibraryのDOM検証をVitestのテスト実行と組み合わせられる。"
+  },
+  {
+    "source": "turbopack",
+    "target": "parcel",
+    "type": "competes-with",
+    "note": "TurbopackとParcelは開発サーバー、バンドル速度、拡張性で比較される。ファイル単位のキャッシュで開発と本番のNext.js ビルドを行う。一方、ParcelはHTMLを入口に変換、バンドル、開発サーバーを自動構成する。"
+  },
+  {
+    "source": "turbopack",
+    "target": "rolldown",
+    "type": "competes-with",
+    "note": "TurbopackとRolldownは開発サーバー、バンドル速度、拡張性で比較される。ファイル単位のキャッシュで開発と本番のNext.js ビルドを行う。一方、Rolldownは高速なバンドルと変換を一つのエンジンにまとめ、Vite 8を支える。"
+  },
+  {
+    "source": "turbopack",
+    "target": "rspack",
+    "type": "competes-with",
+    "note": "TurbopackとRspackは開発サーバー、バンドル速度、拡張性で比較される。ファイル単位のキャッシュで開発と本番のNext.js ビルドを行う。一方、Rspackは既存webpack生態系を活かしながらビルドを高速化する。"
+  },
+  {
+    "source": "turborepo",
+    "target": "npm",
+    "type": "works-with",
+    "note": "Turborepoはnpm workspacesのスクリプトを依存順に実行・キャッシュできる。"
+  },
+  {
+    "source": "turborepo",
+    "target": "nx",
+    "type": "competes-with",
+    "note": "TurborepoとNxはモノレポのタスク実行とキャッシュで比較される。パッケージ間の依存に沿ってタスクをキャッシュし並列実行する。一方、Nxは影響範囲計算、タスクキャッシュ、generator、境界規則を提供する。"
+  },
+  {
+    "source": "turborepo",
+    "target": "pnpm",
+    "type": "works-with",
+    "note": "Turborepoはpnpm ワークスペースの各パッケージにまたがるタスクをキャッシュ実行できる。"
+  },
+  {
+    "source": "turso",
+    "target": "appwrite",
+    "type": "competes-with",
+    "note": "TursoとAppwriteはバックエンド機能の所有範囲と運用負荷で比較される。libSQLと複製で利用者に近い場所から低遅延にクエリする。一方、Appwriteはセルフホスト可能なAPIとSDKで共通バックエンド機能をまとめる。"
+  },
+  {
+    "source": "turso",
+    "target": "convex",
+    "type": "competes-with",
+    "note": "TursoとConvexはバックエンド機能の所有範囲と運用負荷で比較される。libSQLと複製で利用者に近い場所から低遅延にクエリする。一方、Convexはクエリ、ミューテーション、アクションの結果をクライアントへ自動同期する。"
+  },
+  {
+    "source": "turso",
+    "target": "pocketbase",
+    "type": "competes-with",
+    "note": "TursoとPocketBaseはバックエンド機能の所有範囲と運用負荷で比較される。libSQLと複製で利用者に近い場所から低遅延にクエリする。一方、PocketBaseはSQLiteと管理画面を小さなサーバーへまとめる。"
+  },
+  {
+    "source": "turso",
+    "target": "sqlite",
+    "type": "built-on",
+    "note": "TursoはlibSQL/SQLite系データベースをエッジに複製して提供する。"
+  },
+  {
+    "source": "typeorm",
+    "target": "kysely",
+    "type": "competes-with",
+    "note": "TypeORMとKyselyはNode.jsのデータアクセスと型安全性で比較される。クラスとテーブルを対応付け、複数SQL DBへのクエリを抽象化する。一方、Kyselyはテーブル型からSQLに近いクエリを組み立て、結果型を推論する。"
+  },
+  {
+    "source": "typeorm",
+    "target": "mongoose",
+    "type": "competes-with",
+    "note": "TypeORMとMongooseはNode.jsのデータアクセスと型安全性で比較される。クラスとテーブルを対応付け、複数SQL DBへのクエリを抽象化する。一方、Mongooseは検証、ミドルウェア、参照をNode.js オブジェクトとして扱う。"
+  },
+  {
+    "source": "typeorm",
+    "target": "postgresql",
+    "type": "works-with",
+    "note": "TypeORMはPostgreSQLへ型またはモデルを通じてアクセスできる。"
+  },
+  {
+    "source": "typeorm",
+    "target": "sequelize",
+    "type": "competes-with",
+    "note": "TypeORMとSequelizeはNode.jsのデータアクセスと型安全性で比較される。クラスとテーブルを対応付け、複数SQL DBへのクエリを抽象化する。一方、Sequelizeはモデル、関連付け、トランザクションをJavaScript APIで提供する。"
+  },
+  {
+    "source": "typescript",
+    "target": "javascript",
+    "type": "built-on",
+    "note": "TypeScriptはJavaScriptへ型検査を加え、JavaScriptとして出力する。"
+  },
+  {
+    "source": "typescript",
+    "target": "vite",
+    "type": "works-with",
+    "note": "ViteはTypeScriptを高速に変換し、型検査は別工程として組み合わせる。"
+  },
+  {
+    "source": "typescript",
+    "target": "zod",
+    "type": "works-with",
+    "note": "TypeScriptの静的型をZodの実行時検証で補完できる。"
+  },
+  {
+    "source": "vercel",
+    "target": "digitalocean",
+    "type": "competes-with",
+    "note": "VercelとDigitalOceanはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携プレビュー、サーバーレス/エッジ実行、CDNを統合する。一方、DigitalOceanはDroplet、Kubernetes、DB、App Platformを比較的単純に提供する。"
+  },
+  {
+    "source": "vercel",
+    "target": "flyio",
+    "type": "competes-with",
+    "note": "VercelとFly.ioはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携プレビュー、サーバーレス/エッジ実行、CDNを統合する。一方、Fly.ioはFirecracker系VMとプライベートネットワークで利用者の近くにアプリを動かす。"
+  },
+  {
+    "source": "vercel",
+    "target": "heroku",
+    "type": "competes-with",
+    "note": "VercelとHerokuはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携プレビュー、サーバーレス/エッジ実行、CDNを統合する。一方、Herokuはビルドパック、Dyno、アドオンでサーバー運用を抽象化する。"
+  },
+  {
+    "source": "vercel",
+    "target": "netlify",
+    "type": "competes-with",
+    "note": "VercelとNetlifyはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携プレビュー、サーバーレス/エッジ実行、CDNを統合する。一方、NetlifyはGit連携とCDNで静的サイトやフレームワークアプリを公開する。"
+  },
+  {
+    "source": "vercel",
+    "target": "nextjs",
+    "type": "works-with",
+    "note": "VercelはNext.jsのサーバー描画、静的生成、Functionsを統合して配備する。"
+  },
+  {
+    "source": "vercel",
+    "target": "railway",
+    "type": "competes-with",
+    "note": "VercelとRailwayはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携プレビュー、サーバーレス/エッジ実行、CDNを統合する。一方、Railwayはリポジトリやコンテナからサービスを作り環境変数とネットワークを管理する。"
+  },
+  {
+    "source": "vercel",
+    "target": "render",
+    "type": "competes-with",
+    "note": "VercelとRenderはWebアプリの配備体験、実行場所、運用自由度で比較される。Git連携プレビュー、サーバーレス/エッジ実行、CDNを統合する。一方、RenderはGitからビルドし、常駐サービスとマネージドデータを簡潔に運用する。"
+  },
+  {
+    "source": "vite",
+    "target": "esbuild",
+    "type": "competes-with",
+    "note": "Viteとesbuildは開発サーバー、バンドル速度、拡張性で比較される。ネイティブ ESMで開発し、Rolldownを中心に配布用アセットを生成する。一方、esbuildはバンドル、変換、圧縮を高速に実行する。"
+  },
+  {
+    "source": "vite",
+    "target": "parcel",
+    "type": "competes-with",
+    "note": "ViteとParcelは開発サーバー、バンドル速度、拡張性で比較される。ネイティブ ESMで開発し、Rolldownを中心に配布用アセットを生成する。一方、ParcelはHTMLを入口に変換、バンドル、開発サーバーを自動構成する。"
+  },
+  {
+    "source": "vite",
+    "target": "rolldown",
+    "type": "competes-with",
+    "note": "ViteとRolldownは開発サーバー、バンドル速度、拡張性で比較される。ネイティブ ESMで開発し、Rolldownを中心に配布用アセットを生成する。一方、Rolldownは高速なバンドルと変換を一つのエンジンにまとめ、Vite 8を支える。"
+  },
+  {
+    "source": "vite",
+    "target": "rolldown",
+    "type": "works-with",
+    "note": "Vite 8はRust製Rolldownを統合し、開発と本番ビルドの一貫性を高める。"
+  },
+  {
+    "source": "vite",
+    "target": "rollup",
+    "type": "built-on",
+    "note": "Vite 7までの本番ビルドはRollupを基盤としてプラグイン資産を共有する。"
+  },
+  {
+    "source": "vite",
+    "target": "rollup",
+    "type": "competes-with",
+    "note": "ViteとRollupは開発サーバー、バンドル速度、拡張性で比較される。ネイティブ ESMで開発し、Rolldownを中心に配布用アセットを生成する。一方、Rollupはツリーシェイキングと複数形式出力で配布パッケージを生成する。"
+  },
+  {
+    "source": "vite",
+    "target": "rspack",
+    "type": "competes-with",
+    "note": "ViteとRspackは開発サーバー、バンドル速度、拡張性で比較される。ネイティブ ESMで開発し、Rolldownを中心に配布用アセットを生成する。一方、Rspackは既存webpack生態系を活かしながらビルドを高速化する。"
+  },
+  {
+    "source": "vite",
+    "target": "turbopack",
+    "type": "competes-with",
+    "note": "ViteとTurbopackは開発サーバー、バンドル速度、拡張性で比較される。ネイティブ ESMで開発し、Rolldownを中心に配布用アセットを生成する。一方、Turbopackはファイル単位のキャッシュで開発と本番のNext.js ビルドを行う。"
+  },
+  {
+    "source": "vite",
+    "target": "webpack",
+    "type": "competes-with",
+    "note": "Viteとwebpackは開発サーバー、バンドル速度、拡張性で比較される。ネイティブ ESMで開発し、Rolldownを中心に配布用アセットを生成する。一方、webpackはローダーとプラグインで多様なリソースを配布単位へ変換する。"
+  },
+  {
+    "source": "vitest",
+    "target": "jest",
+    "type": "competes-with",
+    "note": "VitestとJestはJavaScript単体テストの実行環境で比較される。unit テスト、mock、coverageをVite projectへ統合する。一方、Jestはランナー、assertion、mock、snapshotを一体で提供する。"
+  },
+  {
+    "source": "vitest",
+    "target": "vite",
+    "type": "built-on",
+    "note": "VitestはViteの変換、解決、設定を共有するテストランナーである。"
+  },
+  {
+    "source": "vue",
+    "target": "angular",
+    "type": "competes-with",
+    "note": "VueとAngularは大規模さ、描画方式、学習コストで比較される。テンプレート、反応的な状態、部品化を一体で提供する。一方、Angularは部品、依存注入、ルーティング、フォームなどの標準構成を提供する。"
+  },
+  {
+    "source": "vue",
+    "target": "preact",
+    "type": "competes-with",
+    "note": "VueとPreactは大規模さ、描画方式、学習コストで比較される。テンプレート、反応的な状態、部品化を一体で提供する。一方、Preactは軽量な互換層でコンポーネント型の画面を動かす。"
+  },
+  {
+    "source": "vue",
+    "target": "qwik",
+    "type": "competes-with",
+    "note": "VueとQwikは大規模さ、描画方式、学習コストで比較される。テンプレート、反応的な状態、部品化を一体で提供する。一方、Qwikは細かく分割した処理を必要時に読み込み、再実行ではなく再開する。"
+  },
+  {
+    "source": "vue",
+    "target": "solid",
+    "type": "competes-with",
+    "note": "VueとSolidは大規模さ、描画方式、学習コストで比較される。テンプレート、反応的な状態、部品化を一体で提供する。一方、Solidはシグナルを使い、仮想DOMなしで状態変化を画面へ反映する。"
+  },
+  {
+    "source": "vue",
+    "target": "svelte",
+    "type": "competes-with",
+    "note": "VueとSvelteは大規模さ、描画方式、学習コストで比較される。テンプレート、反応的な状態、部品化を一体で提供する。一方、Svelteは簡潔な部品記法をブラウザで動くJavaScriptへ変換する。"
+  },
+  {
+    "source": "webpack",
+    "target": "babel",
+    "type": "works-with",
+    "note": "webpackはBabel ローダーを介して新しいJavaScript構文を変換できる。"
+  },
+  {
+    "source": "webpack",
+    "target": "esbuild",
+    "type": "competes-with",
+    "note": "webpackとesbuildは開発サーバー、バンドル速度、拡張性で比較される。ローダーとプラグインで多様なリソースを配布単位へ変換する。一方、esbuildはバンドル、変換、圧縮を高速に実行する。"
+  },
+  {
+    "source": "webpack",
+    "target": "parcel",
+    "type": "competes-with",
+    "note": "webpackとParcelは開発サーバー、バンドル速度、拡張性で比較される。ローダーとプラグインで多様なリソースを配布単位へ変換する。一方、ParcelはHTMLを入口に変換、バンドル、開発サーバーを自動構成する。"
+  },
+  {
+    "source": "webpack",
+    "target": "rolldown",
+    "type": "competes-with",
+    "note": "webpackとRolldownは開発サーバー、バンドル速度、拡張性で比較される。ローダーとプラグインで多様なリソースを配布単位へ変換する。一方、Rolldownは高速なバンドルと変換を一つのエンジンにまとめ、Vite 8を支える。"
+  },
+  {
+    "source": "webpack",
+    "target": "rollup",
+    "type": "competes-with",
+    "note": "webpackとRollupは開発サーバー、バンドル速度、拡張性で比較される。ローダーとプラグインで多様なリソースを配布単位へ変換する。一方、Rollupはツリーシェイキングと複数形式出力で配布パッケージを生成する。"
+  },
+  {
+    "source": "webpack",
+    "target": "rspack",
+    "type": "competes-with",
+    "note": "webpackとRspackは開発サーバー、バンドル速度、拡張性で比較される。ローダーとプラグインで多様なリソースを配布単位へ変換する。一方、Rspackは既存webpack生態系を活かしながらビルドを高速化する。"
+  },
+  {
+    "source": "webpack",
+    "target": "turbopack",
+    "type": "competes-with",
+    "note": "webpackとTurbopackは開発サーバー、バンドル速度、拡張性で比較される。ローダーとプラグインで多様なリソースを配布単位へ変換する。一方、Turbopackはファイル単位のキャッシュで開発と本番のNext.js ビルドを行う。"
+  },
+  {
+    "source": "websocket",
+    "target": "server-sent-events",
+    "type": "alternative-to",
+    "note": "WebSocketとServer-Sent Eventsはサーバーからのリアルタイム更新で比較される。一度接続したchannelで双方からmessageを即時送信する。一方、Server-Sent EventsはHTTP接続上のテキスト streamをEventSourceで受信する。"
+  },
+  {
+    "source": "wordpress",
+    "target": "contentful",
+    "type": "competes-with",
+    "note": "WordPressとContentfulはコンテンツ編集、API、ホスティングの所有範囲で比較される。記事編集、テーマ、プラグイン、利用者管理を一体で提供する。一方、Contentfulはコンテンツモデル、編集ワークフロー、ロケール、配信APIを提供する。"
+  },
+  {
+    "source": "wordpress",
+    "target": "directus",
+    "type": "competes-with",
+    "note": "WordPressとDirectusはコンテンツ編集、API、ホスティングの所有範囲で比較される。記事編集、テーマ、プラグイン、利用者管理を一体で提供する。一方、DirectusはテーブルをコンテンツモデルとしてREST/GraphQLと権限管理を提供する。"
+  },
+  {
+    "source": "wordpress",
+    "target": "ghost",
+    "type": "competes-with",
+    "note": "WordPressとGhostはコンテンツ編集、API、ホスティングの所有範囲で比較される。記事編集、テーマ、プラグイン、利用者管理を一体で提供する。一方、Ghostは記事編集、ニュースレター、会員管理、テーマを一体で提供する。"
+  },
+  {
+    "source": "wordpress",
+    "target": "payload-cms",
+    "type": "competes-with",
+    "note": "WordPressとPayload CMSはコンテンツ編集、API、ホスティングの所有範囲で比較される。記事編集、テーマ、プラグイン、利用者管理を一体で提供する。一方、Payload CMSはスキーマ、認証、管理画面、APIをアプリコードと同じリポジトリで定義する。"
+  },
+  {
+    "source": "wordpress",
+    "target": "php",
+    "type": "built-on",
+    "note": "WordPressはPHPで実装され、テーマとプラグインの巨大な生態系を持つ。"
+  },
+  {
+    "source": "wordpress",
+    "target": "sanity",
+    "type": "competes-with",
+    "note": "WordPressとSanityはコンテンツ編集、API、ホスティングの所有範囲で比較される。記事編集、テーマ、プラグイン、利用者管理を一体で提供する。一方、Sanityはリアルタイム編集、Content Lake、クエリ言語、カスタムスタジオを提供する。"
+  },
+  {
+    "source": "wordpress",
+    "target": "strapi",
+    "type": "competes-with",
+    "note": "WordPressとStrapiはコンテンツ編集、API、ホスティングの所有範囲で比較される。記事編集、テーマ、プラグイン、利用者管理を一体で提供する。一方、Strapiはコンテンツモデル、管理画面、REST/GraphQL APIを提供する。"
+  },
+  {
+    "source": "zod",
+    "target": "nodejs",
+    "type": "works-with",
+    "note": "ZodでNode.js APIへ入る環境変数やリクエストの実行時データを検証できる。"
+  },
+  {
+    "source": "zod",
+    "target": "valibot",
+    "type": "competes-with",
+    "note": "ZodとValibotはTypeScript実行時スキーマ検証で比較される。入力を実行時に検査し、同じ定義からTypeScript型を推論する。一方、Valibotは個別関数を組み合わせ、必要なコードだけをバンドルして入力を検証する。"
+  },
+  {
+    "source": "zustand",
+    "target": "pinia",
+    "type": "alternative-to",
+    "note": "ZustandとPiniaはクライアント状態の共有と更新方法で比較される。フックから直接使えるストアを少ない定型記述で提供する。一方、Piniaは複数ストア、アクション、devtools連携で共有状態を管理する。"
+  }
 ]

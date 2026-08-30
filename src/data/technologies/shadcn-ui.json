@@ -1,0 +1,30 @@
+{
+  "id": "shadcn-ui",
+  "name": "shadcn/ui",
+  "shortDescription": "部品コードを自分のプロジェクトへ取り込んで所有するUI集。",
+  "category": "ui-components",
+  "officialUrl": "https://ui.shadcn.com/",
+  "whatItDoes": "部品コードを自分のプロジェクトへ取り込んで所有するUI集。Radix系プリミティブとTailwind CSSを基に編集可能な部品を生成する。",
+  "role": "Radix系プリミティブとTailwind CSSを基に編集可能な部品を生成する。",
+  "whenToUse": [
+    "Reactで見た目と実装を自分のコードとして変更したいとき。"
+  ],
+  "whenNotToUse": [
+    "更新をパッケージ一つに任せたいかReact以外を使うとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "aliases": [
+    "shadcn"
+  ],
+  "tags": [
+    "components",
+    "copy-owned"
+  ],
+  "lastVerified": "2026-08-30"
+}

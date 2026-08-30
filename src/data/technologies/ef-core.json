@@ -1,0 +1,29 @@
+{
+  "id": "ef-core",
+  "name": "Entity Framework Core",
+  "shortDescription": "NET向けのオブジェクト-リレーショナルマッパー。",
+  "category": "orm",
+  "officialUrl": "https://learn.microsoft.com/ef/core/",
+  "whatItDoes": "NET向けのオブジェクト-リレーショナルマッパー。LINQ、モデル、マイグレーションでC# オブジェクトとSQL DBを結ぶ。",
+  "role": "LINQ、モデル、マイグレーションでC# オブジェクトとSQL DBを結ぶ。",
+  "whenToUse": [
+    "ASP.NET Coreで型付きデータアクセスを統一するとき。"
+  ],
+  "whenNotToUse": [
+    "DB固有SQLの完全制御と最小オーバーヘッドを優先するとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "dotnet",
+    "data"
+  ],
+  "aliases": [
+    "EF Core"
+  ],
+  "tags": [
+    "orm",
+    "linq"
+  ],
+  "lastVerified": "2026-08-30"
+}

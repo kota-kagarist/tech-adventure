@@ -1,0 +1,27 @@
+{
+  "id": "appwrite",
+  "name": "Appwrite",
+  "shortDescription": "認証、データベース、ストレージ、関数を提供するオープンソースバックエンド。",
+  "category": "backend-platform",
+  "officialUrl": "https://appwrite.io/",
+  "whatItDoes": "認証、データベース、ストレージ、関数を提供するオープンソースバックエンド。セルフホスト可能なAPIとSDKで共通バックエンド機能をまとめる。",
+  "role": "セルフホスト可能なAPIとSDKで共通バックエンド機能をまとめる。",
+  "whenToUse": [
+    "BaaSの速さとセルフホストの選択肢を両立したいとき。"
+  ],
+  "whenNotToUse": [
+    "SQLへ直接高度なクエリを行う設計を中心にするとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data",
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "baas",
+    "self-hosted"
+  ],
+  "lastVerified": "2026-08-30"
+}

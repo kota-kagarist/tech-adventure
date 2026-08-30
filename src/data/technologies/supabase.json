@@ -1,0 +1,28 @@
+{
+  "id": "supabase",
+  "name": "Supabase",
+  "shortDescription": "PostgreSQLを中心に認証、ストレージ、APIをまとめるバックエンドプラットフォーム。",
+  "category": "backend-platform",
+  "officialUrl": "https://supabase.com/",
+  "whatItDoes": "PostgreSQLを中心に認証、ストレージ、APIをまとめるバックエンドプラットフォーム。管理済みDBへリアルタイム、認証、オブジェクトストレージ、エッジ関数を加える。",
+  "role": "管理済みDBへリアルタイム、認証、オブジェクトストレージ、エッジ関数を加える。",
+  "whenToUse": [
+    "SQLを保ちながらバックエンド機能を素早く立ち上げたいとき。"
+  ],
+  "whenNotToUse": [
+    "クラウドに依存せず全機能を独自構成したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "data",
+    "javascript",
+    "typescript"
+  ],
+  "aliases": [],
+  "tags": [
+    "baas",
+    "postgresql"
+  ],
+  "lastVerified": "2026-08-30"
+}

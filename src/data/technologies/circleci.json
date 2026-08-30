@@ -1,0 +1,26 @@
+{
+  "id": "circleci",
+  "name": "CircleCI",
+  "shortDescription": "クラウドとセルフホストランナーを持つCI/CD サービス。",
+  "category": "ci-cd",
+  "officialUrl": "https://circleci.com/",
+  "whatItDoes": "クラウドとセルフホストランナーを持つCI/CD サービス。設定ファイルからジョブをキャッシュ・並列実行し、複数VCSと接続する。",
+  "role": "設定ファイルからジョブをキャッシュ・並列実行し、複数VCSと接続する。",
+  "whenToUse": [
+    "CI性能と柔軟なランナー構成を専門サービスへ任せたいとき。"
+  ],
+  "whenNotToUse": [
+    "リポジトリ内蔵CIだけで要件を満たすとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "ci",
+    "pipeline"
+  ],
+  "lastVerified": "2026-08-30"
+}

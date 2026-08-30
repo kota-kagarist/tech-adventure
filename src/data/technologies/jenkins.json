@@ -1,0 +1,27 @@
+{
+  "id": "jenkins",
+  "name": "Jenkins",
+  "shortDescription": "プラグイン拡張できるセルフホスト型の成熟した自動化サーバー。",
+  "category": "ci-cd",
+  "officialUrl": "https://www.jenkins.io/",
+  "whatItDoes": "プラグイン拡張できるセルフホスト型の成熟した自動化サーバー。任意のビルド、テスト、デプロイ処理を自社サーバーで実行する。",
+  "role": "任意のビルド、テスト、デプロイ処理を自社サーバーで実行する。",
+  "whenToUse": [
+    "既存企業環境で豊富なプラグインと完全な運用制御が必要なとき。"
+  ],
+  "whenNotToUse": [
+    "新規でサーバー保守を避けマネージド CIを使いたいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "devops",
+    "java"
+  ],
+  "aliases": [],
+  "tags": [
+    "ci",
+    "self-hosted"
+  ],
+  "lastVerified": "2026-08-30"
+}

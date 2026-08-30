@@ -1,0 +1,27 @@
+{
+  "id": "keycloak",
+  "name": "Keycloak",
+  "shortDescription": "シングルサインオンとアイデンティティ管理をセルフホストできるサーバー。",
+  "category": "auth",
+  "officialUrl": "https://www.keycloak.org/",
+  "whatItDoes": "シングルサインオンとアイデンティティ管理をセルフホストできるサーバー。OIDC、OAuth 2.0、SAML、利用者・役割管理を一体で提供する。",
+  "role": "OIDC、OAuth 2.0、SAML、利用者・役割管理を一体で提供する。",
+  "whenToUse": [
+    "企業内の複数アプリへ共通アイデンティティ基盤を持つとき。"
+  ],
+  "whenNotToUse": [
+    "単一の小規模アプリで運用サーバーを増やしたくないとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "java",
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "identity-provider",
+    "sso"
+  ],
+  "lastVerified": "2026-08-30"
+}

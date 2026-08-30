@@ -1,0 +1,28 @@
+{
+  "id": "gitlab-ci",
+  "name": "GitLab CI/CD",
+  "shortDescription": "GitLabへ統合されたパイプライン実行機能。",
+  "category": "ci-cd",
+  "officialUrl": "https://docs.gitlab.com/ci/",
+  "whatItDoes": "GitLabへ統合されたパイプライン実行機能。リポジトリ、ランナー、成果物、環境を一つのプラットフォームで管理する。",
+  "role": "リポジトリ、ランナー、成果物、環境を一つのプラットフォームで管理する。",
+  "whenToUse": [
+    "GitLabでコードからデプロイまで一体運用するとき。"
+  ],
+  "whenNotToUse": [
+    "GitHub中心でGitLab ランナーを別途管理したくないとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [
+    "GitLab CI"
+  ],
+  "tags": [
+    "ci",
+    "pipeline"
+  ],
+  "lastVerified": "2026-08-30"
+}

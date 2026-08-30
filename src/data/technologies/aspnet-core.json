@@ -1,0 +1,29 @@
+{
+  "id": "aspnet-core",
+  "name": "ASP.NET Core",
+  "shortDescription": "NET向けのクロスプラットフォームWebフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://dotnet.microsoft.com/apps/aspnet",
+  "whatItDoes": "NET向けのクロスプラットフォームWebフレームワーク。高性能なHTTP処理、API、画面、認証を.NET上で提供する。",
+  "role": "高性能なHTTP処理、API、画面、認証を.NET上で提供する。",
+  "whenToUse": [
+    "C#とAzureやMicrosoft製品を統合するサービスを作るとき。"
+  ],
+  "whenNotToUse": [
+    "NETを採用しない小さなJavaScript中心の構成。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "dotnet",
+    "azure"
+  ],
+  "aliases": [
+    "ASP.NET"
+  ],
+  "tags": [
+    "backend",
+    "enterprise"
+  ],
+  "lastVerified": "2026-08-30"
+}

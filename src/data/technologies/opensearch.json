@@ -1,0 +1,27 @@
+{
+  "id": "opensearch",
+  "name": "OpenSearch",
+  "shortDescription": "全文検索と分析を行うオープンソース検索スイート。",
+  "category": "database",
+  "officialUrl": "https://opensearch.org/",
+  "whatItDoes": "全文検索と分析を行うオープンソース検索スイート。分散インデックス、クエリ、ダッシュボードで検索とログ分析を提供する。",
+  "role": "分散インデックス、クエリ、ダッシュボードで検索とログ分析を提供する。",
+  "whenToUse": [
+    "オープンソースの検索基盤やAWS連携を重視するとき。"
+  ],
+  "whenNotToUse": [
+    "小規模な完全一致検索だけで十分なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data",
+    "aws"
+  ],
+  "aliases": [],
+  "tags": [
+    "search",
+    "analytics"
+  ],
+  "lastVerified": "2026-08-30"
+}

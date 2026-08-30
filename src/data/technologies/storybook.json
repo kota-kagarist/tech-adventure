@@ -1,0 +1,30 @@
+{
+  "id": "storybook",
+  "name": "Storybook",
+  "shortDescription": "UI部品を単独状態で開発・文書化するワークショップ。",
+  "category": "testing",
+  "officialUrl": "https://storybook.js.org/",
+  "whatItDoes": "UI部品を単独状態で開発・文書化するワークショップ。ストーリーごとに状態を固定し、視覚的確認と対話テストを支える。",
+  "role": "ストーリーごとに状態を固定し、視覚的確認と対話テストを支える。",
+  "whenToUse": [
+    "設計システムや共有部品を画面本体から分離して育てるとき。"
+  ],
+  "whenNotToUse": [
+    "API サーバーだけで表示部品を持たないプロジェクト。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "vue",
+    "svelte"
+  ],
+  "aliases": [],
+  "tags": [
+    "components",
+    "visual-test"
+  ],
+  "lastVerified": "2026-08-30"
+}

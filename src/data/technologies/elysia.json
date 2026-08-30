@@ -1,0 +1,30 @@
+{
+  "id": "elysia",
+  "name": "Elysia",
+  "shortDescription": "Bunを中心に型推論と性能を重視するサーバーフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://elysiajs.com/",
+  "whatItDoes": "Bunを中心に型推論と性能を重視するサーバーフレームワーク。ルート定義から入力と出力の型をつなぎ、高速にHTTP処理する。",
+  "role": "ルート定義から入力と出力の型をつなぎ、高速にHTTP処理する。",
+  "whenToUse": [
+    "Bunの性能とE2Eの型安全性を試したいとき。"
+  ],
+  "whenNotToUse": [
+    "Node.jsでの長期互換性と最大の導入実績を優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "bun"
+  ],
+  "aliases": [
+    "ElysiaJS"
+  ],
+  "tags": [
+    "bun",
+    "type-safe"
+  ],
+  "lastVerified": "2026-08-30"
+}

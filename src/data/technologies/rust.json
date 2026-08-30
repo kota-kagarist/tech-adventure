@@ -1,0 +1,26 @@
+{
+  "id": "rust",
+  "name": "Rust",
+  "shortDescription": "メモリ安全性と実行性能を両立する静的型付き言語。",
+  "category": "language",
+  "officialUrl": "https://www.rust-lang.org/",
+  "whatItDoes": "メモリ安全性と実行性能を両立する静的型付き言語。低水準の制御を保ちながら安全なサーバーや開発ツールを作る。",
+  "role": "低水準の制御を保ちながら安全なサーバーや開発ツールを作る。",
+  "whenToUse": [
+    "性能と安全性が重要な基盤、Wasm、ビルドツールを作るとき。"
+  ],
+  "whenNotToUse": [
+    "開発速度を優先する小規模な業務画面だけを作るとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "rust"
+  ],
+  "aliases": [],
+  "tags": [
+    "systems",
+    "performance"
+  ],
+  "lastVerified": "2026-08-30"
+}

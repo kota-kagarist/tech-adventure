@@ -1,0 +1,28 @@
+{
+  "id": "neon",
+  "name": "Neon",
+  "shortDescription": "コンピューティングとストレージを分離したサーバーレス PostgreSQL。",
+  "category": "backend-platform",
+  "officialUrl": "https://neon.com/",
+  "whatItDoes": "コンピューティングとストレージを分離したサーバーレス PostgreSQL。ブランチ作成、スケール-ゼロまで、接続プールで開発と運用を支える。",
+  "role": "ブランチ作成、スケール-ゼロまで、接続プールで開発と運用を支える。",
+  "whenToUse": [
+    "PostgreSQLをサーバーレスアプリやプレビュー環境で使うとき。"
+  ],
+  "whenNotToUse": [
+    "常時高負荷で固定容量の予測可能性を優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [
+    "Neon Postgres"
+  ],
+  "tags": [
+    "postgresql",
+    "serverless"
+  ],
+  "lastVerified": "2026-08-30"
+}

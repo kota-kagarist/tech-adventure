@@ -1,0 +1,27 @@
+{
+  "id": "hibernate",
+  "name": "Hibernate",
+  "shortDescription": "Javaのオブジェクトとリレーショナル DBを対応付ける成熟したORM。",
+  "category": "orm",
+  "officialUrl": "https://hibernate.org/",
+  "whatItDoes": "Javaのオブジェクトとリレーショナル DBを対応付ける成熟したORM。エンティティ、関係、キャッシュ、クエリをJPA生態系で管理する。",
+  "role": "エンティティ、関係、キャッシュ、クエリをJPA生態系で管理する。",
+  "whenToUse": [
+    "Java企業システムで複雑なドメインモデルを長期運用するとき。"
+  ],
+  "whenNotToUse": [
+    "単純なSQLを完全に明示して軽量に実行したいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "java",
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "orm",
+    "jpa"
+  ],
+  "lastVerified": "2026-08-30"
+}

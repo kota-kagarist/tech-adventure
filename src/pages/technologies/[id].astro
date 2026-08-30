@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import TechnologyRelations from '../../components/TechnologyRelations.astro';
-import { categoryById, getRelationsFor, getTechnologies } from '../../data/load';
+import { categoryById, ecosystems, getRelationsFor, getTechnologies } from '../../data/load';
 import { withBase } from '../../lib/paths';
+import { getTechnologyMetadata } from '../../lib/technology-metadata.mjs';
 import type { Technology } from '../../data/schema';
 export function getStaticPaths() { return getTechnologies().map((technology) => ({ params: { id: technology.id }, props: { technology } })); }
 interface Props { technology: Technology; }
@@ -10,6 +11,8 @@ const { technology } = Astro.props;
 const allTechnologies = getTechnologies();
 const relations = getRelationsFor(technology.id);
 const category = categoryById[technology.category];
+const ecosystemNames = Object.fromEntries(ecosystems.map((ecosystem) => [ecosystem.id, ecosystem.name]));
+const metadata = getTechnologyMetadata(technology, ecosystemNames);
 ---
 <BaseLayout title={technology.name} description={technology.shortDescription}>
   <header class="technology-hero">
@@ -35,7 +38,18 @@ const category = categoryById[technology.category];
       <section class="detail-block">
         <div class="meta-label">ROLE</div>
         <h2>何を担当する？</h2>
-        <p><strong>{category.name}</strong> — {category.description}</p>
+        <p>{technology.role}</p>
+      </section>
+      <section class="detail-block">
+        <div class="meta-label">DECISION METADATA</div>
+        <h2>判断の手掛かり</h2>
+        <dl class="metadata-grid">
+          <div><dt>主要度</dt><dd>{metadata.importance}</dd></div>
+          <div><dt>成熟度</dt><dd>{metadata.maturity}</dd></div>
+          <div><dt>Ecosystem</dt><dd>{metadata.ecosystems.join(' / ')}</dd></div>
+          <div><dt>別名</dt><dd>{metadata.aliases.length ? metadata.aliases.join(' / ') : '—'}</dd></div>
+          <div><dt>最終確認</dt><dd><time datetime={technology.lastVerified}>{technology.lastVerified}</time></dd></div>
+        </dl>
       </section>
       <section class="detail-block">
         <div class="meta-label">USE IT WHEN</div>

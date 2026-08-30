@@ -1,0 +1,28 @@
+{
+  "id": "css-modules",
+  "name": "CSS Modules",
+  "shortDescription": "クラス名をファイル単位に閉じ込めるCSSの管理方式。",
+  "category": "styling",
+  "officialUrl": "https://github.com/css-modules/css-modules",
+  "whatItDoes": "クラス名をファイル単位に閉じ込めるCSSの管理方式。ビルド時にクラス名を固有化し、部品間の衝突を防ぐ。",
+  "role": "ビルド時にクラス名を固有化し、部品間の衝突を防ぐ。",
+  "whenToUse": [
+    "部品ごとに通常のCSSを安全に分離したいとき。"
+  ],
+  "whenNotToUse": [
+    "グローバルなユーティリティクラスを中心に統一したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "web-platform"
+  ],
+  "aliases": [],
+  "tags": [
+    "scoped-css",
+    "components"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "mui",
+  "name": "MUI",
+  "shortDescription": "Material Designを中心とするReact UI部品ライブラリ。",
+  "category": "ui-components",
+  "officialUrl": "https://mui.com/",
+  "whatItDoes": "Material Designを中心とするReact UI部品ライブラリ。豊富な部品、テーマ、アクセシビリティの土台をパッケージで提供する。",
+  "role": "豊富な部品、テーマ、アクセシビリティの土台をパッケージで提供する。",
+  "whenToUse": [
+    "Reactの業務画面を成熟した部品群で統一したいとき。"
+  ],
+  "whenNotToUse": [
+    "Material系の見た目から大きく外れる軽量サイト。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "aliases": [
+    "Material UI"
+  ],
+  "tags": [
+    "components",
+    "material-design"
+  ],
+  "lastVerified": "2026-08-30"
+}

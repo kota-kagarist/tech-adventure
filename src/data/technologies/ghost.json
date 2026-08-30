@@ -1,0 +1,28 @@
+{
+  "id": "ghost",
+  "name": "Ghost",
+  "shortDescription": "出版と会員制配信に特化したオープンソース CMS。",
+  "category": "cms",
+  "officialUrl": "https://ghost.org/",
+  "whatItDoes": "出版と会員制配信に特化したオープンソース CMS。記事編集、ニュースレター、会員管理、テーマを一体で提供する。",
+  "role": "記事編集、ニュースレター、会員管理、テーマを一体で提供する。",
+  "whenToUse": [
+    "メディア、blog、有料ニュースレターを少ない構成で運営するとき。"
+  ],
+  "whenNotToUse": [
+    "複雑な任意コンテンツモデルと業務ワークフローが必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "node",
+    "content"
+  ],
+  "aliases": [],
+  "tags": [
+    "publishing",
+    "membership"
+  ],
+  "lastVerified": "2026-08-30"
+}

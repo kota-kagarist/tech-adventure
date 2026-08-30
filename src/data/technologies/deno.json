@@ -1,12 +1,28 @@
 {
   "id": "deno",
   "name": "Deno",
-  "shortDescription": "Web標準と安全性を重視したJavaScript/TypeScript実行環境。",
+  "shortDescription": "Web標準と安全な初期設定を重視するJavaScript実行環境。",
   "category": "runtime",
   "officialUrl": "https://deno.com/",
-  "whatItDoes": "ブラウザ外でJavaScript/TypeScriptをWeb標準寄りのAPIで実行する。",
-  "whenToUse": ["Web標準に寄せたサーバーコード", "権限モデルを活用したい"],
-  "whenNotToUse": ["Node.js専用パッケージへの依存が強い既存環境"],
+  "whatItDoes": "Web標準と安全な初期設定を重視するJavaScript実行環境。権限制御、TypeScript対応、標準ツールを一体で提供する。",
+  "role": "権限制御、TypeScript対応、標準ツールを一体で提供する。",
+  "whenToUse": [
+    "Web標準寄りのサーバーやスクリプトを明示的な権限で動かすとき。"
+  ],
+  "whenNotToUse": [
+    "Node.js専用の未対応パッケージへ深く依存するとき。"
+  ],
   "maturity": "established",
-  "tags": ["runtime", "typescript"]
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "deno"
+  ],
+  "aliases": [],
+  "tags": [
+    "runtime",
+    "security"
+  ],
+  "lastVerified": "2026-08-30"
 }

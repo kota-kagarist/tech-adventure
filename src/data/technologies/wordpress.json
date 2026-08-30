@@ -1,0 +1,27 @@
+{
+  "id": "wordpress",
+  "name": "WordPress",
+  "shortDescription": "Web全体を管理できるPHP製の代表的なCMS。",
+  "category": "cms",
+  "officialUrl": "https://wordpress.org/",
+  "whatItDoes": "Web全体を管理できるPHP製の代表的なCMS。記事編集、テーマ、プラグイン、利用者管理を一体で提供する。",
+  "role": "記事編集、テーマ、プラグイン、利用者管理を一体で提供する。",
+  "whenToUse": [
+    "編集者が多いメディアや企業サイトを豊富なプラグインで運用するとき。"
+  ],
+  "whenNotToUse": [
+    "型付きヘッドレスコンテンツだけをAPIから配信したいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "php",
+    "content"
+  ],
+  "aliases": [],
+  "tags": [
+    "cms",
+    "themes"
+  ],
+  "lastVerified": "2026-08-30"
+}

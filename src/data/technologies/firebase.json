@@ -1,0 +1,28 @@
+{
+  "id": "firebase",
+  "name": "Firebase",
+  "shortDescription": "Google Cloud上でアプリバックエンド機能をまとめて提供するプラットフォーム。",
+  "category": "backend-platform",
+  "officialUrl": "https://firebase.google.com/",
+  "whatItDoes": "Google Cloud上でアプリバックエンド機能をまとめて提供するプラットフォーム。データベース、認証、ホスティング、関数、分析機能をクライアント SDKへ接続する。",
+  "role": "データベース、認証、ホスティング、関数、分析機能をクライアント SDKへ接続する。",
+  "whenToUse": [
+    "モバイル/Web アプリのバックエンドを少人数で素早く構築するとき。"
+  ],
+  "whenNotToUse": [
+    "リレーショナル SQLとクラウド移行性を最優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "gcp",
+    "data",
+    "javascript"
+  ],
+  "aliases": [],
+  "tags": [
+    "baas",
+    "realtime"
+  ],
+  "lastVerified": "2026-08-30"
+}

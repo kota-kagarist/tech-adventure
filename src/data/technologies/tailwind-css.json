@@ -1,0 +1,29 @@
+{
+  "id": "tailwind-css",
+  "name": "Tailwind CSS",
+  "shortDescription": "小さなユーティリティクラスを組み合わせて画面を装飾するCSS フレームワーク。",
+  "category": "styling",
+  "officialUrl": "https://tailwindcss.com/",
+  "whatItDoes": "小さなユーティリティクラスを組み合わせて画面を装飾するCSS フレームワーク。設計トークンに沿ったCSSをクラス名から生成する。",
+  "role": "設計トークンに沿ったCSSをクラス名から生成する。",
+  "whenToUse": [
+    "独自設計を素早く組み、CSSの増加を抑えたいとき。"
+  ],
+  "whenNotToUse": [
+    "意味のあるクラス名だけで既存CSSを維持する方針のとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "web-platform"
+  ],
+  "aliases": [
+    "Tailwind"
+  ],
+  "tags": [
+    "utility-first",
+    "css"
+  ],
+  "lastVerified": "2026-08-30"
+}

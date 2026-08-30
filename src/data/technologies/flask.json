@@ -1,0 +1,26 @@
+{
+  "id": "flask",
+  "name": "Flask",
+  "shortDescription": "必要な機能を選んで足す小さなPython Webフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://flask.palletsprojects.com/",
+  "whatItDoes": "必要な機能を選んで足す小さなPython Webフレームワーク。リクエスト、ルート、レスポンスの基本を簡潔に提供する。",
+  "role": "リクエスト、ルート、レスポンスの基本を簡潔に提供する。",
+  "whenToUse": [
+    "小規模APIや独自構成のPythonサービスを作るとき。"
+  ],
+  "whenNotToUse": [
+    "認証や管理画面まで標準化された大規模構成が必要なとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "python"
+  ],
+  "aliases": [],
+  "tags": [
+    "microframework",
+    "http"
+  ],
+  "lastVerified": "2026-08-30"
+}

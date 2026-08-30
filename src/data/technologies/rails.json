@@ -1,0 +1,29 @@
+{
+  "id": "rails",
+  "name": "Ruby on Rails",
+  "shortDescription": "規約を優先してWeb開発を速めるRubyフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://rubyonrails.org/",
+  "whatItDoes": "規約を優先してWeb開発を速めるRubyフレームワーク。MVC、DB マイグレーション、ルート、ジョブなどを標準構成にまとめる。",
+  "role": "MVC、DB マイグレーション、ルート、ジョブなどを標準構成にまとめる。",
+  "whenToUse": [
+    "定型判断を減らして業務サービスを早く形にするとき。"
+  ],
+  "whenNotToUse": [
+    "細部の構成を初期から自由に組み替えたいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "ruby"
+  ],
+  "aliases": [
+    "Rails",
+    "RoR"
+  ],
+  "tags": [
+    "convention",
+    "mvc"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "oxlint",
+  "name": "oxlint",
+  "shortDescription": "Rust製の高速なJavaScript/TypeScript リンター。",
+  "category": "quality-validation",
+  "officialUrl": "https://oxc.rs/docs/guide/usage/linter.html",
+  "whatItDoes": "Rust製の高速なJavaScript/TypeScript リンター。一般的なリント規則を並列に検査し、大規模コードベースを高速処理する。",
+  "role": "一般的なリント規則を並列に検査し、大規模コードベースを高速処理する。",
+  "whenToUse": [
+    "既存リントの速度を上げ、対応規則で十分なとき。"
+  ],
+  "whenNotToUse": [
+    "独自ESLint プラグインを完全に再現する必要があるとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "rust",
+    "node"
+  ],
+  "aliases": [
+    "Oxc Linter"
+  ],
+  "tags": [
+    "linter",
+    "performance"
+  ],
+  "lastVerified": "2026-08-30"
+}

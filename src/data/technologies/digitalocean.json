@@ -1,0 +1,28 @@
+{
+  "id": "digitalocean",
+  "name": "DigitalOcean",
+  "shortDescription": "分かりやすいVMとマネージドサービスを提供するクラウド。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://www.digitalocean.com/",
+  "whatItDoes": "分かりやすいVMとマネージドサービスを提供するクラウド。Droplet、Kubernetes、DB、App Platformを比較的単純に提供する。",
+  "role": "Droplet、Kubernetes、DB、App Platformを比較的単純に提供する。",
+  "whenToUse": [
+    "小中規模サーバーを明瞭な構成で運用したいとき。"
+  ],
+  "whenNotToUse": [
+    "最大規模のサービス種類とグローバル企業機能を必要とするとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [
+    "DO"
+  ],
+  "tags": [
+    "cloud",
+    "vps"
+  ],
+  "lastVerified": "2026-08-30"
+}

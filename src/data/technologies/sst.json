@@ -1,0 +1,30 @@
+{
+  "id": "sst",
+  "name": "SST",
+  "shortDescription": "フルスタックアプリのクラウド資源と開発体験をまとめるツール。",
+  "category": "infrastructure",
+  "officialUrl": "https://sst.dev/",
+  "whatItDoes": "フルスタックアプリのクラウド資源と開発体験をまとめるツール。Pulumiを基盤にアプリ、関数、ストレージをTypeScriptから接続する。",
+  "role": "Pulumiを基盤にアプリ、関数、ストレージをTypeScriptから接続する。",
+  "whenToUse": [
+    "AWS中心のサーバーレス/フルスタック構成をアプリコードに近く管理するとき。"
+  ],
+  "whenNotToUse": [
+    "クラウド非依存の標準IaCだけで運用したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "devops",
+    "typescript",
+    "aws"
+  ],
+  "aliases": [
+    "Serverless Stack"
+  ],
+  "tags": [
+    "iac",
+    "serverless"
+  ],
+  "lastVerified": "2026-08-30"
+}

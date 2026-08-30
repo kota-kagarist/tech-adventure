@@ -1,0 +1,32 @@
+{
+  "id": "tanstack-query",
+  "name": "TanStack Query",
+  "shortDescription": "サーバーから得る非同期データをキャッシュ管理するライブラリ。",
+  "category": "state-data",
+  "officialUrl": "https://tanstack.com/query/latest",
+  "whatItDoes": "サーバーから得る非同期データをキャッシュ管理するライブラリ。取得、再取得、失効、読み込み、ミューテーションの状態を扱う。",
+  "role": "取得、再取得、失効、読み込み、ミューテーションの状態を扱う。",
+  "whenToUse": [
+    "API データの同期とキャッシュを画面状態から分離したいとき。"
+  ],
+  "whenNotToUse": [
+    "クライアント内だけの単純なフォーム状態を管理したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "vue",
+    "svelte"
+  ],
+  "aliases": [
+    "React Query"
+  ],
+  "tags": [
+    "server-state",
+    "cache"
+  ],
+  "lastVerified": "2026-08-30"
+}

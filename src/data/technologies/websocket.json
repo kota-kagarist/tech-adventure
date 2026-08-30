@@ -1,0 +1,28 @@
+{
+  "id": "websocket",
+  "name": "WebSocket",
+  "shortDescription": "クライアントとサーバーが双方向通信を続けるWeb プロトコル。",
+  "category": "protocol-api",
+  "officialUrl": "https://websockets.spec.whatwg.org/",
+  "whatItDoes": "クライアントとサーバーが双方向通信を続けるWeb プロトコル。一度接続したチャネルで双方からメッセージを即時送信する。",
+  "role": "一度接続したチャネルで双方からメッセージを即時送信する。",
+  "whenToUse": [
+    "chat、共同編集、gameなど双方向の低遅延更新が必要なとき。"
+  ],
+  "whenNotToUse": [
+    "サーバーからクライアントへの一方向通知だけで足りるとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform"
+  ],
+  "aliases": [
+    "WebSockets"
+  ],
+  "tags": [
+    "realtime",
+    "duplex"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,27 @@
+{
+  "id": "grafana",
+  "name": "Grafana",
+  "shortDescription": "複数データソースの観測データをダッシュボード化するツール。",
+  "category": "observability",
+  "officialUrl": "https://grafana.com/oss/grafana/",
+  "whatItDoes": "複数データソースの観測データをダッシュボード化するツール。メトリクス、ログ、トレースをパネルへまとめ、アラートと共有を行う。",
+  "role": "メトリクス、ログ、トレースをパネルへまとめ、アラートと共有を行う。",
+  "whenToUse": [
+    "Prometheusなどのデータを運用者向けに可視化するとき。"
+  ],
+  "whenNotToUse": [
+    "データ収集と保存をGrafana単独で完結させたいとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "devops",
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "dashboards",
+    "visualization"
+  ],
+  "lastVerified": "2026-08-30"
+}

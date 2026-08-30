@@ -1,12 +1,26 @@
 {
   "id": "sqlite",
   "name": "SQLite",
-  "shortDescription": "1ファイルで動く組み込み型リレーショナルデータベース。",
+  "shortDescription": "アプリへ組み込めるサーバー不要のリレーショナル DB。",
   "category": "database",
   "officialUrl": "https://www.sqlite.org/",
-  "whatItDoes": "サーバーを別途立てず、アプリ内からSQLでデータを保存・検索する。",
-  "whenToUse": ["ローカルアプリや小規模サービス", "運用するDBサーバーを増やしたくない"],
-  "whenNotToUse": ["多数のサーバーから高頻度に同時書き込みする構成"],
+  "whatItDoes": "アプリへ組み込めるサーバー不要のリレーショナル DB。単一ファイル内でSQL、トランザクション、インデックスを実行する。",
+  "role": "単一ファイル内でSQL、トランザクション、インデックスを実行する。",
+  "whenToUse": [
+    "端末内データ、小規模サービス、テスト環境を簡潔に保つとき。"
+  ],
+  "whenNotToUse": [
+    "多数サーバーから同じDBへ高頻度に同時書込みするとき。"
+  ],
   "maturity": "mature",
-  "tags": ["sql", "embedded"]
+  "importance": "core",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "sql",
+    "embedded"
+  ],
+  "lastVerified": "2026-08-30"
 }

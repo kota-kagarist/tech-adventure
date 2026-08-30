@@ -1,0 +1,28 @@
+{
+  "id": "unocss",
+  "name": "UnoCSS",
+  "shortDescription": "必要なユーティリティだけを即時生成するアトミック CSS エンジン。",
+  "category": "styling",
+  "officialUrl": "https://unocss.dev/",
+  "whatItDoes": "必要なユーティリティだけを即時生成するアトミック CSS エンジン。プリセットとルールから使用中のクラスに対応するCSSを生成する。",
+  "role": "プリセットとルールから使用中のクラスに対応するCSSを生成する。",
+  "whenToUse": [
+    "独自ユーティリティ規則と小さな生成物を柔軟に設計したいとき。"
+  ],
+  "whenNotToUse": [
+    "規約済みの部品集だけで設計を統一したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "web-platform"
+  ],
+  "aliases": [],
+  "tags": [
+    "atomic-css",
+    "on-demand"
+  ],
+  "lastVerified": "2026-08-30"
+}

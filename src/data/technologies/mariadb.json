@@ -1,0 +1,26 @@
+{
+  "id": "mariadb",
+  "name": "MariaDB",
+  "shortDescription": "MySQL互換を重視するオープンソースリレーショナル DB。",
+  "category": "database",
+  "officialUrl": "https://mariadb.org/",
+  "whatItDoes": "MySQL互換を重視するオープンソースリレーショナル DB。SQL、トランザクション、レプリケーションをMySQL系の運用で提供する。",
+  "role": "SQL、トランザクション、レプリケーションをMySQL系の運用で提供する。",
+  "whenToUse": [
+    "オープンソース性とMySQL互換を重視するシステム。"
+  ],
+  "whenNotToUse": [
+    "利用サービスがMySQL固有版だけを正式対応するとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "sql",
+    "relational"
+  ],
+  "lastVerified": "2026-08-30"
+}

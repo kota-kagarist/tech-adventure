@@ -1,0 +1,29 @@
+{
+  "id": "terraform",
+  "name": "Terraform",
+  "shortDescription": "クラウド資源を宣言ファイルで管理するInfrastructure as Code ツール。",
+  "category": "infrastructure",
+  "officialUrl": "https://developer.hashicorp.com/terraform",
+  "whatItDoes": "クラウド資源を宣言ファイルで管理するInfrastructure as Code ツール。プロバイダーを通じてリソース差分を計画し、再現可能に適用する。",
+  "role": "プロバイダーを通じてリソース差分を計画し、再現可能に適用する。",
+  "whenToUse": [
+    "複数環境のクラウド構成をレビュー可能なコードにするとき。"
+  ],
+  "whenNotToUse": [
+    "アプリコードだけを変更し既存プラットフォームが基盤を自動管理するとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "devops",
+    "aws",
+    "azure",
+    "gcp"
+  ],
+  "aliases": [],
+  "tags": [
+    "iac",
+    "declarative"
+  ],
+  "lastVerified": "2026-08-30"
+}

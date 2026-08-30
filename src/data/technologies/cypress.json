@@ -1,0 +1,29 @@
+{
+  "id": "cypress",
+  "name": "Cypress",
+  "shortDescription": "ブラウザー内の観測性を重視するE2E テストツール。",
+  "category": "testing",
+  "officialUrl": "https://www.cypress.io/",
+  "whatItDoes": "ブラウザー内の観測性を重視するE2E テストツール。操作の時間経過、DOM、リクエストを対話的にデバッグできる。",
+  "role": "操作の時間経過、DOM、リクエストを対話的にデバッグできる。",
+  "whenToUse": [
+    "フロントエンドチームが画面テストを見ながら開発したいとき。"
+  ],
+  "whenNotToUse": [
+    "複数タブや複数ブラウザーエンジンの同時網羅を最優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node",
+    "web-platform"
+  ],
+  "aliases": [],
+  "tags": [
+    "e2e",
+    "browser"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "biome",
+  "name": "Biome",
+  "shortDescription": "フォーマッターとリンターを一体化した高速なWeb ツールチェーン。",
+  "category": "quality-validation",
+  "officialUrl": "https://biomejs.dev/",
+  "whatItDoes": "フォーマッターとリンターを一体化した高速なWeb ツールチェーン。JavaScript、TypeScript、JSON、CSSなどを単一ツールで検査・整形する。",
+  "role": "JavaScript、TypeScript、JSON、CSSなどを単一ツールで検査・整形する。",
+  "whenToUse": [
+    "ESLintとPrettier相当の処理を速く簡潔にまとめたいとき。"
+  ],
+  "whenNotToUse": [
+    "必要なESLint プラグインがBiomeで代替できないとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "rust",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "linter",
+    "formatter"
+  ],
+  "lastVerified": "2026-08-30"
+}

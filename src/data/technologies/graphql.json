@@ -1,0 +1,27 @@
+{
+  "id": "graphql",
+  "name": "GraphQL",
+  "shortDescription": "クライアントが必要なフィールドを指定するクエリ言語と実行方式。",
+  "category": "protocol-api",
+  "officialUrl": "https://graphql.org/",
+  "whatItDoes": "クライアントが必要なフィールドを指定するクエリ言語と実行方式。型付きスキーマを介して複数リソースのデータを一度に取得する。",
+  "role": "型付きスキーマを介して複数リソースのデータを一度に取得する。",
+  "whenToUse": [
+    "画面ごとに必要データが大きく異なりスキーマを共有したいとき。"
+  ],
+  "whenNotToUse": [
+    "単純なHTTP リソース APIでキャッシュや運用を簡潔に保ちたいとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform",
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "query-language",
+    "schema"
+  ],
+  "lastVerified": "2026-08-30"
+}

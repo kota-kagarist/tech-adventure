@@ -1,0 +1,30 @@
+{
+  "id": "turbopack",
+  "name": "Turbopack",
+  "shortDescription": "Next.js向けに増分処理を最適化したRust製バンドラー。",
+  "category": "build-transform",
+  "officialUrl": "https://nextjs.org/docs/app/api-reference/turbopack",
+  "whatItDoes": "Next.js向けに増分処理を最適化したRust製バンドラー。ファイル単位のキャッシュで開発と本番のNext.js ビルドを行う。",
+  "role": "ファイル単位のキャッシュで開発と本番のNext.js ビルドを行う。",
+  "whenToUse": [
+    "Next.js 16以降で標準の高速ビルドを使うとき。"
+  ],
+  "whenNotToUse": [
+    "Next.js外の汎用バンドラーとして自由に設定したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "rust",
+    "react",
+    "node"
+  ],
+  "aliases": [],
+  "tags": [
+    "bundler",
+    "incremental"
+  ],
+  "lastVerified": "2026-08-30"
+}

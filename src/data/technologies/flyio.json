@@ -1,0 +1,28 @@
+{
+  "id": "flyio",
+  "name": "Fly.io",
+  "shortDescription": "コンテナを複数リージョンへ配置するアプリケーションプラットフォーム。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://fly.io/",
+  "whatItDoes": "コンテナを複数リージョンへ配置するアプリケーションプラットフォーム。Firecracker系VMとプライベートネットワークで利用者の近くにアプリを動かす。",
+  "role": "Firecracker系VMとプライベートネットワークで利用者の近くにアプリを動かす。",
+  "whenToUse": [
+    "ステートフルアプリも含めてリージョン配置を細かく制御したいとき。"
+  ],
+  "whenNotToUse": [
+    "完全マネージドで配置判断を任せたいとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [
+    "Fly"
+  ],
+  "tags": [
+    "edge",
+    "containers"
+  ],
+  "lastVerified": "2026-08-30"
+}

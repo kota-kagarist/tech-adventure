@@ -1,17 +1,28 @@
 {
   "id": "astro",
   "name": "Astro",
-  "shortDescription": "コンテンツ中心のWebサイトを作るフレームワーク。",
+  "shortDescription": "コンテンツ中心サイトへ必要な対話部分だけを配るWebフレームワーク。",
   "category": "web-framework",
   "officialUrl": "https://astro.build/",
-  "whatItDoes": "基本は静的HTMLを生成し、必要な部分だけJavaScriptやUIコンポーネントを動かす。",
+  "whatItDoes": "コンテンツ中心サイトへ必要な対話部分だけを配るWebフレームワーク。標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。",
+  "role": "標準では静的HTMLを生成し、選んだUI部品だけをブラウザで動かす。",
   "whenToUse": [
-    "ブログ・メディア・企業サイト",
-    "表示速度と少ないJavaScriptを重視する"
+    "ブログ、文書、企業サイトで表示速度と少ないJavaScriptを重視するとき。"
   ],
   "whenNotToUse": [
-    "画面全体が常時対話的なアプリケーション"
+    "画面全体が常時対話する単一ページアプリを中心に作るとき。"
   ],
   "maturity": "established",
-  "tags": ["ssg", "content", "islands"]
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "web-platform"
+  ],
+  "aliases": [],
+  "tags": [
+    "islands",
+    "content"
+  ],
+  "lastVerified": "2026-08-30"
 }

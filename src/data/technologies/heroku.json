@@ -1,0 +1,26 @@
+{
+  "id": "heroku",
+  "name": "Heroku",
+  "shortDescription": "Git プッシュ中心でアプリを公開する成熟したPaaS。",
+  "category": "cloud-hosting",
+  "officialUrl": "https://www.heroku.com/",
+  "whatItDoes": "Git プッシュ中心でアプリを公開する成熟したPaaS。ビルドパック、Dyno、アドオンでサーバー運用を抽象化する。",
+  "role": "ビルドパック、Dyno、アドオンでサーバー運用を抽象化する。",
+  "whenToUse": [
+    "既存Heroku アプリを保守するか運用を単純化したいとき。"
+  ],
+  "whenNotToUse": [
+    "費用を細かく最適化する大規模基盤やエッジ配信。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "paas",
+    "hosting"
+  ],
+  "lastVerified": "2026-08-30"
+}

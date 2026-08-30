@@ -1,0 +1,29 @@
+{
+  "id": "playwright",
+  "name": "Playwright",
+  "shortDescription": "複数ブラウザーを自動操作するE2E テストツール。",
+  "category": "testing",
+  "officialUrl": "https://playwright.dev/",
+  "whatItDoes": "複数ブラウザーを自動操作するE2E テストツール。Chromium、Firefox、WebKitで実利用に近い操作を再現する。",
+  "role": "Chromium、Firefox、WebKitで実利用に近い操作を再現する。",
+  "whenToUse": [
+    "主要ブラウザーの画面操作とネットワークを安定して検証したいとき。"
+  ],
+  "whenNotToUse": [
+    "純粋関数の細かな分岐だけを高速に検証するとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node",
+    "web-platform"
+  ],
+  "aliases": [],
+  "tags": [
+    "e2e",
+    "browser"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "tanstack-start",
+  "name": "TanStack Start",
+  "shortDescription": "TanStack Routerを中心にした型安全なフルスタックフレームワーク。",
+  "category": "web-framework",
+  "officialUrl": "https://tanstack.com/start/latest",
+  "whatItDoes": "TanStack Routerを中心にした型安全なフルスタックフレームワーク。ルート、データ取得、サーバー関数、描画方式を同じ型情報で接続する。",
+  "role": "ルート、データ取得、サーバー関数、描画方式を同じ型情報で接続する。",
+  "whenToUse": [
+    "URL状態とデータ取得を明示的かつ型安全に設計したいとき。"
+  ],
+  "whenNotToUse": [
+    "正式版前の変更余地を許容できない本番基盤へ採用するとき。"
+  ],
+  "maturity": "emerging",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "node"
+  ],
+  "aliases": [
+    "Start"
+  ],
+  "tags": [
+    "fullstack",
+    "router"
+  ],
+  "lastVerified": "2026-08-30"
+}

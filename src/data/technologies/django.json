@@ -1,0 +1,26 @@
+{
+  "id": "django",
+  "name": "Django",
+  "shortDescription": "Web開発に必要な機能を広く備えるPythonフレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://www.djangoproject.com/",
+  "whatItDoes": "Web開発に必要な機能を広く備えるPythonフレームワーク。ORM、認証、管理画面、ルート、テンプレートを一体で提供する。",
+  "role": "ORM、認証、管理画面、ルート、テンプレートを一体で提供する。",
+  "whenToUse": [
+    "管理画面を含むデータ中心のWebサービスを素早く作るとき。"
+  ],
+  "whenNotToUse": [
+    "小さなAPIへ最小の依存だけを求めるとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "python"
+  ],
+  "aliases": [],
+  "tags": [
+    "batteries-included",
+    "mvc"
+  ],
+  "lastVerified": "2026-08-30"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "swc",
+  "name": "SWC",
+  "shortDescription": "Rustで書かれた高速なJavaScript/TypeScript コンパイラー。",
+  "category": "build-transform",
+  "officialUrl": "https://swc.rs/",
+  "whatItDoes": "Rustで書かれた高速なJavaScript/TypeScript コンパイラー。構文変換と圧縮を高速化しフレームワークの内部でも使われる。",
+  "role": "構文変換と圧縮を高速化しフレームワークの内部でも使われる。",
+  "whenToUse": [
+    "Babel相当の変換を速くしたい大規模プロジェクト。"
+  ],
+  "whenNotToUse": [
+    "必要なBabel プラグインがSWCへ移植されていないとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "rust",
+    "node"
+  ],
+  "aliases": [
+    "Speedy Web Compiler"
+  ],
+  "tags": [
+    "compiler",
+    "performance"
+  ],
+  "lastVerified": "2026-08-30"
+}

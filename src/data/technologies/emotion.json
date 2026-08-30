@@ -1,0 +1,28 @@
+{
+  "id": "emotion",
+  "name": "Emotion",
+  "shortDescription": "柔軟なAPIを持つCSS-in-JS ライブラリ。",
+  "category": "styling",
+  "officialUrl": "https://emotion.sh/",
+  "whatItDoes": "柔軟なAPIを持つCSS-in-JS ライブラリ。オブジェクトまたはテンプレート記法から部品に紐づくスタイルを生成する。",
+  "role": "オブジェクトまたはテンプレート記法から部品に紐づくスタイルを生成する。",
+  "whenToUse": [
+    "Reactでテーマや動的スタイルを細かく制御したいとき。"
+  ],
+  "whenNotToUse": [
+    "ランタイムのスタイル生成を避け、標準CSSを優先するとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "aliases": [],
+  "tags": [
+    "css-in-js",
+    "theming"
+  ],
+  "lastVerified": "2026-08-30"
+}

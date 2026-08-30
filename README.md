@@ -2,7 +2,7 @@
 
 > Navigate the technology landscape.
 
-Tech Adventure は、Astro / Hono / React / Cloudflare Workers などのWeb技術を、単なる名前の一覧ではなく **「何を担当するか」「何と競合するか」「何と組み合わせるか」** で理解するためのオープンガイドです。
+Tech Adventure は、2026年の主要なWeb技術179件を22カテゴリに整理し、単なる名前の一覧ではなく **「何を担当するか」「何と競合するか」「何と組み合わせるか」** で理解するためのオープンガイドです。
 
 AIにコードを書いてもらえる時代ほど、「出てきた技術名が何者なのか」を把握する地図が必要だと考えています。
 
@@ -14,9 +14,10 @@ https://kota-kagarist.github.io/tech-adventure/
 
 ## できること
 
-- 技術を役割ごとに見る
-- 1つの技術について「何者？」「いつ使う？」を確認する
+- 技術を役割・ecosystem・成熟度・主要度から絞り込む
+- 1つの技術について「何者？」「いつ使う？」「いつ使わない？」を確認する
 - 2つの技術が本当に競合するのか比較する
+- 468件の関係から、基盤・実行環境・規格・組み合わせをたどる
 - 「ブログ」「API」など、作りたいものから代表構成をたどる
 
 ## 技術構成
@@ -49,12 +50,13 @@ npx wrangler deploy --dry-run
 ## 技術を追加する
 
 1. `src/data/technologies/<id>.json` を追加する
-2. `src/data/technologies/index.ts` にimportを追加する
-3. 必要なら `src/data/relations.json` に関係を追加する
-4. 公式一次情報で内容を確認する
-5. `npm run check && npm test && npm run build` を実行する
+2. `src/data/relations.json` に比較候補・基盤・併用先などの関係を追加する
+3. 公式一次情報で内容を確認し、`lastVerified` を更新する
+4. `npm run check && npm test && npm run build` を実行する
 
-`id` は小文字 kebab-case。公式URLは `https://` を使います。
+技術JSONは`import.meta.glob`で自動読込されるため、一覧ファイルへの手動importは不要です。必須フィールドとIDは`src/data/schema.ts`、実データの整合性条件は`tests/data.test.mjs`を参照してください。
+
+`id` は小文字kebab-case、公式URLは`https://`を使います。各技術には役割、採用・非採用条件、成熟度、主要度、ecosystem、aliases、タグ、公式URL、最終確認日を持たせます。
 
 ## データの考え方
 
@@ -63,6 +65,8 @@ npx wrangler deploy --dry-run
 - Astro と Next.js → Webサイト全体を担当するため、比較しやすい
 - Astro と Hono → 担当する層が違うため、単純な競合ではない
 - React と Next.js → UIライブラリと、それを土台にするWebフレームワーク
+
+関係データは参照先、重複、孤立を自動検査します。Core技術には最低3件の関係が必要です。
 
 ## Contributing
 

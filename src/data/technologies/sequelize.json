@@ -1,0 +1,29 @@
+{
+  "id": "sequelize",
+  "name": "Sequelize",
+  "shortDescription": "Node.jsで複数SQL DBを扱う成熟したORM。",
+  "category": "orm",
+  "officialUrl": "https://sequelize.org/",
+  "whatItDoes": "Node.jsで複数SQL DBを扱う成熟したORM。モデル、関連付け、トランザクションをJavaScript APIで提供する。",
+  "role": "モデル、関連付け、トランザクションをJavaScript APIで提供する。",
+  "whenToUse": [
+    "既存Sequelize プロジェクトや広いSQL DB対応を保守するとき。"
+  ],
+  "whenNotToUse": [
+    "TypeScriptでスキーマから厳密な型推論を得たい新規プロジェクト。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node",
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "orm",
+    "sql"
+  ],
+  "lastVerified": "2026-08-30"
+}

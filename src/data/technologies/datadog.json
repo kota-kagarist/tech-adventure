@@ -1,0 +1,26 @@
+{
+  "id": "datadog",
+  "name": "Datadog",
+  "shortDescription": "インフラからアプリまで統合監視するマネージドプラットフォーム。",
+  "category": "observability",
+  "officialUrl": "https://www.datadoghq.com/",
+  "whatItDoes": "インフラからアプリまで統合監視するマネージドプラットフォーム。メトリクス、ログ、トレース、RUM、アラートを一つの画面で関連付ける。",
+  "role": "メトリクス、ログ、トレース、RUM、アラートを一つの画面で関連付ける。",
+  "whenToUse": [
+    "複数サービスの運用データを短期間で統合したいとき。"
+  ],
+  "whenNotToUse": [
+    "費用を抑えオープンソース部品を自分で運用したいとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "devops"
+  ],
+  "aliases": [],
+  "tags": [
+    "apm",
+    "monitoring"
+  ],
+  "lastVerified": "2026-08-30"
+}

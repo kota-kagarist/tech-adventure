@@ -1,0 +1,30 @@
+{
+  "id": "supabase-auth",
+  "name": "Supabase Auth",
+  "shortDescription": "Supabaseに含まれるPostgreSQL連携の認証機能。",
+  "category": "auth",
+  "officialUrl": "https://supabase.com/docs/guides/auth",
+  "whatItDoes": "Supabaseに含まれるPostgreSQL連携の認証機能。JWTとRow Level Securityを使い、利用者とDB権限を結ぶ。",
+  "role": "JWTとRow Level Securityを使い、利用者とDB権限を結ぶ。",
+  "whenToUse": [
+    "Supabase DBと認証・行単位権限を一体で設計するとき。"
+  ],
+  "whenNotToUse": [
+    "Supabaseを使わない独立アイデンティティプロバイダーが必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data",
+    "javascript",
+    "typescript"
+  ],
+  "aliases": [
+    "GoTrue"
+  ],
+  "tags": [
+    "authentication",
+    "postgresql"
+  ],
+  "lastVerified": "2026-08-30"
+}

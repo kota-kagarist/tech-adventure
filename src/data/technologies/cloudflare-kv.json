@@ -1,12 +1,30 @@
 {
   "id": "cloudflare-kv",
   "name": "Cloudflare KV",
-  "shortDescription": "世界中から低遅延で読む用途に向くキー・値ストア。",
-  "category": "database",
+  "shortDescription": "世界へ複製される読み取り中心のキー値ストレージ。",
+  "category": "backend-platform",
   "officialUrl": "https://developers.cloudflare.com/kv/",
-  "whatItDoes": "キーに対して値を保存し、Cloudflareネットワーク上から高速に読み取る。",
-  "whenToUse": ["設定値・キャッシュ・読み取り中心のデータ", "単純なキー検索で十分"],
-  "whenNotToUse": ["強い即時整合性や複雑なSQL検索が必要"],
-  "maturity": "mature",
-  "tags": ["kv", "cloudflare"]
+  "whatItDoes": "世界へ複製される読み取り中心のキー値ストレージ。小さな値をエッジへキャッシュし、Workers バインディングから読み書きする。",
+  "role": "小さな値をエッジへキャッシュし、Workers バインディングから読み書きする。",
+  "whenToUse": [
+    "設定、フラグ、キャッシュを世界各地で高速に読むとき。"
+  ],
+  "whenNotToUse": [
+    "直後の強い整合性や高頻度な同一キー書込みが必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "data",
+    "cloudflare"
+  ],
+  "aliases": [
+    "Workers KV",
+    "KV"
+  ],
+  "tags": [
+    "key-value",
+    "edge"
+  ],
+  "lastVerified": "2026-08-30"
 }

@@ -1,0 +1,26 @@
+{
+  "id": "php",
+  "name": "PHP",
+  "shortDescription": "WebサーバーでHTML生成や業務処理を行う動的言語。",
+  "category": "language",
+  "officialUrl": "https://www.php.net/",
+  "whatItDoes": "WebサーバーでHTML生成や業務処理を行う動的言語。リクエストごとにサーバー処理を実行し、WebページやAPIを返す。",
+  "role": "リクエストごとにサーバー処理を実行し、WebページやAPIを返す。",
+  "whenToUse": [
+    "WordPressやLaravelを含む成熟したWeb生態系を使うとき。"
+  ],
+  "whenNotToUse": [
+    "ブラウザ内だけで完結するアプリを作るとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "php"
+  ],
+  "aliases": [],
+  "tags": [
+    "backend",
+    "web"
+  ],
+  "lastVerified": "2026-08-30"
+}

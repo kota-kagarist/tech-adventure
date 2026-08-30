@@ -1,0 +1,26 @@
+{
+  "id": "java",
+  "name": "Java",
+  "shortDescription": "JVM上で動く静的型付きの汎用プログラミング言語。",
+  "category": "language",
+  "officialUrl": "https://www.java.com/",
+  "whatItDoes": "JVM上で動く静的型付きの汎用プログラミング言語。大規模なサーバー処理を移植性のある実行環境で構築する。",
+  "role": "大規模なサーバー処理を移植性のある実行環境で構築する。",
+  "whenToUse": [
+    "長期運用の業務システムやSpringの生態系を使うとき。"
+  ],
+  "whenNotToUse": [
+    "小さな静的サイトを短時間で公開したいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "java"
+  ],
+  "aliases": [],
+  "tags": [
+    "backend",
+    "jvm"
+  ],
+  "lastVerified": "2026-08-30"
+}

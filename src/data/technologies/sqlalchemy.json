@@ -1,0 +1,27 @@
+{
+  "id": "sqlalchemy",
+  "name": "SQLAlchemy",
+  "shortDescription": "PythonでSQL ツールキットとORMを提供するライブラリ。",
+  "category": "orm",
+  "officialUrl": "https://www.sqlalchemy.org/",
+  "whatItDoes": "PythonでSQL ツールキットとORMを提供するライブラリ。低水準SQLからオブジェクトマッピングまで段階的にDBを扱う。",
+  "role": "低水準SQLからオブジェクトマッピングまで段階的にDBを扱う。",
+  "whenToUse": [
+    "Pythonで複雑なクエリとトランザクションを厳密に制御するとき。"
+  ],
+  "whenNotToUse": [
+    "小さな非同期APIでより単純なデータアクセスだけが必要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "python",
+    "data"
+  ],
+  "aliases": [],
+  "tags": [
+    "orm",
+    "sql"
+  ],
+  "lastVerified": "2026-08-30"
+}

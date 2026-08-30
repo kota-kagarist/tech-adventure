@@ -1,0 +1,28 @@
+{
+  "id": "go",
+  "name": "Go",
+  "shortDescription": "並行処理と単一バイナリ配布に強い静的型付き言語。",
+  "category": "language",
+  "officialUrl": "https://go.dev/",
+  "whatItDoes": "並行処理と単一バイナリ配布に強い静的型付き言語。ネットワークサービスやCLIを小さな実行物として構築する。",
+  "role": "ネットワークサービスやCLIを小さな実行物として構築する。",
+  "whenToUse": [
+    "高い並行性と簡単な配布を重視するAPIや基盤を作るとき。"
+  ],
+  "whenNotToUse": [
+    "豊富な画面部品の生態系を最優先するフロントエンド開発。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "go"
+  ],
+  "aliases": [
+    "Golang"
+  ],
+  "tags": [
+    "backend",
+    "concurrency"
+  ],
+  "lastVerified": "2026-08-30"
+}

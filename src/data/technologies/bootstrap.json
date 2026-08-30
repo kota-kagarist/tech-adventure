@@ -1,0 +1,26 @@
+{
+  "id": "bootstrap",
+  "name": "Bootstrap",
+  "shortDescription": "レイアウトとUI部品をまとめた成熟したCSS フレームワーク。",
+  "category": "styling",
+  "officialUrl": "https://getbootstrap.com/",
+  "whatItDoes": "レイアウトとUI部品をまとめた成熟したCSS フレームワーク。グリッド、フォーム、ナビゲーションなどを既定の見た目で素早く提供する。",
+  "role": "グリッド、フォーム、ナビゲーションなどを既定の見た目で素早く提供する。",
+  "whenToUse": [
+    "管理画面や試作を共通部品で短期間に作るとき。"
+  ],
+  "whenNotToUse": [
+    "独自性の高い設計を最小の上書きで実現したいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "web-platform"
+  ],
+  "aliases": [],
+  "tags": [
+    "css-framework",
+    "components"
+  ],
+  "lastVerified": "2026-08-30"
+}

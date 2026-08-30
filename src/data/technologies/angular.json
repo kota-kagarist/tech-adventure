@@ -1,0 +1,29 @@
+{
+  "id": "angular",
+  "name": "Angular",
+  "shortDescription": "大規模Webアプリ向け機能を一式備えるUIフレームワーク。",
+  "category": "ui-library",
+  "officialUrl": "https://angular.dev/",
+  "whatItDoes": "大規模Webアプリ向け機能を一式備えるUIフレームワーク。部品、依存注入、ルーティング、フォームなどの標準構成を提供する。",
+  "role": "部品、依存注入、ルーティング、フォームなどの標準構成を提供する。",
+  "whenToUse": [
+    "大人数で統一された作法の業務アプリを長期運用するとき。"
+  ],
+  "whenNotToUse": [
+    "小さな画面へ一部だけ軽く導入したいとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript"
+  ],
+  "aliases": [
+    "AngularJS"
+  ],
+  "tags": [
+    "framework",
+    "enterprise"
+  ],
+  "lastVerified": "2026-08-30"
+}

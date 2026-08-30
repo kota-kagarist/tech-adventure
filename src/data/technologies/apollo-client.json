@@ -1,0 +1,31 @@
+{
+  "id": "apollo-client",
+  "name": "Apollo Client",
+  "shortDescription": "GraphQL データを取得・正規化キャッシュするクライアントライブラリ。",
+  "category": "state-data",
+  "officialUrl": "https://www.apollographql.com/docs/react/",
+  "whatItDoes": "GraphQL データを取得・正規化キャッシュするクライアントライブラリ。クエリ結果をオブジェクト単位でキャッシュし、Reactの状態へ接続する。",
+  "role": "クエリ結果をオブジェクト単位でキャッシュし、Reactの状態へ接続する。",
+  "whenToUse": [
+    "GraphQL スキーマを中心に複雑な画面データを扱うとき。"
+  ],
+  "whenNotToUse": [
+    "RESTだけの小さなAPIでGraphQL キャッシュが不要なとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react",
+    "data"
+  ],
+  "aliases": [
+    "Apollo"
+  ],
+  "tags": [
+    "graphql",
+    "normalized-cache"
+  ],
+  "lastVerified": "2026-08-30"
+}

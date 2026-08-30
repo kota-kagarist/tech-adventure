@@ -1,0 +1,29 @@
+{
+  "id": "yarn",
+  "name": "Yarn",
+  "shortDescription": "ワークスペースと拡張可能な解決方式を持つパッケージ管理機能。",
+  "category": "package-monorepo",
+  "officialUrl": "https://yarnpkg.com/",
+  "whatItDoes": "ワークスペースと拡張可能な解決方式を持つパッケージ管理機能。依存取得、ロック、ワークスペース、Plug'n'Playなどを提供する。",
+  "role": "依存取得、ロック、ワークスペース、Plug'n'Playなどを提供する。",
+  "whenToUse": [
+    "既存Yarn プロジェクトか高度なワークスペース機能を使うとき。"
+  ],
+  "whenNotToUse": [
+    "標準npm運用で十分な小規模プロジェクトへ新たに導入するとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "node"
+  ],
+  "aliases": [
+    "Yarn Berry"
+  ],
+  "tags": [
+    "package-manager",
+    "workspace"
+  ],
+  "lastVerified": "2026-08-30"
+}

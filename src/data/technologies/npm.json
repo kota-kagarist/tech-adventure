@@ -1,0 +1,29 @@
+{
+  "id": "npm",
+  "name": "npm",
+  "shortDescription": "JavaScript パッケージのレジストリーと標準的な管理クライアント。",
+  "category": "package-monorepo",
+  "officialUrl": "https://www.npmjs.com/",
+  "whatItDoes": "JavaScript パッケージのレジストリーと標準的な管理クライアント。依存パッケージの公開、取得、スクリプト実行、バージョン固定を担う。",
+  "role": "依存パッケージの公開、取得、スクリプト実行、バージョン固定を担う。",
+  "whenToUse": [
+    "Node.js生態系のパッケージを最も標準的な方法で扱うとき。"
+  ],
+  "whenNotToUse": [
+    "JavaScript以外の言語だけで依存管理するとき。"
+  ],
+  "maturity": "mature",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "node"
+  ],
+  "aliases": [
+    "Node Package Manager"
+  ],
+  "tags": [
+    "package-manager",
+    "registry"
+  ],
+  "lastVerified": "2026-08-30"
+}

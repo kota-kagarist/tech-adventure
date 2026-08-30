@@ -1,0 +1,30 @@
+{
+  "id": "nestjs",
+  "name": "NestJS",
+  "shortDescription": "大規模Node.jsサーバー向けの構造化フレームワーク。",
+  "category": "server-framework",
+  "officialUrl": "https://nestjs.com/",
+  "whatItDoes": "大規模Node.jsサーバー向けの構造化フレームワーク。モジュール、コントローラー、依存注入でアプリの責務を分割する。",
+  "role": "モジュール、コントローラー、依存注入でアプリの責務を分割する。",
+  "whenToUse": [
+    "大人数で統一構造のTypeScriptバックエンドを作るとき。"
+  ],
+  "whenNotToUse": [
+    "小さな単機能APIへ最小の抽象だけを求めるとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [
+    "Nest"
+  ],
+  "tags": [
+    "dependency-injection",
+    "enterprise"
+  ],
+  "lastVerified": "2026-08-30"
+}

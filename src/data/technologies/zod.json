@@ -1,0 +1,27 @@
+{
+  "id": "zod",
+  "name": "Zod",
+  "shortDescription": "TypeScript向けのスキーマ宣言とランタイム検証ライブラリ。",
+  "category": "quality-validation",
+  "officialUrl": "https://zod.dev/",
+  "whatItDoes": "TypeScript向けのスキーマ宣言とランタイム検証ライブラリ。入力を実行時に検査し、同じ定義からTypeScript型を推論する。",
+  "role": "入力を実行時に検査し、同じ定義からTypeScript型を推論する。",
+  "whenToUse": [
+    "APIやフォームの外部入力を型と一緒に検証したいとき。"
+  ],
+  "whenNotToUse": [
+    "別言語間で標準スキーマを共有することが最優先のとき。"
+  ],
+  "maturity": "established",
+  "importance": "core",
+  "ecosystem": [
+    "javascript",
+    "typescript"
+  ],
+  "aliases": [],
+  "tags": [
+    "schema",
+    "validation"
+  ],
+  "lastVerified": "2026-08-30"
+}
