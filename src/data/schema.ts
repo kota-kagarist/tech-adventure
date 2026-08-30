@@ -57,5 +57,6 @@ export interface Journey {
   summary: string;
   technologyIds: string[];
   reasoning: string[];
+  tradeoffs: string[];
   alternatives: string[];
 }
