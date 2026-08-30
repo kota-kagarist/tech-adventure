@@ -1,4 +1,5 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/paths';
 ---
-<BaseLayout title="ページが見つかりません"><header class="page-head shell"><div class="kicker">LOST?</div><h1>ここはまだ地図にない場所です。</h1><p>技術一覧へ戻って、別のルートを探してください。</p><a class="button primary" href="/technologies">技術地図へ戻る</a></header></BaseLayout>
+<BaseLayout title="ページが見つかりません"><header class="page-head shell"><div class="kicker">LOST?</div><h1>ここはまだ地図にない場所です。</h1><p>技術一覧へ戻って、別のルートを探してください。</p><a class="button primary" href={withBase('/technologies')}>技術地図へ戻る</a></header></BaseLayout>
