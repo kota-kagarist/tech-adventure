@@ -32,6 +32,7 @@ const relationLabels = [
       <p data-atlas-focus-description></p>
       <a class="section-link" data-atlas-focus-detail href={withBase('/technologies')}>技術詳細を見る →</a>
     </div>
+    <p class="atlas-no-relations" data-atlas-no-relations hidden>現在の絞り込み条件では、直接関係は未登録です。技術詳細を開くか、絞り込みを解除して確認してください。</p>
     <div class="atlas-relation-groups">
       {relationLabels.map(([type, label]) => (
         <section class="atlas-relation-group" data-atlas-relation-group={type} hidden>
