@@ -1,0 +1,32 @@
+{
+  "id": "service-worker",
+  "name": "Service Worker",
+  "shortDescription": "Webアプリとネットワークの間で動くブラウザのバックグラウンド処理。",
+  "category": "runtime",
+  "officialUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API",
+  "whatItDoes": "ページとは別のWorkerコンテキストで動き、ネットワークリクエストの仲介、キャッシュ、オフライン応答、Push通知やバックグラウンド同期につながる機能を支える。",
+  "role": "ブラウザ内でWebアプリの通信とオフライン動作を支えるバックグラウンド実行環境。",
+  "whenToUse": [
+    "オフラインでも使えるWebアプリや細かなキャッシュ制御が必要なとき。",
+    "Push通知やバックグラウンド処理をWebアプリへ組み込みたいとき。"
+  ],
+  "whenNotToUse": [
+    "単純なサイトでブラウザキャッシュ以上の通信制御が不要なとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "web-platform",
+    "javascript"
+  ],
+  "aliases": [
+    "Service Worker API"
+  ],
+  "tags": [
+    "pwa",
+    "offline",
+    "cache",
+    "worker"
+  ],
+  "lastVerified": "2026-09-04"
+}
