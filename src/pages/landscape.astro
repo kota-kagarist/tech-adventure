@@ -21,7 +21,7 @@ const payload = JSON.stringify({ technologies, relations }).replaceAll('<', '\\u
         <div class="breadcrumb"><a href={withBase('/')}>Home</a> / Landscape</div>
         <div class="meta-label accent-label">TECHNOLOGY ATLAS</div>
         <h1>Web技術の全体像を、役割から眺める。</h1>
-        <p>179個の名前を暗記するのではなく、まず「どの地域にいる技術か」を見る。気になる技術を選ぶと、直接つながる比較候補・組み合わせ・土台だけを浮かび上がらせます。</p>
+        <p>{technologies.length}個の名前を暗記するのではなく、まず「どの地域にいる技術か」を見る。気になる技術を選ぶと、直接つながる比較候補・組み合わせ・土台だけを浮かび上がらせます。</p>
         <div class="atlas-metrics" aria-label="Atlas収録情報">
           <div class="atlas-metric"><strong>{technologies.length}</strong><span>TECHNOLOGIES</span></div>
           <div class="atlas-metric"><strong>{relations.length}</strong><span>RELATIONS</span></div>
@@ -58,7 +58,7 @@ const payload = JSON.stringify({ technologies, relations }).replaceAll('<', '\\u
     </section>
   </main>
 
-  <script id="atlas-payload" type="application/json" set:html={payload}></script>
+  <script is:inline id="atlas-payload" type="application/json" set:html={payload}></script>
   <script>
     import { buildAdjacency, filterAtlasTechnologies, getFocusState } from '../lib/landscape.mjs';
     import type { Technology, TechnologyRelation } from '../data/schema';
@@ -95,6 +95,7 @@ const payload = JSON.stringify({ technologies, relations }).replaceAll('<', '\\u
     const inspector = document.querySelector('[data-atlas-inspector]');
     const emptyInspector = inspector?.querySelector('[data-atlas-empty]');
     const activeInspector = inspector?.querySelector('[data-atlas-active]');
+    const noRelations = inspector?.querySelector('[data-atlas-no-relations]');
     const resetButton = inspector?.querySelector('[data-atlas-reset]');
     const focusCategory = inspector?.querySelector('[data-atlas-focus-category]');
     const focusName = inspector?.querySelector('[data-atlas-focus-name]');
@@ -153,6 +154,7 @@ const payload = JSON.stringify({ technologies, relations }).replaceAll('<', '\\u
       if (!technology || !focusId || !visibleIds.has(focusId)) {
         if (emptyInspector instanceof HTMLElement) emptyInspector.hidden = false;
         if (activeInspector instanceof HTMLElement) activeInspector.hidden = true;
+        if (noRelations instanceof HTMLElement) noRelations.hidden = true;
         if (resetButton instanceof HTMLButtonElement) resetButton.disabled = true;
         for (const group of relationGroups.values()) group.hidden = true;
         return;
@@ -175,6 +177,8 @@ const payload = JSON.stringify({ technologies, relations }).replaceAll('<', '\\u
         const neighborId = relation.source === focusId ? relation.target : relation.source;
         return visibleIds.has(neighborId);
       });
+
+      if (noRelations instanceof HTMLElement) noRelations.hidden = visibleRelations.length > 0;
 
       for (const [type, group] of relationGroups) {
         const matches = visibleRelations.filter((relation) => relation.type === type);
