@@ -1,0 +1,32 @@
+{
+  "id": "tsdown",
+  "name": "tsdown",
+  "shortDescription": "Rolldownを基盤にTypeScriptライブラリを配布用へまとめるバンドラー。",
+  "category": "build-transform",
+  "officialUrl": "https://tsdown.dev/",
+  "whatItDoes": "TypeScriptライブラリ向けのバンドル、型宣言、複数形式の出力などを簡潔な設定でまとめる。Rolldownを基盤とし、tsupからの移行先としても案内されている。",
+  "role": "TypeScriptライブラリの配布用ビルドをまとめる。",
+  "whenToUse": [
+    "npmへ公開するTypeScriptライブラリを複数形式で効率よくビルドしたいとき。",
+    "tsupからRolldown系の現行ツールへ移行したいとき。"
+  ],
+  "whenNotToUse": [
+    "Webアプリ全体の開発サーバーやページ配信まで含むViteのような役割が必要なとき。"
+  ],
+  "maturity": "emerging",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript"
+  ],
+  "aliases": [
+    "tsdown bundler"
+  ],
+  "tags": [
+    "bundler",
+    "library",
+    "typescript",
+    "rolldown"
+  ],
+  "lastVerified": "2026-09-04"
+}
