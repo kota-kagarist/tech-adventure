@@ -122,13 +122,13 @@ Webサイト、Webアプリ、API、コンテンツ配信のアプリケーシ�
 
 6地域を縦方向に並べる。各地域内は既存カテゴリごとの小区画を持ち、技術ノードをカードより小さいチップとして配置する。
 
-ノードは常に通常のHTMLリンクとして存在する。JavaScript無効でも全技術と地域構造を閲覧できる。
+各技術ノードは、Focus用の`button`と技術詳細へ進む通常の`a`要素を分けて持つ。JavaScript無効時でも詳細リンクと地域構造を辿れる。Focus操作とページ遷移は同じクリックへ割り当てない。
 
 デスクトップでは地域内を複数列で表示する。小さい画面では横スクロール可能なレーンにし、強制的に全体を縮小しない。
 
 ### Focus interaction
 
-技術ノードをクリックまたはキーボードでFocusすると:
+Focus用buttonをクリックまたはキーボード操作すると:
 
 1. 選択ノードを強調
 2. 直接関係するノードを強調
@@ -136,7 +136,7 @@ Webサイト、Webアプリ、API、コンテンツ配信のアプリケーシ�
 4. 選択ノードから直接関係ノードへの線だけをSVG overlayで描く
 5. 下部または右側のRelationship Inspectorに関係をテキスト表示
 
-通常の詳細ページへ移動するリンクも明示する。Focus操作と詳細遷移を同じクリックにしない。
+各ノードには独立した詳細リンクを置き、Focus状態からでも技術詳細ページへ移動できる。
 
 ### Relationship Inspector
 
@@ -164,6 +164,7 @@ Astro build時に以下を生成する。
 - 22カテゴリ区画
 - 全technology node
 - 各nodeの検索・絞り込み用data attributes
+- 各nodeのFocus buttonとdetail anchor
 - Relationship Inspectorの初期説明
 
 ### Interactive layer
@@ -181,7 +182,7 @@ Vanilla JavaScriptで以下のみ行う。
 
 SVG線はfocus時だけ生成する。全468関係を常時DOMへ描画しない。
 
-### Suggested modules
+### Modules
 
 - `src/data/landscape.ts`
   - 6地域定義
@@ -272,10 +273,10 @@ State of JavaScript 2025では`tsup`、`tRPC`、Node Test Runner等が主要ラ�
 
 ## 10. Accessibility and fallback
 
-- 技術ノードはキーボード操作可能
+- Focus buttonとdetail anchorを個別にキーボード操作できる
 - Focus状態は色だけでなくborder / opacity / text labelで表現
 - relation typeは線種だけでなくInspector内の文字でも示す
-- JavaScript無効でも全技術ノードと地域分類を読める
+- JavaScript無効でも全技術の詳細リンクと地域分類を辿れる
 - prefers-reduced-motionではtransitionを抑える
 - mobileではrelation linesに依存せずInspectorを主表示にする
 
@@ -330,7 +331,7 @@ TDDで進める。
 
 - `/landscape`がbuildされる
 - GitHub Pages base pathを守る
-- 主要nodeが通常のanchorとしてHTMLに存在する
+- 主要nodeにFocus buttonとdetail anchorがHTMLとして存在する
 - homepage previewが`/landscape`へ導線を持つ
 
 ### Catalog audit
@@ -363,11 +364,11 @@ npx wrangler deploy --dry-run
 
 1. `/landscape`を開けば、初学者がWeb技術を6つの大きな役割地域として俯瞰できる
 2. 全technologyがAtlas内のどこかに存在する
-3. 1技術を選ぶと、直接の比較・代替・組み合わせ・依存関係だけが読める
+3. 1技術をFocusすると、直接の比較・代替・組み合わせ・依存関係だけが読める
 4. 全relationを常時表示せず、情報密度を制御できる
 5. Explorer / Journey / technology detail / comparisonの既存導線を壊さない
 6. 明確なカタログ欠落を一次情報で監査し、必要分だけ補完する
-7. JavaScriptがなくても役割別の全技術一覧として利用できる
+7. JavaScriptがなくても役割別の全技術と詳細ページへの導線を利用できる
 8. 新規runtime dependencyを追加しない
 9. 必須検証がすべて成功する
 
