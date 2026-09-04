@@ -5,6 +5,7 @@ import TechnologyAtlas from '../components/TechnologyAtlas.astro';
 import { ecosystems, getRelations, getTechnologies } from '../data/load';
 import { landscapeRegions } from '../data/landscape';
 import { withBase } from '../lib/paths';
+import '../styles/landscape-tokens.css';
 import '../styles/landscape.css';
 
 const technologies = getTechnologies();
@@ -15,7 +16,7 @@ const payload = JSON.stringify({ technologies, relations }).replaceAll('<', '\\u
   title="Technology Atlas"
   description="Web技術の全体像を6つの役割地域に分け、直接の比較・組み合わせ・土台関係だけを辿れる技術地図。"
 >
-  <main class="atlas-page">
+  <div class="atlas-page">
     <header class="page-head shell atlas-page-head">
       <div>
         <div class="breadcrumb"><a href={withBase('/')}>Home</a> / Landscape</div>
@@ -56,7 +57,7 @@ const payload = JSON.stringify({ technologies, relations }).replaceAll('<', '\\u
         <RelationshipInspector />
       </div>
     </section>
-  </main>
+  </div>
 
   <script is:inline id="atlas-payload" type="application/json" set:html={payload}></script>
   <script>
