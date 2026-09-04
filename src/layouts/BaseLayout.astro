@@ -2,6 +2,7 @@
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import '../styles/global.css';
+import '../styles/mobile-layout.css';
 interface Props { title?: string; description?: string; }
 const { title = 'Tech Adventure', description = '技術の世界を、役割・競合・組み合わせから理解するオープンなテクノロジーガイド。' } = Astro.props;
 const fullTitle = title === 'Tech Adventure' ? title : `${title} | Tech Adventure`;
