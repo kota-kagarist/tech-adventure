@@ -1,19 +1,18 @@
 ---
+import { landscapeRegions } from '../data/landscape';
 import { withBase } from '../lib/paths';
 import TechnologyIcon from './TechnologyIcon.astro';
 import type { Technology } from '../data/schema';
 
 interface Props { technologies: Technology[]; }
 const { technologies } = Astro.props;
-const byId = new Map(technologies.map((technology) => [technology.id, technology]));
-const groups = [
-  { label: 'LANGUAGE', ids: ['javascript', 'typescript'] },
-  { label: 'UI', ids: ['react', 'vue', 'svelte'] },
-  { label: 'FRAMEWORK', ids: ['astro', 'nextjs', 'nuxt'] },
-  { label: 'SERVER', ids: ['hono', 'fastify', 'express'] },
-  { label: 'RUNTIME', ids: ['nodejs', 'bun', 'deno'] },
-  { label: 'DATA', ids: ['postgresql', 'sqlite', 'cloudflare-d1'] }
-];
+
+const groups = landscapeRegions.map((region) => {
+  const regionTechnologies = technologies.filter((technology) => region.categories.includes(technology.category));
+  const core = regionTechnologies.filter((technology) => technology.importance === 'core');
+  const representatives = [...core, ...regionTechnologies.filter((technology) => technology.importance !== 'core')].slice(0, 3);
+  return { ...region, count: regionTechnologies.length, representatives };
+});
 ---
 <div class="landscape-panel" aria-label="技術世界のプレビュー">
   <div class="landscape-chrome">
@@ -24,20 +23,24 @@ const groups = [
     <div class="landscape-grid">
       {groups.map((group) => (
         <section class="landscape-group" aria-label={group.label}>
-          <div class="landscape-group-label">{group.label}</div>
+          <div class="landscape-group-label">
+            <span>{group.label}</span>
+            <small>{group.count} TECH</small>
+          </div>
           <div class="landscape-node-list">
-            {group.ids.map((id) => {
-              const technology = byId.get(id);
-              if (!technology) return null;
-              return <a class="landscape-node" href={withBase(`/technologies/${technology.id}`)}><TechnologyIcon technology={technology} size="small" /><span>{technology.name}</span></a>;
-            })}
+            {group.representatives.map((technology) => (
+              <a class="landscape-node" href={withBase(`/technologies/${technology.id}`)}>
+                <TechnologyIcon technology={technology} size="small" />
+                <span>{technology.name}</span>
+              </a>
+            ))}
           </div>
         </section>
       ))}
     </div>
   </div>
   <div class="landscape-footer">
-    <span>18 representative nodes</span>
-    <a href={withBase('/technologies')}>Explore all technologies →</a>
+    <span>6 regions / {technologies.length} technologies</span>
+    <a href={withBase('/landscape')}>Open full atlas →</a>
   </div>
 </div>
