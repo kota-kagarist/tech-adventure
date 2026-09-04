@@ -1,0 +1,322 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import RelationshipInspector from '../components/RelationshipInspector.astro';
+import TechnologyAtlas from '../components/TechnologyAtlas.astro';
+import { ecosystems, getRelations, getTechnologies } from '../data/load';
+import { landscapeRegions } from '../data/landscape';
+import { withBase } from '../lib/paths';
+import '../styles/landscape.css';
+
+const technologies = getTechnologies();
+const relations = getRelations();
+const payload = JSON.stringify({ technologies, relations }).replaceAll('<', '\\u003c');
+---
+<BaseLayout
+  title="Technology Atlas"
+  description="Web技術の全体像を6つの役割地域に分け、直接の比較・組み合わせ・土台関係だけを辿れる技術地図。"
+>
+  <main class="atlas-page">
+    <header class="page-head shell atlas-page-head">
+      <div>
+        <div class="breadcrumb"><a href={withBase('/')}>Home</a> / Landscape</div>
+        <div class="meta-label accent-label">TECHNOLOGY ATLAS</div>
+        <h1>Web技術の全体像を、役割から眺める。</h1>
+        <p>179個の名前を暗記するのではなく、まず「どの地域にいる技術か」を見る。気になる技術を選ぶと、直接つながる比較候補・組み合わせ・土台だけを浮かび上がらせます。</p>
+        <div class="atlas-metrics" aria-label="Atlas収録情報">
+          <div class="atlas-metric"><strong>{technologies.length}</strong><span>TECHNOLOGIES</span></div>
+          <div class="atlas-metric"><strong>{relations.length}</strong><span>RELATIONS</span></div>
+          <div class="atlas-metric"><strong>{landscapeRegions.length}</strong><span>REGIONS</span></div>
+        </div>
+      </div>
+      <div class="atlas-page-actions">
+        <a class="button-secondary" href={withBase('/technologies')}>Technology Explorer</a>
+        <a class="button-secondary" href={withBase('/journeys')}>Choose a journey</a>
+      </div>
+    </header>
+
+    <section class="shell">
+      <div class="atlas-toolbar" aria-label="Atlasを絞り込む">
+        <input data-atlas-search type="search" placeholder="Search React, database, router..." aria-label="技術名や役割を検索" />
+        <select data-atlas-ecosystem aria-label="エコシステムで絞り込む">
+          <option value="">すべてのecosystem</option>
+          {ecosystems.map((ecosystem) => <option value={ecosystem.id}>{ecosystem.name}</option>)}
+        </select>
+        <select data-atlas-importance aria-label="主要度で絞り込む">
+          <option value="">すべての主要度</option>
+          <option value="core">Core</option>
+          <option value="major">Major</option>
+        </select>
+        <div class="atlas-toolbar-summary" data-atlas-count>{technologies.length} technologies</div>
+      </div>
+
+      <noscript><p class="atlas-noscript">JavaScriptが無効でも地域・カテゴリ・全技術は閲覧できます。関係のFocus表示だけが無効になります。</p></noscript>
+
+      <div class="atlas-layout">
+        <TechnologyAtlas technologies={technologies} />
+        <RelationshipInspector />
+      </div>
+    </section>
+  </main>
+
+  <script id="atlas-payload" type="application/json" set:html={payload}></script>
+  <script>
+    import { buildAdjacency, filterAtlasTechnologies, getFocusState } from '../lib/landscape.mjs';
+
+    const payloadElement = document.querySelector('#atlas-payload');
+    const payload = JSON.parse(payloadElement?.textContent ?? '{"technologies":[],"relations":[]}');
+    const technologies = payload.technologies ?? [];
+    const relations = payload.relations ?? [];
+    const technologyById = new Map(technologies.map((technology) => [technology.id, technology]));
+    const adjacency = buildAdjacency(relations);
+
+    const searchInput = document.querySelector('[data-atlas-search]');
+    const ecosystemSelect = document.querySelector('[data-atlas-ecosystem]');
+    const importanceSelect = document.querySelector('[data-atlas-importance]');
+    const count = document.querySelector('[data-atlas-count]');
+    const canvas = document.querySelector('[data-atlas-canvas]');
+    const svg = document.querySelector('[data-atlas-lines]');
+    const nodes = [...document.querySelectorAll('[data-atlas-node]')];
+    const categories = [...document.querySelectorAll('[data-atlas-category]')];
+    const regions = [...document.querySelectorAll('[data-atlas-region]')];
+    const nodeById = new Map(
+      nodes
+        .filter((node) => node instanceof HTMLElement)
+        .map((node) => [node.dataset.id ?? '', node]),
+    );
+
+    const inspector = document.querySelector('[data-atlas-inspector]');
+    const emptyInspector = inspector?.querySelector('[data-atlas-empty]');
+    const activeInspector = inspector?.querySelector('[data-atlas-active]');
+    const resetButton = inspector?.querySelector('[data-atlas-reset]');
+    const focusCategory = inspector?.querySelector('[data-atlas-focus-category]');
+    const focusName = inspector?.querySelector('[data-atlas-focus-name]');
+    const focusDescription = inspector?.querySelector('[data-atlas-focus-description]');
+    const focusDetail = inspector?.querySelector('[data-atlas-focus-detail]');
+    const relationGroups = new Map(
+      [...(inspector?.querySelectorAll('[data-atlas-relation-group]') ?? [])]
+        .filter((group) => group instanceof HTMLElement)
+        .map((group) => [group.dataset.atlasRelationGroup ?? '', group]),
+    );
+
+    const params = new URLSearchParams(window.location.search);
+    let focusId = params.get('focus');
+
+    function setControlValue(control, value) {
+      if (control instanceof HTMLInputElement) control.value = value;
+      if (control instanceof HTMLSelectElement && [...control.options].some((option) => option.value === value)) {
+        control.value = value;
+      }
+    }
+
+    setControlValue(searchInput, params.get('query') ?? '');
+    setControlValue(ecosystemSelect, params.get('ecosystem') ?? '');
+    setControlValue(importanceSelect, params.get('importance') ?? '');
+
+    function currentFilters() {
+      return {
+        query: searchInput instanceof HTMLInputElement ? searchInput.value : '',
+        ecosystem: ecosystemSelect instanceof HTMLSelectElement ? ecosystemSelect.value : '',
+        importance: importanceSelect instanceof HTMLSelectElement ? importanceSelect.value : '',
+      };
+    }
+
+    function syncUrl(filters) {
+      const next = new URLSearchParams();
+      if (filters.query) next.set('query', filters.query);
+      if (filters.ecosystem) next.set('ecosystem', filters.ecosystem);
+      if (filters.importance) next.set('importance', filters.importance);
+      if (focusId) next.set('focus', focusId);
+      const query = next.toString();
+      window.history.replaceState({}, '', `${window.location.pathname}${query ? `?${query}` : ''}`);
+    }
+
+    function directionText(relation, neighborName) {
+      const outgoing = relation.source === focusId;
+      if (relation.type === 'built-on') return outgoing ? `この技術は ${neighborName} を土台にする` : `${neighborName} はこの技術を土台にする`;
+      if (relation.type === 'runs-on') return outgoing ? `この技術は ${neighborName} 上で動く` : `${neighborName} はこの技術上で動く`;
+      if (relation.type === 'implements') return outgoing ? `この技術は ${neighborName} を実装する` : `${neighborName} がこの技術を実装する`;
+      if (relation.type === 'part-of') return outgoing ? `この技術は ${neighborName} の一部` : `${neighborName} はこの技術の一部`;
+      if (relation.type === 'competes-with') return `${neighborName} と同じ役割で比較できる`;
+      if (relation.type === 'alternative-to') return `${neighborName} は置き換え候補になり得る`;
+      return `${neighborName} と組み合わせて使う`;
+    }
+
+    function renderInspector(visibleIds) {
+      const technology = focusId ? technologyById.get(focusId) : undefined;
+      if (!technology || !visibleIds.has(focusId)) {
+        if (emptyInspector instanceof HTMLElement) emptyInspector.hidden = false;
+        if (activeInspector instanceof HTMLElement) activeInspector.hidden = true;
+        if (resetButton instanceof HTMLButtonElement) resetButton.disabled = true;
+        for (const group of relationGroups.values()) group.hidden = true;
+        return;
+      }
+
+      if (emptyInspector instanceof HTMLElement) emptyInspector.hidden = true;
+      if (activeInspector instanceof HTMLElement) activeInspector.hidden = false;
+      if (resetButton instanceof HTMLButtonElement) resetButton.disabled = false;
+      if (focusCategory) focusCategory.textContent = technology.category;
+      if (focusName) focusName.textContent = technology.name;
+      if (focusDescription) focusDescription.textContent = technology.shortDescription;
+
+      const detailNode = nodeById.get(technology.id)?.querySelector('[data-atlas-detail]');
+      if (focusDetail instanceof HTMLAnchorElement && detailNode instanceof HTMLAnchorElement) {
+        focusDetail.href = detailNode.href;
+      }
+
+      const visibleRelations = relations.filter((relation) => {
+        if (relation.source !== focusId && relation.target !== focusId) return false;
+        const neighborId = relation.source === focusId ? relation.target : relation.source;
+        return visibleIds.has(neighborId);
+      });
+
+      for (const [type, group] of relationGroups) {
+        const matches = visibleRelations.filter((relation) => relation.type === type);
+        group.hidden = matches.length === 0;
+        const countNode = group.querySelector('[data-atlas-relation-count]');
+        const list = group.querySelector('[data-atlas-relation-list]');
+        if (countNode) countNode.textContent = String(matches.length);
+        if (!(list instanceof HTMLUListElement)) continue;
+        list.replaceChildren();
+
+        for (const relation of matches) {
+          const neighborId = relation.source === focusId ? relation.target : relation.source;
+          const neighbor = technologyById.get(neighborId);
+          if (!neighbor) continue;
+          const detailLink = nodeById.get(neighborId)?.querySelector('[data-atlas-detail]');
+          const item = document.createElement('li');
+          const anchor = document.createElement('a');
+          anchor.textContent = neighbor.name;
+          if (detailLink instanceof HTMLAnchorElement) anchor.href = detailLink.href;
+          const direction = document.createElement('span');
+          direction.className = 'atlas-relation-direction';
+          direction.textContent = directionText(relation, neighbor.name);
+          const note = document.createElement('p');
+          note.textContent = relation.note;
+          item.append(anchor, direction, note);
+          list.append(item);
+        }
+      }
+    }
+
+    function clearLines() {
+      if (svg instanceof SVGElement) svg.replaceChildren();
+    }
+
+    function drawLines(visibleIds) {
+      clearLines();
+      if (!focusId || !(canvas instanceof HTMLElement) || !(svg instanceof SVGSVGElement)) return;
+      if (window.matchMedia('(max-width: 760px)').matches) return;
+
+      const focusNode = nodeById.get(focusId);
+      if (!(focusNode instanceof HTMLElement) || focusNode.hidden) return;
+      const canvasRect = canvas.getBoundingClientRect();
+      const width = Math.max(canvas.clientWidth, canvas.scrollWidth);
+      const height = Math.max(canvas.clientHeight, canvas.scrollHeight);
+      svg.setAttribute('width', String(width));
+      svg.setAttribute('height', String(height));
+      svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+
+      const focusRect = focusNode.getBoundingClientRect();
+      const x1 = focusRect.left - canvasRect.left + focusRect.width / 2;
+      const y1 = focusRect.top - canvasRect.top + focusRect.height / 2;
+
+      for (const relation of relations) {
+        if (relation.source !== focusId && relation.target !== focusId) continue;
+        const neighborId = relation.source === focusId ? relation.target : relation.source;
+        if (!visibleIds.has(neighborId)) continue;
+        const neighborNode = nodeById.get(neighborId);
+        if (!(neighborNode instanceof HTMLElement) || neighborNode.hidden) continue;
+        const rect = neighborNode.getBoundingClientRect();
+        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+        line.setAttribute('x1', String(x1));
+        line.setAttribute('y1', String(y1));
+        line.setAttribute('x2', String(rect.left - canvasRect.left + rect.width / 2));
+        line.setAttribute('y2', String(rect.top - canvasRect.top + rect.height / 2));
+        line.dataset.relation = relation.type;
+        svg.append(line);
+      }
+    }
+
+    function applyFocus(visibleIds) {
+      const state = getFocusState(focusId, visibleIds, adjacency);
+      focusId = state.focusId;
+
+      for (const [id, node] of nodeById) {
+        const selected = id === state.focusId;
+        node.dataset.atlasSelected = String(selected);
+        node.dataset.atlasRelated = String(state.relatedIds.has(id));
+        node.dataset.atlasDimmed = String(state.dimmedIds.has(id));
+        const button = node.querySelector('[data-atlas-focus]');
+        if (button instanceof HTMLButtonElement) button.setAttribute('aria-pressed', String(selected));
+      }
+
+      renderInspector(visibleIds);
+      drawLines(visibleIds);
+    }
+
+    function applyFilters() {
+      const filters = currentFilters();
+      const visibleTechnologies = filterAtlasTechnologies(technologies, filters);
+      const visibleIds = new Set(visibleTechnologies.map((technology) => technology.id));
+
+      for (const [id, node] of nodeById) node.hidden = !visibleIds.has(id);
+
+      for (const category of categories) {
+        if (!(category instanceof HTMLElement)) continue;
+        const visibleNodes = [...category.querySelectorAll('[data-atlas-node]')]
+          .filter((node) => node instanceof HTMLElement && !node.hidden);
+        category.hidden = visibleNodes.length === 0;
+        const categoryCount = category.querySelector('[data-atlas-category-count]');
+        if (categoryCount) categoryCount.textContent = String(visibleNodes.length);
+      }
+
+      for (const region of regions) {
+        if (!(region instanceof HTMLElement)) continue;
+        const visibleNodes = [...region.querySelectorAll('[data-atlas-node]')]
+          .filter((node) => node instanceof HTMLElement && !node.hidden);
+        region.hidden = visibleNodes.length === 0;
+        const regionCount = region.querySelector('[data-atlas-region-count]');
+        if (regionCount) regionCount.textContent = `${visibleNodes.length} tech`;
+      }
+
+      if (count) count.textContent = `${visibleIds.size} technologies`;
+      applyFocus(visibleIds);
+      syncUrl(filters);
+      return visibleIds;
+    }
+
+    for (const node of nodes) {
+      const button = node.querySelector('[data-atlas-focus]');
+      button?.addEventListener('click', () => {
+        if (!(node instanceof HTMLElement)) return;
+        focusId = focusId === node.dataset.id ? null : node.dataset.id ?? null;
+        applyFilters();
+      });
+    }
+
+    if (resetButton instanceof HTMLButtonElement) {
+      resetButton.addEventListener('click', () => {
+        focusId = null;
+        applyFilters();
+      });
+    }
+
+    searchInput?.addEventListener('input', applyFilters);
+    ecosystemSelect?.addEventListener('change', applyFilters);
+    importanceSelect?.addEventListener('change', applyFilters);
+    window.addEventListener('resize', () => applyFocus(new Set(
+      nodes
+        .filter((node) => node instanceof HTMLElement && !node.hidden)
+        .map((node) => node.dataset.id ?? ''),
+    )));
+    for (const lane of document.querySelectorAll('.atlas-node-list')) {
+      lane.addEventListener('scroll', () => drawLines(new Set(
+        nodes
+          .filter((node) => node instanceof HTMLElement && !node.hidden)
+          .map((node) => node.dataset.id ?? ''),
+      )), { passive: true });
+    }
+
+    applyFilters();
+  </script>
+</BaseLayout>
