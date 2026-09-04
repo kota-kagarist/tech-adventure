@@ -19,6 +19,8 @@ test('landscape page is build-time local and composes atlas components', async (
   assert.match(page, /focus/);
   assert.match(page, /technologies\.length/);
   assert.match(page, /is:inline/);
+  assert.match(page, /landscape-tokens\.css/);
+  assert.doesNotMatch(page, /<main\b/);
   assert.doesNotMatch(page, /179個/);
   assert.doesNotMatch(page, /fetch\(/);
 });
