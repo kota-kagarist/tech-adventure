@@ -1,0 +1,32 @@
+{
+  "id": "web-app-manifest",
+  "name": "Web App Manifest",
+  "shortDescription": "Webアプリの名前・アイコン・起動方法などをブラウザへ伝える標準メタデータ。",
+  "category": "language",
+  "officialUrl": "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest",
+  "whatItDoes": "JSON形式のmanifestでWebアプリの名前、アイコン、開始URL、表示方式などを記述し、ホーム画面への追加やOSとの統合に必要な情報をブラウザへ伝える。",
+  "role": "インストール可能なWebアプリの外観と起動情報を宣言するWeb標準。",
+  "whenToUse": [
+    "PWAとしてホーム画面やアプリ一覧から起動できる体験を作りたいとき。",
+    "Webアプリのアイコンや表示モード、開始URLをブラウザへ宣言したいとき。"
+  ],
+  "whenNotToUse": [
+    "通常のWebページとしてだけ配信し、インストールやOS統合を必要としないとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "web-platform"
+  ],
+  "aliases": [
+    "Web Application Manifest",
+    "manifest.json"
+  ],
+  "tags": [
+    "pwa",
+    "manifest",
+    "installable",
+    "web-standard"
+  ],
+  "lastVerified": "2026-09-04"
+}
