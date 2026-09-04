@@ -3,6 +3,7 @@ import { execFile } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import test from 'node:test';
 import { promisify } from 'node:util';
+import { requiredTechnologyIds } from './fixtures/required-technologies.mjs';
 
 const execFileAsync = promisify(execFile);
 
@@ -31,7 +32,7 @@ test('built pages render local technology icons across every discovery surface',
   ]);
 
   assert.ok(iconCount(home) >= 20, 'home must show icons in the landscape and featured cards');
-  assert.equal(iconCount(explorer), 179, 'every explorer card must show an icon');
+  assert.equal(iconCount(explorer), requiredTechnologyIds.length, 'every explorer card must show an icon');
   assert.ok(iconCount(detail) >= 2, 'detail must show an icon in the hero and relationship list');
   assert.equal(iconCount(journey), 6, 'every technology in a journey must show an icon');
   assert.ok(iconCount(comparison) >= 2, 'comparison columns must show both technology icons');
