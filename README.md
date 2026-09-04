@@ -2,7 +2,7 @@
 
 > Navigate the technology landscape.
 
-Tech Adventure は、2026年の主要なWeb技術179件を22カテゴリに整理し、単なる名前の一覧ではなく **「何を担当するか」「何と競合するか」「何と組み合わせるか」** で理解するためのオープンガイドです。
+Tech Adventure は、2026年の主要なWeb技術186件を22カテゴリ・6つの役割地域に整理し、単なる名前の一覧ではなく **「何を担当するか」「何と競合するか」「何と組み合わせるか」** で理解するためのオープンガイドです。
 
 ![Astro 7](https://img.shields.io/badge/Astro-7-BC52EE?style=flat-square&logo=astro&logoColor=white)
 ![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript&logoColor=white)
@@ -21,10 +21,11 @@ https://kota-kagarist.github.io/tech-adventure/
 
 ## できること
 
+- 6つの役割地域からWeb技術の全体像を眺め、1技術を選んだときだけ直接関係を浮かび上がらせる
 - 技術を役割・ecosystem・成熟度・主要度から絞り込む
 - 1つの技術について「何者？」「いつ使う？」「いつ使わない？」を確認する
 - 2つの技術が本当に競合するのか比較する
-- 468件の関係から、基盤・実行環境・規格・組み合わせをたどる
+- 485件の関係から、基盤・実行環境・規格・組み合わせをたどる
 - 「ブログ」「API」など、作りたいものから代表構成をたどる
 
 ## 技術構成
@@ -63,7 +64,7 @@ npx wrangler deploy --dry-run
 ## 技術を追加する
 
 1. `src/data/technologies/<id>.json` を追加する
-2. `src/data/relations.json` に比較候補・基盤・併用先などの関係を追加する
+2. `src/data/relations.json` または検証単位のrelation補遺に、比較候補・基盤・併用先などの関係を追加する
 3. 公式一次情報で内容を確認し、`lastVerified` を更新する
 4. `npm run check && npm test && npm run build` を実行する
 

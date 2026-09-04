@@ -20,13 +20,17 @@ async function loadTechnologyEntries() {
 }
 
 async function loadRelations() {
-  return JSON.parse(await readFile(new URL('../src/data/relations.json', import.meta.url), 'utf8'));
+  const [base, atlas] = await Promise.all([
+    readFile(new URL('../src/data/relations.json', import.meta.url), 'utf8'),
+    readFile(new URL('../src/data/relations-atlas.json', import.meta.url), 'utf8')
+  ]);
+  return [...JSON.parse(base), ...JSON.parse(atlas)];
 }
 
-test('catalog contains exactly the 179 required technology ids across 22 categories', async () => {
+test('catalog contains exactly the 186 required technology ids across 22 categories', async () => {
   const entries = await loadTechnologyEntries();
   const ids = entries.map(({ technology }) => technology.id).sort();
-  assert.equal(entries.length, 179);
+  assert.equal(entries.length, 186);
   assert.deepEqual(ids, [...requiredTechnologyIds].sort());
   assert.equal(categoryIds.size, 22);
 });
@@ -150,4 +154,15 @@ test('part-of and protocol foundation relations point in the semantic direction'
   assert.ok(relations.some((relation) => relation.source === 'rest' && relation.target === 'http' && relation.type === 'built-on'));
   assert.ok(relations.some((relation) => relation.source === 'server-sent-events' && relation.target === 'http' && relation.type === 'built-on'));
   assert.ok(relations.some((relation) => relation.source === 'msw' && relation.target === 'http' && relation.type === 'works-with'));
+});
+
+test('atlas additions connect to existing web platform and library layers with evidenced directions', async () => {
+  const relations = await loadRelations();
+  assert.ok(relations.some((relation) => relation.source === 'web-components' && relation.target === 'html' && relation.type === 'built-on'));
+  assert.ok(relations.some((relation) => relation.source === 'service-worker' && relation.target === 'browser' && relation.type === 'runs-on'));
+  assert.ok(relations.some((relation) => relation.source === 'web-app-manifest' && relation.target === 'service-worker' && relation.type === 'works-with'));
+  assert.ok(relations.some((relation) => relation.source === 'trpc' && relation.target === 'typescript' && relation.type === 'built-on'));
+  assert.ok(relations.some((relation) => relation.source === 'tanstack-router' && relation.target === 'react' && relation.type === 'works-with'));
+  assert.ok(relations.some((relation) => relation.source === 'solidstart' && relation.target === 'solid' && relation.type === 'built-on'));
+  assert.ok(relations.some((relation) => relation.source === 'tsdown' && relation.target === 'rolldown' && relation.type === 'built-on'));
 });

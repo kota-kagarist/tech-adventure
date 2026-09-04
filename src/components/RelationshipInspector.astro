@@ -1,0 +1,55 @@
+---
+import { withBase } from '../lib/paths';
+
+const relationLabels = [
+  ['competes-with', '同じ土俵'],
+  ['alternative-to', '代替候補'],
+  ['works-with', '組み合わせ'],
+  ['built-on', '土台'],
+  ['runs-on', '実行場所'],
+  ['implements', '実装する規格'],
+  ['part-of', '一部を構成'],
+] as const;
+---
+<aside class="atlas-inspector" data-atlas-inspector aria-live="polite">
+  <div class="atlas-inspector-head">
+    <div>
+      <div class="meta-label accent-label">RELATIONSHIP INSPECTOR</div>
+      <h2>関係を見る</h2>
+    </div>
+    <button class="atlas-reset" type="button" data-atlas-reset disabled>Reset focus</button>
+  </div>
+
+  <div class="atlas-inspector-empty" data-atlas-empty>
+    <p>技術を選ぶと、直接つながる技術だけを表示します。</p>
+    <span>同じ土俵か、組み合わせる相手か、土台かを一つずつ確認できます。</span>
+  </div>
+
+  <div class="atlas-inspector-active" data-atlas-active hidden>
+    <div class="atlas-focus-title">
+      <span class="meta-label" data-atlas-focus-category></span>
+      <h3 data-atlas-focus-name></h3>
+      <p data-atlas-focus-description></p>
+      <a class="section-link" data-atlas-focus-detail href={withBase('/technologies')}>技術詳細を見る →</a>
+    </div>
+    <p class="atlas-no-relations" data-atlas-no-relations hidden>現在の絞り込み条件では、直接関係は未登録です。技術詳細を開くか、絞り込みを解除して確認してください。</p>
+    <div class="atlas-relation-groups">
+      {relationLabels.map(([type, label]) => (
+        <section class="atlas-relation-group" data-atlas-relation-group={type} hidden>
+          <div class="atlas-relation-heading">
+            <span class={`relation-swatch relation-${type}`} aria-hidden="true"></span>
+            <h4>{label}</h4>
+            <span data-atlas-relation-count>0</span>
+          </div>
+          <ul data-atlas-relation-list></ul>
+        </section>
+      ))}
+    </div>
+  </div>
+
+  <div class="atlas-legend" aria-label="関係の凡例">
+    {relationLabels.map(([type, label]) => (
+      <span><i class={`relation-swatch relation-${type}`} aria-hidden="true"></i>{label}</span>
+    ))}
+  </div>
+</aside>

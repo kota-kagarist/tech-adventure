@@ -1,0 +1,87 @@
+---
+import TechnologyIcon from './TechnologyIcon.astro';
+import { categoryById } from '../data/load';
+import { landscapeRegions } from '../data/landscape';
+import { withBase } from '../lib/paths';
+import type { Technology } from '../data/schema';
+
+interface Props {
+  technologies: Technology[];
+}
+
+const { technologies } = Astro.props;
+---
+<div class="atlas-canvas" data-atlas-canvas>
+  <svg class="atlas-lines" data-atlas-lines aria-hidden="true"></svg>
+
+  <div class="atlas-regions">
+    {landscapeRegions.map((region, regionIndex) => {
+      const regionTechnologies = technologies.filter((technology) => region.categories.includes(technology.category));
+      return (
+        <section class="atlas-region" data-atlas-region={region.id}>
+          <header class="atlas-region-head">
+            <div class="atlas-region-index">0{regionIndex + 1}</div>
+            <div>
+              <div class="meta-label accent-label">{region.label}</div>
+              <h2>{region.name}</h2>
+              <p>{region.description}</p>
+            </div>
+            <span class="atlas-region-count" data-atlas-region-count>{regionTechnologies.length} tech</span>
+          </header>
+
+          <div class="atlas-category-grid">
+            {region.categories.map((categoryId) => {
+              const category = categoryById[categoryId];
+              const items = regionTechnologies.filter((technology) => technology.category === categoryId);
+              if (items.length === 0) return null;
+              return (
+                <section class="atlas-category" data-atlas-category={categoryId}>
+                  <header class="atlas-category-head">
+                    <div>
+                      <div class="meta-label">{category.id}</div>
+                      <h3>{category.name}</h3>
+                    </div>
+                    <span data-atlas-category-count>{items.length}</span>
+                  </header>
+                  <p class="atlas-category-description">{category.description}</p>
+                  <div class="atlas-node-list">
+                    {items.map((technology) => (
+                      <article
+                        class="atlas-node"
+                        data-atlas-node
+                        data-id={technology.id}
+                        data-category={technology.category}
+                        data-region={region.id}
+                        data-importance={technology.importance}
+                      >
+                        <button
+                          class="atlas-focus-button"
+                          type="button"
+                          data-atlas-focus={technology.id}
+                          aria-pressed="false"
+                          title={`${technology.name} の関係を表示`}
+                        >
+                          <TechnologyIcon technology={technology} size="small" />
+                          <span class="atlas-node-copy">
+                            <strong>{technology.name}</strong>
+                            <small>{technology.role}</small>
+                          </span>
+                        </button>
+                        <a
+                          class="atlas-detail-link"
+                          data-atlas-detail
+                          href={withBase(`/technologies/${technology.id}`)}
+                          aria-label={`${technology.name} の詳細を開く`}
+                        >↗</a>
+                      </article>
+                    ))}
+                  </div>
+                </section>
+              );
+            })}
+          </div>
+        </section>
+      );
+    })}
+  </div>
+</div>

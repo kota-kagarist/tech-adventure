@@ -14,27 +14,34 @@ test('v2 dark design tokens replace the rustic theme', async () => {
   assert.doesNotMatch(css, /--signal:/);
 });
 
-test('home renders the technology landscape instead of decorative adventure cards', async () => {
-  const [home, preview] = await Promise.all([
+test('home preview summarizes the six-region technology atlas', async () => {
+  const [home, preview, header] = await Promise.all([
     source('src/pages/index.astro'),
-    source('src/components/LandscapePreview.astro')
+    source('src/components/LandscapePreview.astro'),
+    source('src/components/SiteHeader.astro')
   ]);
   assert.match(home, /TECHNOLOGY LANDSCAPE/);
   assert.match(home, /Navigate the technology landscape\./);
   assert.match(home, /<LandscapePreview/);
-  assert.match(preview, /landscape-grid/);
-  assert.match(preview, /landscape-node/);
+  assert.match(home, /withBase\('\/landscape'\)/);
+  assert.match(home, /withBase\('\/technologies'\)/);
+  assert.match(preview, /landscapeRegions/);
+  assert.match(preview, /Open full atlas/);
+  assert.match(preview, /withBase\('\/landscape'\)/);
+  assert.match(header, /withBase\('\/landscape'\)/);
 });
 
 test('core screens use the v2 structural shells', async () => {
-  const [list, detail, compare, journeys] = await Promise.all([
+  const [list, detail, compare, journeys, landscape] = await Promise.all([
     source('src/pages/technologies/index.astro'),
     source('src/pages/technologies/[id].astro'),
     source('src/pages/compare/[left]/[right].astro'),
-    source('src/pages/journeys/[id].astro')
+    source('src/pages/journeys/[id].astro'),
+    source('src/pages/landscape.astro')
   ]);
   assert.match(list, /explorer-toolbar/);
   assert.match(detail, /technology-detail-grid/);
   assert.match(compare, /comparison-shell/);
   assert.match(journeys, /journey-rail/);
+  assert.match(landscape, /atlas-layout/);
 });

@@ -1,15 +1,15 @@
 export const requiredTechnologyIdsByCategory = Object.freeze({
-  language: ['html', 'css', 'javascript', 'typescript', 'python', 'go', 'rust', 'php', 'java', 'csharp', 'ruby'],
+  language: ['html', 'css', 'javascript', 'typescript', 'python', 'go', 'rust', 'php', 'java', 'csharp', 'ruby', 'web-components', 'web-app-manifest'],
   'ui-library': ['react', 'vue', 'angular', 'svelte', 'solid', 'preact', 'htmx', 'alpinejs', 'lit', 'qwik'],
-  'web-framework': ['nextjs', 'nuxt', 'astro', 'sveltekit', 'tanstack-start', 'remix', 'react-router', 'gatsby', 'fresh', 'docusaurus'],
+  'web-framework': ['nextjs', 'nuxt', 'astro', 'sveltekit', 'tanstack-start', 'remix', 'react-router', 'gatsby', 'fresh', 'docusaurus', 'tanstack-router', 'solidstart'],
   'server-framework': ['hono', 'express', 'fastify', 'nestjs', 'elysia', 'nitro', 'fastapi', 'django', 'flask', 'laravel', 'rails', 'spring-boot', 'aspnet-core', 'phoenix'],
-  runtime: ['nodejs', 'bun', 'deno', 'browser', 'cloudflare-workers', 'aws-lambda'],
+  runtime: ['nodejs', 'bun', 'deno', 'browser', 'cloudflare-workers', 'aws-lambda', 'service-worker'],
   styling: ['tailwind-css', 'bootstrap', 'sass', 'css-modules', 'styled-components', 'emotion', 'unocss'],
   'ui-components': ['shadcn-ui', 'mui', 'ant-design', 'chakra-ui'],
   'state-data': ['redux-toolkit', 'zustand', 'tanstack-query', 'swr', 'apollo-client', 'pinia'],
-  'protocol-api': ['http', 'rest', 'graphql', 'websocket', 'server-sent-events', 'grpc'],
+  'protocol-api': ['http', 'rest', 'graphql', 'websocket', 'server-sent-events', 'grpc', 'trpc'],
   'package-monorepo': ['npm', 'pnpm', 'yarn', 'turborepo', 'nx'],
-  'build-transform': ['vite', 'webpack', 'rollup', 'esbuild', 'swc', 'turbopack', 'rspack', 'rolldown', 'parcel', 'babel'],
+  'build-transform': ['vite', 'webpack', 'rollup', 'esbuild', 'swc', 'turbopack', 'rspack', 'rolldown', 'parcel', 'babel', 'tsdown'],
   'quality-validation': ['eslint', 'prettier', 'biome', 'oxlint', 'zod', 'valibot'],
   testing: ['vitest', 'jest', 'playwright', 'cypress', 'testing-library', 'storybook', 'msw', 'puppeteer', 'selenium'],
   orm: ['prisma', 'drizzle-orm', 'typeorm', 'sequelize', 'mongoose', 'kysely', 'sqlalchemy', 'hibernate', 'ef-core'],
@@ -25,8 +25,8 @@ export const requiredTechnologyIdsByCategory = Object.freeze({
 
 export const requiredTechnologyIds = Object.freeze(Object.values(requiredTechnologyIdsByCategory).flat());
 
-if (requiredTechnologyIds.length !== 179) {
-  throw new Error(`Required technology fixture must contain 179 ids, got ${requiredTechnologyIds.length}`);
+if (requiredTechnologyIds.length !== 186) {
+  throw new Error(`Required technology fixture must contain 186 ids, got ${requiredTechnologyIds.length}`);
 }
 
 export const ecosystemIds = Object.freeze([

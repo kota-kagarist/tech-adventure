@@ -1,0 +1,34 @@
+{
+  "id": "tanstack-router",
+  "name": "TanStack Router",
+  "shortDescription": "ReactとSolid向けの型安全なルーティングライブラリ。",
+  "category": "web-framework",
+  "officialUrl": "https://tanstack.com/router/latest/docs/overview",
+  "whatItDoes": "型安全な経路、検索パラメータ、loader、prefetch、ファイルベースまたはコードベースのroute定義を提供し、ReactやSolidのアプリでURLと画面・データを結ぶ。",
+  "role": "フロントエンドアプリの経路とURL状態をTypeScriptで安全に管理する。",
+  "whenToUse": [
+    "ReactやSolidでURLパラメータまで強く型付けしたルーティングが欲しいとき。",
+    "TanStack Queryなどのクライアントデータ層とルーティングを密に連携したいとき。"
+  ],
+  "whenNotToUse": [
+    "ルーティングを含むフルスタックフレームワークへ全面的に任せる構成で、独立routerを選ぶ必要がないとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "react"
+  ],
+  "aliases": [
+    "TanStack React Router",
+    "TanStack Solid Router"
+  ],
+  "tags": [
+    "router",
+    "routing",
+    "typesafe",
+    "search-params"
+  ],
+  "lastVerified": "2026-09-04"
+}

@@ -1,10 +1,11 @@
 import { categories, categoryById } from './categories';
 import { ecosystems, ecosystemById } from './ecosystems';
 import relationsJson from './relations.json';
+import atlasRelationsJson from './relations-atlas.json';
 import type { Technology, TechnologyRelation } from './schema';
 import { technologies } from './technologies';
 
-const relations = relationsJson as TechnologyRelation[];
+const relations = [...relationsJson, ...atlasRelationsJson] as TechnologyRelation[];
 
 export function getTechnologies(): Technology[] {
   return [...technologies].sort((a, b) => {
