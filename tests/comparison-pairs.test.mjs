@@ -10,6 +10,14 @@ async function loadSubject() {
   }
 }
 
+async function loadCatalogRelations() {
+  const [base, atlas] = await Promise.all([
+    readFile(new URL('../src/data/relations.json', import.meta.url), 'utf8'),
+    readFile(new URL('../src/data/relations-atlas.json', import.meta.url), 'utf8')
+  ]);
+  return [...JSON.parse(base), ...JSON.parse(atlas)];
+}
+
 test('comparison pairs include alternatives and competitors once in canonical order', async () => {
   const { buildComparisonPairIds } = await loadSubject();
   const technologies = [
@@ -62,7 +70,7 @@ test('catalog comparison pairs cover every explicit competitor and alternative',
   const technologyDirectory = new URL('../src/data/technologies/', import.meta.url);
   const filenames = (await readdir(technologyDirectory)).filter((filename) => filename.endsWith('.json'));
   const technologies = await Promise.all(filenames.map(async (filename) => JSON.parse(await readFile(new URL(filename, technologyDirectory), 'utf8'))));
-  const relations = JSON.parse(await readFile(new URL('../src/data/relations.json', import.meta.url), 'utf8'));
+  const relations = await loadCatalogRelations();
   const pairs = buildComparisonPairIds(technologies, relations);
   const pairKeys = new Set(pairs.map(([left, right]) => `${left}/${right}`));
 
