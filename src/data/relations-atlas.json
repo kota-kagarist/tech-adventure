@@ -1,0 +1,104 @@
+[
+  {
+    "source": "web-components",
+    "target": "html",
+    "type": "built-on",
+    "note": "Custom Elementsやtemplate、slotをHTML要素として利用するWeb標準群。"
+  },
+  {
+    "source": "web-components",
+    "target": "javascript",
+    "type": "works-with",
+    "note": "Custom Elementsの定義や振る舞いはJavaScript APIで実装できる。"
+  },
+  {
+    "source": "lit",
+    "target": "web-components",
+    "type": "built-on",
+    "note": "Litはブラウザ標準のWeb Componentsを基盤にコンポーネントを構築する。"
+  },
+  {
+    "source": "service-worker",
+    "target": "browser",
+    "type": "runs-on",
+    "note": "Service WorkerはブラウザのWorkerコンテキストでページとは別に動作する。"
+  },
+  {
+    "source": "service-worker",
+    "target": "http",
+    "type": "works-with",
+    "note": "ネットワークリクエストを仲介し、キャッシュやオフライン応答を制御する。"
+  },
+  {
+    "source": "web-app-manifest",
+    "target": "service-worker",
+    "type": "works-with",
+    "note": "PWAではmanifestとService Workerを組み合わせ、インストール性とオフライン機能を構成する。"
+  },
+  {
+    "source": "web-app-manifest",
+    "target": "browser",
+    "type": "works-with",
+    "note": "ブラウザがmanifestを読み、アプリ名やアイコン、開始URL、表示方式を利用する。"
+  },
+  {
+    "source": "trpc",
+    "target": "typescript",
+    "type": "built-on",
+    "note": "TypeScriptの型推論を共有してクライアントとサーバーの型安全性をつなぐ。"
+  },
+  {
+    "source": "trpc",
+    "target": "zod",
+    "type": "works-with",
+    "note": "tRPCのprocedure入力検証ではZodなどのvalidatorを組み合わせられる。"
+  },
+  {
+    "source": "tanstack-router",
+    "target": "react",
+    "type": "works-with",
+    "note": "TanStack RouterはReactアプリ向けの公式router実装を提供する。"
+  },
+  {
+    "source": "tanstack-router",
+    "target": "solid",
+    "type": "works-with",
+    "note": "TanStack RouterはSolid向けrouterも提供し型安全な経路モデルを利用できる。"
+  },
+  {
+    "source": "tanstack-router",
+    "target": "tanstack-query",
+    "type": "works-with",
+    "note": "route loaderとTanStack Queryなどのクライアントデータキャッシュを連携できる。"
+  },
+  {
+    "source": "tanstack-router",
+    "target": "react-router",
+    "type": "competes-with",
+    "note": "Reactアプリのルーティングを担う同じ層の選択肢として比較できる。"
+  },
+  {
+    "source": "solidstart",
+    "target": "solid",
+    "type": "built-on",
+    "note": "SolidStart v2はSolid上にフルスタックWebアプリを構成する。"
+  },
+  {
+    "source": "solidstart",
+    "target": "vite",
+    "type": "built-on",
+    "note": "SolidStart v2はViteのEnvironment APIを使ってクライアントとサーバーを構成する。"
+  },
+  {
+    "source": "tsdown",
+    "target": "rolldown",
+    "type": "built-on",
+    "note": "tsdownはRolldownを利用してTypeScriptライブラリをバンドルする。"
+  },
+  {
+    "source": "tsdown",
+    "target": "typescript",
+    "type": "works-with",
+    "note": "TypeScriptライブラリの配布用ビルドを簡潔な設定で生成する。"
+  }
+]
