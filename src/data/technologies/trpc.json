@@ -1,0 +1,33 @@
+{
+  "id": "trpc",
+  "name": "tRPC",
+  "shortDescription": "TypeScriptの型推論でクライアントとサーバーをつなぐ型安全なAPI層。",
+  "category": "protocol-api",
+  "officialUrl": "https://trpc.io/",
+  "whatItDoes": "サーバー側のrouterとprocedureの型をクライアントへ共有し、スキーマ生成やコード生成なしで入力・出力までTypeScriptの型安全性をつなぐ。",
+  "role": "TypeScript中心のフルスタック開発でAPI境界の型ずれを減らす。",
+  "whenToUse": [
+    "クライアントとサーバーをTypeScriptで統一し、APIの型を自動で共有したいとき。",
+    "公開仕様よりも同一チーム内の開発速度と型安全性を優先するとき。"
+  ],
+  "whenNotToUse": [
+    "言語をまたぐ公開APIや、OpenAPIなど独立した契約を外部へ配布する必要があるとき。"
+  ],
+  "maturity": "established",
+  "importance": "major",
+  "ecosystem": [
+    "javascript",
+    "typescript",
+    "node"
+  ],
+  "aliases": [
+    "tRPC.io"
+  ],
+  "tags": [
+    "api",
+    "typesafe",
+    "rpc",
+    "fullstack"
+  ],
+  "lastVerified": "2026-09-04"
+}
