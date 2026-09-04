@@ -17,6 +17,9 @@ test('landscape page is build-time local and composes atlas components', async (
   assert.match(page, /getRelations\(\)/);
   assert.match(page, /withBase\('\/technologies'\)/);
   assert.match(page, /focus/);
+  assert.match(page, /technologies\.length/);
+  assert.match(page, /is:inline/);
+  assert.doesNotMatch(page, /179個/);
   assert.doesNotMatch(page, /fetch\(/);
 });
 
@@ -34,6 +37,8 @@ test('relationship inspector exposes readable text-first relationship UI', async
 
   assert.match(inspector, /data-atlas-inspector/);
   assert.match(inspector, /関係を見る/);
+  assert.match(inspector, /data-atlas-no-relations/);
+  assert.match(inspector, /直接関係は未登録/);
   assert.match(inspector, /competes-with/);
   assert.match(inspector, /works-with/);
   assert.match(inspector, /built-on/);
