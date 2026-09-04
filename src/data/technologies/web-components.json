@@ -1,0 +1,33 @@
+{
+  "id": "web-components",
+  "name": "Web Components",
+  "shortDescription": "ブラウザ標準で再利用可能な独自UI要素を作る仕組み。",
+  "category": "language",
+  "officialUrl": "https://developer.mozilla.org/en-US/docs/Web/API/Web_components",
+  "whatItDoes": "Custom Elements、Shadow DOM、templateやslotを組み合わせ、特定のUIフレームワークに依存しない再利用可能な要素をブラウザ標準で定義する。",
+  "role": "ブラウザ標準の部品化・カプセル化の土台を提供する。",
+  "whenToUse": [
+    "複数のフレームワークや素のHTMLから共通利用できるUI部品を作りたいとき。",
+    "Shadow DOMなどブラウザ標準のカプセル化を使いたいとき。"
+  ],
+  "whenNotToUse": [
+    "単一フレームワーク内だけで完結し、そのコンポーネントモデルの方が開発体験に合うとき。"
+  ],
+  "maturity": "mature",
+  "importance": "major",
+  "ecosystem": [
+    "web-platform",
+    "javascript"
+  ],
+  "aliases": [
+    "Custom Elements",
+    "Shadow DOM"
+  ],
+  "tags": [
+    "web-standard",
+    "component",
+    "custom-elements",
+    "shadow-dom"
+  ],
+  "lastVerified": "2026-09-04"
+}
