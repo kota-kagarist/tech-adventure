@@ -46,15 +46,17 @@
     grid-column: auto;
   }
 
-  .home-hero .display-title,
-  .page-head h1 {
+  .home-hero .display-title {
+    max-width: 14ch;
     font-size: clamp(2.1rem, 9.5vw, 2.75rem);
     word-break: keep-all;
     text-wrap: balance;
   }
 
-  .home-hero .display-title {
-    max-width: 14ch;
+  .page-head h1 {
+    font-size: clamp(1.9rem, 8.8vw, 2.6rem);
+    word-break: keep-all;
+    text-wrap: balance;
   }
 
   .journey-row-count {
