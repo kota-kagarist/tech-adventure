@@ -28,6 +28,19 @@ const category = categoryById[technology.category];
       <h3><a href={withBase(`/technologies/${technology.id}`)}>{technology.name}</a></h3>
     </div>
   </div>
-  <p>{technology.shortDescription}</p>
+  <p class="tech-card-role">{technology.role}</p>
+  <p class="tech-card-description">{technology.shortDescription}</p>
   <div class="tag-row" aria-label="タグ">{technology.tags.slice(0, 3).map((tag) => <span class="tag">{tag}</span>)}</div>
 </article>
+
+<style>
+  .tech-card-role {
+    margin: 0 0 .45rem;
+    color: var(--ink);
+    font-size: .78rem;
+    font-weight: 680;
+  }
+  .tech-card-description {
+    margin: 0;
+  }
+</style>
