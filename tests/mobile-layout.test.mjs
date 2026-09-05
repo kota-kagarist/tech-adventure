@@ -28,6 +28,7 @@ test('responsive light atlas keeps every major surface inside the viewport', asy
   assert.match(polishCss, /\.relation-note\s*\{[\s\S]*?display:\s*block;[\s\S]*?min-width:\s*0;[\s\S]*?max-width:\s*100%;[\s\S]*?white-space:\s*normal;[\s\S]*?overflow-wrap:\s*anywhere/);
   assert.match(polishCss, /@media\s*\(max-width:\s*1020px\)[\s\S]*?\.explorer-toolbar\s*\{[\s\S]*?grid-template-columns:\s*repeat\(2,\s*minmax\(0,\s*1fr\)\)/);
   assert.match(polishCss, /@media\s*\(min-width:\s*761px\)[\s\S]*?\.home-hero \.display-title\s*\{[\s\S]*?font-size:\s*clamp\(3rem,\s*4\.2vw,\s*3\.8rem\);[\s\S]*?word-break:\s*keep-all;[\s\S]*?text-wrap:\s*balance/);
-  assert.match(polishCss, /@media\s*\(max-width:\s*760px\)[\s\S]*?\.home-hero \.display-title,\s*\.page-head h1\s*\{[\s\S]*?font-size:\s*clamp\(2\.1rem,\s*9\.5vw,\s*2\.75rem\);[\s\S]*?word-break:\s*keep-all;[\s\S]*?text-wrap:\s*balance/);
+  assert.match(polishCss, /@media\s*\(max-width:\s*760px\)[\s\S]*?\.home-hero \.display-title\s*\{[\s\S]*?font-size:\s*clamp\(2\.1rem,\s*9\.5vw,\s*2\.75rem\);[\s\S]*?word-break:\s*keep-all;[\s\S]*?text-wrap:\s*balance/);
+  assert.match(polishCss, /@media\s*\(max-width:\s*760px\)[\s\S]*?\.page-head h1\s*\{[\s\S]*?font-size:\s*clamp\(1\.9rem,\s*8\.8vw,\s*2\.6rem\);[\s\S]*?word-break:\s*keep-all;[\s\S]*?text-wrap:\s*balance/);
   assert.match(polishCss, /\.journey-row-count\s*\{[\s\S]*?grid-column:\s*2\s*\/\s*-1;[\s\S]*?justify-self:\s*start/);
 });
