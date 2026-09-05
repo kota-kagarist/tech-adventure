@@ -68,7 +68,7 @@ Tech Adventure の個性は「冒険っぽい絵」ではなく、技術を **�
 
 A 案の地形感は残す。ただし UI 全体を水彩画にはしない。
 
-- Home hero: 1 枚の軽量な「技術世界の地形」ビジュアルを許容
+- Home hero: 1 枚の軽量な「技術世界の地形」ビジュアルを使う
 - Region cards: CSS / SVG の薄い等高線・地形シルエット程度
 - Technology cards: イラストを置かず、公式アイコン + 情報を優先
 - Detail / Compare / Explorer: ほぼ情報 UI に寄せる
@@ -161,12 +161,13 @@ Desktop:
 
 現在の Landscape を **Atlas** と表示して第一導線にする。
 
-Mobile:
+Mobile (`<= 760px`):
 
-- brand mark + `Tech Adventure`
-- 主要 2〜3 導線を維持
-- 収まらない外部導線は省略してよい
-- hamburger を追加するためだけに JS を増やさない。必要なら horizontally scrollable nav か CSS-only compact nav を選ぶ
+- 2 段 header にする
+- 1 段目: compact mark + `Tech Adventure`
+- 2 段目: Atlas / Technologies / Journeys / Compare を横スクロール可能な nav として全て残す
+- GitHub external link は header から隠し、footer から到達可能にする
+- hamburger と menu JavaScript は追加しない
 
 Header の目的は「サイトの機能一覧」ではなく「今どの地図を見ているか」を明確にすること。
 
@@ -190,7 +191,7 @@ Right:
 - 6 region を連想できる色の地形
 - 小さな route dots / contour lines
 - 文字・技術ロゴを大量に描き込まない
-- decorative image の場合 `alt=""`
+- decorative image として `alt=""`
 
 Mobile は illustration を本文の後に置き、CTA を先に見せる。Hero だけで 1 画面以上を消費しない。
 
@@ -245,8 +246,9 @@ Atlas は刷新の中心画面。
 - search を最大幅
 - ecosystem / importance filters
 - visible count
-- desktop では sticky
-- mobile は 1 列または 2 列に崩し、横にはみ出さない
+- desktop / tablet (`> 760px`) では sticky
+- mobile (`<= 760px`) は 1 列にして search / ecosystem / importance / count の順に積む
+- page-level horizontal overflow を発生させない
 
 ### 9.3 Region structure
 
@@ -290,7 +292,20 @@ Mobile は現在通り line graph に依存しない。Relationship Inspector �
 
 ### 9.6 Inspector
 
-Desktop では Atlas と並ぶ sticky side panel を第一候補とする。
+Desktop wide (`>= 1100px`):
+
+- Atlas 左、Inspector 右の 2 カラム
+- Inspector width は 300-340px
+- Inspector は viewport 内で sticky
+
+Tablet / mobile (`< 1100px`):
+
+- Toolbar -> Inspector -> Atlas の 1 カラム順にする
+- Inspector は通常フローに置き、sticky side panel にしない
+- Focus 操作後、Inspector が viewport 外なら reduced-motion 設定を尊重した上で Inspector へスクロールする
+- Inspector に `地図へ戻る` anchor を置く
+
+Inspector content:
 
 - selected technology summary
 - relation groups
@@ -300,8 +315,6 @@ Desktop では Atlas と並ぶ sticky side panel を第一候補とする。
 - clear focus
 
 focus 未選択時は短い使い方を表示する。
-
-Tablet / mobile では Atlas の上または focus node の近くへ inline 配置し、sticky side panel を解除する。
 
 ## 10. Explorer
 
@@ -383,7 +396,7 @@ Mobile でも rail が本文幅を圧迫しないよう、rail は 24-36px 程�
 
 ## 14. Illustration assets
 
-実装時、Home hero 用に 1 点だけ新規の地形ビジュアルを作成してよい。
+Home hero 用に 1 点だけ新規の地形ビジュアルを作成する。
 
 条件:
 
@@ -397,7 +410,7 @@ Mobile でも rail が本文幅を圧迫しないよう、rail は 24-36px 程�
 - mobile は smaller source または CSS crop
 - asset が読み込めなくても情報欠落がない decorative content
 
-Region decoration はできるだけ CSS / lightweight SVG で作り、6 枚の重い画像を追加しない。
+Region decoration は CSS / lightweight SVG で作り、6 枚の重い画像を追加しない。
 
 ## 15. Accessibility
 
@@ -443,7 +456,7 @@ Main areas expected to change:
 - `src/styles/global.css`
 - `src/styles/mobile-layout.css`
 - `src/styles/landscape.css`
-- `src/styles/landscape-tokens.css`（統合または役割変更を検討）
+- `src/styles/landscape-tokens.css`（light global tokens と重複する alias は除去する）
 - `src/layouts/BaseLayout.astro`
 - `src/components/SiteHeader.astro`
 - `src/components/SiteFooter.astro`
@@ -495,7 +508,7 @@ Add/strengthen coverage for:
 - required routes still build
 - local technology icons still render
 
-Where static source tests cannot prove real layout, verify the generated site at the viewport matrix above.
+Where static source tests cannot prove real layout, verify the generated site with browser tooling at the viewport matrix above. Do not add a browser framework dependency solely for this redesign if the existing validation environment can perform the viewport check.
 
 ## 20. Required verification
 
@@ -511,7 +524,7 @@ npx wrangler deploy --dry-run
 Additionally before completion:
 
 - visually inspect Home, Atlas, Explorer, one technology detail, one Compare, Journey list, one Journey detail
-- inspect at 390px and 1440px minimum; automated viewport audit should cover the full matrix
+- inspect at 390px and 1440px minimum; viewport overflow check covers the full matrix
 - verify no unintended page-level horizontal overflow
 - verify focus/filter states on Atlas
 - verify keyboard focus visibility
