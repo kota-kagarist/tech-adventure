@@ -4,14 +4,20 @@ import test from 'node:test';
 
 const source = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
 
-test('v2 dark design tokens replace the rustic theme', async () => {
-  const css = await source('src/styles/global.css');
-  assert.match(css, /--bg:\s*#08090b/);
-  assert.match(css, /--accent:\s*#8b5cf6/);
-  assert.match(css, /--surface:\s*#0e1014/);
-  assert.doesNotMatch(css, /--paper:/);
-  assert.doesNotMatch(css, /--moss:/);
-  assert.doesNotMatch(css, /--signal:/);
+test('light Digital Atlas tokens replace the dark canvas', async () => {
+  const [css, layout, header] = await Promise.all([
+    source('src/styles/global.css'),
+    source('src/layouts/BaseLayout.astro'),
+    source('src/components/SiteHeader.astro')
+  ]);
+  assert.match(css, /--canvas:\s*#F6F7F4/i);
+  assert.match(css, /--ink:\s*#14233B/i);
+  assert.match(css, /--brand:\s*#1D5FD1/i);
+  assert.match(css, /--region-foundation-bg:/);
+  assert.doesNotMatch(css, /color-scheme:\s*dark/);
+  assert.match(layout, /theme-color[^\n]*#F6F7F4/i);
+  assert.match(header, />Atlas</);
+  assert.doesNotMatch(header, />Landscape</);
 });
 
 test('home preview summarizes the six-region technology atlas', async () => {
