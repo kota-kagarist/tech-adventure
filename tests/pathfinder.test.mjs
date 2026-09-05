@@ -26,6 +26,22 @@ test('pathfinder returns deterministic equal-hop shortest routes only', async ()
   assert.deepEqual(routes.map((route) => route.hopCount), [2, 2]);
 });
 
+test('pathfinder caps equal shortest routes at the requested limit', async () => {
+  const { findShortestPaths } = await import('../src/lib/pathfinder.mjs');
+  const branchingRelations = ['bravo', 'charlie', 'delta', 'echo'].flatMap((middle) => [
+    { source: 'start', target: middle, type: 'works-with', note: `Start works with ${middle}.` },
+    { source: middle, target: 'finish', type: 'works-with', note: `${middle} works with finish.` },
+  ]);
+
+  const routes = findShortestPaths('start', 'finish', branchingRelations, { limit: 3 });
+  assert.equal(routes.length, 3);
+  assert.deepEqual(routes.map((route) => route.nodeIds), [
+    ['start', 'bravo', 'finish'],
+    ['start', 'charlie', 'finish'],
+    ['start', 'delta', 'finish'],
+  ]);
+});
+
 test('pathfinder handles same-node, unknown-node, and disconnected inputs safely', async () => {
   const { findShortestPaths } = await import('../src/lib/pathfinder.mjs');
 
