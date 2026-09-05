@@ -4,23 +4,29 @@ import test from 'node:test';
 
 const source = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
 
-test('atlas semantic tokens resolve to the active v2 design system without global layout coupling', async () => {
-  const [globalCss, bridgeCss, page, layout] = await Promise.all([
+test('atlas semantic tokens resolve to the light Digital Atlas system without global layout coupling', async () => {
+  const [globalCss, bridgeCss, atlasCss, page, layout] = await Promise.all([
     source('src/styles/global.css'),
     source('src/styles/landscape-tokens.css'),
+    source('src/styles/landscape.css'),
     source('src/pages/landscape.astro'),
     source('src/layouts/BaseLayout.astro'),
   ]);
 
-  for (const token of ['--border:', '--surface:', '--text-muted:', '--accent:']) {
+  for (const token of ['--canvas:', '--surface:', '--ink-muted:', '--brand:', '--region-foundation-bg:']) {
     assert.match(globalCss, new RegExp(token.replace('--', '--')));
   }
 
-  assert.match(bridgeCss, /--line:\s*var\(--border\)/);
+  assert.match(bridgeCss, /--line:\s*var\(--line\)/);
   assert.match(bridgeCss, /--panel:\s*var\(--surface\)/);
-  assert.match(bridgeCss, /--muted:\s*var\(--text-muted\)/);
-  assert.match(bridgeCss, /--text-soft:\s*var\(--text-muted\)/);
-  assert.match(bridgeCss, /--accent-light:\s*#b9a3ff/);
+  assert.match(bridgeCss, /--muted:\s*var\(--ink-muted\)/);
+  assert.match(bridgeCss, /--text-soft:\s*var\(--ink-muted\)/);
+  assert.match(bridgeCss, /--accent-light:\s*#7EA6E8/i);
+  assert.match(atlasCss, /\.atlas-layout\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)\s+minmax\(280px,\s*340px\)/);
+  assert.match(atlasCss, /\[data-atlas-region="foundation"\][\s\S]*?var\(--region-foundation-bg\)/);
+  assert.match(atlasCss, /\[data-atlas-region="interface"\][\s\S]*?var\(--region-interface-bg\)/);
+  assert.match(atlasCss, /line\[data-relation="built-on"\]/);
+  assert.match(atlasCss, /line\[data-relation="competes-with"\]/);
   assert.match(page, /landscape-tokens\.css/);
   assert.doesNotMatch(layout, /landscape-tokens\.css/);
 });
