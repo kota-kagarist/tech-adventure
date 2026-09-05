@@ -1,10 +1,76 @@
-/* Responsive constraints shared by the home landscape preview and full atlas. */
+/* Responsive constraints shared across the Light Digital Atlas. */
 .atlas-regions {
   grid-template-columns: minmax(0, 1fr);
 }
 
+@media (max-width: 1020px) {
+  .atlas-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 760px) {
+  .header-inner {
+    min-height: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .45rem;
+    align-items: center;
+    padding-block: .55rem;
+  }
+
+  .brand {
+    width: max-content;
+  }
+
+  .brand span:last-child {
+    display: inline;
+  }
+
+  .site-nav {
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    padding: .1rem 0 .35rem;
+  }
+
+  .site-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .site-nav a {
+    flex: 0 0 auto;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .site-nav .nav-external {
+    display: none;
+  }
+
+  .atlas-toolbar {
+    position: static;
+    grid-template-columns: 1fr;
+  }
+
+  .atlas-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+
   .landscape-grid {
+    min-width: 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .atlas-preview-grid {
     min-width: 0;
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -19,7 +85,7 @@
   }
 
   .landscape-group:nth-child(n + 3) {
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--line);
   }
 
   .landscape-group-label {
@@ -29,5 +95,23 @@
 
   .landscape-node {
     min-width: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-nav a:nth-child(3) {
+    display: inline-flex;
+  }
+
+  .shell,
+  .site-shell,
+  .section-shell {
+    width: min(100% - 1.1rem, 1180px);
+  }
+
+  .button,
+  .button-primary,
+  .button-secondary {
+    min-height: 44px;
   }
 }
