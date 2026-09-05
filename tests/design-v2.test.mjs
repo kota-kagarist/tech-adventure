@@ -20,20 +20,25 @@ test('light Digital Atlas tokens replace the dark canvas', async () => {
   assert.doesNotMatch(header, />Landscape</);
 });
 
-test('home preview summarizes the six-region technology atlas', async () => {
-  const [home, preview, header] = await Promise.all([
+test('home is a light atlas entry point', async () => {
+  const [home, preview, terrain, header] = await Promise.all([
     source('src/pages/index.astro'),
     source('src/components/LandscapePreview.astro'),
+    source('src/components/AtlasTerrain.astro').catch(() => ''),
     source('src/components/SiteHeader.astro')
   ]);
-  assert.match(home, /TECHNOLOGY LANDSCAPE/);
-  assert.match(home, /Navigate the technology landscape\./);
+  assert.match(home, /WEB TECHNOLOGY ATLAS/);
+  assert.match(home, /Web技術の地図を、一緒に旅しよう。/);
+  assert.match(home, />地図を開く</);
+  assert.match(home, />技術を探す</);
+  assert.match(home, /categories\.length/);
+  assert.match(home, /<AtlasTerrain/);
   assert.match(home, /<LandscapePreview/);
-  assert.match(home, /withBase\('\/landscape'\)/);
-  assert.match(home, /withBase\('\/technologies'\)/);
+  assert.match(home, /start-path-grid/);
   assert.match(preview, /landscapeRegions/);
-  assert.match(preview, /Open full atlas/);
+  assert.match(preview, /landscape-region-card/);
   assert.match(preview, /withBase\('\/landscape'\)/);
+  assert.match(terrain, /<svg/);
   assert.match(header, /withBase\('\/landscape'\)/);
 });
 
