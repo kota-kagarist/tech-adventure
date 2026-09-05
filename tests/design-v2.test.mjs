@@ -42,6 +42,18 @@ test('home is a light atlas entry point', async () => {
   assert.match(header, /withBase\('\/landscape'\)/);
 });
 
+test('explorer cards expose role context in a responsive index grid', async () => {
+  const [card, css] = await Promise.all([
+    source('src/components/TechnologyCard.astro'),
+    source('src/styles/global.css'),
+  ]);
+  assert.match(card, /tech-card-role/);
+  assert.match(card, /technology\.role/);
+  assert.match(css, /\.tech-grid\s*\{[\s\S]*?repeat\(4,\s*minmax\(0,\s*1fr\)\)/);
+  assert.match(css, /@media\s*\(max-width:\s*1020px\)[\s\S]*?\.tech-grid\s*\{\s*grid-template-columns:\s*repeat\(2,\s*minmax\(0,1fr\)\)/);
+  assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*?\.tech-grid\s*\{\s*grid-template-columns:\s*1fr/);
+});
+
 test('core screens use the v2 structural shells', async () => {
   const [list, detail, compare, journeys, landscape] = await Promise.all([
     source('src/pages/technologies/index.astro'),
