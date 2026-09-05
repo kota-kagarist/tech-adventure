@@ -13,11 +13,11 @@ test('atlas semantic tokens resolve to the light Digital Atlas system without gl
     source('src/layouts/BaseLayout.astro'),
   ]);
 
-  for (const token of ['--canvas:', '--surface:', '--ink-muted:', '--brand:', '--region-foundation-bg:']) {
+  for (const token of ['--canvas:', '--surface:', '--ink-muted:', '--line:', '--brand:', '--region-foundation-bg:']) {
     assert.match(globalCss, new RegExp(token.replace('--', '--')));
   }
 
-  assert.match(bridgeCss, /--line:\s*var\(--line\)/);
+  assert.doesNotMatch(bridgeCss, /--line:\s*var\(--line\)/);
   assert.match(bridgeCss, /--panel:\s*var\(--surface\)/);
   assert.match(bridgeCss, /--muted:\s*var\(--ink-muted\)/);
   assert.match(bridgeCss, /--text-soft:\s*var\(--ink-muted\)/);
