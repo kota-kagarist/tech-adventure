@@ -35,7 +35,10 @@ const metadata = getTechnologyMetadata(technology, ecosystemNames);
             <p>{technology.shortDescription}</p>
           </div>
         </div>
-        <a class="button-secondary" href={technology.officialUrl} rel="noreferrer">Official site ↗</a>
+        <div class="technology-hero-actions">
+          <a class="button-secondary" href={withBase(`/pathfinder?from=${technology.id}`)}>他の技術との経路を見る</a>
+          <a class="button-secondary" href={technology.officialUrl} rel="noreferrer">Official site ↗</a>
+        </div>
       </div>
     </div>
   </header>
@@ -104,4 +107,9 @@ const metadata = getTechnologyMetadata(technology, ecosystemNames);
   .technology-region-label[data-region="data-identity"] span:first-child { color: var(--region-data-identity-ink); }
   .technology-region-label[data-region="delivery"] span:first-child { color: var(--region-delivery-ink); }
   .technology-region-label[data-region="engineering"] span:first-child { color: var(--region-engineering-ink); }
+  .technology-hero-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .65rem; }
+  @media (max-width: 760px) {
+    .technology-hero-actions { width: 100%; justify-content: flex-start; }
+    .technology-hero-actions a { flex: 1 1 210px; }
+  }
 </style>
