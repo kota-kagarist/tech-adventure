@@ -55,7 +55,7 @@ test('pathfinder page exposes shareable from/to controls and relation route resu
   const page = await source('src/pages/pathfinder.astro');
   const css = await source('src/styles/pathfinder.css');
   const home = await source('src/pages/index.astro');
-  const atlas = await source('src/pages/landscape.astro');
+  const inspector = await source('src/components/RelationshipInspector.astro');
   const detail = await source('src/pages/technologies/[id].astro');
 
   assert.match(page, /TECHNOLOGY PATHFINDER/);
@@ -67,6 +67,6 @@ test('pathfinder page exposes shareable from/to controls and relation route resu
   assert.match(css, /\.pathfinder-route/);
   assert.match(css, /@media\s*\(max-width:\s*760px\)/);
   assert.match(home, /\/pathfinder/);
-  assert.match(atlas, /\/pathfinder/);
+  assert.match(inspector, /\/pathfinder/);
   assert.match(detail, /\/pathfinder\?from=/);
 });
