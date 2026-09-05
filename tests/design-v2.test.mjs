@@ -66,6 +66,18 @@ test('technology detail identifies its atlas region before the category', async 
   assert.match(detail, /いつ使わない？/);
 });
 
+test('comparison is verdict-first and exposes equal decision facts for both technologies', async () => {
+  const compare = await source('src/pages/compare/[left]/[right].astro');
+  assert.match(compare, /comparison-verdict/);
+  assert.match(compare, /comparison-facts/);
+  assert.match(compare, /left\.role/);
+  assert.match(compare, /right\.role/);
+  assert.match(compare, /いつ使う？/);
+  assert.match(compare, /避けたい場面/);
+  assert.match(compare, /left\.whenNotToUse/);
+  assert.match(compare, /right\.whenNotToUse/);
+});
+
 test('core screens use the v2 structural shells', async () => {
   const [list, detail, compare, journeys, landscape] = await Promise.all([
     source('src/pages/technologies/index.astro'),
