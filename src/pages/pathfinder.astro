@@ -206,7 +206,8 @@ const payload = JSON.stringify({
 
       const path = document.createElement('div');
       path.className = 'pathfinder-route';
-      const first = technologyById.get(route.nodeIds[0]);
+      const firstId = route.nodeIds[0];
+      const first = firstId ? technologyById.get(firstId) : undefined;
       if (first) path.append(nodeElement(first));
 
       route.steps.forEach((step) => {
@@ -245,12 +246,13 @@ const payload = JSON.stringify({
       }
 
       const routes = findShortestPaths(fromId, toId, payload.relations, { limit: 3 }) as PathRoute[];
-      if (routes.length === 0) {
+      const firstRoute = routes[0];
+      if (!firstRoute) {
         if (status) status.textContent = `${fromTechnology.name} と ${toTechnology.name} をつなぐ経路は、現在のrelationデータでは見つかりませんでした。`;
         return;
       }
 
-      const hopCount = routes[0].hopCount;
+      const hopCount = firstRoute.hopCount;
       if (status) {
         status.textContent = `${fromTechnology.name} → ${toTechnology.name}: 最少 ${hopCount} hop。${routes.length > 1 ? `同じhop数の経路を${routes.length}案表示しています。` : '最短経路を表示しています。'}`;
       }
