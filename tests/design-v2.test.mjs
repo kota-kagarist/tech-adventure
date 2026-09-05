@@ -54,6 +54,18 @@ test('explorer cards expose role context in a responsive index grid', async () =
   assert.match(css, /@media\s*\(max-width:\s*760px\)[\s\S]*?\.tech-grid\s*\{\s*grid-template-columns:\s*1fr/);
 });
 
+test('technology detail identifies its atlas region before the category', async () => {
+  const detail = await source('src/pages/technologies/[id].astro');
+  assert.match(detail, /regionByCategory/);
+  assert.match(detail, /landscapeRegions/);
+  assert.match(detail, /technology-region-label/);
+  assert.match(detail, /technology-detail-grid/);
+  assert.match(detail, /RELATIONSHIP MAP/);
+  assert.match(detail, /何者？/);
+  assert.match(detail, /いつ使う？/);
+  assert.match(detail, /いつ使わない？/);
+});
+
 test('core screens use the v2 structural shells', async () => {
   const [list, detail, compare, journeys, landscape] = await Promise.all([
     source('src/pages/technologies/index.astro'),
