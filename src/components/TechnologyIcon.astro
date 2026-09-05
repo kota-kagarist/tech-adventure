@@ -15,12 +15,13 @@ const red = (numericColor >> 16) & 255;
 const green = (numericColor >> 8) & 255;
 const blue = numericColor & 255;
 const luminance = (0.2126 * red + 0.7152 * green + 0.0722 * blue) / 255;
-const ink = luminance < 0.28 ? 'F5F3FF' : icon.hex;
+// The Atlas uses light icon tiles. Keep dark brand artwork dark; only move very
+// light fallback lettering to the site ink color so it stays readable.
+const ink = luminance > 0.78 ? '14233B' : icon.hex;
 const style = `--technology-icon-brand:#${icon.hex};--technology-icon-ink:#${ink}`;
-const invertArtwork = icon.kind === 'brand' && icon.source !== 'official' && luminance < 0.28;
 ---
 <span
-  class:list={['technology-icon', `technology-icon--${size}`, icon.kind === 'fallback' && 'technology-icon--fallback', invertArtwork && 'technology-icon--invert']}
+  class:list={['technology-icon', `technology-icon--${size}`, icon.kind === 'fallback' && 'technology-icon--fallback']}
   data-icon-source={icon.kind === 'brand' ? icon.source : 'fallback'}
   style={style}
   aria-hidden="true"
