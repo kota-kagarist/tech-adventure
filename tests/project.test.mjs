@@ -7,7 +7,7 @@ test('brand and accessibility contracts exist', async () => {
   const [layout, header, css] = await Promise.all([source('src/layouts/BaseLayout.astro'), source('src/components/SiteHeader.astro'), source('src/styles/global.css')]);
   assert.match(layout, /<main id="main">/);
   assert.match(layout, /skip-link/);
-  assert.match(header, /TECH ADVENTURE/);
+  assert.match(header, />Tech Adventure</);
   assert.match(css, /--space-/);
   assert.match(css, /prefers-reduced-motion/);
   assert.match(css, /:focus-visible/);
