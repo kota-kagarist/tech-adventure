@@ -1,0 +1,72 @@
+/* Final responsive polish discovered through rendered-artifact checks. */
+.relation-row > span {
+  min-width: 0;
+}
+
+.relation-note {
+  display: block;
+  min-width: 0;
+  max-width: 100%;
+  margin-top: .2rem;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-overflow: clip;
+}
+
+.relation-arrow {
+  white-space: nowrap;
+}
+
+@media (min-width: 761px) {
+  .home-hero .display-title {
+    max-width: 14ch;
+    font-size: clamp(3rem, 4.2vw, 3.8rem);
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 1020px) {
+  .explorer-toolbar {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .explorer-count {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+}
+
+@media (max-width: 760px) {
+  .explorer-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .explorer-count {
+    grid-column: auto;
+  }
+
+  .atlas-page .atlas-page-head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .home-hero .display-title {
+    max-width: 14ch;
+    font-size: clamp(2.1rem, 9.5vw, 2.75rem);
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+
+  .page-head h1 {
+    font-size: clamp(1.9rem, 8.8vw, 2.6rem);
+    word-break: normal;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
+  }
+
+  .journey-row-count {
+    grid-column: 2 / -1;
+    justify-self: start;
+    white-space: nowrap;
+  }
+}

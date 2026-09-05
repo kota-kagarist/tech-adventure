@@ -1,8 +1,7 @@
-/* Atlas-local semantic aliases mapped to the active v2 design tokens. */
+/* Atlas-local semantic aliases mapped to the light Digital Atlas tokens. */
 .atlas-page {
-  --line: var(--border);
   --panel: var(--surface);
-  --muted: var(--text-muted);
-  --text-soft: var(--text-muted);
-  --accent-light: #b9a3ff;
+  --muted: var(--ink-muted);
+  --text-soft: var(--ink-muted);
+  --accent-light: #7EA6E8;
 }

@@ -41,6 +41,7 @@ test('built pages render local technology icons across every discovery surface',
   assert.match(explorer, /data-icon-source="thesvg"/);
   assert.match(explorer, /data-icon-source="official"/);
   assert.match(explorer, /data-icon-source="fallback"/);
+  assert.doesNotMatch(explorer, /technology-icon--invert/, 'light theme must not invert dark brand logos to white');
   assert.doesNotMatch(explorer, /class="technology-icon[^>]+src="https?:\/\//);
   assert.doesNotMatch(explorer, /<svg[^>]+id="/, 'brand SVG internals must not be duplicated into page HTML');
   assert.ok(Buffer.byteLength(explorer) < 500_000, 'explorer HTML must stay below 500 KB');

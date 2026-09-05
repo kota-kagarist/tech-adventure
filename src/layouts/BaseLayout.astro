@@ -3,6 +3,7 @@ import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import '../styles/global.css';
 import '../styles/mobile-layout.css';
+import '../styles/layout-polish.css';
 interface Props { title?: string; description?: string; }
 const { title = 'Tech Adventure', description = '技術の世界を、役割・競合・組み合わせから理解するオープンなテクノロジーガイド。' } = Astro.props;
 const fullTitle = title === 'Tech Adventure' ? title : `${title} | Tech Adventure`;
@@ -12,7 +13,7 @@ const fullTitle = title === 'Tech Adventure' ? title : `${title} | Tech Adventur
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <meta name="theme-color" content="#08090b" />
+    <meta name="theme-color" content="#F6F7F4" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>

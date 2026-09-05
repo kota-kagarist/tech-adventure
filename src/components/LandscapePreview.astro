@@ -14,33 +14,35 @@ const groups = landscapeRegions.map((region) => {
   return { ...region, count: regionTechnologies.length, representatives };
 });
 ---
-<div class="landscape-panel" aria-label="技術世界のプレビュー">
+<div class="landscape-panel atlas-preview" aria-label="技術世界の6地域">
   <div class="landscape-chrome">
-    <span>TECH ADVENTURE / LANDSCAPE</span>
-    <span>ROLE → RELATION → PURPOSE</span>
+    <span>TECH ADVENTURE / ATLAS</span>
+    <span>6 REGIONS · ROLE → RELATION → PURPOSE</span>
   </div>
-  <div class="landscape-scroll">
-    <div class="landscape-grid">
-      {groups.map((group) => (
-        <section class="landscape-group" aria-label={group.label}>
-          <div class="landscape-group-label">
-            <span>{group.label}</span>
-            <small>{group.count} TECH</small>
-          </div>
-          <div class="landscape-node-list">
-            {group.representatives.map((technology) => (
-              <a class="landscape-node" href={withBase(`/technologies/${technology.id}`)}>
-                <TechnologyIcon technology={technology} size="small" />
-                <span>{technology.name}</span>
-              </a>
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
+  <div class="landscape-grid atlas-preview-grid">
+    {groups.map((group, index) => (
+      <section class="landscape-region-card" data-region={group.id} aria-label={`${group.label} ${group.name}`}>
+        <div class="landscape-region-card-top">
+          <span class="landscape-region-index">{String(index + 1).padStart(2, '0')}</span>
+          <span class="landscape-region-count">{group.count} TECH</span>
+        </div>
+        <div>
+          <div class="meta-label">{group.label}</div>
+          <h3>{group.name}</h3>
+          <p>{group.description}</p>
+        </div>
+        <div class="landscape-region-icons" aria-label="代表技術">
+          {group.representatives.map((technology) => (
+            <a href={withBase(`/technologies/${technology.id}`)} aria-label={`${technology.name} の詳細`} title={technology.name}>
+              <TechnologyIcon technology={technology} size="small" />
+            </a>
+          ))}
+        </div>
+      </section>
+    ))}
   </div>
   <div class="landscape-footer">
-    <span>6 regions / {technologies.length} technologies</span>
-    <a href={withBase('/landscape')}>Open full atlas →</a>
+    <span>{technologies.length} technologies / 22 categories</span>
+    <a href={withBase('/landscape')}>地図をすべて開く →</a>
   </div>
 </div>

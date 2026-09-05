@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import TechnologyRelations from '../../components/TechnologyRelations.astro';
 import TechnologyIcon from '../../components/TechnologyIcon.astro';
 import { categoryById, ecosystems, getRelationsFor, getTechnologies } from '../../data/load';
+import { landscapeRegions, regionByCategory } from '../../data/landscape';
 import { withBase } from '../../lib/paths';
 import { getTechnologyMetadata } from '../../lib/technology-metadata.mjs';
 import type { Technology } from '../../data/schema';
@@ -12,20 +13,26 @@ const { technology } = Astro.props;
 const allTechnologies = getTechnologies();
 const relations = getRelationsFor(technology.id);
 const category = categoryById[technology.category];
+const regionId = regionByCategory[technology.category];
+const region = landscapeRegions.find((candidate) => candidate.id === regionId);
 const ecosystemNames = Object.fromEntries(ecosystems.map((ecosystem) => [ecosystem.id, ecosystem.name]));
 const metadata = getTechnologyMetadata(technology, ecosystemNames);
 ---
 <BaseLayout title={technology.name} description={technology.shortDescription}>
   <header class="technology-hero">
     <div class="shell">
-      <div class="breadcrumb"><a href={withBase('/')}>Home</a> / <a href={withBase('/technologies')}>Technologies</a> / {technology.name}</div>
+      <div class="breadcrumb"><a href={withBase('/')}>Home</a> / <a href={withBase('/landscape')}>Atlas</a> / <a href={withBase('/technologies')}>Technologies</a> / {technology.name}</div>
       <div class="technology-hero-row">
         <div class="technology-title-lockup">
           <TechnologyIcon technology={technology} size="large" />
           <div>
-          <div class="meta-label accent-label">{category.name}</div>
-          <h1 class="page-title">{technology.name}</h1>
-          <p>{technology.shortDescription}</p>
+            <div class="technology-region-label" data-region={region?.id ?? ''}>
+              <span>{region?.label ?? 'ATLAS'}</span>
+              <span aria-hidden="true">→</span>
+              <span>{category.name}</span>
+            </div>
+            <h1 class="page-title">{technology.name}</h1>
+            <p>{technology.shortDescription}</p>
           </div>
         </div>
         <a class="button-secondary" href={technology.officialUrl} rel="noreferrer">Official site ↗</a>
@@ -48,6 +55,8 @@ const metadata = getTechnologyMetadata(technology, ecosystemNames);
         <div class="meta-label">DECISION METADATA</div>
         <h2>判断の手掛かり</h2>
         <dl class="metadata-grid">
+          <div><dt>地域</dt><dd>{region?.name ?? '—'}</dd></div>
+          <div><dt>カテゴリ</dt><dd>{category.name}</dd></div>
           <div><dt>主要度</dt><dd>{metadata.importance}</dd></div>
           <div><dt>成熟度</dt><dd>{metadata.maturity}</dd></div>
           <div><dt>Ecosystem</dt><dd>{metadata.ecosystems.join(' / ')}</dd></div>
@@ -74,3 +83,25 @@ const metadata = getTechnologyMetadata(technology, ecosystemNames);
     </aside>
   </div>
 </BaseLayout>
+
+<style>
+  .technology-region-label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: .4rem;
+    margin-bottom: .3rem;
+    color: var(--ink-muted);
+    font-size: .7rem;
+    font-weight: 760;
+    letter-spacing: .07em;
+    text-transform: uppercase;
+  }
+  .technology-region-label span:first-child { color: var(--brand); }
+  .technology-region-label[data-region="foundation"] span:first-child { color: var(--region-foundation-ink); }
+  .technology-region-label[data-region="interface"] span:first-child { color: var(--region-interface-ink); }
+  .technology-region-label[data-region="application"] span:first-child { color: var(--region-application-ink); }
+  .technology-region-label[data-region="data-identity"] span:first-child { color: var(--region-data-identity-ink); }
+  .technology-region-label[data-region="delivery"] span:first-child { color: var(--region-delivery-ink); }
+  .technology-region-label[data-region="engineering"] span:first-child { color: var(--region-engineering-ink); }
+</style>

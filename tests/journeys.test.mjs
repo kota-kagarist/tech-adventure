@@ -81,3 +81,19 @@ test('home page features four distinct journeys from the full catalog', () => {
   assert.equal(new Set(featuredJourneys.map(({ id }) => id)).size, 4);
   assert.ok(featuredJourneys.every((featured) => journeys.includes(featured)));
 });
+
+test('journey screens present outcomes as routes and stops', async () => {
+  const [list, detail] = await Promise.all([
+    readFile(new URL('../src/pages/journeys/index.astro', import.meta.url), 'utf8'),
+    readFile(new URL('../src/pages/journeys/[id].astro', import.meta.url), 'utf8'),
+  ]);
+  assert.match(list, /journey-route-mark/);
+  assert.match(list, /TechnologyIcon/);
+  assert.match(list, /journey-row-icons/);
+  assert.match(detail, /journey-rail/);
+  assert.match(detail, /journey-step-index/);
+  assert.match(detail, /TechnologyIcon/);
+  assert.match(detail, /WHY THIS ROUTE\?/);
+  assert.match(detail, /TRADE-OFFS/);
+  assert.match(detail, /ALTERNATIVES/);
+});
