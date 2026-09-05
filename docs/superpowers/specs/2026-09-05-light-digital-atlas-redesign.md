@@ -1,6 +1,6 @@
 # Tech Adventure Light Digital Atlas Redesign
 
-Status: visual direction approved; implementation starts after written-spec review.
+Status: approved and implemented in PR #13; release verification recorded in the PR.
 
 ## 1. Goal
 
@@ -68,7 +68,7 @@ Tech Adventure の個性は「冒険っぽい絵」ではなく、技術を **�
 
 A 案の地形感は残す。ただし UI 全体を水彩画にはしない。
 
-- Home hero: 1 枚の軽量な「技術世界の地形」ビジュアルを使う
+- Home hero: 1 枚の軽量な「技術世界の地形」ビジュアルを許容
 - Region cards: CSS / SVG の薄い等高線・地形シルエット程度
 - Technology cards: イラストを置かず、公式アイコン + 情報を優先
 - Detail / Compare / Explorer: ほぼ情報 UI に寄せる
@@ -161,13 +161,12 @@ Desktop:
 
 現在の Landscape を **Atlas** と表示して第一導線にする。
 
-Mobile (`<= 760px`):
+Mobile:
 
-- 2 段 header にする
-- 1 段目: compact mark + `Tech Adventure`
-- 2 段目: Atlas / Technologies / Journeys / Compare を横スクロール可能な nav として全て残す
-- GitHub external link は header から隠し、footer から到達可能にする
-- hamburger と menu JavaScript は追加しない
+- brand mark + `Tech Adventure`
+- 主要 2〜3 導線を維持
+- 収まらない外部導線は省略してよい
+- hamburger を追加するためだけに JS を増やさない。必要なら horizontally scrollable nav か CSS-only compact nav を選ぶ
 
 Header の目的は「サイトの機能一覧」ではなく「今どの地図を見ているか」を明確にすること。
 
@@ -191,7 +190,7 @@ Right:
 - 6 region を連想できる色の地形
 - 小さな route dots / contour lines
 - 文字・技術ロゴを大量に描き込まない
-- decorative image として `alt=""`
+- decorative image の場合 `alt=""`
 
 Mobile は illustration を本文の後に置き、CTA を先に見せる。Hero だけで 1 画面以上を消費しない。
 
@@ -246,9 +245,8 @@ Atlas は刷新の中心画面。
 - search を最大幅
 - ecosystem / importance filters
 - visible count
-- desktop / tablet (`> 760px`) では sticky
-- mobile (`<= 760px`) は 1 列にして search / ecosystem / importance / count の順に積む
-- page-level horizontal overflow を発生させない
+- desktop では sticky
+- mobile は 1 列または 2 列に崩し、横にはみ出さない
 
 ### 9.3 Region structure
 
@@ -292,20 +290,7 @@ Mobile は現在通り line graph に依存しない。Relationship Inspector �
 
 ### 9.6 Inspector
 
-Desktop wide (`>= 1100px`):
-
-- Atlas 左、Inspector 右の 2 カラム
-- Inspector width は 300-340px
-- Inspector は viewport 内で sticky
-
-Tablet / mobile (`< 1100px`):
-
-- Toolbar -> Inspector -> Atlas の 1 カラム順にする
-- Inspector は通常フローに置き、sticky side panel にしない
-- Focus 操作後、Inspector が viewport 外なら reduced-motion 設定を尊重した上で Inspector へスクロールする
-- Inspector に `地図へ戻る` anchor を置く
-
-Inspector content:
+Desktop では Atlas と並ぶ sticky side panel を第一候補とする。
 
 - selected technology summary
 - relation groups
@@ -315,6 +300,8 @@ Inspector content:
 - clear focus
 
 focus 未選択時は短い使い方を表示する。
+
+Tablet / mobile では Atlas の上または focus node の近くへ inline 配置し、sticky side panel を解除する。
 
 ## 10. Explorer
 
@@ -396,123 +383,154 @@ Mobile でも rail が本文幅を圧迫しないよう、rail は 24-36px 程�
 
 ## 14. Illustration assets
 
-Home hero 用に 1 点だけ新規の地形ビジュアルを作成する。
+実装時、Home hero 用に 1 点だけ新規の地形ビジュアルを作成してよい。
 
 条件:
 
-- text を画像に焼き込まない
-- technology logo を画像に焼き込まない
-- pale blue / green / lavender / warm sand
-- watercolor texture は弱め
-- contemporary editorial atlas, not fantasy RPG
-- WebP/AVIF 等に最適化
-- desktop で 160KB 程度を目標
-- mobile は smaller source または CSS crop
-- asset が読み込めなくても情報欠落がない decorative content
+- text を画像内に焼き込まない
+- external CDN dependency にしない
+- decorative なら accessible name を持たせない
+- SVG / WebP / AVIF の軽量形式
+- 背景透過またはキャンバス色へ自然に溶ける
+- ブランドロゴを勝手に地形へ埋め込まない
 
-Region decoration は CSS / lightweight SVG で作り、6 枚の重い画像を追加しない。
+地形ビジュアルがなくてもレイアウトが成立するようにする。
 
-## 15. Accessibility
+## 15. Motion
 
-- WCAG AA 相当の本文 contrast
-- pastel background 上でも本文は濃色
-- region color だけに意味を依存しない
-- `:focus-visible` は明確な 2px ring
-- hover-only controls を作らない
-- button / link の役割を混同しない
-- reduced motion を維持
-- semantic heading hierarchy を維持
-- JS disabled でも主要コンテンツと detail links を読める
+- hover: 120-180ms
+- selected / focus: 150-220ms
+- 大きな parallax / floating / continuous animation は使わない
+- `prefers-reduced-motion` では transition を無効化または極小化する
 
-## 16. Responsive contract
+## 16. Accessibility
 
-Mobile は「desktop を縮める」のではなく、情報階層を保った別レイアウトとして扱う。
+- normal text は WCAG AA 相当を目標
+- pale region color の上でも本文は `--ink` / `--ink-muted` を使う
+- region は色 + text label
+- `:focus-visible` を常に見える形にする
+- clickable target は mobile で概ね 44px 以上
+- hover-only disclosure を作らない
+- decorative map visual は assistive technology から隠す
+- heading hierarchy を守る
+- JS 無効でもリンクと主要情報が読める
 
-必ず確認する viewport:
+## 17. Responsive contract
 
-- 320px
-- 360px
-- 390px
-- 430px
-- 768px
-- 1024px
-- 1440px
+実装完了条件として次の viewport を確認する。
 
-Contract:
+```text
+320
+360
+390
+430
+768
+1024
+1440
+```
 
-- `documentElement.scrollWidth <= viewport width` を原則とする
-- Atlas category lane の意図的な内部横スクロールだけを例外とする
-- fixed `min-width` を page-level grid に持たせない
-- grid children には必要に応じて `min-width: 0`
-- long technology names / URLs は overflow-wrap で処理
-- CTA / filter / metadata は 320px で切れない
+### Desktop >= 1024
 
-## 17. Architecture and implementation boundaries
+- full header
+- Home hero 2 columns
+- Atlas: main map + sticky Inspector
+- Explorer: up to 4 columns
+- Detail: content + relation side rail
+- Compare: 2 columns
 
-既存の Astro コンポーネントとデータ API を活かし、デザイン変更のために framework を追加しない。
+### Tablet 761-1023
 
-Main areas expected to change:
+- content width shrinks without horizontal page scroll
+- Atlas Inspector moves above the map and is not sticky
+- Explorer: 2 columns
+- Detail: 1 column with relationships after content
+- Compare can stack if each column would become too narrow
 
-- `src/styles/global.css`
-- `src/styles/mobile-layout.css`
-- `src/styles/landscape.css`
-- `src/styles/landscape-tokens.css`（light global tokens と重複する alias は除去する）
-- `src/layouts/BaseLayout.astro`
-- `src/components/SiteHeader.astro`
-- `src/components/SiteFooter.astro`
-- `src/components/LandscapePreview.astro`
-- `src/components/TechnologyAtlas.astro`
-- `src/components/RelationshipInspector.astro`
-- `src/components/TechnologyCard.astro`
-- `src/components/TechnologyRelations.astro`
-- `src/pages/index.astro`
-- `src/pages/landscape.astro`
-- `src/pages/technologies/index.astro`
-- technology detail / compare / journey page templates
+### Mobile <= 760
 
-Prefer adding small presentational components only when duplication becomes clear. Avoid a one-off component for every decorative element.
+- header is 2 rows: brand, then horizontally scrollable primary nav
+- no hamburger JS
+- Home hero is 1 column, CTA before illustration
+- region preview 2 x 3
+- Atlas toolbar 1 column
+- Inspector is inline above the map; `地図へ戻る` anchor is visible
+- Atlas category technology nodes remain horizontally swipeable inside the category lane
+- relation SVG lines are hidden
+- Explorer cards 1 column
+- Compare A -> B 1 column
+- Journeys rail uses 24-36px marker column
 
-## 18. Migration order
+### Overflow invariant
 
-1. Lock light design tokens and shared primitives.
-2. Update header/footer/BaseLayout and accessibility states.
-3. Rebuild Home visual hierarchy.
-4. Rebuild Atlas and Inspector while preserving all focus/filter behavior.
-5. Update Explorer and technology cards.
-6. Update technology detail and relationship panels.
-7. Update Compare.
-8. Update Journeys.
-9. Finish mobile/tablet responsive pass.
-10. Run visual regression checks and required repository verification.
+At all required viewport widths:
 
-Do not mix technology catalog additions into this redesign PR unless required to fix a broken existing view.
+```text
+document.scrollWidth <= window.innerWidth
+```
 
-## 19. Testing strategy
+Atlas の category node lane の `overflow-x: auto` と、mobile header nav の `overflow-x: auto` だけを意図的な内部横スクロールとして許可する。
 
-TDD for behavior and layout contracts.
+## 18. Static architecture constraints
 
-Update existing tests that intentionally describe dark v2; do not merely delete them.
+維持:
 
-Add/strengthen coverage for:
+- Astro 7
+- TypeScript 5.9
+- Node.js 22+
+- GitHub Pages base `/tech-adventure/`
+- no UI framework
+- no DB
+- no server API
+- `import.meta.glob` technology loading
+- build-time local icons
+- 既存 filter / focus URL state
+- static HTML fallback
 
-- light atlas design tokens exist
-- legacy dark page canvas is no longer the default
-- 6 region palette mappings exist
-- Home hero + 6 region preview contract
-- Header first-class Atlas path
-- Atlas filter/focus behavior unchanged
-- no nested interactive controls
-- relation inspector text states
-- GitHub Pages base-path awareness
-- mobile responsive constraints
-- required routes still build
-- local technology icons still render
+新しい JS dependency は追加しない。
 
-Where static source tests cannot prove real layout, verify the generated site with browser tooling at the viewport matrix above. Do not add a browser framework dependency solely for this redesign if the existing validation environment can perform the viewport check.
+## 19. Test contract
 
-## 20. Required verification
+既存 test suite を壊さず、light redesign の回帰テストを追加する。
 
-Repository rules remain authoritative:
+最低限固定する。
+
+### Global
+
+- `--canvas`, `--surface`, `--ink`, `--brand` light tokens
+- dark `color-scheme` を除去
+- BaseLayout theme color
+- Atlas nav label
+
+### Home
+
+- selected hero copy / CTAs
+- 4 data-derived metrics
+- 6 region preview
+- terrain visual component
+- 3 start paths
+
+### Atlas
+
+- six region styles
+- focus/detail interaction separation
+- Inspector relation types
+- focus-only lines
+- mobile return link
+- direct relationship empty state
+
+### Explorer / Detail / Compare / Journey
+
+- light structural classes
+- required decision information remains present
+- relation / journey semantics unchanged
+
+### Responsive
+
+CSS contract tests plus rendered viewport verificationを行う。
+
+## 20. Verification
+
+Before completion:
 
 ```bash
 npm run check
@@ -521,41 +539,42 @@ npm run build
 npx wrangler deploy --dry-run
 ```
 
-Additionally before completion:
+さらに build output を使い、次を確認する。
 
-- visually inspect Home, Atlas, Explorer, one technology detail, one Compare, Journey list, one Journey detail
-- inspect at 390px and 1440px minimum; viewport overflow check covers the full matrix
-- verify no unintended page-level horizontal overflow
-- verify focus/filter states on Atlas
-- verify keyboard focus visibility
-- verify light UI text contrast
-- verify GitHub Pages deployment after merge
+- Home
+- Atlas
+- Explorer
+- representative Technology detail
+- representative Compare page
+- Journeys list
+- representative Journey detail
 
-## 21. Non-goals
+7 viewport widths で page overflow と視覚崩れを確認する。
 
-Not part of this redesign:
+## 21. Out of scope
+
+今回追加しない。
 
 - dark mode toggle
-- account / login
-- user progress
-- backend API / DB
-- D3 / Canvas / WebGL graph
-- catalog expansion
+- user accounts
+- AI recommendation
+- arbitrary force graph
+- Canvas / WebGL / D3 dependency
+- new technology catalog batch
 - relation-data expansion
-- ranking or popularity scores
-- changing the meaning of the 6 regions or 22 categories
+- server-side search
 
-## 22. Definition of done
+Dark mode は light direction が安定した後の別 issue とする。
 
-This redesign is complete only when:
+## 22. Release strategy
 
-1. All primary screens use the light Digital Atlas design language.
-2. The site feels like one product rather than a mixture of old dark and new light pages.
-3. Home communicates the map metaphor immediately.
-4. Atlas remains readable with all current technologies and relations.
-5. Mobile has no unintended viewport overflow at the defined widths.
-6. Existing data behavior and static-navigation behavior remain intact.
-7. All required commands pass.
-8. The merged main branch deploys successfully to GitHub Pages.
-9. The live site is visually rechecked after deployment.
-10. The next resume point is recorded in the PR / relevant repository document.
+1. design spec approved
+2. implementation plan
+3. test-first implementation
+4. full mandatory verification
+5. responsive visual verification
+6. PR review
+7. merge to `main`
+8. GitHub Pages deploy confirmation
+
+本番公開は `main` への merge により行う。
