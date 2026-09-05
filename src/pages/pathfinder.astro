@@ -1,0 +1,278 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { categoryById, getRelations, getTechnologies } from '../data/load';
+import { regionByCategory } from '../data/landscape';
+import { withBase } from '../lib/paths';
+import '../styles/pathfinder.css';
+
+const technologies = getTechnologies()
+  .slice()
+  .sort((a, b) => a.name.localeCompare(b.name, 'en'));
+const relations = getRelations();
+const base = import.meta.env.BASE_URL;
+const pathfinderTechnologies = technologies.map((technology) => ({
+  id: technology.id,
+  name: technology.name,
+  shortDescription: technology.shortDescription,
+  categoryName: categoryById[technology.category].name,
+  regionId: regionByCategory[technology.category],
+}));
+const payload = JSON.stringify({
+  technologies: pathfinderTechnologies,
+  relations,
+  base,
+}).replaceAll('<', '\\u003c');
+---
+<BaseLayout
+  title="Technology Pathfinder"
+  description="2つのWeb技術を選び、既存のrelationデータから最少ホップのつながりを辿る。"
+>
+  <header class="page-head shell pathfinder-head">
+    <div class="breadcrumb"><a href={withBase('/')}>Home</a> / Pathfinder</div>
+    <div class="meta-label accent-label">TECHNOLOGY PATHFINDER</div>
+    <h1>2つの技術の間を、関係から辿る。</h1>
+    <p>出発点と到着点を選ぶと、Tech Adventureに記録されたrelationだけを使って、最少ホップでつながる経路を最大3案まで表示します。おすすめ順位ではなく、現在の地図上で「どうつながっているか」を見るための機能です。</p>
+  </header>
+
+  <section class="section pathfinder-section">
+    <div class="shell">
+      <div class="pathfinder-panel">
+        <div class="pathfinder-controls" aria-label="経路を選ぶ">
+          <label>
+            <span>出発点</span>
+            <select data-pathfinder-from>
+              <option value="">技術を選ぶ</option>
+              {technologies.map((technology) => <option value={technology.id}>{technology.name}</option>)}
+            </select>
+          </label>
+
+          <button class="pathfinder-swap" data-pathfinder-swap type="button" aria-label="出発点と到着点を入れ替える">⇄ 入れ替え</button>
+
+          <label>
+            <span>到着点</span>
+            <select data-pathfinder-to>
+              <option value="">技術を選ぶ</option>
+              {technologies.map((technology) => <option value={technology.id}>{technology.name}</option>)}
+            </select>
+          </label>
+        </div>
+        <div class="pathfinder-method">
+          <span class="meta-label">HOW IT WORKS</span>
+          <p>relationはすべて1 edgeとして扱い、hop数だけで最短を判定します。relation typeの人気度や主観的な重み付けは行いません。</p>
+        </div>
+      </div>
+
+      <div class="pathfinder-status" data-pathfinder-status aria-live="polite">2つの技術を選ぶと経路を表示します。</div>
+      <div class="pathfinder-results" data-pathfinder-results></div>
+
+      <noscript>
+        <div class="pathfinder-noscript">
+          Pathfinderの経路計算にはJavaScriptを使います。技術そのものは <a href={withBase('/technologies')}>Technology Explorer</a> と <a href={withBase('/landscape')}>Atlas</a> から閲覧できます。
+        </div>
+      </noscript>
+    </div>
+  </section>
+
+  <script is:inline id="pathfinder-payload" type="application/json" set:html={payload}></script>
+  <script>
+    import { describePathStep, findShortestPaths } from '../lib/pathfinder.mjs';
+    import type { TechnologyRelation } from '../data/schema';
+
+    type PathfinderTechnology = {
+      id: string;
+      name: string;
+      shortDescription: string;
+      categoryName: string;
+      regionId: string;
+    };
+
+    type PathfinderPayload = {
+      technologies: PathfinderTechnology[];
+      relations: TechnologyRelation[];
+      base: string;
+    };
+
+    type PathStep = {
+      from: string;
+      to: string;
+      direction: 'incoming' | 'outgoing';
+      relation: TechnologyRelation;
+    };
+
+    type PathRoute = {
+      nodeIds: string[];
+      steps: PathStep[];
+      hopCount: number;
+    };
+
+    const payloadNode = document.querySelector('#pathfinder-payload');
+    const payload = JSON.parse(payloadNode?.textContent ?? '{"technologies":[],"relations":[],"base":"/"}') as PathfinderPayload;
+    const technologyById = new Map(payload.technologies.map((technology) => [technology.id, technology] as const));
+    const fromSelect = document.querySelector('[data-pathfinder-from]');
+    const toSelect = document.querySelector('[data-pathfinder-to]');
+    const swapButton = document.querySelector('[data-pathfinder-swap]');
+    const status = document.querySelector('[data-pathfinder-status]');
+    const results = document.querySelector('[data-pathfinder-results]');
+    const symmetricRelations = new Set(['works-with', 'competes-with', 'alternative-to']);
+
+    function selectedValue(control: Element | null) {
+      return control instanceof HTMLSelectElement ? control.value : '';
+    }
+
+    function setSelectedValue(control: Element | null, value: string | null) {
+      if (!(control instanceof HTMLSelectElement) || !value || !technologyById.has(value)) return;
+      control.value = value;
+    }
+
+    function syncUrl(fromId: string, toId: string) {
+      const params = new URLSearchParams();
+      if (fromId) params.set('from', fromId);
+      if (toId) params.set('to', toId);
+      const query = params.toString();
+      window.history.replaceState({}, '', `${window.location.pathname}${query ? `?${query}` : ''}`);
+    }
+
+    function technologyHref(id: string) {
+      const cleanBase = payload.base.endsWith('/') ? payload.base : `${payload.base}/`;
+      return `${cleanBase}technologies/${encodeURIComponent(id)}/`;
+    }
+
+    function nodeElement(technology: PathfinderTechnology) {
+      const anchor = document.createElement('a');
+      anchor.className = 'pathfinder-node';
+      anchor.dataset.region = technology.regionId;
+      anchor.href = technologyHref(technology.id);
+
+      const marker = document.createElement('span');
+      marker.className = 'pathfinder-node-marker';
+      marker.setAttribute('aria-hidden', 'true');
+
+      const copy = document.createElement('span');
+      copy.className = 'pathfinder-node-copy';
+      const category = document.createElement('small');
+      category.textContent = technology.categoryName;
+      const name = document.createElement('strong');
+      name.textContent = technology.name;
+      const description = document.createElement('span');
+      description.textContent = technology.shortDescription;
+      copy.append(category, name, description);
+      anchor.append(marker, copy);
+      return anchor;
+    }
+
+    function relationElement(step: PathStep) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'pathfinder-bridge';
+      wrapper.dataset.relation = step.relation.type;
+
+      const relation = document.createElement('div');
+      relation.className = 'pathfinder-relation';
+      const top = document.createElement('div');
+      top.className = 'pathfinder-relation-top';
+      const label = document.createElement('strong');
+      label.textContent = describePathStep(step);
+      const type = document.createElement('span');
+      type.textContent = step.relation.type;
+      top.append(label, type);
+
+      const direction = document.createElement('small');
+      if (symmetricRelations.has(step.relation.type)) {
+        direction.textContent = '双方向の関係';
+      } else {
+        const source = technologyById.get(step.relation.source)?.name ?? step.relation.source;
+        const target = technologyById.get(step.relation.target)?.name ?? step.relation.target;
+        direction.textContent = `${source} → ${target}`;
+      }
+
+      const note = document.createElement('p');
+      note.textContent = step.relation.note;
+      relation.append(top, direction, note);
+      wrapper.append(relation);
+      return wrapper;
+    }
+
+    function renderRoute(route: PathRoute, index: number) {
+      const article = document.createElement('article');
+      article.className = 'pathfinder-route-card';
+
+      const head = document.createElement('header');
+      head.className = 'pathfinder-route-head';
+      const meta = document.createElement('span');
+      meta.className = 'meta-label accent-label';
+      meta.textContent = `ROUTE ${String(index + 1).padStart(2, '0')}`;
+      const hops = document.createElement('strong');
+      hops.textContent = `${route.hopCount} hop${route.hopCount === 1 ? '' : 's'}`;
+      head.append(meta, hops);
+
+      const path = document.createElement('div');
+      path.className = 'pathfinder-route';
+      const firstId = route.nodeIds[0];
+      const first = firstId ? technologyById.get(firstId) : undefined;
+      if (first) path.append(nodeElement(first));
+
+      route.steps.forEach((step) => {
+        path.append(relationElement(step));
+        const next = technologyById.get(step.to);
+        if (next) path.append(nodeElement(next));
+      });
+
+      article.append(head, path);
+      return article;
+    }
+
+    function render() {
+      if (!(results instanceof HTMLElement)) return;
+      results.replaceChildren();
+
+      const fromId = selectedValue(fromSelect);
+      const toId = selectedValue(toSelect);
+      syncUrl(fromId, toId);
+
+      if (!fromId || !toId) {
+        if (status) status.textContent = '2つの技術を選ぶと経路を表示します。';
+        return;
+      }
+
+      const fromTechnology = technologyById.get(fromId);
+      const toTechnology = technologyById.get(toId);
+      if (!fromTechnology || !toTechnology) {
+        if (status) status.textContent = '選択した技術を現在のカタログで確認できませんでした。';
+        return;
+      }
+
+      if (fromId === toId) {
+        if (status) status.textContent = '同じ技術が選ばれています。別の到着点を選んでください。';
+        return;
+      }
+
+      const routes = findShortestPaths(fromId, toId, payload.relations, { limit: 3 }) as PathRoute[];
+      const firstRoute = routes[0];
+      if (!firstRoute) {
+        if (status) status.textContent = `${fromTechnology.name} と ${toTechnology.name} をつなぐ経路は、現在のrelationデータでは見つかりませんでした。`;
+        return;
+      }
+
+      const hopCount = firstRoute.hopCount;
+      if (status) {
+        status.textContent = `${fromTechnology.name} → ${toTechnology.name}: 最少 ${hopCount} hop。${routes.length > 1 ? `同じhop数の経路を${routes.length}案表示しています。` : '最短経路を表示しています。'}`;
+      }
+      routes.forEach((route, index) => results.append(renderRoute(route, index)));
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    setSelectedValue(fromSelect, params.get('from'));
+    setSelectedValue(toSelect, params.get('to'));
+
+    fromSelect?.addEventListener('change', render);
+    toSelect?.addEventListener('change', render);
+    swapButton?.addEventListener('click', () => {
+      if (!(fromSelect instanceof HTMLSelectElement) || !(toSelect instanceof HTMLSelectElement)) return;
+      const previousFrom = fromSelect.value;
+      fromSelect.value = toSelect.value;
+      toSelect.value = previousFrom;
+      render();
+    });
+
+    render();
+  </script>
+</BaseLayout>

@@ -22,7 +22,8 @@ const comparisons = [
 const startPaths = [
   { number: '01', title: '技術を探す', body: '名前や役割、ecosystemから索引を引く。知らない技術の「何者？」を確認したいときに。', href: '/technologies', arrow: 'Explorerへ' },
   { number: '02', title: '違いを比べる', body: '二つの技術が本当に競合するのか、別の層なのかを役割から見比べる。', href: '/compare/astro/nextjs', arrow: '比較を見る' },
-  { number: '03', title: '作りたいものから辿る', body: 'ブログやAPIなど目的を出発点に、代表的な構成と選択理由を航路として辿る。', href: '/journeys', arrow: 'Journeyへ' },
+  { number: '03', title: 'つながりを辿る', body: '離れた二つの技術を選び、既存relationだけで最少ホップのつながりを辿る。', href: '/pathfinder', arrow: 'Pathfinderへ' },
+  { number: '04', title: '作りたいものから辿る', body: 'ブログやAPIなど目的を出発点に、代表的な構成と選択理由を航路として辿る。', href: '/journeys', arrow: 'Journeyへ' },
 ];
 ---
 <BaseLayout>
@@ -67,7 +68,7 @@ const startPaths = [
           <div class="meta-label">02 / CHOOSE YOUR ROUTE</div>
           <h2 class="section-title">今知りたいことから、入口を選ぶ。</h2>
         </div>
-        <p class="section-description">全技術を順番に読む必要はありません。探す、比べる、作りたいものから辿る。目的に合う入口から始められます。</p>
+        <p class="section-description">全技術を順番に読む必要はありません。探す、比べる、つなぐ、作りたいものから辿る。目的に合う入口から始められます。</p>
       </div>
       <div class="start-path-grid">
         {startPaths.map((path) => (

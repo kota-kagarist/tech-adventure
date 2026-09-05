@@ -79,7 +79,7 @@
 .landscape-region-icons { position: relative; z-index: 1; display: flex; gap: .45rem; margin-top: auto; }
 .landscape-region-icons a { display: inline-flex; border-radius: 7px; text-decoration: none; }
 
-.start-path-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: .85rem; }
+.start-path-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: .85rem; }
 .start-path-card {
   min-height: 190px;
   display: flex;
@@ -100,6 +100,7 @@
   .hero-layout { grid-template-columns: 1fr; }
   .atlas-terrain { max-width: 720px; margin-inline: auto; }
   .atlas-preview-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .start-path-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 760px) {

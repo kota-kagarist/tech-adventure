@@ -49,9 +49,30 @@ const relationLabels = [
     </div>
   </div>
 
+  <a class="atlas-pathfinder-link" href={withBase('/pathfinder')}>
+    <span class="meta-label">PATHFINDER</span>
+    <strong>2つの技術の間を辿る</strong>
+    <span>直接つながっていない技術も、relationを経路として確認する →</span>
+  </a>
+
   <div class="atlas-legend" aria-label="関係の凡例">
     {relationLabels.map(([type, label]) => (
       <span><i class={`relation-swatch relation-${type}`} aria-hidden="true"></i>{label}</span>
     ))}
   </div>
 </aside>
+
+<style>
+  .atlas-pathfinder-link {
+    display: grid;
+    gap: .22rem;
+    margin-top: 1rem;
+    padding: .8rem;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--brand-soft);
+    text-decoration: none;
+  }
+  .atlas-pathfinder-link strong { color: var(--ink); font-size: .82rem; }
+  .atlas-pathfinder-link > span:last-child { color: var(--ink-muted); font-size: .7rem; line-height: 1.45; }
+</style>
