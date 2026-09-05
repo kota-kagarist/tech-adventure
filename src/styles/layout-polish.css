@@ -17,6 +17,15 @@
   white-space: nowrap;
 }
 
+@media (min-width: 761px) {
+  .home-hero .display-title {
+    max-width: 14ch;
+    font-size: clamp(3rem, 4.2vw, 3.8rem);
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+}
+
 @media (max-width: 1020px) {
   .explorer-toolbar {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -37,10 +46,20 @@
     grid-column: auto;
   }
 
-  .home-hero .display-title {
-    max-width: 14ch;
+  .home-hero .display-title,
+  .page-head h1 {
     font-size: clamp(2.1rem, 9.5vw, 2.75rem);
     word-break: keep-all;
     text-wrap: balance;
+  }
+
+  .home-hero .display-title {
+    max-width: 14ch;
+  }
+
+  .journey-row-count {
+    grid-column: 2 / -1;
+    justify-self: start;
+    white-space: nowrap;
   }
 }
