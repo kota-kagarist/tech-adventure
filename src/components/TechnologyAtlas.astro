@@ -11,7 +11,7 @@ interface Props {
 
 const { technologies } = Astro.props;
 ---
-<div class="atlas-canvas" data-atlas-canvas>
+<div id="atlas-map" class="atlas-canvas" data-atlas-canvas>
   <svg class="atlas-lines" data-atlas-lines aria-hidden="true"></svg>
 
   <div class="atlas-regions">
@@ -20,7 +20,7 @@ const { technologies } = Astro.props;
       return (
         <section class="atlas-region" data-atlas-region={region.id}>
           <header class="atlas-region-head">
-            <div class="atlas-region-index">0{regionIndex + 1}</div>
+            <div class="atlas-region-index">{String(regionIndex + 1).padStart(2, '0')}</div>
             <div>
               <div class="meta-label accent-label">{region.label}</div>
               <h2>{region.name}</h2>
