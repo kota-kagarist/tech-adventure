@@ -1,7 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import TechnologyIcon from '../../components/TechnologyIcon.astro';
 import { journeys } from '../../data/journeys';
+import { getTechnologies } from '../../data/load';
 import { withBase } from '../../lib/paths';
+
+const byId = new Map(getTechnologies().map((technology) => [technology.id, technology]));
 ---
 <BaseLayout title="旅程から探す" description="作りたいものから代表的な技術構成と、その選択理由をたどれます。">
   <header class="page-head shell">
@@ -13,15 +17,44 @@ import { withBase } from '../../lib/paths';
   <section class="section">
     <div class="shell">
       <div class="journey-list">
-        {journeys.map((journey, index) => (
-          <a class="journey-row" href={withBase(`/journeys/${journey.id}`)}>
-            <span class="journey-row-number">{String(index + 1).padStart(2, '0')}</span>
-            <strong class="journey-row-title">{journey.title}</strong>
-            <span class="journey-row-summary">{journey.summary}</span>
-            <span class="journey-row-count">{journey.technologyIds.length} tech →</span>
-          </a>
-        ))}
+        {journeys.map((journey, index) => {
+          const representatives = journey.technologyIds
+            .slice(0, 3)
+            .map((id) => byId.get(id))
+            .filter((technology) => Boolean(technology));
+          return (
+            <a class="journey-row" href={withBase(`/journeys/${journey.id}`)}>
+              <span class="journey-row-map">
+                <span class="journey-row-number">{String(index + 1).padStart(2, '0')}</span>
+                <span class="journey-route-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+              </span>
+              <strong class="journey-row-title">{journey.title}</strong>
+              <span class="journey-row-body">
+                <span class="journey-row-summary">{journey.summary}</span>
+                <span class="journey-row-icons" aria-hidden="true">
+                  {representatives.map((technology) => technology && <TechnologyIcon technology={technology} size="small" />)}
+                </span>
+              </span>
+              <span class="journey-row-count">{journey.technologyIds.length} tech →</span>
+            </a>
+          );
+        })}
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .journey-row-map { display: flex; align-items: center; gap: .55rem; }
+  .journey-route-mark { display: inline-flex; align-items: center; gap: 3px; min-width: 24px; }
+  .journey-route-mark i { width: 4px; height: 4px; border-radius: 50%; background: var(--brand); }
+  .journey-route-mark i + i { position: relative; }
+  .journey-route-mark i + i::before { content: ""; position: absolute; right: 4px; top: 1px; width: 3px; border-top: 1px dashed color-mix(in srgb, var(--brand) 55%, transparent); }
+  .journey-row-body { min-width: 0; display: grid; gap: .6rem; }
+  .journey-row-icons { display: flex; gap: .35rem; }
+  @media (max-width: 760px) {
+    .journey-row-map { align-self: start; }
+    .journey-route-mark { display: none; }
+    .journey-row-body { grid-column: 2 / -1; }
+  }
+</style>
