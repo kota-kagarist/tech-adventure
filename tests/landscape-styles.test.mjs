@@ -27,6 +27,7 @@ test('atlas semantic tokens resolve to the light Digital Atlas system without gl
   assert.match(atlasCss, /\[data-atlas-region="interface"\][\s\S]*?var\(--region-interface-bg\)/);
   assert.match(atlasCss, /line\[data-relation="built-on"\]/);
   assert.match(atlasCss, /line\[data-relation="competes-with"\]/);
+  assert.match(atlasCss, /@media\s*\(max-width:\s*760px\)[\s\S]*?\.atlas-page-head\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/);
   assert.match(page, /landscape-tokens\.css/);
   assert.doesNotMatch(layout, /landscape-tokens\.css/);
 });
