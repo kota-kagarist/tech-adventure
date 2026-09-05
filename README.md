@@ -4,6 +4,8 @@
 
 Tech Adventure は、2026年の主要なWeb技術186件を22カテゴリ・6つの役割地域に整理し、単なる名前の一覧ではなく **「何を担当するか」「何と競合するか」「何と組み合わせるか」** で理解するためのオープンガイドです。
 
+明るい Digital Atlas デザインで、技術を **地域・地点・関係・旅程** として眺められます。
+
 ![Astro 7](https://img.shields.io/badge/Astro-7-BC52EE?style=flat-square&logo=astro&logoColor=white)
 ![TypeScript 5.9](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript&logoColor=white)
 ![Node.js 22+](https://img.shields.io/badge/Node.js-22%2B-5FA04E?style=flat-square&logo=nodedotjs&logoColor=white)
