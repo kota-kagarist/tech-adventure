@@ -1,6 +1,5 @@
 /* Atlas-local semantic aliases mapped to the light Digital Atlas tokens. */
 .atlas-page {
-  --line: var(--line);
   --panel: var(--surface);
   --muted: var(--ink-muted);
   --text-soft: var(--ink-muted);
