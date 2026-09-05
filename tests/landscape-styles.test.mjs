@@ -5,10 +5,11 @@ import test from 'node:test';
 const source = (path) => readFile(new URL(`../${path}`, import.meta.url), 'utf8');
 
 test('atlas semantic tokens resolve to the light Digital Atlas system without global layout coupling', async () => {
-  const [globalCss, bridgeCss, atlasCss, page, layout] = await Promise.all([
+  const [globalCss, bridgeCss, atlasCss, polishCss, page, layout] = await Promise.all([
     source('src/styles/global.css'),
     source('src/styles/landscape-tokens.css'),
     source('src/styles/landscape.css'),
+    source('src/styles/layout-polish.css'),
     source('src/pages/landscape.astro'),
     source('src/layouts/BaseLayout.astro'),
   ]);
@@ -27,7 +28,7 @@ test('atlas semantic tokens resolve to the light Digital Atlas system without gl
   assert.match(atlasCss, /\[data-atlas-region="interface"\][\s\S]*?var\(--region-interface-bg\)/);
   assert.match(atlasCss, /line\[data-relation="built-on"\]/);
   assert.match(atlasCss, /line\[data-relation="competes-with"\]/);
-  assert.match(atlasCss, /@media\s*\(max-width:\s*760px\)[\s\S]*?\.atlas-page-head\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/);
+  assert.match(polishCss, /@media\s*\(max-width:\s*760px\)[\s\S]*?\.atlas-page \.atlas-page-head\s*\{[\s\S]*?grid-template-columns:\s*minmax\(0,\s*1fr\)/);
   assert.match(page, /landscape-tokens\.css/);
   assert.doesNotMatch(layout, /landscape-tokens\.css/);
 });
