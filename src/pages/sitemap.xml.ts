@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import { getRelations, getTechnologies } from '../data/load';
 import { journeys } from '../data/journeys';
 import { buildComparisonPairIds } from '../lib/comparison-pairs.mjs';
+import { projectAssetUrl } from '../lib/site-urls.mjs';
 
 export const prerender = true;
 
@@ -22,8 +23,8 @@ function escapeXml(value: string) {
 export const GET: APIRoute = ({ site }) => {
   const technologies = getTechnologies();
   const relations = getRelations();
-  const projectRoot = new URL(import.meta.env.BASE_URL, site ?? new URL('https://kota-kagarist.github.io'));
-  const absolute = (path = '') => new URL(path.replace(/^\/+/, ''), projectRoot).href;
+  const resolvedSite = site ?? new URL('https://kota-kagarist.github.io');
+  const absolute = (path = '') => projectAssetUrl(resolvedSite, import.meta.env.BASE_URL, path).href;
 
   const entries: SitemapEntry[] = [
     { path: '' },
