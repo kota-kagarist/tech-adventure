@@ -49,10 +49,11 @@ test('project URLs preserve the GitHub Pages base path and canonical root', asyn
   );
 });
 
-test('search crawlers receive sitemap and robots endpoints without a new dependency', async () => {
-  const [sitemap, robots, packageJson] = await Promise.all([
+test('project site publishes a complete sitemap without pretending robots.txt is origin-level', async () => {
+  const [sitemap, projectRobots, footer, packageJson] = await Promise.all([
     source('src/pages/sitemap.xml.ts'),
     source('src/pages/robots.txt.ts'),
+    source('src/components/SiteFooter.astro'),
     source('package.json'),
   ]);
 
@@ -60,8 +61,8 @@ test('search crawlers receive sitemap and robots endpoints without a new depende
   assert.match(sitemap, /buildComparisonPairIds/);
   assert.match(sitemap, /journeys/);
   assert.match(sitemap, /application\/xml/);
-  assert.match(robots, /User-agent:/);
-  assert.match(robots, /Sitemap:/);
+  assert.equal(projectRobots, '');
+  assert.match(footer, /sitemap\.xml/);
   assert.doesNotMatch(packageJson, /@astrojs\/sitemap/);
 });
 
