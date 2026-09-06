@@ -23,8 +23,8 @@ test('base layout exposes canonical, social, author, and structured metadata', a
   assert.match(layout, /Person/);
 });
 
-test('project URLs preserve the GitHub Pages base path', async () => {
-  const { projectRootUrl, projectAssetUrl } = await import('../src/lib/site-urls.mjs');
+test('project URLs preserve the GitHub Pages base path and canonical root', async () => {
+  const { canonicalPageUrl, projectRootUrl, projectAssetUrl } = await import('../src/lib/site-urls.mjs');
   const site = new URL('https://kota-kagarist.github.io');
 
   assert.equal(
@@ -38,6 +38,14 @@ test('project URLs preserve the GitHub Pages base path', async () => {
   assert.equal(
     projectAssetUrl(site, '/tech-adventure/', 'sitemap.xml').href,
     'https://kota-kagarist.github.io/tech-adventure/sitemap.xml',
+  );
+  assert.equal(
+    canonicalPageUrl(site, '/tech-adventure', '/tech-adventure').href,
+    'https://kota-kagarist.github.io/tech-adventure/',
+  );
+  assert.equal(
+    canonicalPageUrl(site, '/tech-adventure', '/tech-adventure/technologies/react').href,
+    'https://kota-kagarist.github.io/tech-adventure/technologies/react',
   );
 });
 
