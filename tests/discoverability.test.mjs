@@ -4,6 +4,7 @@ import test from 'node:test';
 
 const root = new URL('../', import.meta.url);
 const source = (path) => readFile(new URL(path, root), 'utf8').catch(() => '');
+const binary = (path) => readFile(new URL(path, root)).catch(() => Buffer.alloc(0));
 
 test('base layout exposes canonical, social, author, and structured metadata', async () => {
   const layout = await source('src/layouts/BaseLayout.astro');
@@ -21,6 +22,18 @@ test('base layout exposes canonical, social, author, and structured metadata', a
   assert.match(layout, /application\/ld\+json/);
   assert.match(layout, /WebSite/);
   assert.match(layout, /Person/);
+});
+
+test('social preview is a complete 1200x630 PNG', async () => {
+  const image = await binary('public/social-preview.png');
+  const pngSignature = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+  const iend = Buffer.from([0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82]);
+
+  assert.ok(image.length > 100, 'social preview should not be empty or truncated');
+  assert.deepEqual(image.subarray(0, 8), pngSignature);
+  assert.equal(image.readUInt32BE(16), 1200);
+  assert.equal(image.readUInt32BE(20), 630);
+  assert.deepEqual(image.subarray(-8), iend);
 });
 
 test('project URLs preserve the GitHub Pages base path and canonical root', async () => {
