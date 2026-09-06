@@ -5,6 +5,11 @@ import { buildComparisonPairIds } from '../lib/comparison-pairs.mjs';
 
 export const prerender = true;
 
+type SitemapEntry = {
+  path: string;
+  lastmod?: string;
+};
+
 function escapeXml(value: string) {
   return value
     .replaceAll('&', '&amp;')
@@ -20,7 +25,7 @@ export const GET: APIRoute = ({ site }) => {
   const projectRoot = new URL(import.meta.env.BASE_URL, site ?? new URL('https://kota-kagarist.github.io'));
   const absolute = (path = '') => new URL(path.replace(/^\/+/, ''), projectRoot).href;
 
-  const entries = [
+  const entries: SitemapEntry[] = [
     { path: '' },
     { path: 'landscape' },
     { path: 'technologies' },
