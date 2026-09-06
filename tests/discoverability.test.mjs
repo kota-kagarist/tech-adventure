@@ -23,6 +23,24 @@ test('base layout exposes canonical, social, author, and structured metadata', a
   assert.match(layout, /Person/);
 });
 
+test('project URLs preserve the GitHub Pages base path', async () => {
+  const { projectRootUrl, projectAssetUrl } = await import('../src/lib/site-urls.mjs');
+  const site = new URL('https://kota-kagarist.github.io');
+
+  assert.equal(
+    projectRootUrl(site, '/tech-adventure').href,
+    'https://kota-kagarist.github.io/tech-adventure/',
+  );
+  assert.equal(
+    projectAssetUrl(site, '/tech-adventure', 'social-preview.png').href,
+    'https://kota-kagarist.github.io/tech-adventure/social-preview.png',
+  );
+  assert.equal(
+    projectAssetUrl(site, '/tech-adventure/', 'sitemap.xml').href,
+    'https://kota-kagarist.github.io/tech-adventure/sitemap.xml',
+  );
+});
+
 test('search crawlers receive sitemap and robots endpoints without a new dependency', async () => {
   const [sitemap, robots, packageJson] = await Promise.all([
     source('src/pages/sitemap.xml.ts'),
