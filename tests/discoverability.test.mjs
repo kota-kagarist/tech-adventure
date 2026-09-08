@@ -27,13 +27,27 @@ test('base layout exposes canonical, social, author, and structured metadata', a
 test('social preview is a complete 1200x630 PNG', async () => {
   const image = await binary('public/social-preview.png');
   const pngSignature = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
-  const iend = Buffer.from([0x49, 0x45, 0x4e, 0x44, 0xae, 0x42, 0x60, 0x82]);
 
   assert.ok(image.length > 100, 'social preview should not be empty or truncated');
   assert.deepEqual(image.subarray(0, 8), pngSignature);
   assert.equal(image.readUInt32BE(16), 1200);
   assert.equal(image.readUInt32BE(20), 630);
-  assert.deepEqual(image.subarray(-8), iend);
+
+  let offset = 8;
+  let foundIend = false;
+  while (offset + 12 <= image.length) {
+    const chunkLength = image.readUInt32BE(offset);
+    const chunkEnd = offset + 12 + chunkLength;
+    assert.ok(chunkEnd <= image.length, 'PNG chunk must be complete');
+    const chunkType = image.subarray(offset + 4, offset + 8).toString('ascii');
+    if (chunkType === 'IEND') {
+      foundIend = true;
+      break;
+    }
+    offset = chunkEnd;
+  }
+
+  assert.ok(foundIend, 'social preview should contain a complete IEND chunk');
 });
 
 test('project URLs preserve the GitHub Pages base path and canonical root', async () => {
