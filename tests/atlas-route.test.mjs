@@ -35,6 +35,27 @@ test('Atlas route state rejects unknown, duplicate, incomplete, and non-continuo
   assert.equal(resolveAtlasRoute('alpha,beta,delta', 'alpha:alternative-to:delta,delta:built-on:beta', technologies, relations), null);
 });
 
+test('Atlas accepts any valid simple Pathfinder route length supported by the catalog', () => {
+  const nodeIds = Array.from({ length: 25 }, (_, index) => `node-${index}`);
+  const longTechnologies = new Set(nodeIds);
+  const longRelations = nodeIds.slice(0, -1).map((source, index) => ({
+    source,
+    target: nodeIds[index + 1],
+    type: 'works-with',
+    note: `Step ${index + 1}`,
+  }));
+  const route = resolveAtlasRoute(
+    nodeIds.join(','),
+    longRelations.map((relation) => `${relation.source}:${relation.type}:${relation.target}`).join(','),
+    longTechnologies,
+    longRelations,
+  );
+
+  assert.ok(route);
+  assert.equal(route.nodeIds.length, 25);
+  assert.equal(route.hopCount, 24);
+});
+
 test('Pathfinder routes serialize into stable Atlas query values', () => {
   const serialized = serializeAtlasRoute({
     nodeIds: ['alpha', 'beta', 'delta'],
@@ -60,6 +81,7 @@ test('Pathfinder and Atlas expose route projection controls and mobile text fall
 
   assert.match(pathfinder, /serializeAtlasRoute/);
   assert.match(pathfinder, /Atlasで見る/);
+  assert.match(pathfinder, /landscape\/\?\$\{params\.toString\(\)\}/);
   assert.match(pathfinder, /edges/);
   assert.match(pathfinderCss, /\.pathfinder-atlas-link/);
   assert.match(landscape, /resolveAtlasRoute/);
