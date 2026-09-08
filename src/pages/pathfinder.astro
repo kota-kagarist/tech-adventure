@@ -146,7 +146,7 @@ const payload = JSON.stringify({
       const params = new URLSearchParams();
       params.set('route', serialized.route);
       params.set('edges', serialized.edges);
-      return `${cleanBase()}landscape?${params.toString()}`;
+      return `${cleanBase()}landscape/?${params.toString()}`;
     }
 
     function nodeElement(technology: PathfinderTechnology) {
