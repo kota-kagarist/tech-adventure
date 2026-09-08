@@ -78,6 +78,28 @@
   border-bottom: 1px solid var(--line);
 }
 .pathfinder-route-head strong { color: var(--ink); font-size: .82rem; }
+.pathfinder-route-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  align-items: center;
+  justify-content: flex-end;
+}
+.pathfinder-atlas-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
+  padding: 0 .7rem;
+  border: 1px solid #A9BCD4;
+  border-radius: 8px;
+  background: var(--surface-subtle);
+  color: var(--brand-hover);
+  font-size: .72rem;
+  font-weight: 720;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.pathfinder-atlas-link:hover { border-color: var(--brand); background: var(--brand-soft); }
 .pathfinder-route {
   display: grid;
   gap: 0;
@@ -161,6 +183,7 @@
   .pathfinder-method { grid-template-columns: 1fr; gap: .3rem; }
   .pathfinder-route-card { padding: .85rem; border-radius: 14px; }
   .pathfinder-route-head { align-items: flex-start; }
+  .pathfinder-route-actions { justify-content: flex-start; }
   .pathfinder-node { grid-template-columns: 30px minmax(0, 1fr); padding: .8rem; }
   .pathfinder-node-marker { width: 26px; height: 26px; border-width: 6px; }
   .pathfinder-bridge { margin-left: 1.1rem; padding-left: 1.1rem; }
