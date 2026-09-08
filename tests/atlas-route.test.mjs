@@ -51,11 +51,11 @@ test('Pathfinder routes serialize into stable Atlas query values', () => {
 });
 
 test('Pathfinder and Atlas expose route projection controls and mobile text fallback hooks', async () => {
-  const [pathfinder, pathfinderCss, landscape, landscapeCss] = await Promise.all([
+  const [pathfinder, pathfinderCss, landscape, routeCss] = await Promise.all([
     source('src/pages/pathfinder.astro'),
     source('src/styles/pathfinder.css'),
     source('src/pages/landscape.astro'),
-    source('src/styles/landscape.css'),
+    source('src/styles/atlas-route.css'),
   ]);
 
   assert.match(pathfinder, /serializeAtlasRoute/);
@@ -66,7 +66,7 @@ test('Pathfinder and Atlas expose route projection controls and mobile text fall
   assert.match(landscape, /data-atlas-route-summary/);
   assert.match(landscape, /data-atlas-route-clear/);
   assert.match(landscape, /dataAtlasRoute/);
-  assert.match(landscapeCss, /data-atlas-route="true"/);
-  assert.match(landscapeCss, /data-atlas-route-line="true"/);
-  assert.match(landscapeCss, /@media\s*\(max-width:\s*760px\)[\s\S]*?atlas-route-summary/);
+  assert.match(routeCss, /data-atlas-route="true"/);
+  assert.match(routeCss, /data-atlas-route-line="true"/);
+  assert.match(routeCss, /@media\s*\(max-width:\s*760px\)[\s\S]*?atlas-route-summary/);
 });
