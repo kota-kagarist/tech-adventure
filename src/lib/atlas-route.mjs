@@ -1,5 +1,3 @@
-const MAX_ROUTE_NODES = 24;
-
 function relationKey(relation) {
   return `${relation.source}:${relation.type}:${relation.target}`;
 }
@@ -22,7 +20,7 @@ export function resolveAtlasRoute(routeValue, edgesValue, technologyIds, relatio
   const nodeIds = parseList(routeValue);
   const edgeKeys = parseList(edgesValue);
 
-  if (nodeIds.length < 2 || nodeIds.length > MAX_ROUTE_NODES) return null;
+  if (nodeIds.length < 2) return null;
   if (new Set(nodeIds).size !== nodeIds.length) return null;
   if (nodeIds.some((id) => !technologyIds.has(id))) return null;
   if (edgeKeys.length !== nodeIds.length - 1) return null;
