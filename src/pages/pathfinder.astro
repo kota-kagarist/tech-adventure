@@ -75,6 +75,7 @@ const payload = JSON.stringify({
 
   <script is:inline id="pathfinder-payload" type="application/json" set:html={payload}></script>
   <script>
+    import { serializeAtlasRoute } from '../lib/atlas-route.mjs';
     import { describePathStep, findShortestPaths } from '../lib/pathfinder.mjs';
     import type { TechnologyRelation } from '../data/schema';
 
@@ -132,9 +133,20 @@ const payload = JSON.stringify({
       window.history.replaceState({}, '', `${window.location.pathname}${query ? `?${query}` : ''}`);
     }
 
+    function cleanBase() {
+      return payload.base.endsWith('/') ? payload.base : `${payload.base}/`;
+    }
+
     function technologyHref(id: string) {
-      const cleanBase = payload.base.endsWith('/') ? payload.base : `${payload.base}/`;
-      return `${cleanBase}technologies/${encodeURIComponent(id)}/`;
+      return `${cleanBase()}technologies/${encodeURIComponent(id)}/`;
+    }
+
+    function landscapeHref(route: PathRoute) {
+      const serialized = serializeAtlasRoute(route);
+      const params = new URLSearchParams();
+      params.set('route', serialized.route);
+      params.set('edges', serialized.edges);
+      return `${cleanBase()}landscape?${params.toString()}`;
     }
 
     function nodeElement(technology: PathfinderTechnology) {
@@ -200,9 +212,17 @@ const payload = JSON.stringify({
       const meta = document.createElement('span');
       meta.className = 'meta-label accent-label';
       meta.textContent = `ROUTE ${String(index + 1).padStart(2, '0')}`;
+
+      const actions = document.createElement('div');
+      actions.className = 'pathfinder-route-actions';
       const hops = document.createElement('strong');
       hops.textContent = `${route.hopCount} hop${route.hopCount === 1 ? '' : 's'}`;
-      head.append(meta, hops);
+      const atlasLink = document.createElement('a');
+      atlasLink.className = 'pathfinder-atlas-link';
+      atlasLink.href = landscapeHref(route);
+      atlasLink.textContent = 'Atlasで見る ↗';
+      actions.append(hops, atlasLink);
+      head.append(meta, actions);
 
       const path = document.createElement('div');
       path.className = 'pathfinder-route';
