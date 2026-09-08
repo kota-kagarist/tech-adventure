@@ -65,7 +65,7 @@ test('Pathfinder and Atlas expose route projection controls and mobile text fall
   assert.match(landscape, /resolveAtlasRoute/);
   assert.match(landscape, /data-atlas-route-summary/);
   assert.match(landscape, /data-atlas-route-clear/);
-  assert.match(landscape, /dataAtlasRoute/);
+  assert.match(landscape, /dataset\.atlasRoute/);
   assert.match(routeCss, /data-atlas-route="true"/);
   assert.match(routeCss, /data-atlas-route-line="true"/);
   assert.match(routeCss, /@media\s*\(max-width:\s*760px\)[\s\S]*?atlas-route-summary/);
