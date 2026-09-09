@@ -4,9 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "generate:social-preview": "node scripts/generate-social-preview.mjs",
+    "predev": "npm run generate:social-preview",
     "dev": "astro dev",
     "check": "astro check",
+    "pretest": "npm run generate:social-preview",
     "test": "node --experimental-strip-types --test",
+    "prebuild": "npm run generate:social-preview",
     "build": "astro build",
     "verify": "npm run check && npm test && npm run build"
   },

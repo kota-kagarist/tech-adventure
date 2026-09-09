@@ -1,0 +1,107 @@
+import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
+import test from 'node:test';
+
+const root = new URL('../', import.meta.url);
+const source = (path) => readFile(new URL(path, root), 'utf8').catch(() => '');
+const binary = (path) => readFile(new URL(path, root)).catch(() => Buffer.alloc(0));
+
+test('base layout exposes canonical, social, author, and structured metadata', async () => {
+  const layout = await source('src/layouts/BaseLayout.astro');
+
+  assert.match(layout, /rel="canonical"/);
+  assert.match(layout, /property="og:title"/);
+  assert.match(layout, /property="og:description"/);
+  assert.match(layout, /property="og:url"/);
+  assert.match(layout, /property="og:image"/);
+  assert.match(layout, /name="twitter:card"/);
+  assert.match(layout, /summary_large_image/);
+  assert.match(layout, /name="author"/);
+  assert.match(layout, /Kota Tsuda/);
+  assert.match(layout, /kagarist/);
+  assert.match(layout, /application\/ld\+json/);
+  assert.match(layout, /WebSite/);
+  assert.match(layout, /Person/);
+});
+
+test('social preview is a complete 1200x630 PNG', async () => {
+  const image = await binary('public/social-preview.png');
+  const pngSignature = Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
+
+  assert.ok(image.length > 100, 'social preview should not be empty or truncated');
+  assert.deepEqual(image.subarray(0, 8), pngSignature);
+  assert.equal(image.readUInt32BE(16), 1200);
+  assert.equal(image.readUInt32BE(20), 630);
+
+  let offset = 8;
+  let foundIend = false;
+  while (offset + 12 <= image.length) {
+    const chunkLength = image.readUInt32BE(offset);
+    const chunkEnd = offset + 12 + chunkLength;
+    assert.ok(chunkEnd <= image.length, 'PNG chunk must be complete');
+    const chunkType = image.subarray(offset + 4, offset + 8).toString('ascii');
+    if (chunkType === 'IEND') {
+      foundIend = true;
+      break;
+    }
+    offset = chunkEnd;
+  }
+
+  assert.ok(foundIend, 'social preview should contain a complete IEND chunk');
+});
+
+test('project URLs preserve the GitHub Pages base path and canonical root', async () => {
+  const { canonicalPageUrl, projectRootUrl, projectAssetUrl } = await import('../src/lib/site-urls.mjs');
+  const site = new URL('https://kota-kagarist.github.io');
+
+  assert.equal(
+    projectRootUrl(site, '/tech-adventure').href,
+    'https://kota-kagarist.github.io/tech-adventure/',
+  );
+  assert.equal(
+    projectAssetUrl(site, '/tech-adventure', 'social-preview.png').href,
+    'https://kota-kagarist.github.io/tech-adventure/social-preview.png',
+  );
+  assert.equal(
+    projectAssetUrl(site, '/tech-adventure/', 'sitemap.xml').href,
+    'https://kota-kagarist.github.io/tech-adventure/sitemap.xml',
+  );
+  assert.equal(
+    canonicalPageUrl(site, '/tech-adventure', '/tech-adventure').href,
+    'https://kota-kagarist.github.io/tech-adventure/',
+  );
+  assert.equal(
+    canonicalPageUrl(site, '/tech-adventure', '/tech-adventure/technologies/react').href,
+    'https://kota-kagarist.github.io/tech-adventure/technologies/react',
+  );
+});
+
+test('project site publishes a complete sitemap without pretending robots.txt is origin-level', async () => {
+  const [sitemap, projectRobots, footer, packageJson] = await Promise.all([
+    source('src/pages/sitemap.xml.ts'),
+    source('src/pages/robots.txt.ts'),
+    source('src/components/SiteFooter.astro'),
+    source('package.json'),
+  ]);
+
+  assert.match(sitemap, /getTechnologies/);
+  assert.match(sitemap, /buildComparisonPairIds/);
+  assert.match(sitemap, /journeys/);
+  assert.match(sitemap, /application\/xml/);
+  assert.equal(projectRobots, '');
+  assert.match(footer, /sitemap\.xml/);
+  assert.doesNotMatch(packageJson, /@astrojs\/sitemap/);
+});
+
+test('public identity is visible but restrained in the footer and README', async () => {
+  const [footer, readme] = await Promise.all([
+    source('src/components/SiteFooter.astro'),
+    source('README.md'),
+  ]);
+
+  assert.match(footer, /kagarist/);
+  assert.match(footer, /Kota Tsuda/);
+  assert.match(readme, /kagarist/);
+  assert.match(readme, /Kota Tsuda/);
+  assert.match(readme, /kota-kagarist\.github\.io\/tech-adventure/);
+});
