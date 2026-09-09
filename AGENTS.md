@@ -23,13 +23,14 @@ Tech Adventure は技術の人気ランキングではなく、技術世界の�
 7. 日本語は初学者が理解できる平易さを優先する。
 8. 「最高」「最強」のような主観的ランキング表現を避ける。
 
-## 必須検証
+## 検証
 
-```bash
-npm run check
-npm test
-npm run build
-npx wrangler deploy --dry-run
-```
+検証は変更リスクと対象に応じて選ぶ。毎回すべての検証コマンドを機械的に実行することを目的にしない。
 
-失敗した状態で完了扱いにしない。
+- 技術JSON、関係データ、分類などデータ整合性に触れる変更 → `npm run check` と影響するテストを優先する。
+- 共有ロジック、経路生成、比較・Journey等の振る舞い変更 → 回帰条件を自動テストで固定し、必要に応じて `npm test`、`npm run check`、`npm run build` を実行する。仕様を例で明確に表現できる高リスク変更ではTDDを優先する。
+- UI、文言、スタイルだけの変更 → TDDや無関係な全テストを強制せず、`npm run build` と対象画面・レスポンシブ表示など最も直接的な確認を優先する。
+- Astro/Wrangler設定、配備構成、生成物、Cloudflare互換性に触れる変更 → `npm run build` と `npx wrangler deploy --dry-run` を実行し、必要なcheck/testを追加する。
+- リリースや広い横断変更では、影響範囲が大きい場合に `npm run check`、`npm test`、`npm run build`、`npx wrangler deploy --dry-run` のフルセットを使う。
+
+テストのためだけの不要な抽象化、mock、依存追加を行わない。必要な検証が失敗した状態や、重要な検証を未実施のまま完了扱いにしない。
