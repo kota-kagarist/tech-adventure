@@ -1,13 +1,19 @@
 name: CI
 on:
-  push:
-    branches: [main]
   pull_request:
+    paths-ignore:
+      - 'docs/**'
+      - '**.md'
+  workflow_dispatch:
 permissions:
   contents: read
+concurrency:
+  group: tech-adventure-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 jobs:
   verify:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
