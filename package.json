@@ -12,7 +12,8 @@
     "test": "node --experimental-strip-types --test",
     "prebuild": "npm run generate:social-preview",
     "build": "astro build",
-    "verify": "npm run check && npm test && npm run build"
+    "verify": "npm run check && npm test && npm run build",
+    "freshness": "node scripts/check-freshness.mjs"
   },
   "dependencies": {
     "astro": "^7.2.9",
