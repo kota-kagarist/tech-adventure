@@ -1,5 +1,7 @@
 # AGENTS.md
 
+Kagaristの運用環境では、中央の[共通AGENTS.md](https://github.com/kota-kagarist/Kagarist/blob/main/AGENTS.md)を確認してから、下記のrepo固有ルールを適用する。同じ実行で確認済みの版を理由なく再取得せず、共通指示の本文をこのrepoへ複製しない。
+
 ## Kagarist共通入口
 
 このリポジトリはKAGARISTワークスペースの一部です。作業開始時に中央の[作業振り分け](https://github.com/kota-kagarist/Kagarist/blob/main/ROUTER.md)を1回確認し、今回の主対象がこのリポジトリであることを確定します。確定後は、この `AGENTS.md` とリポジトリ固有の正本を優先し、中央の他文書を一括で読みません。
