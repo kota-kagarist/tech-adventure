@@ -4,6 +4,6 @@ export default defineConfig({
   site: 'https://kota-kagarist.github.io',
   base: '/tech-adventure',
   output: 'static',
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   build: { format: 'directory' }
 });

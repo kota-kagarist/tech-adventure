@@ -50,8 +50,8 @@ test('social preview is a complete 1200x630 PNG', async () => {
   assert.ok(foundIend, 'social preview should contain a complete IEND chunk');
 });
 
-test('project URLs preserve the GitHub Pages base path and canonical root', async () => {
-  const { canonicalPageUrl, projectRootUrl, projectAssetUrl } = await import('../src/lib/site-urls.mjs');
+test('project URLs match GitHub Pages directory URLs without changing assets or queries', async () => {
+  const { canonicalPageUrl, projectRootUrl, projectAssetUrl, projectPath } = await import('../src/lib/site-urls.mjs');
   const site = new URL('https://kota-kagarist.github.io');
 
   assert.equal(
@@ -72,7 +72,28 @@ test('project URLs preserve the GitHub Pages base path and canonical root', asyn
   );
   assert.equal(
     canonicalPageUrl(site, '/tech-adventure', '/tech-adventure/technologies/react').href,
-    'https://kota-kagarist.github.io/tech-adventure/technologies/react',
+    'https://kota-kagarist.github.io/tech-adventure/technologies/react/',
+  );
+  assert.equal(
+    canonicalPageUrl(site, '/tech-adventure/', 'compare/astro/hono').href,
+    'https://kota-kagarist.github.io/tech-adventure/compare/astro/hono/',
+  );
+  assert.equal(
+    canonicalPageUrl(site, '/tech-adventure', '/tech-adventure/pathfinder/?from=react#result').href,
+    'https://kota-kagarist.github.io/tech-adventure/pathfinder/',
+  );
+  assert.equal(
+    canonicalPageUrl(site, '/tech-adventure', '/tech-adventure/404.html').href,
+    'https://kota-kagarist.github.io/tech-adventure/404.html',
+  );
+  assert.equal(projectPath('/tech-adventure', '/'), '/tech-adventure/');
+  assert.equal(projectPath('/tech-adventure', '/technologies/react'), '/tech-adventure/technologies/react/');
+  assert.equal(projectPath('/tech-adventure/', '/pathfinder?from=react#result'), '/tech-adventure/pathfinder/?from=react#result');
+  assert.equal(projectPath('/tech-adventure', '/icons/react.svg'), '/tech-adventure/icons/react.svg');
+  assert.equal(projectPath('/tech-adventure', '/sitemap.xml'), '/tech-adventure/sitemap.xml');
+  assert.equal(
+    canonicalPageUrl(site, '/', '/technologies/react/').href,
+    'https://kota-kagarist.github.io/technologies/react/',
   );
 });
 
