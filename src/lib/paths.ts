@@ -1,6 +1,5 @@
+import { projectPath } from './site-urls.mjs';
+
 export function withBase(path = '/') {
-  const configuredBase = import.meta.env.BASE_URL || '/';
-  const base = configuredBase.endsWith('/') ? configuredBase : `${configuredBase}/`;
-  if (!path || path === '/') return base;
-  return `${base}${path.replace(/^\/+/, '')}`;
+  return projectPath(import.meta.env.BASE_URL || '/', path);
 }

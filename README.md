@@ -28,18 +28,19 @@ AIにコードを書いてもらえる時代ほど、「出てきた技術名が
 - 2026-10-27のユーザー指示により、今後の主担当は GPT-6.1 Terra / max とする。この記載は担当方針であり、将来の実行モデルを自動的に固定する設定ではない。
 - 公開READMEには、186技術・22カテゴリ・6つの役割地域・485関係を扱うWeb技術の地図と、比較・Journey・Pathfinderを記載している。
 - 2026-10-27に公開先のホーム、技術詳細、比較、Journey、Pathfinderの各代表ページを読み戻し、canonical・OGP・作者情報とページ別のタイトル・説明を確認した。サイトの共有画像は1200×630で、サイトマップは529 URLを返した。利用実績は未確認。
-- 公開配信の最終成功は `dfe61e2`。確認時の `main` は `31e10d6` で、その間の差分は文書のみ。[Issue #17の実装記録](https://github.com/kota-kagarist/tech-adventure/issues/17#issuecomment-5588537037)ではサイトの発見導線を実装・公開済みとしている。
+- 公開配信の最終成功は `dfe61e2`。2026-10-27の確認時の `main` は `d2f0324` で、その間の差分は文書のみ。[Issue #17の実装記録](https://github.com/kota-kagarist/tech-adventure/issues/17#issuecomment-5588537037)ではサイトの発見導線を実装・公開済みとしている。
 
 ### 未完了
 
-- [Issue #17](https://github.com/kota-kagarist/tech-adventure/issues/17)のチェック欄には実装記録と一致しない未更新項目が残る。GitHubのdescription・homepage・topicsは2026-10-27時点で未設定。GitHubのカスタムsocial preview設定は未確認。
-- originの `robots.txt` は404だった。代表的な個別ページのcanonicalは末尾スラッシュなしのURLを示し、そのURLは末尾スラッシュありへ301転送される。対応の要否は未検討。
+- [Issue #17](https://github.com/kota-kagarist/tech-adventure/issues/17)のチェック欄には実装記録と一致しない未更新項目が残る。GitHubのdescription・homepage・topicsは2026-10-27時点で未設定。GitHubの公開プレビューは標準カードで、サイトの共有画像とは異なる。カスタム画像の設定状態は未確認。
+- originの `robots.txt` は404だった。プロジェクトのサブパスに置いた `robots.txt` はorigin全体に対する設定にならないため、共用ホストへの変更は行っていない。
+- 2026-10-27の確認時、公開中の代表的な個別ページではcanonicalが末尾スラッシュなしのURLを示し、そこからスラッシュありへ301転送されていた。canonical・サイトマップ・内部リンクを揃える修正を用意したが、修正後の本番検証は未実施。
 - 記事・図解、コミュニティ、効果測定の計画は継続課題。外部投稿とGitHubの公開設定変更は個別の承認待ち。
 - 検索・利用・作者認知への効果は、本書では未確認。
 
 ### 次の一手
 
-- Issue #17 Phase 1の残件として、canonicalとサイトマップのURL、originの `robots.txt` の扱いを調べ、必要な修正を公開前にレビュー可能な形で用意する。
+- canonical・サイトマップ・内部リンクの修正をレビューし、公開の承認後に配信結果と代表ページを再確認する。
 - GitHubメタデータとsocial previewの設定は内容と現状を確認し、変更は個別承認後に進める。記事・SNS投稿も承認後に進める。
 
 

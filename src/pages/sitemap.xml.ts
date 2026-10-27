@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 import { getRelations, getTechnologies } from '../data/load';
 import { journeys } from '../data/journeys';
 import { buildComparisonPairIds } from '../lib/comparison-pairs.mjs';
-import { projectAssetUrl } from '../lib/site-urls.mjs';
+import { canonicalPageUrl } from '../lib/site-urls.mjs';
 
 export const prerender = true;
 
@@ -24,7 +24,7 @@ export const GET: APIRoute = ({ site }) => {
   const technologies = getTechnologies();
   const relations = getRelations();
   const resolvedSite = site ?? new URL('https://kota-kagarist.github.io');
-  const absolute = (path = '') => projectAssetUrl(resolvedSite, import.meta.env.BASE_URL, path).href;
+  const absolute = (path = '') => canonicalPageUrl(resolvedSite, import.meta.env.BASE_URL, path).href;
 
   const entries: SitemapEntry[] = [
     { path: '' },

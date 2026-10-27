@@ -12,6 +12,7 @@
     "test": "node --experimental-strip-types --test",
     "prebuild": "npm run generate:social-preview",
     "build": "astro build",
+    "postbuild": "node scripts/verify-discoverability-build.mjs",
     "verify": "npm run check && npm test && npm run build",
     "freshness": "node scripts/check-freshness.mjs"
   },
