@@ -27,22 +27,22 @@ AIにコードを書いてもらえる時代ほど、「出てきた技術名が
 
 - 2026-10-27のユーザー指示により、今後の主担当は GPT-6.1 Terra / max とする。この記載は担当方針であり、将来の実行モデルを自動的に固定する設定ではない。
 - 公開READMEには、186技術・22カテゴリ・6つの役割地域・485関係を扱うWeb技術の地図と、比較・Journey・Pathfinderを記載している。
-- 2026-10-27に公開先のホーム、技術詳細、比較、Journey、Pathfinderの各代表ページを読み戻し、canonical・OGP・作者情報とページ別のタイトル・説明を確認した。サイトの共有画像は1200×630で、サイトマップは529 URLを返した。利用実績は未確認。
-- 公開配信の最終成功は `dfe61e2`。2026-10-27の確認時の `main` は `d2f0324` で、その間の差分は文書のみ。[Issue #17の実装記録](https://github.com/kota-kagarist/tech-adventure/issues/17#issuecomment-5588537037)ではサイトの発見導線を実装・公開済みとしている。
+- [PR #27](https://github.com/kota-kagarist/tech-adventure/pull/27)の承認済みhead `9b0249d` を `main` の `1f5cdcd` にマージし、[GitHub Pagesの配信](https://github.com/kota-kagarist/tech-adventure/actions/runs/40436247850)が2026-10-27に成功した。
+- 配信後、ホーム・Atlas・React詳細・比較・Journey・Pathfinderの代表6ページでHTTP 200、canonical・OG URL・作者情報を確認した。代表3件の旧URLは301で転送され、Pathfinderのクエリも保持された。サイトマップは529件で重複なく、共有画像は1200×630だった。
+- 配信artifactでも529ページのcanonical・OG URLとサイトマップの一致を確認し、代表6ページ・サイトマップ・共有画像の内容が公開先と一致した。検索・利用・作者認知への効果は未確認。
 
 ### 未完了
 
 - [Issue #17](https://github.com/kota-kagarist/tech-adventure/issues/17)のチェック欄には実装記録と一致しない未更新項目が残る。GitHubのdescription・homepage・topicsは2026-10-27時点で未設定。GitHubの公開プレビューは標準カードで、サイトの共有画像とは異なる。カスタム画像の設定状態は未確認。
 - originの `robots.txt` は404だった。プロジェクトのサブパスに置いた `robots.txt` はorigin全体に対する設定にならないため、共用ホストへの変更は行っていない。
-- 2026-10-27の確認時、公開中の代表的な個別ページではcanonicalが末尾スラッシュなしのURLを示し、そこからスラッシュありへ301転送されていた。canonical・サイトマップ・内部リンクを揃える修正を用意したが、修正後の本番検証は未実施。
 - 2026-10-27にDrive上のZenn・Qiita各1本とX用12本の下書きを再確認した。一人称で書かれた制作動機・体験と外部掲載の有無は未確認。
 - 記事・図解、コミュニティ、効果測定の計画は継続課題。外部投稿とGitHubの公開設定変更は個別の承認待ち。
 - 検索・利用・作者認知への効果は、本書では未確認。
 
 ### 次の一手
 
-- canonical・サイトマップ・内部リンクの修正をレビューし、公開の承認後に配信結果と代表ページを再確認する。
 - GitHubメタデータとsocial previewの設定は内容と現状を確認し、変更は個別承認後に進める。記事・SNS投稿も承認後に進める。
+- 検索・利用・作者認知の観測方法と、Issue #17のチェック欄の更新範囲を確認する。
 
 
 ## Live
